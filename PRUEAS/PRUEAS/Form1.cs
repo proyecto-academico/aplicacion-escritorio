@@ -1,3 +1,4 @@
+using Microsoft.Data.SqlClient;
 using System.Text;
 
 namespace PRUEAS
@@ -58,7 +59,34 @@ namespace PRUEAS
 
             return password;
         }
+        static void dataaseconn ()
+        {
+            //https://www.guru99.com/c-sharp-access-database.html#:~:text=SqlCommand%20in%20C%23%20allow%20the,best%20for%20the%20different%20commands.
+            SqlCommand Pato;
+            SqlDataReader Read;
+            SqlDataAdapter Write = new SqlDataAdapter();
+            SqlConnection cnn;
+            //datasource = pc, inital catalog = db user ID, password
+            string connetionString = @"Data Source=WIN-50GP30FGO75;Initial Catalog=Demodb;User ID=sa;Password=demol23";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            //WRITE
 
+            string quer = "INSERT";
+            Write.InsertCommand = new SqlCommand(quer,cnn);
+            Write.InsertCommand.ExecuteNonQuery();
+            
+            //READ
+            string syntax = "SELECT * FROM TABLE";
+            Pato = new SqlCommand(syntax, cnn);
+            Read = Pato.ExecuteReader();
+            while(Read.Read())
+            {
+                Console.WriteLine("READER.GetValue(0)");
+            }
+            MessageBox.Show("Connection Open  !");
+            cnn.Close();
+        }
 
     }
 }
