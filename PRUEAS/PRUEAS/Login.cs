@@ -1,12 +1,13 @@
+using System.Drawing.Text;
 using System.Text;
 
 namespace PRUEAS
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         string data;
 
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -30,12 +31,23 @@ namespace PRUEAS
             string toma = DecryptPassword(texto);
             if (contasenia == toma)
             {
-                label2.Text = "contraseña correcta pana";
+                Menu();
+                this.Hide();
+
+                // jajaj hace esto jaja 
             }
 
+        }
 
+        #region Methods
+
+        public void Menu()
+        {
+            BaseDeDatos baseDeDatos = new BaseDeDatos();
+            baseDeDatos.Show();
 
         }
+
         static string EncryptPassword(string password)
         {
             byte[] passwordBytes = Encoding.UTF8.GetBytes(password); // convierte la contraseña en bytes
@@ -58,7 +70,13 @@ namespace PRUEAS
 
             return password;
         }
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
 
 
+   
     }
 }

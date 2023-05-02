@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {}
+    "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {
+    "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
+        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
         "projectName": "PRUEAS",
-        "projectPath": "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
+        "projectPath": "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
         "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\PRUEAS\\PRUEAS\\obj\\",
+        "outputPath": "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
