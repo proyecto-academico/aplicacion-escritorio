@@ -21,9 +21,9 @@ namespace PRUEAS
                 string querry = @"
                         INSERT INTO Personas (DNI, Nombre, Apellido, ciclo)
                         VALUES (@DNI, @Nombre, @Apellido, @ciclo)
-";  
+";
 
-                SqlParameter 
+                SqlParameter sqlParameter = new SqlParameter(); 
             } 
             catch (Exception)
             {   

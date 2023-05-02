@@ -22,7 +22,7 @@ namespace PRUEAS
                 __DataAccese.insertarData(personas);
             }
             else {
-                __DataAccese.UpdateData(personas);           
+                //__DataAccese.UpdateData(personas);           
             }
             return personas;
         }
