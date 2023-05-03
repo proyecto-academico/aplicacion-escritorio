@@ -8,6 +8,7 @@ namespace PRUEAS
 {
     public class Personas
     {
+        public int ID;
         public string Name;
         public int Ciclo;
         public int DNI;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PRUEAS
 {
-    internal class ManejoDeDB
+    public class ManejoDeDB
     {
         public int Dato;
         public DataAccese __DataAccese;
@@ -26,6 +26,10 @@ namespace PRUEAS
             }
             return personas;
         }
-
+        public List<Personas> TomaDePersonas()
+        {
+            return __DataAccese.GetPersonas();
+                
+        }
     }
 }
