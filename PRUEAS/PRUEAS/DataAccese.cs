@@ -11,7 +11,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("SQLOLEDB.1; Password=123;Persist Security Info=True;User ID = sa; Initial Catalog = Personas; Data Source = DESKTOP - QB22C4J\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Personas;Data Source=DESKTOP-QB22C4J\\SQLEXPRESS");
 
 
         public void insertarData(Personas Persona)
@@ -25,7 +25,7 @@ namespace PRUEAS
 ";
                 #region Parametros que pasamos
                 SqlParameter sqlParameter = new SqlParameter();
-                sqlParameter.ParameterName = "@Name";
+                sqlParameter.ParameterName = "@Nombre";
                 sqlParameter.Value = Persona.Name;
                 sqlParameter.DbType = System.Data.DbType.String;
 
@@ -71,7 +71,7 @@ namespace PRUEAS
             try
             {  
                 conn.Open();
-                string querry = @" SELECT ID, DNI,Nombre, Apellido, Ciclo
+                string querry = @" SELECT ID, DNI, Nombre, Apellido, Ciclo
                                 FROM Personas
                             ";
                 SqlCommand command = new SqlCommand(querry, conn);

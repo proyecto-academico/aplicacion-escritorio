@@ -13,6 +13,7 @@ namespace PRUEAS
     public partial class AgregarData : Form
     {
         public ManejoDeDB _ManejoDeDB;
+        private Personas _personas;
         public AgregarData()
         {
             InitializeComponent();
@@ -44,8 +45,31 @@ namespace PRUEAS
 
             _ManejoDeDB.GuardarPersonas(personas);
         }
-        #endregion
 
+        public void CargarPersona(Personas personas)
+        {
+
+            _personas = personas;
+            if (personas != null) 
+            {
+                VaciarForm();
+                textBoxName.Text = personas.Name;
+                textBoxDNI.Text = personas.DNI.ToString();
+                textBoxSurname.Text = personas.Surname;
+                textBoxCiCLO.Text=personas.Ciclo.ToString();
+
+            }
+        }
+
+        public void VaciarForm()
+        {
+            textBoxName.Text = string.Empty;
+            textBoxDNI.Text = string.Empty;
+            textBoxSurname.Text = string.Empty;
+            textBoxCiCLO.Text = string.Empty;
+        }
+        #endregion
+        
 
     }
 }

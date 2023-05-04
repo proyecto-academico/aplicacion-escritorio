@@ -8,11 +8,11 @@ namespace PRUEAS
 {
     public class Personas
     {
-        public int ID;
-        public string Name;
-        public int Ciclo;
-        public int DNI;
-        public string Surname;
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Ciclo { get; set; }
+        public int DNI { get; set; }
+        public string Surname { get; set; }
         public Personas() { }
 
 

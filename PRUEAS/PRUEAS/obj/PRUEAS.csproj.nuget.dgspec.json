@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Helma\\Desktop\\cosas bacanas\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {}
+    "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\aplicacion-escritorio\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Helma\\Desktop\\cosas bacanas\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {
+    "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\aplicacion-escritorio\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Helma\\Desktop\\cosas bacanas\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
+        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\aplicacion-escritorio\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
         "projectName": "PRUEAS",
-        "projectPath": "C:\\Users\\Helma\\Desktop\\cosas bacanas\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
-        "packagesPath": "C:\\Users\\Helma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Helma\\Desktop\\cosas bacanas\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\obj\\",
+        "projectPath": "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\aplicacion-escritorio\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
+        "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alumno\\Desktop\\cosas re piolonas\\aplicacion-escritorio\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Helma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
