@@ -17,12 +17,14 @@ namespace PRUEAS
 
     public Personas GuardarPersonas(Personas personas)
         {
-            if (personas.ID != 0)
+            BaseDeDatos baseDeDatos = new BaseDeDatos();
+            if (baseDeDatos.BotonesValue != "edit")
             {
                 __DataAccese.insertarData(personas);
             }
             else {
-                __DataAccese.UpdateData(personas);           
+                __DataAccese.UpdateData(personas);
+                baseDeDatos.BotonesValue = "";
             }
             return personas;
         }

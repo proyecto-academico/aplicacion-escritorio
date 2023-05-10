@@ -41,6 +41,7 @@ namespace PRUEAS
         public void Guardar()
         {
             Personas personas = new Personas();
+            
             personas.Name = textBoxName.Text;
             personas.Surname = textBoxSurname.Text;
             personas.DNI = (int)long.Parse(textBoxDNI.Text);

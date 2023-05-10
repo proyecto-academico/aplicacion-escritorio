@@ -105,8 +105,8 @@ namespace PRUEAS
             {
                 conn.Open();
                 string querry = @"
-                        UPDATE INTO Personas (DNI, Nombre, Apellido, ciclo)
-                        VALUES (@DNI, @Nombre, @Apellido, @ciclo) WHERE DNI = @DNI
+                        UPDATE Personas 
+                        SET Nombre=@Nombre, Apellido=@Apellido, ciclo=@ciclo WHERE DNI = @DNI
 ";
                 #region Parametros que pasamos
                 SqlParameter sqlParameter = new SqlParameter();
@@ -128,10 +128,7 @@ namespace PRUEAS
                 sqlParameter4.ParameterName = "@ciclo";
                 sqlParameter4.Value = Persona.Ciclo;
                 sqlParameter4.DbType = System.Data.DbType.Int64;
-                SqlParameter sqlParameter5 = new SqlParameter();
-                sqlParameter4.ParameterName = "@ID";
-                sqlParameter4.Value = Persona.ID;
-                sqlParameter4.DbType = System.Data.DbType.Int64;
+                
                 #endregion
 
                 #region Comandos Sql
@@ -140,7 +137,7 @@ namespace PRUEAS
                 sqlCommand.Parameters.Add(parametros2);
                 sqlCommand.Parameters.Add(sqlParameter3);
                 sqlCommand.Parameters.Add(sqlParameter4);
-                sqlCommand.Parameters.Add(sqlParameter5);
+              ;
                 sqlCommand.ExecuteNonQuery();
                 #endregion
             }

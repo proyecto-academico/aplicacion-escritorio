@@ -13,6 +13,7 @@ namespace PRUEAS
 {
     public partial class BaseDeDatos : Form
     {
+        public string BotonesValue;
         private ManejoDeDB _ManejoDeDB;
         public BaseDeDatos()
         {
@@ -40,7 +41,8 @@ namespace PRUEAS
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[4].Cells[e.ColumnIndex];
-            if (cell.Value.ToString() == "edit")
+            BotonesValue = cell.Value.ToString();
+            if (BotonesValue == "edit")
             {
 
                 AgregarData AgregarData = new AgregarData();
