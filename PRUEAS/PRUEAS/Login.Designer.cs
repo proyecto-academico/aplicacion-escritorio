@@ -59,7 +59,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(170, 23);
             textBox1.TabIndex = 2;
-            textBox1.Click += textBox1_Click;
+            
             // 
             // Cerrar
             // 

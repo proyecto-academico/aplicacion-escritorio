@@ -26,8 +26,11 @@ namespace PRUEAS
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
-        {
+        {   Personas personas = _personas;
+            
                 Guardar();
+            
+            
             ((BaseDeDatos)this.Owner).CargaDeContactos();
 
         }
@@ -50,7 +53,7 @@ namespace PRUEAS
         {
 
             _personas = personas;
-            if (personas != null) 
+            if (personas != null)  
             {
                 VaciarForm();
                 textBoxName.Text = personas.Name;

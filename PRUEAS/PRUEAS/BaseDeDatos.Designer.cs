@@ -179,11 +179,11 @@
             // 
             // edit
             // 
-            edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             edit.HeaderText = "edit";
             edit.Name = "edit";
             edit.ReadOnly = true;
             edit.Text = "edit";
+            edit.UseColumnTextForLinkValue = true;
             // 
             // BaseDeDatos
             // 

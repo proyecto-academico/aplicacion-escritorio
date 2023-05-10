@@ -17,12 +17,12 @@ namespace PRUEAS
 
     public Personas GuardarPersonas(Personas personas)
         {
-            if (Dato==0)
+            if (personas.ID != 0)
             {
                 __DataAccese.insertarData(personas);
             }
             else {
-                //__DataAccese.UpdateData(personas);           
+                __DataAccese.UpdateData(personas);           
             }
             return personas;
         }

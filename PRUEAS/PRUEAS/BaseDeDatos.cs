@@ -39,18 +39,18 @@ namespace PRUEAS
         }
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[5].Cells[e.ColumnIndex];
+            DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[4].Cells[e.ColumnIndex];
             if (cell.Value.ToString() == "edit")
             {
 
                 AgregarData AgregarData = new AgregarData();
                 AgregarData.CargarPersona(new Personas
                 {
-                    ID = int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
-                    DNI = int.Parse(GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString()),
+                    ID = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                    DNI = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString()),
                     Name = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
                     Surname = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString(),
-                    Ciclo = int.Parse(GRILLA.Rows[e.RowIndex].Cells[4].Value.ToString())
+                    Ciclo = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[4].Value.ToString())
                 });
                 AgregarData.ShowDialog(this);
 
