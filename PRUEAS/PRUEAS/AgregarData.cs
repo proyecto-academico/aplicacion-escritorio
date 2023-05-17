@@ -46,8 +46,9 @@ namespace PRUEAS
             personas.Surname = textBoxSurname.Text;
             personas.DNI = (int)long.Parse(textBoxDNI.Text);
             personas.Ciclo = (int)long.Parse(textBoxCiCLO.Text);
-
-            _ManejoDeDB.GuardarPersonas(personas);
+            BaseDeDatos baseDeDatos = new BaseDeDatos();
+            bool valor = baseDeDatos.BotonesValue;
+            _ManejoDeDB.GuardarPersonas(personas,valor);
         }
 
         public void CargarPersona(Personas personas)

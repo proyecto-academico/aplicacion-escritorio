@@ -15,16 +15,16 @@ namespace PRUEAS
             __DataAccese = new DataAccese();
     }
 
-    public Personas GuardarPersonas(Personas personas)
+    public Personas GuardarPersonas(Personas personas, bool VerDades)
         {
-            BaseDeDatos baseDeDatos = new BaseDeDatos();
-            if (baseDeDatos.BotonesValue != "edit")
+           
+            if (VerDades)
             {
-                __DataAccese.insertarData(personas);
+                __DataAccese.UpdateData(personas);
             }
             else {
-                __DataAccese.UpdateData(personas);
-                baseDeDatos.BotonesValue = "";
+                __DataAccese.insertarData(personas);
+
             }
             return personas;
         }

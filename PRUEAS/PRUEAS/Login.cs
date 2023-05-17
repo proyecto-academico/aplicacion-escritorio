@@ -66,7 +66,7 @@ namespace PRUEAS
         #endregion
 
         #region Cosas Blake
-        /* 
+        /*
         =========
                 static void dataaseconn ()
                 {
@@ -94,7 +94,7 @@ namespace PRUEAS
                         Console.WriteLine("READER.GetValue(0)");
                     }
                     MessageBox.Show("Connection Open  !");
-                   cnn.Close();*/
+                   cnn.Close(); */
         #endregion
     }
 

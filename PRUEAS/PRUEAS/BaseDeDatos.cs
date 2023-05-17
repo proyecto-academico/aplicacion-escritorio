@@ -13,7 +13,7 @@ namespace PRUEAS
 {
     public partial class BaseDeDatos : Form
     {
-        public string BotonesValue;
+        public bool BotonesValue;
         private ManejoDeDB _ManejoDeDB;
         public BaseDeDatos()
         {
@@ -41,8 +41,14 @@ namespace PRUEAS
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[4].Cells[e.ColumnIndex];
-            BotonesValue = cell.Value.ToString();
-            if (BotonesValue == "edit")
+            if (cell.Value.ToString() == "edit") {
+                BotonesValue = true;
+            }
+            else
+            {
+                BotonesValue = false;
+            }
+            if (BotonesValue)
             {
 
                 AgregarData AgregarData = new AgregarData();
@@ -54,6 +60,10 @@ namespace PRUEAS
                     Surname = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString(),
                     Ciclo = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[4].Value.ToString())
                 });
+                BotonesValue = true;
+                ErrorForm errorForm = new ErrorForm();
+                
+                errorForm.ShowDialog(this);
                 AgregarData.ShowDialog(this);
 
             }
