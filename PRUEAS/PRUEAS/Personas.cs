@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,13 +8,24 @@ namespace PRUEAS
 {
     public class Personas
     {
+        private int _dni;
+
         public int ID { get; set; }
         public string Name { get; set; }
         public int Ciclo { get; set; }
-        public int DNI { get; set; }
+        public int DNI
+        {
+            get => _dni;
+            set
+            {
+                if (value.ToString().Length != 8)
+                    throw new ArgumentException("El DNI debe tener 8 caracteres.");
+
+                _dni = value;
+            }
+        }
         public string Surname { get; set; }
+
         public Personas() { }
-
-
     }
 }
