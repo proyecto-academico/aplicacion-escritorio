@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.Identity.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +15,7 @@ namespace PRUEAS
 {
     public partial class AgregarData : Form
     {
+        public bool verdad= false;
         public ManejoDeDB _ManejoDeDB;
         private Personas _personas;
         public AgregarData()
@@ -46,12 +50,15 @@ namespace PRUEAS
             personas.Surname = textBoxSurname.Text;
             personas.DNI = (int)long.Parse(textBoxDNI.Text);
             personas.Ciclo = (int)long.Parse(textBoxCiCLO.Text);
-            BaseDeDatos baseDeDatos = new BaseDeDatos();
-            bool valor = baseDeDatos.BotonesValue;
-            _ManejoDeDB.GuardarPersonas(personas,valor);
+           
+            
+            
+
+        
+            _ManejoDeDB.GuardarPersonas(personas,verdad);
         }
 
-        public void CargarPersona(Personas personas)
+        public void CargarPersona(Personas personas, bool Verdades)
         {
 
             _personas = personas;
@@ -62,8 +69,9 @@ namespace PRUEAS
                 textBoxDNI.Text = personas.DNI.ToString();
                 textBoxSurname.Text = personas.Surname;
                 textBoxCiCLO.Text=personas.Ciclo.ToString();
-
+                verdad = Verdades;
             }
+            
         }
 
         public void VaciarForm()

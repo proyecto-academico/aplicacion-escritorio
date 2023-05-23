@@ -41,13 +41,13 @@
             dataAcceseBindingSource = new BindingSource(components);
             personasBindingSource4 = new BindingSource(components);
             GRILLA = new DataGridView();
-            personasBindingSource5 = new BindingSource(components);
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dNIDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cicloDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             edit = new DataGridViewLinkColumn();
+            personasBindingSource5 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)personasBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource2).BeginInit();
@@ -84,6 +84,7 @@
             // textBox1
             // 
             textBox1.Location = new Point(125, 59);
+            textBox1.MaxLength = 8;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(507, 23);
             textBox1.TabIndex = 3;
@@ -143,10 +144,6 @@
             GRILLA.TabIndex = 6;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
             // 
-            // personasBindingSource5
-            // 
-            personasBindingSource5.DataSource = typeof(Personas);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -184,6 +181,10 @@
             edit.ReadOnly = true;
             edit.Text = "edit";
             edit.UseColumnTextForLinkValue = true;
+            // 
+            // personasBindingSource5
+            // 
+            personasBindingSource5.DataSource = typeof(Personas);
             // 
             // BaseDeDatos
             // 

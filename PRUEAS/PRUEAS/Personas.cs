@@ -13,16 +13,19 @@ namespace PRUEAS
         public int ID { get; set; }
         public string Name { get; set; }
         public int Ciclo { get; set; }
-        public int DNI
-        {
-            get => _dni;
+        public int DNI{ get; set;
+           
+           /* corregi las exepciones no funcionan como deben
+            * get =>  _dni;
             set
             {
-                if (value.ToString().Length != 8)
+                if (value.ToString().Length >= 8 )
+                {
                     throw new ArgumentException("El DNI debe tener 8 caracteres.");
 
-                _dni = value;
-            }
+                    _dni = value;
+                }
+            }*/
         }
         public string Surname { get; set; }
 

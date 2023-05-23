@@ -40,12 +40,17 @@ namespace PRUEAS
         }
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[4].Cells[e.ColumnIndex];
-            if (cell.Value.ToString() == "edit") {
+/*           hay que crear un excepcion para cuando se toque una celda que no sea edit o delete.        */
+            DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[5];
+            if (cell.Value.ToString() == "edit")
+            {
+               
                 BotonesValue = true;
             }
             else
             {
+                ErrorForm form = new ErrorForm();
+                form.ShowDialog();
                 BotonesValue = false;
             }
             if (BotonesValue)
@@ -59,11 +64,12 @@ namespace PRUEAS
                     Name = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
                     Surname = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString(),
                     Ciclo = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[4].Value.ToString())
-                });
-                BotonesValue = true;
-                ErrorForm errorForm = new ErrorForm();
-                
-                errorForm.ShowDialog(this);
+
+                }, BotonesValue);
+               
+              
+
+               
                 AgregarData.ShowDialog(this);
 
             }
