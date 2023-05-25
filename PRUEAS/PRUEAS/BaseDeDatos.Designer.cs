@@ -47,6 +47,7 @@
             surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cicloDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             edit = new DataGridViewLinkColumn();
+            X = new DataGridViewLinkColumn();
             personasBindingSource5 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)personasBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource).BeginInit();
@@ -135,52 +136,67 @@
             // 
             GRILLA.AutoGenerateColumns = false;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, dNIDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn, cicloDataGridViewTextBoxColumn, edit });
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, dNIDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn, cicloDataGridViewTextBoxColumn, edit, X });
             GRILLA.DataSource = personasBindingSource5;
             GRILLA.Location = new Point(45, 110);
             GRILLA.Name = "GRILLA";
             GRILLA.RowTemplate.Height = 25;
-            GRILLA.Size = new Size(682, 381);
+            GRILLA.Size = new Size(697, 381);
             GRILLA.TabIndex = 6;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
             // 
             // iDDataGridViewTextBoxColumn
             // 
             iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.Frozen = true;
             iDDataGridViewTextBoxColumn.HeaderText = "ID";
             iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             // 
             // dNIDataGridViewTextBoxColumn
             // 
             dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
+            dNIDataGridViewTextBoxColumn.Frozen = true;
             dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
             dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
             // 
             // nameDataGridViewTextBoxColumn
             // 
             nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.Frozen = true;
             nameDataGridViewTextBoxColumn.HeaderText = "Name";
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // surnameDataGridViewTextBoxColumn
             // 
             surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
+            surnameDataGridViewTextBoxColumn.Frozen = true;
             surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
             surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             // 
             // cicloDataGridViewTextBoxColumn
             // 
             cicloDataGridViewTextBoxColumn.DataPropertyName = "Ciclo";
+            cicloDataGridViewTextBoxColumn.Frozen = true;
             cicloDataGridViewTextBoxColumn.HeaderText = "Ciclo";
             cicloDataGridViewTextBoxColumn.Name = "cicloDataGridViewTextBoxColumn";
             // 
             // edit
             // 
+            edit.Frozen = true;
             edit.HeaderText = "edit";
             edit.Name = "edit";
             edit.ReadOnly = true;
             edit.Text = "edit";
             edit.UseColumnTextForLinkValue = true;
+            // 
+            // X
+            // 
+            X.Frozen = true;
+            X.HeaderText = "Eliminar";
+            X.Name = "X";
+            X.ReadOnly = true;
+            X.Text = "X";
+            X.UseColumnTextForLinkValue = true;
             // 
             // personasBindingSource5
             // 
@@ -188,7 +204,7 @@
             // 
             // BaseDeDatos
             // 
-            ClientSize = new Size(823, 547);
+            ClientSize = new Size(814, 547);
             Controls.Add(GRILLA);
             Controls.Add(Cerrar);
             Controls.Add(Label1);
@@ -230,5 +246,6 @@
         private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cicloDataGridViewTextBoxColumn;
         private DataGridViewLinkColumn edit;
+        private DataGridViewLinkColumn X;
     }
 }

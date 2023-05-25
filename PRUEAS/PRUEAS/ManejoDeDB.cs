@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PRUEAS
-{
+{   
     public class ManejoDeDB
     {
+  
         public int Dato;
         public DataAccese __DataAccese;
 
@@ -32,6 +33,11 @@ namespace PRUEAS
         {
             return __DataAccese.GetPersonas();
                 
+        }
+        public void DeletePersona (Personas persona)
+        {
+            __DataAccese.DeleteData(persona);
+            
         }
     }
 }

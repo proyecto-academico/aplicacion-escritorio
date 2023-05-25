@@ -1,7 +1,8 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using System.Data.SqlClient;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Personas;Data Source=DESKTOP-QB22C4J\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=Personas;Data Source=PC-F-026\\SQLEXPRESS");
 
 
         public void insertarData(Personas Persona)
@@ -150,6 +151,38 @@ namespace PRUEAS
 
                 conn.Close();
             }
+        }
+
+        public void DeleteData(Personas personas) {
+
+
+            try
+            {
+                conn.Open();
+                string querry = @"DELETE Personas where DNI=@DNI";
+                #region Parametros
+                SqlParameter sqlParameter1 = new SqlParameter();
+                sqlParameter1.ParameterName = "@DNI";
+                sqlParameter1.Value = personas.DNI;
+                sqlParameter1.DbType = System.Data.DbType.Int64;
+                #endregion
+                #region Envios
+                SqlCommand sqlCommand = new SqlCommand(querry, conn);
+                sqlCommand.Parameters.Add(sqlParameter1);
+                sqlCommand.ExecuteNonQuery();
+                #endregion
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+
+                conn.Close();
+            }
+
+
         }
     }
 }

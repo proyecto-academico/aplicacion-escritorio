@@ -13,7 +13,8 @@ namespace PRUEAS
 {
     public partial class BaseDeDatos : Form
     {
-        public bool BotonesValue;
+        public Borrar borrar= new Borrar();
+        public bool BotonesValue = false;
         private ManejoDeDB _ManejoDeDB;
         public BaseDeDatos()
         {
@@ -40,19 +41,29 @@ namespace PRUEAS
         }
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-/*           hay que crear un excepcion para cuando se toque una celda que no sea edit o delete.        */
-            DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[5];
+            
+            DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[e.ColumnIndex];
             if (cell.Value.ToString() == "edit")
             {
-               
+
                 BotonesValue = true;
             }
-            else
+            else if (cell.Value.ToString() == "X")
             {
-                ErrorForm form = new ErrorForm();
-                form.ShowDialog();
-                BotonesValue = false;
+               
+                borrar.CargarPersona(new Personas
+                {
+                    ID = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                    DNI = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString()),
+                    Name = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                    Surname = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString(),
+                    Ciclo = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[4].Value.ToString())
+
+                });
+                borrar.ShowDialog(this);
+
             }
+
             if (BotonesValue)
             {
 
@@ -66,10 +77,10 @@ namespace PRUEAS
                     Ciclo = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[4].Value.ToString())
 
                 }, BotonesValue);
-               
-              
 
-               
+                BotonesValue = false;
+
+
                 AgregarData.ShowDialog(this);
 
             }
