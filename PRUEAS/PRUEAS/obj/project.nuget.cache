@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GFkMkOJ2WLAgqPb3SboKZD/PhL+brrDjXgftt247JMDgLXWUks/SVWAGaD39o8vo+PELPF1x9605AeitsNGfXQ==",
+  "dgSpecHash": "LjzbCYunw43Ga6vSu4zgllgI4/UdOF/+7WkEbBVuJVPZz+ICirRr3Ae1qeL1ADzDyBHA//lFhepZam6oLdNu4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alumno\\source\\repos\\aplicacion-escritorio\\PRUEAS\\lkafhlkhioawffa\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
+  "projectFilePath": "C:\\Users\\Alumno\\source\\repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alumno\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Alumno\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

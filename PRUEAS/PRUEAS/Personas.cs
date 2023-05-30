@@ -10,9 +10,9 @@ namespace PRUEAS
     {
         private int _dni;
 
-        public int ID { get; set; }
+        public string contrasenia { get; set; }
         public string Name { get; set; }
-        public int Ciclo { get; set; }
+        public string mail{ get; set; }
         public int DNI{ get; set;
            
            /* corregi las exepciones no funcionan como deben

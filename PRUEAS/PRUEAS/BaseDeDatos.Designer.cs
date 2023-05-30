@@ -41,14 +41,17 @@
             dataAcceseBindingSource = new BindingSource(components);
             personasBindingSource4 = new BindingSource(components);
             GRILLA = new DataGridView();
-            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dNIDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            cicloDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            personasBindingSource5 = new BindingSource(components);
+            personasBindingSource6 = new BindingSource(components);
             edit = new DataGridViewLinkColumn();
             X = new DataGridViewLinkColumn();
-            personasBindingSource5 = new BindingSource(components);
+            personasBindingSource7 = new BindingSource(components);
+            manejoDeDBBindingSource = new BindingSource(components);
+            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            cicloDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dNIDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource2).BeginInit();
@@ -57,6 +60,9 @@
             ((System.ComponentModel.ISupportInitialize)personasBindingSource4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)manejoDeDBBindingSource).BeginInit();
             SuspendLayout();
             // 
             // personasBindingSource1
@@ -134,51 +140,26 @@
             // 
             // GRILLA
             // 
+            GRILLA.AllowUserToDeleteRows = false;
             GRILLA.AutoGenerateColumns = false;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, dNIDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn, cicloDataGridViewTextBoxColumn, edit, X });
-            GRILLA.DataSource = personasBindingSource5;
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { edit, X, iDDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, cicloDataGridViewTextBoxColumn, dNIDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn });
+            GRILLA.DataSource = personasBindingSource1;
             GRILLA.Location = new Point(45, 110);
             GRILLA.Name = "GRILLA";
+            GRILLA.ReadOnly = true;
             GRILLA.RowTemplate.Height = 25;
-            GRILLA.Size = new Size(697, 381);
+            GRILLA.Size = new Size(749, 381);
             GRILLA.TabIndex = 6;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
             // 
-            // iDDataGridViewTextBoxColumn
+            // personasBindingSource5
             // 
-            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn.Frozen = true;
-            iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            personasBindingSource5.DataSource = typeof(Personas);
             // 
-            // dNIDataGridViewTextBoxColumn
+            // personasBindingSource6
             // 
-            dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
-            dNIDataGridViewTextBoxColumn.Frozen = true;
-            dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
-            dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.Frozen = true;
-            nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            surnameDataGridViewTextBoxColumn.Frozen = true;
-            surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
-            surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            // 
-            // cicloDataGridViewTextBoxColumn
-            // 
-            cicloDataGridViewTextBoxColumn.DataPropertyName = "Ciclo";
-            cicloDataGridViewTextBoxColumn.Frozen = true;
-            cicloDataGridViewTextBoxColumn.HeaderText = "Ciclo";
-            cicloDataGridViewTextBoxColumn.Name = "cicloDataGridViewTextBoxColumn";
+            personasBindingSource6.DataSource = typeof(Personas);
             // 
             // edit
             // 
@@ -198,9 +179,48 @@
             X.Text = "X";
             X.UseColumnTextForLinkValue = true;
             // 
-            // personasBindingSource5
+            // personasBindingSource7
             // 
-            personasBindingSource5.DataSource = typeof(Personas);
+            personasBindingSource7.DataSource = typeof(Personas);
+            // 
+            // manejoDeDBBindingSource
+            // 
+            manejoDeDBBindingSource.DataSource = typeof(ManejoDeDB);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cicloDataGridViewTextBoxColumn
+            // 
+            cicloDataGridViewTextBoxColumn.DataPropertyName = "Ciclo";
+            cicloDataGridViewTextBoxColumn.HeaderText = "Ciclo";
+            cicloDataGridViewTextBoxColumn.Name = "cicloDataGridViewTextBoxColumn";
+            cicloDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dNIDataGridViewTextBoxColumn
+            // 
+            dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
+            dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
+            dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
+            dNIDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // surnameDataGridViewTextBoxColumn
+            // 
+            surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
+            surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
+            surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            surnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // BaseDeDatos
             // 
@@ -221,6 +241,9 @@
             ((System.ComponentModel.ISupportInitialize)personasBindingSource4).EndInit();
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)manejoDeDBBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -240,12 +263,15 @@
         private DataGridView GRILLA;
         private BindingSource personasBindingSource5;
         private DataGridViewLinkColumn editar;
-        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn cicloDataGridViewTextBoxColumn;
         private DataGridViewLinkColumn edit;
         private DataGridViewLinkColumn X;
+        private BindingSource personasBindingSource6;
+        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn cicloDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private BindingSource personasBindingSource7;
+        private BindingSource manejoDeDBBindingSource;
     }
 }

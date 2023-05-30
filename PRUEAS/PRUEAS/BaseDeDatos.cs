@@ -13,7 +13,7 @@ namespace PRUEAS
 {
     public partial class BaseDeDatos : Form
     {
-        public Borrar borrar= new Borrar();
+        public Borrar borrar = new Borrar();
         public bool BotonesValue = false;
         private ManejoDeDB _ManejoDeDB;
         public BaseDeDatos()
@@ -41,7 +41,7 @@ namespace PRUEAS
         }
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[e.ColumnIndex];
             if (cell.Value.ToString() == "edit")
             {
@@ -50,7 +50,7 @@ namespace PRUEAS
             }
             else if (cell.Value.ToString() == "X")
             {
-               
+
                 borrar.CargarPersona(new Personas
                 {
                     ID = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
