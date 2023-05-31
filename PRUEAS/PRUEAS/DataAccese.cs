@@ -12,7 +12,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=Personas;Data Source=PC-F-026\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-026\\SQLEXPRESS");
 
 
         public void insertarData(Personas Persona)
@@ -22,7 +22,7 @@ namespace PRUEAS
                 conn.Open();
                 string querry = @"
                         INSERT INTO Personas (DNI, Nombre, Apellido, ciclo)
-                        VALUES (@DNI, @Nombre, @Apellido, @ciclo)
+                        VALUES (@DNI, @Nombre, @Apellido, @mail
 ";
                 #region Parametros que pasamos
                 SqlParameter sqlParameter = new SqlParameter();
@@ -41,9 +41,9 @@ namespace PRUEAS
                 sqlParameter3.DbType = System.Data.DbType.Int64;
 
                 SqlParameter sqlParameter4 = new SqlParameter();
-                sqlParameter4.ParameterName = "@ciclo";
-                sqlParameter4.Value = Persona.Ciclo;
-                sqlParameter4.DbType = System.Data.DbType.Int64;
+                sqlParameter4.ParameterName = "@Mail";
+                sqlParameter4.Value = Persona.mail;
+                sqlParameter4.DbType = System.Data.DbType.String;
                 #endregion
 
                 #region Comandos Sql
@@ -72,8 +72,8 @@ namespace PRUEAS
             try
             {  
                 conn.Open();
-                string querry = @" SELECT ID, DNI, Nombre, Apellido, Ciclo
-                                FROM Personas
+                string querry = @" SELECT DNI_Alumno, Nombre, Apellido, Mail
+                                FROM alumnos
                             ";
                 SqlCommand command = new SqlCommand(querry, conn);
                 SqlDataReader reader = command.ExecuteReader();
@@ -81,11 +81,10 @@ namespace PRUEAS
                 {
                     personas.Add(new Personas
                     {
-                        ID = int.Parse(reader["ID"].ToString()),
-                        DNI = int.Parse(reader["DNI"].ToString()),
+                        DNI = int.Parse(reader["DNI_Alumno"].ToString()),
                         Name = reader["Nombre"].ToString(), 
                         Surname = reader["Apellido"].ToString(),
-                        Ciclo = int.Parse(reader["Ciclo"].ToString())
+                        mail = reader["Mail"].ToString()
                     });
                 }
 
@@ -127,8 +126,8 @@ namespace PRUEAS
 
                 SqlParameter sqlParameter4 = new SqlParameter();
                 sqlParameter4.ParameterName = "@ciclo";
-                sqlParameter4.Value = Persona.Ciclo;
-                sqlParameter4.DbType = System.Data.DbType.Int64;
+                sqlParameter4.Value = Persona.mail;
+                sqlParameter4.DbType = System.Data.DbType.String;
                 
                 #endregion
 

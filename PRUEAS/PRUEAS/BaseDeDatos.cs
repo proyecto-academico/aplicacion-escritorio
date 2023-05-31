@@ -53,11 +53,11 @@ namespace PRUEAS
 
                 borrar.CargarPersona(new Personas
                 {
-                    ID = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
+
                     DNI = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString()),
                     Name = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
                     Surname = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString(),
-                    Ciclo = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[4].Value.ToString())
+                    mail = GRILLA.Rows[e.RowIndex].Cells[4].Value.ToString()
 
                 });
                 borrar.ShowDialog(this);
@@ -70,11 +70,11 @@ namespace PRUEAS
                 AgregarData AgregarData = new AgregarData();
                 AgregarData.CargarPersona(new Personas
                 {
-                    ID = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
+
                     DNI = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString()),
                     Name = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
                     Surname = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString(),
-                    Ciclo = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[4].Value.ToString())
+                    mail = GRILLA.Rows[e.RowIndex].Cells[4].Value.ToString()
 
                 }, BotonesValue);
 

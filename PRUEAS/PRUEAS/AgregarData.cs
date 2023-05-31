@@ -49,7 +49,7 @@ namespace PRUEAS
             personas.Name = textBoxName.Text;
             personas.Surname = textBoxSurname.Text;
             personas.DNI = (int)long.Parse(textBoxDNI.Text);
-            personas.Ciclo = (int)long.Parse(textBoxCiCLO.Text);
+            personas.mail = (textBoxCiCLO.Text);
            
             
             
@@ -68,7 +68,7 @@ namespace PRUEAS
                 textBoxName.Text = personas.Name;
                 textBoxDNI.Text = personas.DNI.ToString();
                 textBoxSurname.Text = personas.Surname;
-                textBoxCiCLO.Text=personas.Ciclo.ToString();
+                textBoxCiCLO.Text=personas.mail;
                 verdad = Verdades;
             }
             

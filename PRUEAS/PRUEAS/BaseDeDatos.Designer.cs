@@ -29,45 +29,27 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            personasBindingSource1 = new BindingSource(components);
             Button1 = new Button();
             button2 = new Button();
             textBox1 = new TextBox();
             Label1 = new Label();
             Cerrar = new Button();
-            personasBindingSource = new BindingSource(components);
-            personasBindingSource2 = new BindingSource(components);
-            personasBindingSource3 = new BindingSource(components);
-            dataAcceseBindingSource = new BindingSource(components);
-            personasBindingSource4 = new BindingSource(components);
             GRILLA = new DataGridView();
-            personasBindingSource5 = new BindingSource(components);
-            personasBindingSource6 = new BindingSource(components);
+            personasBindingSource = new BindingSource(components);
+            personasBindingSource1 = new BindingSource(components);
+            personasBindingSource2 = new BindingSource(components);
+            dNIDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            mailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            contraseniaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             edit = new DataGridViewLinkColumn();
             X = new DataGridViewLinkColumn();
-            personasBindingSource7 = new BindingSource(components);
-            manejoDeDBBindingSource = new BindingSource(components);
-            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            cicloDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dNIDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataAcceseBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)manejoDeDBBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource2).BeginInit();
             SuspendLayout();
-            // 
-            // personasBindingSource1
-            // 
-            personasBindingSource1.DataSource = typeof(Personas);
             // 
             // Button1
             // 
@@ -118,95 +100,32 @@
             Cerrar.UseVisualStyleBackColor = true;
             Cerrar.Click += Cerrar_Click;
             // 
-            // personasBindingSource
-            // 
-            personasBindingSource.DataSource = typeof(Personas);
-            // 
-            // personasBindingSource2
-            // 
-            personasBindingSource2.DataSource = typeof(Personas);
-            // 
-            // personasBindingSource3
-            // 
-            personasBindingSource3.DataSource = typeof(Personas);
-            // 
-            // dataAcceseBindingSource
-            // 
-            dataAcceseBindingSource.DataSource = typeof(DataAccese);
-            // 
-            // personasBindingSource4
-            // 
-            personasBindingSource4.DataSource = typeof(Personas);
-            // 
             // GRILLA
             // 
             GRILLA.AllowUserToDeleteRows = false;
             GRILLA.AutoGenerateColumns = false;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { edit, X, iDDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, cicloDataGridViewTextBoxColumn, dNIDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn });
-            GRILLA.DataSource = personasBindingSource1;
-            GRILLA.Location = new Point(45, 110);
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { dNIDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn, mailDataGridViewTextBoxColumn, contraseniaDataGridViewTextBoxColumn, edit, X });
+            GRILLA.DataSource = personasBindingSource2;
+            GRILLA.Location = new Point(45, 112);
             GRILLA.Name = "GRILLA";
             GRILLA.ReadOnly = true;
             GRILLA.RowTemplate.Height = 25;
-            GRILLA.Size = new Size(749, 381);
+            GRILLA.Size = new Size(749, 379);
             GRILLA.TabIndex = 6;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
             // 
-            // personasBindingSource5
+            // personasBindingSource
             // 
-            personasBindingSource5.DataSource = typeof(Personas);
+            personasBindingSource.DataSource = typeof(Personas);
             // 
-            // personasBindingSource6
+            // personasBindingSource1
             // 
-            personasBindingSource6.DataSource = typeof(Personas);
+            personasBindingSource1.DataSource = typeof(Personas);
             // 
-            // edit
+            // personasBindingSource2
             // 
-            edit.Frozen = true;
-            edit.HeaderText = "edit";
-            edit.Name = "edit";
-            edit.ReadOnly = true;
-            edit.Text = "edit";
-            edit.UseColumnTextForLinkValue = true;
-            // 
-            // X
-            // 
-            X.Frozen = true;
-            X.HeaderText = "Eliminar";
-            X.Name = "X";
-            X.ReadOnly = true;
-            X.Text = "X";
-            X.UseColumnTextForLinkValue = true;
-            // 
-            // personasBindingSource7
-            // 
-            personasBindingSource7.DataSource = typeof(Personas);
-            // 
-            // manejoDeDBBindingSource
-            // 
-            manejoDeDBBindingSource.DataSource = typeof(ManejoDeDB);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cicloDataGridViewTextBoxColumn
-            // 
-            cicloDataGridViewTextBoxColumn.DataPropertyName = "Ciclo";
-            cicloDataGridViewTextBoxColumn.HeaderText = "Ciclo";
-            cicloDataGridViewTextBoxColumn.Name = "cicloDataGridViewTextBoxColumn";
-            cicloDataGridViewTextBoxColumn.ReadOnly = true;
+            personasBindingSource2.DataSource = typeof(Personas);
             // 
             // dNIDataGridViewTextBoxColumn
             // 
@@ -215,12 +134,49 @@
             dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
             dNIDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // surnameDataGridViewTextBoxColumn
             // 
             surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
             surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
             surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             surnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mailDataGridViewTextBoxColumn
+            // 
+            mailDataGridViewTextBoxColumn.DataPropertyName = "mail";
+            mailDataGridViewTextBoxColumn.HeaderText = "mail";
+            mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            mailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contraseniaDataGridViewTextBoxColumn
+            // 
+            contraseniaDataGridViewTextBoxColumn.DataPropertyName = "contrasenia";
+            contraseniaDataGridViewTextBoxColumn.HeaderText = "contrasenia";
+            contraseniaDataGridViewTextBoxColumn.Name = "contraseniaDataGridViewTextBoxColumn";
+            contraseniaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // edit
+            // 
+            edit.HeaderText = "edit";
+            edit.Name = "edit";
+            edit.ReadOnly = true;
+            edit.Text = "edit";
+            edit.UseColumnTextForLinkValue = true;
+            // 
+            // X
+            // 
+            X.HeaderText = "Eliminar";
+            X.Name = "X";
+            X.ReadOnly = true;
+            X.Text = "X";
+            X.UseColumnTextForLinkValue = true;
             // 
             // BaseDeDatos
             // 
@@ -233,17 +189,10 @@
             Controls.Add(Button1);
             Name = "BaseDeDatos";
             Load += BaseDeDatos_Load;
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataAcceseBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource4).EndInit();
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)manejoDeDBBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -254,24 +203,18 @@
         private TextBox textBox1;
         private Label Label1;
         private Button Cerrar;
-        private BindingSource personasBindingSource1;
-        private BindingSource personasBindingSource;
-        private BindingSource dataAcceseBindingSource;
-        private BindingSource personasBindingSource2;
-        private BindingSource personasBindingSource3;
-        private BindingSource personasBindingSource4;
+
         private DataGridView GRILLA;
-        private BindingSource personasBindingSource5;
         private DataGridViewLinkColumn editar;
+        private BindingSource personasBindingSource;
+        private BindingSource personasBindingSource1;
+        private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn contraseniaDataGridViewTextBoxColumn;
         private DataGridViewLinkColumn edit;
         private DataGridViewLinkColumn X;
-        private BindingSource personasBindingSource6;
-        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn cicloDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
-        private BindingSource personasBindingSource7;
-        private BindingSource manejoDeDBBindingSource;
+        private BindingSource personasBindingSource2;
     }
 }
