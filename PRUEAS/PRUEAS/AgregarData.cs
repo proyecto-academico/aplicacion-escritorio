@@ -15,7 +15,7 @@ namespace PRUEAS
 {
     public partial class AgregarData : Form
     {
-        public bool verdad= false;
+        public bool verdad = false;
         public ManejoDeDB _ManejoDeDB;
         private Personas _personas;
         public AgregarData()
@@ -30,48 +30,49 @@ namespace PRUEAS
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
-        {   Personas personas = _personas;
-            
-                Guardar();
-            
-            
+        {
+            Personas personas = _personas;
+
+            Guardar();
+
+
             ((BaseDeDatos)this.Owner).CargaDeContactos();
 
         }
         #endregion
 
         #region Methods
-        
+
         public void Guardar()
         {
             Personas personas = new Personas();
-            
+
             personas.Name = textBoxName.Text;
             personas.Surname = textBoxSurname.Text;
             personas.DNI = (int)long.Parse(textBoxDNI.Text);
             personas.mail = (textBoxCiCLO.Text);
-           
-            
-            
 
-        
-            _ManejoDeDB.GuardarPersonas(personas,verdad);
+
+
+
+
+            _ManejoDeDB.GuardarPersonas(personas, verdad);
         }
 
         public void CargarPersona(Personas personas, bool Verdades)
         {
 
             _personas = personas;
-            if (personas != null)  
+            if (personas != null)
             {
                 VaciarForm();
                 textBoxName.Text = personas.Name;
                 textBoxDNI.Text = personas.DNI.ToString();
                 textBoxSurname.Text = personas.Surname;
-                textBoxCiCLO.Text=personas.mail;
+                textBoxCiCLO.Text = personas.mail;
                 verdad = Verdades;
             }
-            
+
         }
 
         public void VaciarForm()
@@ -82,7 +83,8 @@ namespace PRUEAS
             textBoxCiCLO.Text = string.Empty;
         }
         #endregion
-        
 
+
+       
     }
 }

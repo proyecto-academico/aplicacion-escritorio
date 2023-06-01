@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alumno\\Source\\Repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {}
+    "C:\\Users\\Helma\\source\\repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alumno\\Source\\Repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {
+    "C:\\Users\\Helma\\source\\repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alumno\\Source\\Repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
+        "projectUniqueName": "C:\\Users\\Helma\\source\\repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
         "projectName": "PRUEAS",
-        "projectPath": "C:\\Users\\Alumno\\Source\\Repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
-        "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alumno\\Source\\Repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\obj\\",
+        "projectPath": "C:\\Users\\Helma\\source\\repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
+        "packagesPath": "C:\\Users\\Helma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Helma\\source\\repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Helma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

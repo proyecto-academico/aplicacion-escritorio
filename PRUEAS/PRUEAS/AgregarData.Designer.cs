@@ -95,7 +95,8 @@
             label4.Name = "label4";
             label4.Size = new Size(134, 20);
             label4.TabIndex = 5;
-            label4.Text = "Ciclo lectivo actual";
+            label4.Text = "Mail";
+  
             // 
             // textBoxName
             // 

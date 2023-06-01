@@ -35,20 +35,21 @@
             Label1 = new Label();
             Cerrar = new Button();
             GRILLA = new DataGridView();
+            personasBindingSource2 = new BindingSource(components);
             personasBindingSource = new BindingSource(components);
             personasBindingSource1 = new BindingSource(components);
-            personasBindingSource2 = new BindingSource(components);
             dNIDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             mailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            contraseniaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Notas = new DataGridViewLinkColumn();
+            Faltas = new DataGridViewLinkColumn();
             edit = new DataGridViewLinkColumn();
             X = new DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource2).BeginInit();
             SuspendLayout();
             // 
             // Button1
@@ -75,7 +76,7 @@
             textBox1.Location = new Point(125, 59);
             textBox1.MaxLength = 8;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(507, 23);
+            textBox1.Size = new Size(507, 27);
             textBox1.TabIndex = 3;
             // 
             // Label1
@@ -84,7 +85,7 @@
             Label1.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             Label1.Location = new Point(45, 58);
             Label1.Name = "Label1";
-            Label1.Size = new Size(58, 20);
+            Label1.Size = new Size(74, 25);
             Label1.TabIndex = 4;
             Label1.Text = "Buscar";
             // 
@@ -105,15 +106,20 @@
             GRILLA.AllowUserToDeleteRows = false;
             GRILLA.AutoGenerateColumns = false;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { dNIDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn, mailDataGridViewTextBoxColumn, contraseniaDataGridViewTextBoxColumn, edit, X });
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { dNIDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn, mailDataGridViewTextBoxColumn, Notas, Faltas, edit, X });
             GRILLA.DataSource = personasBindingSource2;
             GRILLA.Location = new Point(45, 112);
             GRILLA.Name = "GRILLA";
             GRILLA.ReadOnly = true;
+            GRILLA.RowHeadersWidth = 51;
             GRILLA.RowTemplate.Height = 25;
             GRILLA.Size = new Size(749, 379);
             GRILLA.TabIndex = 6;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
+            // 
+            // personasBindingSource2
+            // 
+            personasBindingSource2.DataSource = typeof(Personas);
             // 
             // personasBindingSource
             // 
@@ -123,60 +129,81 @@
             // 
             personasBindingSource1.DataSource = typeof(Personas);
             // 
-            // personasBindingSource2
-            // 
-            personasBindingSource2.DataSource = typeof(Personas);
-            // 
             // dNIDataGridViewTextBoxColumn
             // 
             dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
             dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
+            dNIDataGridViewTextBoxColumn.MinimumWidth = 6;
             dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
             dNIDataGridViewTextBoxColumn.ReadOnly = true;
+            dNIDataGridViewTextBoxColumn.Width = 125;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             nameDataGridViewTextBoxColumn.ReadOnly = true;
+            nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // surnameDataGridViewTextBoxColumn
             // 
             surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
             surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
+            surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             surnameDataGridViewTextBoxColumn.ReadOnly = true;
+            surnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // mailDataGridViewTextBoxColumn
             // 
             mailDataGridViewTextBoxColumn.DataPropertyName = "mail";
             mailDataGridViewTextBoxColumn.HeaderText = "mail";
+            mailDataGridViewTextBoxColumn.MinimumWidth = 6;
             mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
             mailDataGridViewTextBoxColumn.ReadOnly = true;
+            mailDataGridViewTextBoxColumn.Width = 125;
             // 
-            // contraseniaDataGridViewTextBoxColumn
+            // Notas
             // 
-            contraseniaDataGridViewTextBoxColumn.DataPropertyName = "contrasenia";
-            contraseniaDataGridViewTextBoxColumn.HeaderText = "contrasenia";
-            contraseniaDataGridViewTextBoxColumn.Name = "contraseniaDataGridViewTextBoxColumn";
-            contraseniaDataGridViewTextBoxColumn.ReadOnly = true;
+            Notas.HeaderText = "Notas";
+            Notas.MinimumWidth = 6;
+            Notas.Name = "Notas";
+            Notas.ReadOnly = true;
+            Notas.Text = "Notas";
+            Notas.UseColumnTextForLinkValue = true;
+            Notas.Width = 125;
+            // 
+            // Faltas
+            // 
+            Faltas.HeaderText = "Faltas";
+            Faltas.MinimumWidth = 6;
+            Faltas.Name = "Faltas";
+            Faltas.ReadOnly = true;
+            Faltas.Text = "Faltas";
+            Faltas.UseColumnTextForLinkValue = true;
+            Faltas.Width = 125;
             // 
             // edit
             // 
             edit.HeaderText = "edit";
+            edit.MinimumWidth = 6;
             edit.Name = "edit";
             edit.ReadOnly = true;
             edit.Text = "edit";
             edit.UseColumnTextForLinkValue = true;
+            edit.Width = 125;
             // 
             // X
             // 
             X.HeaderText = "Eliminar";
+            X.MinimumWidth = 6;
             X.Name = "X";
             X.ReadOnly = true;
             X.Text = "X";
             X.UseColumnTextForLinkValue = true;
+            X.Width = 125;
             // 
             // BaseDeDatos
             // 
@@ -190,9 +217,9 @@
             Name = "BaseDeDatos";
             Load += BaseDeDatos_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource2).EndInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -208,13 +235,14 @@
         private DataGridViewLinkColumn editar;
         private BindingSource personasBindingSource;
         private BindingSource personasBindingSource1;
+        private BindingSource personasBindingSource2;
         private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn contraseniaDataGridViewTextBoxColumn;
+        private DataGridViewLinkColumn Notas;
+        private DataGridViewLinkColumn Faltas;
         private DataGridViewLinkColumn edit;
         private DataGridViewLinkColumn X;
-        private BindingSource personasBindingSource2;
     }
 }

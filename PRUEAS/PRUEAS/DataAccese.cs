@@ -12,7 +12,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-026\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-3B9J7H4\\MSSQLSERVER01\r\n");
 
 
         public void insertarData(Personas Persona)
@@ -21,8 +21,8 @@ namespace PRUEAS
             {
                 conn.Open();
                 string querry = @"
-                        INSERT INTO Personas (DNI, Nombre, Apellido, ciclo)
-                        VALUES (@DNI, @Nombre, @Apellido, @mail
+                        INSERT INTO alumno (DNI, Nombre, Apellido, Mail)
+                        VALUES (@DNI, @Nombre, @Apellido, @mail)
 ";
                 #region Parametros que pasamos
                 SqlParameter sqlParameter = new SqlParameter();
@@ -73,7 +73,7 @@ namespace PRUEAS
             {  
                 conn.Open();
                 string querry = @" SELECT DNI_Alumno, Nombre, Apellido, Mail
-                                FROM alumnos
+                                FROM alumno
                             ";
                 SqlCommand command = new SqlCommand(querry, conn);
                 SqlDataReader reader = command.ExecuteReader();
@@ -105,8 +105,8 @@ namespace PRUEAS
             {
                 conn.Open();
                 string querry = @"
-                        UPDATE Personas 
-                        SET Nombre=@Nombre, Apellido=@Apellido, ciclo=@ciclo WHERE DNI = @DNI
+                        UPDATE alumno 
+                        SET Nombre=@Nombre, Apellido=@Apellido, Mail=@Mail WHERE DNI = @DNI
 ";
                 #region Parametros que pasamos
                 SqlParameter sqlParameter = new SqlParameter();
@@ -125,7 +125,7 @@ namespace PRUEAS
                 sqlParameter3.DbType = System.Data.DbType.Int64;
 
                 SqlParameter sqlParameter4 = new SqlParameter();
-                sqlParameter4.ParameterName = "@ciclo";
+                sqlParameter4.ParameterName = "@Mail";
                 sqlParameter4.Value = Persona.mail;
                 sqlParameter4.DbType = System.Data.DbType.String;
                 
