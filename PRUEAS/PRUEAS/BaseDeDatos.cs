@@ -41,11 +41,10 @@ namespace PRUEAS
         }
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            /*HACER UNA EXCEPCION*/
             DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[e.ColumnIndex];
             if (cell.Value.ToString() == "edit")
             {
-
                 BotonesValue = true;
             }
             else if (cell.Value.ToString() == "X")

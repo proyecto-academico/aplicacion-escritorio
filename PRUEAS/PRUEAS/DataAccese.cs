@@ -12,7 +12,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-3B9J7H4\\MSSQLSERVER01\r\n");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-026\\SQLEXPRESS");
 
 
         public void insertarData(Personas Persona)
@@ -21,7 +21,7 @@ namespace PRUEAS
             {
                 conn.Open();
                 string querry = @"
-                        INSERT INTO alumno (DNI, Nombre, Apellido, Mail)
+                        INSERT INTO alumno (DNI_Alumno, Nombre, Apellido, Mail)
                         VALUES (@DNI, @Nombre, @Apellido, @mail)
 ";
                 #region Parametros que pasamos
@@ -106,7 +106,7 @@ namespace PRUEAS
                 conn.Open();
                 string querry = @"
                         UPDATE alumno 
-                        SET Nombre=@Nombre, Apellido=@Apellido, Mail=@Mail WHERE DNI = @DNI
+                        SET Nombre=@Nombre, Apellido=@Apellido, Mail=@Mail WHERE DNI_Alumno = @DNI
 ";
                 #region Parametros que pasamos
                 SqlParameter sqlParameter = new SqlParameter();
@@ -158,7 +158,7 @@ namespace PRUEAS
             try
             {
                 conn.Open();
-                string querry = @"DELETE Personas where DNI=@DNI";
+                string querry = @"DELETE alumno where DNI_Alumno = @DNI ";
                 #region Parametros
                 SqlParameter sqlParameter1 = new SqlParameter();
                 sqlParameter1.ParameterName = "@DNI";

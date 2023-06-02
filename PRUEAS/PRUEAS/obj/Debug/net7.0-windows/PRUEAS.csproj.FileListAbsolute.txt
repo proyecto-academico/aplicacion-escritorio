@@ -288,3 +288,5 @@ C:\Users\Helma\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Debug\net7.0
 C:\Users\Helma\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Debug\net7.0-windows\PRUEAS.pdb
 C:\Users\Helma\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Debug\net7.0-windows\PRUEAS.genruntimeconfig.cache
 C:\Users\Helma\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Debug\net7.0-windows\ref\PRUEAS.dll
+C:\Users\Alumno\Source\Repos\aplicacion-escritorio\PRUEAS\PRUEAS\bin\Debug\net7.0-windows\PRUEAS.dll.config
+C:\Users\Alumno\Source\Repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Debug\net7.0-windows\PRUEAS.Faltas.resources
