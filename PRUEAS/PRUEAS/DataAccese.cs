@@ -12,9 +12,9 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-026\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=DESKTOP-QB22C4J\\SQLEXPRESS\r\n");
 
-
+        #region Querry Personas
         public void insertarData(Personas Persona)
         {
             try
@@ -183,5 +183,43 @@ namespace PRUEAS
 
 
         }
+        #endregion
+        
+        #region Querry Faltas
+        public List<ClaseFaltas> GetFaltas()
+        {
+            List<ClaseFaltas> personas = new List<ClaseFaltas>();
+            try
+            {
+                conn.Open();
+                string querry = @" SELECT Falta_ID, DNI_Alumno, Fecha, Tipo, jutificada
+                                FROM faltas
+                            ";
+                SqlCommand command = new SqlCommand(querry, conn);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    personas.Add(new ClaseFaltas
+                    {
+                        FaltasID = int.Parse(reader["DNI_Alumno"].ToString()),
+                        DNI = int.Parse(reader["DNI_Alumno"].ToString()),
+                        Surname = reader["Apellido"].ToString(),
+                        mail = reader["Mail"].ToString()
+                    });
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return personas;
+        }
+        #endregion
     }
 }
