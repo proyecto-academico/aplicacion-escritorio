@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace PRUEAS
 {
     public partial class BaseDeDatos : Form
-    {
+    {   public string VaribleBuscador;
         public Borrar borrar = new Borrar();
         public bool BotonesValue = false;
         private ManejoDeDB _ManejoDeDB;
@@ -111,6 +111,13 @@ namespace PRUEAS
 
 
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {   
+            VaribleBuscador = textBox1.Text.ToString();
+            if (VaribleBuscador == textBox1.Text ) {
+               
+            }
+        }
     }
 
 }

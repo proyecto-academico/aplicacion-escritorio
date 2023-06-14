@@ -35,9 +35,6 @@
             Label1 = new Label();
             Cerrar = new Button();
             GRILLA = new DataGridView();
-            personasBindingSource2 = new BindingSource(components);
-            personasBindingSource = new BindingSource(components);
-            personasBindingSource1 = new BindingSource(components);
             dNIDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -46,6 +43,9 @@
             Faltas = new DataGridViewLinkColumn();
             edit = new DataGridViewLinkColumn();
             X = new DataGridViewLinkColumn();
+            personasBindingSource2 = new BindingSource(components);
+            personasBindingSource = new BindingSource(components);
+            personasBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource).BeginInit();
@@ -76,8 +76,9 @@
             textBox1.Location = new Point(125, 59);
             textBox1.MaxLength = 8;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(507, 27);
+            textBox1.Size = new Size(507, 23);
             textBox1.TabIndex = 3;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Label1
             // 
@@ -85,7 +86,7 @@
             Label1.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             Label1.Location = new Point(45, 58);
             Label1.Name = "Label1";
-            Label1.Size = new Size(74, 25);
+            Label1.Size = new Size(58, 20);
             Label1.TabIndex = 4;
             Label1.Text = "Buscar";
             // 
@@ -116,18 +117,6 @@
             GRILLA.Size = new Size(749, 379);
             GRILLA.TabIndex = 6;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
-            // 
-            // personasBindingSource2
-            // 
-            personasBindingSource2.DataSource = typeof(Personas);
-            // 
-            // personasBindingSource
-            // 
-            personasBindingSource.DataSource = typeof(Personas);
-            // 
-            // personasBindingSource1
-            // 
-            personasBindingSource1.DataSource = typeof(Personas);
             // 
             // dNIDataGridViewTextBoxColumn
             // 
@@ -204,6 +193,18 @@
             X.Text = "X";
             X.UseColumnTextForLinkValue = true;
             X.Width = 125;
+            // 
+            // personasBindingSource2
+            // 
+            personasBindingSource2.DataSource = typeof(Personas);
+            // 
+            // personasBindingSource
+            // 
+            personasBindingSource.DataSource = typeof(Personas);
+            // 
+            // personasBindingSource1
+            // 
+            personasBindingSource1.DataSource = typeof(Personas);
             // 
             // BaseDeDatos
             // 

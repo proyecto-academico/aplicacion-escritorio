@@ -8,24 +8,20 @@ namespace PRUEAS
 {
     public class Personas
     {
-        private int _dni;
+        
 
         public string contrasenia { get; set; }
         public string Name { get; set; }
         public string mail{ get; set; }
-        public int DNI{ get; set;
-           
-           /* corregi las exepciones no funcionan como deben
-            * get =>  _dni;
-            set
-            {
-                if (value.ToString().Length >= 8 )
-                {
-                    throw new ArgumentException("El DNI debe tener 8 caracteres.");
+        public int DNI{
 
-                    _dni = value;
-                }
-            }*/
+
+            get;
+            set;
+            
+                
+              
+            
         }
         public string Surname { get; set; }
 
