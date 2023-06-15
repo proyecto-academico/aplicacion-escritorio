@@ -39,5 +39,10 @@ namespace PRUEAS
             __DataAccese.DeleteData(persona);
             
         }
+        public List<ClaseFaltas> TomaDeFaltas(int persona_)
+        {
+            return __DataAccese.GetFaltas(persona_);
+
+        }
     }
 }

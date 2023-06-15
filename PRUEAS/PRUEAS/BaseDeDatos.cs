@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,6 +27,11 @@ namespace PRUEAS
         private void BaseDeDatos_Load(object sender, EventArgs e)
         {
             CargaDeContactos();
+            DataGridViewLinkColumn linkColumn = new DataGridViewLinkColumn();
+            linkColumn.HeaderText = "Faltas";
+            linkColumn.Text = "Ver Faltas";
+            linkColumn.UseColumnTextForLinkValue = true;
+            GRILLA.Columns.Add(linkColumn);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -41,6 +47,21 @@ namespace PRUEAS
         }
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == GRILLA.Columns["Faltas"].Index && e.RowIndex >= 0)
+            {
+                /* Lean siendo Lean
+                StreamWriter sr = new StreamWriter("C:\\Users\\Alumno\\Desktop\\Nuevo documento de texto (2).txt");
+                sr.WriteLine();
+                sr.WriteLine();
+                //sr.WriteLine(JsonSerializer.Serialize(sender));
+                sr.Close();
+                */
+
+                // Abrir el formulario "faltas.cs"
+                Faltas formFaltas = new Faltas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                formFaltas.ShowDialog();
+            }
+
             /*HACER UNA EXCEPCION*/
             DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[e.ColumnIndex];
             if (cell.Value.ToString() == "edit")
@@ -84,6 +105,7 @@ namespace PRUEAS
 
             }
         }
+      
         #endregion
 
 

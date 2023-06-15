@@ -12,7 +12,6 @@ namespace PRUEAS
         public DateTime Fecha { get; set; }
         public float Tipo { get; set; }
         public bool Justificado { get; set; } 
-        
-       
     }
+
 }

@@ -85,6 +85,10 @@ namespace PRUEAS
         #endregion
 
 
-       
+
+        private void AgregarData_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

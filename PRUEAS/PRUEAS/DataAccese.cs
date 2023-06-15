@@ -12,7 +12,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=DESKTOP-QB22C4J\\SQLEXPRESS\r\n");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-QB22C4J\\SQLEXPRESS");
 
         #region Querry Personas
         public void insertarData(Personas Persona)
@@ -186,25 +186,22 @@ namespace PRUEAS
         #endregion
         
         #region Querry Faltas
-        public List<ClaseFaltas> GetFaltas()
+        public List<ClaseFaltas> GetFaltas(int persona_)
         {
-            List<ClaseFaltas> personas = new List<ClaseFaltas>();
+            List<ClaseFaltas> faltas = new List<ClaseFaltas>();
             try
             {
                 conn.Open();
-                string querry = @" SELECT Falta_ID, DNI_Alumno, Fecha, Tipo, jutificada
-                                FROM faltas
-                            ";
+                string querry = @$"SELECT Fecha, Tipo, CASE WHEN jutificada = 1 THEN 'True' ELSE 'False' END AS jutificada FROM alumno INNER JOIN faltas ON alumno.DNI_Alumno = faltas.DNI_Alumno WHERE alumno.DNI_Alumno = {persona_}";
                 SqlCommand command = new SqlCommand(querry, conn);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    personas.Add(new ClaseFaltas
+                    faltas.Add(new ClaseFaltas
                     {
-                        FaltasID = int.Parse(reader["DNI_Alumno"].ToString()),
-                        DNI = int.Parse(reader["DNI_Alumno"].ToString()),
-                        Surname = reader["Apellido"].ToString(),
-                        mail = reader["Mail"].ToString()
+                        Fecha = DateTime.Parse(reader["Fecha"].ToString()),
+                        Tipo = float.Parse(reader["Tipo"].ToString()),
+                        Justificado = Convert.ToBoolean(reader["jutificada"].ToString())
                     });
                 }
 
@@ -218,8 +215,9 @@ namespace PRUEAS
             {
                 conn.Close();
             }
-            return personas;
+            return faltas;
         }
+        
         #endregion
     }
 }
