@@ -14,6 +14,7 @@ namespace PRUEAS
 {
     public partial class BaseDeDatos : Form
     {
+        int nivel = 1;
         public string VaribleBuscador;
         public Borrar borrar = new Borrar();
         public bool BotonesValue = false;
@@ -110,7 +111,7 @@ namespace PRUEAS
 
         public void CargaDeContactos()
         {
-            List<Personas> personas = _ManejoDeDB.TomaDePersonas();
+            List<Personas> personas = _ManejoDeDB.TomaDePersonas(nivel);
             GRILLA.DataSource = personas;
 
         }
@@ -128,6 +129,48 @@ namespace PRUEAS
             if (VaribleBuscador == textBox1.Text)
             {
 
+            }
+        }
+
+        private void AlumnoCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AlumnoCheck.Checked)
+            {
+                nivel = 3;
+                ProfesorCheck.Checked = false;
+                AdminitracionCheck.Checked = false;
+                Notas.Visible = true;
+                Faltas.Visible = true;
+                CargaDeContactos();
+            }
+
+
+
+        }
+
+        private void ProfesorCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ProfesorCheck.Checked)
+            {
+                nivel = 2;
+                AlumnoCheck.Checked = false;
+                AdminitracionCheck.Checked = false;
+                Notas.Visible = false;
+                Faltas.Visible = false;
+                CargaDeContactos();
+            }
+        }
+
+        private void AdminitracionCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AdminitracionCheck.Checked)
+            {
+                nivel = 1;
+                ProfesorCheck.Checked = false;
+                AlumnoCheck.Checked = false;
+                Notas.Visible = false;
+                Faltas.Visible = false;
+                CargaDeContactos();
             }
         }
     }

@@ -36,10 +36,6 @@
             Label1 = new Label();
             Cerrar = new Button();
             GRILLA = new DataGridView();
-            personasBindingSource2 = new BindingSource(components);
-            personasBindingSource = new BindingSource(components);
-            personasBindingSource1 = new BindingSource(components);
-            FiltroPersonas = new CheckedListBox();
             _dni = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -48,6 +44,12 @@
             Faltas = new DataGridViewLinkColumn();
             edit = new DataGridViewLinkColumn();
             X = new DataGridViewLinkColumn();
+            personasBindingSource2 = new BindingSource(components);
+            personasBindingSource = new BindingSource(components);
+            personasBindingSource1 = new BindingSource(components);
+            AlumnoCheck = new CheckBox();
+            AdminitracionCheck = new CheckBox();
+            ProfesorCheck = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource).BeginInit();
@@ -81,7 +83,7 @@
             textBox1.Location = new Point(121, 59);
             textBox1.MaxLength = 8;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(504, 27);
+            textBox1.Size = new Size(504, 23);
             textBox1.TabIndex = 3;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -92,7 +94,7 @@
             Label1.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             Label1.Location = new Point(45, 58);
             Label1.Name = "Label1";
-            Label1.Size = new Size(74, 25);
+            Label1.Size = new Size(58, 20);
             Label1.TabIndex = 4;
             Label1.Text = "Buscar";
             // 
@@ -103,9 +105,9 @@
             Cerrar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Cerrar.Location = new Point(739, 507);
+            Cerrar.Location = new Point(747, 510);
             Cerrar.Name = "Cerrar";
-            Cerrar.Size = new Size(66, 30);
+            Cerrar.Size = new Size(58, 27);
             Cerrar.TabIndex = 5;
             Cerrar.Text = "SALIR";
             Cerrar.UseVisualStyleBackColor = true;
@@ -137,31 +139,6 @@
             GRILLA.Size = new Size(746, 379);
             GRILLA.TabIndex = 6;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
-            // 
-            // personasBindingSource2
-            // 
-            personasBindingSource2.DataSource = typeof(Personas);
-            // 
-            // personasBindingSource
-            // 
-            personasBindingSource.DataSource = typeof(Personas);
-            // 
-            // personasBindingSource1
-            // 
-            personasBindingSource1.DataSource = typeof(Personas);
-            // 
-            // FiltroPersonas
-            // 
-            FiltroPersonas.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            FiltroPersonas.Font = new Font("Arial", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
-            FiltroPersonas.FormattingEnabled = true;
-            FiltroPersonas.Items.AddRange(new object[] { "Profesores", "Alumnos", "Administracion" });
-            FiltroPersonas.Location = new Point(57, 507);
-            FiltroPersonas.Margin = new Padding(0);
-            FiltroPersonas.MultiColumn = true;
-            FiltroPersonas.Name = "FiltroPersonas";
-            FiltroPersonas.Size = new Size(463, 27);
-            FiltroPersonas.TabIndex = 7;
             // 
             // _dni
             // 
@@ -231,12 +208,67 @@
             X.Text = "X";
             X.UseColumnTextForLinkValue = true;
             // 
+            // personasBindingSource2
+            // 
+            personasBindingSource2.DataSource = typeof(Personas);
+            // 
+            // personasBindingSource
+            // 
+            personasBindingSource.DataSource = typeof(Personas);
+            // 
+            // personasBindingSource1
+            // 
+            personasBindingSource1.DataSource = typeof(Personas);
+            // 
+            // AlumnoCheck
+            // 
+            AlumnoCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            AlumnoCheck.AutoSize = true;
+            AlumnoCheck.Checked = true;
+            AlumnoCheck.CheckState = CheckState.Checked;
+            AlumnoCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            AlumnoCheck.Location = new Point(45, 493);
+            AlumnoCheck.Name = "AlumnoCheck";
+            AlumnoCheck.Size = new Size(79, 22);
+            AlumnoCheck.TabIndex = 7;
+            AlumnoCheck.Text = "Alumno";
+            AlumnoCheck.UseVisualStyleBackColor = true;
+            AlumnoCheck.CheckedChanged += AlumnoCheck_CheckedChanged;
+            // 
+            // AdminitracionCheck
+            // 
+            AdminitracionCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            AdminitracionCheck.AutoSize = true;
+            AdminitracionCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            AdminitracionCheck.Location = new Point(225, 493);
+            AdminitracionCheck.Name = "AdminitracionCheck";
+            AdminitracionCheck.Size = new Size(131, 22);
+            AdminitracionCheck.TabIndex = 8;
+            AdminitracionCheck.Text = "Administracion";
+            AdminitracionCheck.UseVisualStyleBackColor = true;
+            AdminitracionCheck.CheckedChanged += AdminitracionCheck_CheckedChanged;
+            // 
+            // ProfesorCheck
+            // 
+            ProfesorCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            ProfesorCheck.AutoSize = true;
+            ProfesorCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            ProfesorCheck.Location = new Point(130, 493);
+            ProfesorCheck.Name = "ProfesorCheck";
+            ProfesorCheck.Size = new Size(89, 22);
+            ProfesorCheck.TabIndex = 9;
+            ProfesorCheck.Text = "Profesor";
+            ProfesorCheck.UseVisualStyleBackColor = true;
+            ProfesorCheck.CheckedChanged += ProfesorCheck_CheckedChanged;
+            // 
             // BaseDeDatos
             // 
             AutoScaleMode = AutoScaleMode.None;
             AutoSize = true;
             ClientSize = new Size(835, 555);
-            Controls.Add(FiltroPersonas);
+            Controls.Add(ProfesorCheck);
+            Controls.Add(AdminitracionCheck);
+            Controls.Add(AlumnoCheck);
             Controls.Add(GRILLA);
             Controls.Add(Cerrar);
             Controls.Add(Label1);
@@ -268,7 +300,6 @@
         private BindingSource personasBindingSource2;
         private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
         private CheckedListBox checkedListBox1;
-        private CheckedListBox FiltroPersonas;
         private DataGridViewTextBoxColumn _dni;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
@@ -277,5 +308,8 @@
         private DataGridViewLinkColumn Faltas;
         private DataGridViewLinkColumn edit;
         private DataGridViewLinkColumn X;
+        private CheckBox AlumnoCheck;
+        private CheckBox AdminitracionCheck;
+        private CheckBox ProfesorCheck;
     }
 }

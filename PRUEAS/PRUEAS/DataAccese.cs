@@ -12,7 +12,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-3B9J7H4\\MSSQLSERVER01");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-007\\SQLEXPRESS");
 
         #region Querry Personas
         public void insertarData(Personas Persona)
@@ -21,7 +21,7 @@ namespace PRUEAS
             {
                 conn.Open();
                 string querry = @"
-                        INSERT INTO alumno (DNI_Alumno, Nombre, Apellido, Mail)
+                        INSERT INTO persona (DNI, Nombre, Apellido, Mail)
                         VALUES (@DNI, @Nombre, @Apellido, @mail)
 ";
                 #region Parametros que pasamos
@@ -67,21 +67,25 @@ namespace PRUEAS
     
         }
     
-        public List<Personas> GetPersonas()
+        public List<Personas> GetPersonas(int nivel)
         {   List<Personas> personas = new List<Personas>();
             try
             {  
                 conn.Open();
-                string querry = @" SELECT DNI_Alumno, Nombre, Apellido, Mail
-                                FROM alumno
+                string querry = @" SELECT DNI, Nombre, Apellido, Mail
+                                FROM persona WHERE nivel = @nivel
                             ";
+                SqlParameter sqlParameter3 = new SqlParameter();
+                sqlParameter3.ParameterName = "@nivel";
+                sqlParameter3.Value = nivel;
+                sqlParameter3.DbType = System.Data.DbType.Int64;
                 SqlCommand command = new SqlCommand(querry, conn);
+                command.Parameters.Add(sqlParameter3);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     personas.Add(new Personas
-                    {
-                        _dni = int.Parse(reader["DNI_Alumno"].ToString()),
+                    { _dni = int.Parse(reader["DNI"].ToString()),
                         Name = reader["Nombre"].ToString(), 
                         Surname = reader["Apellido"].ToString(),
                         mail = reader["Mail"].ToString()
@@ -105,8 +109,8 @@ namespace PRUEAS
             {
                 conn.Open();
                 string querry = @"
-                        UPDATE alumno 
-                        SET Nombre=@Nombre, Apellido=@Apellido, Mail=@Mail WHERE DNI_Alumno = @DNI
+                        UPDATE persona 
+                        SET Nombre=@Nombre, Apellido=@Apellido, Mail=@Mail WHERE DNI = @DNI
 ";
                 #region Parametros que pasamos
                 SqlParameter sqlParameter = new SqlParameter();
@@ -158,7 +162,7 @@ namespace PRUEAS
             try
             {
                 conn.Open();
-                string querry = @"DELETE alumno where DNI_Alumno = @DNI ";
+                string querry = @"DELETE persona where DNI = @DNI ";
                 #region Parametros
                 SqlParameter sqlParameter1 = new SqlParameter();
                 sqlParameter1.ParameterName = "@DNI";
@@ -192,7 +196,7 @@ namespace PRUEAS
             try
             {
                 conn.Open();
-                string querry = @$"SELECT Fecha, Tipo, CASE WHEN jutificada = 1 THEN 'True' ELSE 'False' END AS jutificada FROM alumno INNER JOIN faltas ON alumno.DNI_Alumno = faltas.DNI_Alumno WHERE alumno.DNI_Alumno = {persona_}";
+                string querry = @$"SELECT Fecha, Tipo, CASE WHEN jutificada = 1 THEN 'True' ELSE 'False' END AS jutificada FROM persona INNER JOIN faltas ON persona.DNI = faltas.DNI_Alumno WHERE persona.DNI = {persona_}";
                 SqlCommand command = new SqlCommand(querry, conn);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())

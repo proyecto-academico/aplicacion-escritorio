@@ -13,6 +13,7 @@ namespace PRUEAS
         public string contrasenia { get; set; }
         public string Name { get; set; }
         public string mail{ get; set; }
+
         private int DNI;
         public int _dni{
             get => DNI;

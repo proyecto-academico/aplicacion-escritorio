@@ -29,9 +29,9 @@ namespace PRUEAS
             }
             return personas;
         }
-        public List<Personas> TomaDePersonas()
+        public List<Personas> TomaDePersonas(int nivel)
         {
-            return __DataAccese.GetPersonas();
+            return __DataAccese.GetPersonas(nivel);
                 
         }
         public void DeletePersona (Personas persona)
