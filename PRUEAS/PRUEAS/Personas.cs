@@ -13,16 +13,16 @@ namespace PRUEAS
         public string contrasenia { get; set; }
         public string Name { get; set; }
         public string mail{ get; set; }
-        public int DNI{
-
-
-            get;
-            set;
-            
-                
-              
-            
+        private int DNI;
+        public int _dni{
+            get => DNI;
+            set {  if (value.ToString().Length < 9) { 
+                        DNI = value;
+                }
+            else { throw new Exception("El DNI ESTA RE VOLADO AMIGO NO PODES INGRESAR MAS DE 8 DIGITOS GIL"); }
+           }
         }
+
         public string Surname { get; set; }
 
         public Personas() { }

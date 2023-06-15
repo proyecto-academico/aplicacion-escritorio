@@ -12,7 +12,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-QB22C4J\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-3B9J7H4\\MSSQLSERVER01");
 
         #region Querry Personas
         public void insertarData(Personas Persona)
@@ -37,7 +37,7 @@ namespace PRUEAS
  
                 SqlParameter sqlParameter3 = new SqlParameter();
                 sqlParameter3.ParameterName = "@DNI";
-                sqlParameter3.Value = Persona.DNI;
+                sqlParameter3.Value = Persona._dni;
                 sqlParameter3.DbType = System.Data.DbType.Int64;
 
                 SqlParameter sqlParameter4 = new SqlParameter();
@@ -81,7 +81,7 @@ namespace PRUEAS
                 {
                     personas.Add(new Personas
                     {
-                        DNI = int.Parse(reader["DNI_Alumno"].ToString()),
+                        _dni = int.Parse(reader["DNI_Alumno"].ToString()),
                         Name = reader["Nombre"].ToString(), 
                         Surname = reader["Apellido"].ToString(),
                         mail = reader["Mail"].ToString()
@@ -121,7 +121,7 @@ namespace PRUEAS
 
                 SqlParameter sqlParameter3 = new SqlParameter();
                 sqlParameter3.ParameterName = "@DNI";
-                sqlParameter3.Value = Persona.DNI;
+                sqlParameter3.Value = Persona._dni;
                 sqlParameter3.DbType = System.Data.DbType.Int64;
 
                 SqlParameter sqlParameter4 = new SqlParameter();
@@ -162,7 +162,7 @@ namespace PRUEAS
                 #region Parametros
                 SqlParameter sqlParameter1 = new SqlParameter();
                 sqlParameter1.ParameterName = "@DNI";
-                sqlParameter1.Value = personas.DNI;
+                sqlParameter1.Value = personas._dni;
                 sqlParameter1.DbType = System.Data.DbType.Int64;
                 #endregion
                 #region Envios

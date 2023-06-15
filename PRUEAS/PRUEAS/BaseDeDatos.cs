@@ -13,7 +13,8 @@ using System.Windows.Forms;
 namespace PRUEAS
 {
     public partial class BaseDeDatos : Form
-    {   public string VaribleBuscador;
+    {
+        public string VaribleBuscador;
         public Borrar borrar = new Borrar();
         public bool BotonesValue = false;
         private ManejoDeDB _ManejoDeDB;
@@ -27,11 +28,6 @@ namespace PRUEAS
         private void BaseDeDatos_Load(object sender, EventArgs e)
         {
             CargaDeContactos();
-            DataGridViewLinkColumn linkColumn = new DataGridViewLinkColumn();
-            linkColumn.HeaderText = "Faltas";
-            linkColumn.Text = "Ver Faltas";
-            linkColumn.UseColumnTextForLinkValue = true;
-            GRILLA.Columns.Add(linkColumn);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -49,13 +45,6 @@ namespace PRUEAS
         {
             if (e.ColumnIndex == GRILLA.Columns["Faltas"].Index && e.RowIndex >= 0)
             {
-                /* Lean siendo Lean
-                StreamWriter sr = new StreamWriter("C:\\Users\\Alumno\\Desktop\\Nuevo documento de texto (2).txt");
-                sr.WriteLine();
-                sr.WriteLine();
-                //sr.WriteLine(JsonSerializer.Serialize(sender));
-                sr.Close();
-                */
 
                 // Abrir el formulario "faltas.cs"
                 Faltas formFaltas = new Faltas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
@@ -74,7 +63,7 @@ namespace PRUEAS
                 borrar.CargarPersona(new Personas
                 {
 
-                    DNI = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                    _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
                     Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
                     Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
                     mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
@@ -91,7 +80,7 @@ namespace PRUEAS
                 AgregarData.CargarPersona(new Personas
                 {
 
-                    DNI = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                    _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
                     Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
                     Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
                     mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
@@ -105,7 +94,7 @@ namespace PRUEAS
 
             }
         }
-      
+
         #endregion
 
 
@@ -134,10 +123,11 @@ namespace PRUEAS
 
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {   
+        {
             VaribleBuscador = textBox1.Text.ToString();
-            if (VaribleBuscador == textBox1.Text ) {
-               
+            if (VaribleBuscador == textBox1.Text)
+            {
+
             }
         }
     }
