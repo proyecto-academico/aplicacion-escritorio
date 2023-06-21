@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -115,6 +116,7 @@ namespace PRUEAS
             GRILLA.DataSource = personas;
 
         }
+      
 
 
         #endregion
@@ -123,14 +125,7 @@ namespace PRUEAS
 
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            VaribleBuscador = textBox1.Text.ToString();
-            if (VaribleBuscador == textBox1.Text)
-            {
 
-            }
-        }
 
         private void AlumnoCheck_CheckedChanged(object sender, EventArgs e)
         {
@@ -172,6 +167,24 @@ namespace PRUEAS
                 Faltas.Visible = false;
                 CargaDeContactos();
             }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            VaribleBuscador = Buscador.Text;
+            int entero;
+            bool esEntero = int.TryParse(VaribleBuscador, out entero);
+            if (esEntero)
+            {
+                int tranformacion = (int)Int64.Parse(VaribleBuscador);
+
+                GRILLA.DataSource = _ManejoDeDB.BusquedaDePersonas(nivel, tranformacion);
+            }
+            else
+            {
+                GRILLA.DataSource = _ManejoDeDB.BusquedaDePersonas(nivel, VaribleBuscador);
+            }
+            
         }
     }
 

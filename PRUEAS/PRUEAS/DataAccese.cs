@@ -12,7 +12,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-007\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-3B9J7H4\\MSSQLSERVER01");
 
         #region Querry Personas
         public void insertarData(Personas Persona)
@@ -221,7 +221,114 @@ namespace PRUEAS
             }
             return faltas;
         }
-        
+
+        #endregion
+       
+        #region Querry Varios 
+
+        public List<Personas> BuscarPersona(int nivel, string Busqueda)
+        {
+            List<Personas> personas = new List<Personas>();
+            try
+            {
+                string querry;
+                conn.Open();
+
+                querry = @" SELECT DNI, Nombre, Apellido, Mail 
+                        FROM persona WHERE nivel = @nivel
+                        AND (Nombre LIKE '%' + @busqueda + '%'
+                        OR Apellido LIKE '%' + @busqueda + '%'
+                        OR Mail LIKE '%' + @busqueda + '%')
+
+                            ";
+
+                SqlParameter sqlParameter3 = new SqlParameter();
+                sqlParameter3.ParameterName = "@nivel";
+                sqlParameter3.Value = nivel;
+                sqlParameter3.DbType = System.Data.DbType.Int64;
+                SqlParameter sqlParameter1 = new SqlParameter();
+                sqlParameter1.ParameterName = "@busqueda";
+                sqlParameter1.Value = Busqueda;
+                sqlParameter1.DbType = System.Data.DbType.String;
+
+                SqlCommand command = new SqlCommand(querry, conn);
+                command.Parameters.Add(sqlParameter3);
+                command.Parameters.Add(sqlParameter1);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    personas.Add(new Personas
+                    {
+                        _dni = int.Parse(reader["DNI"].ToString()),
+                        Name = reader["Nombre"].ToString(),
+                        Surname = reader["Apellido"].ToString(),
+                        mail = reader["Mail"].ToString()
+                    });
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return personas;
+
+        }
+        public List<Personas> BuscarPersona(int nivel, int Busqueda)
+        {
+            List<Personas> personas = new List<Personas>();
+            try
+            {
+                string querry;
+                conn.Open();
+
+                querry = @" SELECT DNI, Nombre, Apellido, Mail 
+                        FROM persona WHERE nivel = @nivel
+                        AND DNI = @busqueda 
+                            ";
+
+                SqlParameter sqlParameter3 = new SqlParameter();
+                sqlParameter3.ParameterName = "@nivel";
+                sqlParameter3.Value = nivel;
+                sqlParameter3.DbType = System.Data.DbType.Int64;
+                SqlParameter sqlParameter1 = new SqlParameter();
+                sqlParameter1.ParameterName = "@busqueda";
+                sqlParameter1.Value = Busqueda;
+                sqlParameter1.DbType = System.Data.DbType.Int64;
+
+                SqlCommand command = new SqlCommand(querry, conn);
+                command.Parameters.Add(sqlParameter3);
+                command.Parameters.Add(sqlParameter1);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    personas.Add(new Personas
+                    {
+                        _dni = int.Parse(reader["DNI"].ToString()),
+                        Name = reader["Nombre"].ToString(),
+                        Surname = reader["Apellido"].ToString(),
+                        mail = reader["Mail"].ToString()
+                    });
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return personas;
+
+        }
         #endregion
     }
 }

@@ -44,5 +44,16 @@ namespace PRUEAS
             return __DataAccese.GetFaltas(persona_);
 
         }
+        public List<Personas> BusquedaDePersonas(int nivel, string Busqueda)
+        {
+            return __DataAccese.BuscarPersona(nivel, Busqueda);
+
+        }
+
+        public List<Personas> BusquedaDePersonas(int nivel, int Busqueda)
+        {
+            return __DataAccese.BuscarPersona(nivel, Busqueda);
+
+        }
     }
 }

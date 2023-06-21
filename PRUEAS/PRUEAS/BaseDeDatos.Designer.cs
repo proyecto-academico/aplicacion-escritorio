@@ -32,7 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             Button1 = new Button();
             button2 = new Button();
-            textBox1 = new TextBox();
+            Buscador = new TextBox();
             Label1 = new Label();
             Cerrar = new Button();
             GRILLA = new DataGridView();
@@ -65,6 +65,7 @@
             Button1.TabIndex = 1;
             Button1.Text = "Buscar";
             Button1.UseVisualStyleBackColor = true;
+            Button1.Click += Button1_Click;
             // 
             // button2
             // 
@@ -77,15 +78,14 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // textBox1
+            // Buscador
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(121, 59);
-            textBox1.MaxLength = 8;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(504, 23);
-            textBox1.TabIndex = 3;
-            textBox1.TextChanged += textBox1_TextChanged;
+            Buscador.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Buscador.Location = new Point(121, 59);
+            Buscador.MaxLength = 8;
+            Buscador.Name = "Buscador";
+            Buscador.Size = new Size(504, 27);
+            Buscador.TabIndex = 3;
             // 
             // Label1
             // 
@@ -94,7 +94,7 @@
             Label1.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             Label1.Location = new Point(45, 58);
             Label1.Name = "Label1";
-            Label1.Size = new Size(58, 20);
+            Label1.Size = new Size(74, 25);
             Label1.TabIndex = 4;
             Label1.Text = "Buscar";
             // 
@@ -105,9 +105,9 @@
             Cerrar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Cerrar.Location = new Point(747, 510);
+            Cerrar.Location = new Point(739, 507);
             Cerrar.Name = "Cerrar";
-            Cerrar.Size = new Size(58, 27);
+            Cerrar.Size = new Size(66, 30);
             Cerrar.TabIndex = 5;
             Cerrar.Text = "SALIR";
             Cerrar.UseVisualStyleBackColor = true;
@@ -227,9 +227,9 @@
             AlumnoCheck.Checked = true;
             AlumnoCheck.CheckState = CheckState.Checked;
             AlumnoCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            AlumnoCheck.Location = new Point(45, 493);
+            AlumnoCheck.Location = new Point(45, 507);
             AlumnoCheck.Name = "AlumnoCheck";
-            AlumnoCheck.Size = new Size(79, 22);
+            AlumnoCheck.Size = new Size(103, 26);
             AlumnoCheck.TabIndex = 7;
             AlumnoCheck.Text = "Alumno";
             AlumnoCheck.UseVisualStyleBackColor = true;
@@ -240,9 +240,9 @@
             AdminitracionCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             AdminitracionCheck.AutoSize = true;
             AdminitracionCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            AdminitracionCheck.Location = new Point(225, 493);
+            AdminitracionCheck.Location = new Point(273, 507);
             AdminitracionCheck.Name = "AdminitracionCheck";
-            AdminitracionCheck.Size = new Size(131, 22);
+            AdminitracionCheck.Size = new Size(172, 26);
             AdminitracionCheck.TabIndex = 8;
             AdminitracionCheck.Text = "Administracion";
             AdminitracionCheck.UseVisualStyleBackColor = true;
@@ -253,9 +253,9 @@
             ProfesorCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             ProfesorCheck.AutoSize = true;
             ProfesorCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            ProfesorCheck.Location = new Point(130, 493);
+            ProfesorCheck.Location = new Point(154, 507);
             ProfesorCheck.Name = "ProfesorCheck";
-            ProfesorCheck.Size = new Size(89, 22);
+            ProfesorCheck.Size = new Size(113, 26);
             ProfesorCheck.TabIndex = 9;
             ProfesorCheck.Text = "Profesor";
             ProfesorCheck.UseVisualStyleBackColor = true;
@@ -272,7 +272,7 @@
             Controls.Add(GRILLA);
             Controls.Add(Cerrar);
             Controls.Add(Label1);
-            Controls.Add(textBox1);
+            Controls.Add(Buscador);
             Controls.Add(button2);
             Controls.Add(Button1);
             Name = "BaseDeDatos";
@@ -289,7 +289,7 @@
         #endregion
         private Button Button1;
         private Button button2;
-        private TextBox textBox1;
+        private TextBox Buscador;
         private Label Label1;
         private Button Cerrar;
 
