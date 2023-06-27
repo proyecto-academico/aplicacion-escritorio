@@ -291,3 +291,4 @@ C:\Users\Helma\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Debug\net7.0
 C:\Users\Alumno\Source\Repos\aplicacion-escritorio\PRUEAS\PRUEAS\bin\Debug\net7.0-windows\PRUEAS.dll.config
 C:\Users\Alumno\Source\Repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Debug\net7.0-windows\PRUEAS.Faltas.resources
 C:\Users\Helma\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Debug\net7.0-windows\PRUEAS.Eventos.resources
+C:\Users\Alumno\Source\Repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Debug\net7.0-windows\PRUEAS.Eventos.resources

@@ -15,7 +15,7 @@ namespace PRUEAS
 {
     public partial class BaseDeDatos : Form
     {
-        int nivel = 1;
+        int nivel = 3;
         public string VaribleBuscador;
         public Borrar borrar = new Borrar();
         public bool BotonesValue = false;
@@ -48,7 +48,12 @@ namespace PRUEAS
             if (e.ColumnIndex == GRILLA.Columns["Faltas"].Index && e.RowIndex >= 0)
             {
 
-                // Abrir el formulario "faltas.cs"
+
+
+
+
+
+
                 Faltas formFaltas = new Faltas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
                 formFaltas.ShowDialog();
             }
@@ -116,7 +121,7 @@ namespace PRUEAS
             GRILLA.DataSource = personas;
 
         }
-      
+
 
 
         #endregion
@@ -184,7 +189,7 @@ namespace PRUEAS
             {
                 GRILLA.DataSource = _ManejoDeDB.BusquedaDePersonas(nivel, VaribleBuscador);
             }
-            
+
         }
     }
 

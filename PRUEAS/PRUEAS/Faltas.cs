@@ -24,7 +24,7 @@ namespace PRUEAS
 
         private void Faltas_Load(object sender, EventArgs e)
         {
-            
+
             CargarFaltas(persona);
         }
 
@@ -35,7 +35,7 @@ namespace PRUEAS
 
         public void CargarFaltas(int persona_)
         {
-            List<ClaseFaltas> faltas = _manejoDeDB.TomaDeFaltas(persona_); 
+            List<ClaseFaltas> faltas = _manejoDeDB.TomaDeFaltas(persona_);
             GRILLA.DataSource = faltas;
         }
     }

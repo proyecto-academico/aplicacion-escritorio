@@ -23,6 +23,8 @@ namespace PRUEAS
             else { throw new Exception("El DNI ESTA RE VOLADO AMIGO NO PODES INGRESAR MAS DE 8 DIGITOS GIL"); }
            }
         }
+        public int curso { get; set; }
+        public int division { get; set; }
 
         public string Surname { get; set; }
 

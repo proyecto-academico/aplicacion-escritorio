@@ -30,6 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             GRILLA = new DataGridView();
+            fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            tipoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            justificadoDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
+            claseFaltasBindingSource2 = new BindingSource(components);
             dataAcceseBindingSource = new BindingSource(components);
             Cerrar = new Button();
             Label1 = new Label();
@@ -42,15 +46,11 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            claseFaltasBindingSource2 = new BindingSource(components);
-            fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            tipoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            justificadoDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)claseFaltasBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataAcceseBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseFaltasBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseFaltasBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)claseFaltasBindingSource2).BeginInit();
             SuspendLayout();
             // 
             // GRILLA
@@ -67,6 +67,31 @@
             GRILLA.RowTemplate.Height = 25;
             GRILLA.Size = new Size(356, 336);
             GRILLA.TabIndex = 12;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // justificadoDataGridViewCheckBoxColumn
+            // 
+            justificadoDataGridViewCheckBoxColumn.DataPropertyName = "Justificado";
+            justificadoDataGridViewCheckBoxColumn.HeaderText = "Justificado";
+            justificadoDataGridViewCheckBoxColumn.Name = "justificadoDataGridViewCheckBoxColumn";
+            justificadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // claseFaltasBindingSource2
+            // 
+            claseFaltasBindingSource2.DataSource = typeof(ClaseFaltas);
             // 
             // dataAcceseBindingSource
             // 
@@ -167,31 +192,6 @@
             label4.Text = "NO LIBRE";
             label4.Click += label4_Click;
             // 
-            // claseFaltasBindingSource2
-            // 
-            claseFaltasBindingSource2.DataSource = typeof(ClaseFaltas);
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // justificadoDataGridViewCheckBoxColumn
-            // 
-            justificadoDataGridViewCheckBoxColumn.DataPropertyName = "Justificado";
-            justificadoDataGridViewCheckBoxColumn.HeaderText = "Justificado";
-            justificadoDataGridViewCheckBoxColumn.Name = "justificadoDataGridViewCheckBoxColumn";
-            justificadoDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
             // Faltas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -210,10 +210,10 @@
             Text = "Form1";
             Load += Faltas_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)claseFaltasBindingSource2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataAcceseBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseFaltasBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseFaltasBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)claseFaltasBindingSource2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

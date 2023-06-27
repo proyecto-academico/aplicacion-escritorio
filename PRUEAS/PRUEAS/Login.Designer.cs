@@ -36,16 +36,23 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Location = new Point(336, 170);
+            label1.MaximumSize = new Size(115, 15);
+            label1.MinimumSize = new Size(115, 15);
             label1.Name = "label1";
             label1.Size = new Size(115, 15);
             label1.TabIndex = 0;
             label1.Text = "INGRESE EL CODIGO";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.None;
             button1.Location = new Point(355, 217);
+            button1.MaximumSize = new Size(150, 46);
+            button1.MinimumSize = new Size(75, 23);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
@@ -55,14 +62,18 @@
             // 
             // textBox1
             // 
+            textBox1.Anchor = AnchorStyles.None;
             textBox1.Location = new Point(309, 188);
+            textBox1.MaximumSize = new Size(240, 60);
+            textBox1.MinimumSize = new Size(170, 23);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(170, 23);
             textBox1.TabIndex = 2;
-            
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Cerrar
             // 
+            Cerrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.Font = new Font("Showcard Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Cerrar.Location = new Point(680, 396);
@@ -82,9 +93,11 @@
             Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(label1);
+            MinimizeBox = false;
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

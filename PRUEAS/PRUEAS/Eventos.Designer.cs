@@ -33,16 +33,18 @@
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(18, 61);
+            monthCalendar1.Location = new Point(16, 46);
+            monthCalendar1.Margin = new Padding(8, 7, 8, 7);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 0;
             // 
             // Eventos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1026, 531);
             Controls.Add(monthCalendar1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Eventos";
             Text = "Form1";
             ResumeLayout(false);

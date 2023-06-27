@@ -12,7 +12,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-3B9J7H4\\MSSQLSERVER01");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-008\\SQLEXPRESS");
 
         #region Querry Personas
         public void insertarData(Personas Persona)
@@ -70,26 +70,37 @@ namespace PRUEAS
         public List<Personas> GetPersonas(int nivel)
         {   List<Personas> personas = new List<Personas>();
             try
-            {  
-                conn.Open();
-                string querry = @" SELECT DNI, Nombre, Apellido, Mail
-                                FROM persona WHERE nivel = @nivel
-                            ";
-                SqlParameter sqlParameter3 = new SqlParameter();
-                sqlParameter3.ParameterName = "@nivel";
-                sqlParameter3.Value = nivel;
-                sqlParameter3.DbType = System.Data.DbType.Int64;
-                SqlCommand command = new SqlCommand(querry, conn);
-                command.Parameters.Add(sqlParameter3);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+            {  if (nivel > 2)
                 {
-                    personas.Add(new Personas
-                    { _dni = int.Parse(reader["DNI"].ToString()),
-                        Name = reader["Nombre"].ToString(), 
-                        Surname = reader["Apellido"].ToString(),
-                        mail = reader["Mail"].ToString()
-                    });
+                    conn.Open();
+                    string querry = @" SELECT p.DNI ,p.Nombre, p.Apellido, p.Mail, d.Division_ID, c.Clase_ID
+                    FROM Personas p
+                    INNER JOIN Divisiones_De_Alumno d ON p.DNI = d.DNI_Alumno INNER JOIN clase c ON c.Division_ID = d.DNI_Alumno
+
+                            ";
+                    SqlParameter sqlParameter3 = new SqlParameter();
+                    sqlParameter3.ParameterName = "@nivel";
+                    sqlParameter3.Value = nivel;
+                    sqlParameter3.DbType = System.Data.DbType.Int64;
+                    SqlCommand command = new SqlCommand(querry, conn);
+                    command.Parameters.Add(sqlParameter3);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        personas.Add(new Personas
+                        {
+                            _dni = int.Parse(reader["p.DNI"].ToString()),
+                            Name = reader["p.Nombre"].ToString(),
+                            Surname = reader["p.Apellido"].ToString(),
+                            mail = reader["p.Mail"].ToString(),
+                            division = int.Parse(reader["d.Division_ID"].ToString()),
+                            curso = int.Parse(reader["c.Clase_ID"].ToString()),
+                        });
+                    }
+                }
+                else
+                {
+
                 }
 
             }
