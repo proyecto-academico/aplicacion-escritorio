@@ -12,7 +12,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-3B9J7H4\\MSSQLSERVER01");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-026\\SQLEXPRESS");
 
         #region Querry Personas
         public void insertarData(Personas Persona)
@@ -261,7 +261,8 @@ namespace PRUEAS
                 conn.Open();
 
                 querry = @" SELECT DNI, Nombre, Apellido, Mail 
-                        FROM persona WHERE nivel = @nivel
+                        FROM persona p
+                        INNER JOIN division_de_alumnos d ON p.DNI = d.DNI_Alumno INNER JOIN division  ON [division].Division_ID = d.Division_ID WHERE nivel = @nivel
                         AND (Nombre LIKE '%' + @busqueda + '%'
                         OR Apellido LIKE '%' + @busqueda + '%'
                         OR Mail LIKE '%' + @busqueda + '%')
@@ -289,6 +290,7 @@ namespace PRUEAS
                         Name = reader["Nombre"].ToString(),
                         Surname = reader["Apellido"].ToString(),
                         mail = reader["Mail"].ToString()
+                       
                     });
                 }
 
@@ -314,7 +316,8 @@ namespace PRUEAS
                 conn.Open();
 
                 querry = @" SELECT DNI, Nombre, Apellido, Mail 
-                        FROM persona WHERE nivel = @nivel
+                        FROM persona p
+                        INNER JOIN division_de_alumnos d ON p.DNI = d.DNI_Alumno INNER JOIN division  ON [division].Division_ID = d.Division_ID WHERE nivel = @nivel
                         AND DNI = @busqueda 
                             ";
 
@@ -339,6 +342,7 @@ namespace PRUEAS
                         Name = reader["Nombre"].ToString(),
                         Surname = reader["Apellido"].ToString(),
                         mail = reader["Mail"].ToString()
+                        
                     });
                 }
 

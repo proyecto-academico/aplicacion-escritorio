@@ -104,6 +104,25 @@ namespace PRUEAS
             }
             }
         }
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            VaribleBuscador = Buscador.Text;
+            curso.Visible = false;
+            division.Visible = false;
+            int entero;
+            bool esEntero = int.TryParse(VaribleBuscador, out entero);
+            if (esEntero)
+            {
+                int tranformacion = (int)Int64.Parse(VaribleBuscador);
+
+                GRILLA.DataSource = _ManejoDeDB.BusquedaDePersonas(nivel, tranformacion);
+            }
+            else
+            {
+                GRILLA.DataSource = _ManejoDeDB.BusquedaDePersonas(nivel, VaribleBuscador);
+            }
+
+        }
 
         #endregion
 
@@ -144,6 +163,10 @@ namespace PRUEAS
                 AdminitracionCheck.Checked = false;
                 Notas.Visible = true;
                 Faltas.Visible = true;
+                curso.Visible = true;
+                division.Visible = true;
+                edit.Visible = true;
+                X.Visible = true;
                 CargaDeContactos();
             }
 
@@ -162,6 +185,8 @@ namespace PRUEAS
                 Faltas.Visible = false;
                 curso.Visible = false;
                 division.Visible = false;
+                edit.Visible = true;
+                X.Visible = true;
                 CargaDeContactos();
             }
         }
@@ -183,23 +208,7 @@ namespace PRUEAS
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            VaribleBuscador = Buscador.Text;
-            int entero;
-            bool esEntero = int.TryParse(VaribleBuscador, out entero);
-            if (esEntero)
-            {
-                int tranformacion = (int)Int64.Parse(VaribleBuscador);
-
-                GRILLA.DataSource = _ManejoDeDB.BusquedaDePersonas(nivel, tranformacion);
-            }
-            else
-            {
-                GRILLA.DataSource = _ManejoDeDB.BusquedaDePersonas(nivel, VaribleBuscador);
-            }
-
-        }
+       
     }
 
 }
