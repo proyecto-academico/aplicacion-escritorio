@@ -12,7 +12,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-008\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-3B9J7H4\\MSSQLSERVER01");
 
         #region Querry Personas
         public void insertarData(Personas Persona)
@@ -73,10 +73,30 @@ namespace PRUEAS
             {  if (nivel > 2)
                 {
                     conn.Open();
-                    string querry = @" SELECT p.DNI ,p.Nombre, p.Apellido, p.Mail, d.Division_ID, c.Clase_ID
-                    FROM Personas p
-                    INNER JOIN Divisiones_De_Alumno d ON p.DNI = d.DNI_Alumno INNER JOIN clase c ON c.Division_ID = d.DNI_Alumno
+                    string querry = @" SELECT	DNI ,Nombre,Apellido, Mail, [division].Anio_Escolar, [division].Division_Escolar
+                    FROM persona p
+                    INNER JOIN division_de_alumnos d ON p.DNI = d.DNI_Alumno INNER JOIN division  ON [division].Division_ID = d.Division_ID WHERE d.Anio_Calendario = 2023
 
+                            ";
+                    SqlCommand command = new SqlCommand(querry, conn);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        personas.Add(new Personas
+                        {
+                            _dni = int.Parse(reader["DNI"].ToString()),
+                            Name = reader["Nombre"].ToString(),
+                            Surname = reader["Apellido"].ToString(),
+                            mail = reader["Mail"].ToString(),
+                            division = int.Parse(reader["Anio_Escolar"].ToString()),
+                            curso = int.Parse(reader["Division_Escolar"].ToString()),
+                        });
+                    }
+                }
+                else
+                {
+                    conn.Open();
+                    string querry = @"  Select DNI, Nombre, Apellido, Mail from persona where @nivel = Nivel
                             ";
                     SqlParameter sqlParameter3 = new SqlParameter();
                     sqlParameter3.ParameterName = "@nivel";
@@ -89,18 +109,13 @@ namespace PRUEAS
                     {
                         personas.Add(new Personas
                         {
-                            _dni = int.Parse(reader["p.DNI"].ToString()),
-                            Name = reader["p.Nombre"].ToString(),
-                            Surname = reader["p.Apellido"].ToString(),
-                            mail = reader["p.Mail"].ToString(),
-                            division = int.Parse(reader["d.Division_ID"].ToString()),
-                            curso = int.Parse(reader["c.Clase_ID"].ToString()),
+                            _dni = int.Parse(reader["DNI"].ToString()),
+                            Name = reader["Nombre"].ToString(),
+                            Surname = reader["Apellido"].ToString(),
+                            mail = reader["Mail"].ToString(),
+                    
                         });
                     }
-                }
-                else
-                {
-
                 }
 
             }

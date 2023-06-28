@@ -36,14 +36,7 @@
             Label1 = new Label();
             Cerrar = new Button();
             GRILLA = new DataGridView();
-            _dni = new DataGridViewTextBoxColumn();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            mailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            Notas = new DataGridViewLinkColumn();
-            Faltas = new DataGridViewLinkColumn();
-            edit = new DataGridViewLinkColumn();
-            X = new DataGridViewLinkColumn();
+            personasBindingSource5 = new BindingSource(components);
             personasBindingSource3 = new BindingSource(components);
             personasBindingSource2 = new BindingSource(components);
             personasBindingSource = new BindingSource(components);
@@ -52,14 +45,23 @@
             AdminitracionCheck = new CheckBox();
             ProfesorCheck = new CheckBox();
             personasBindingSource4 = new BindingSource(components);
-            personasBindingSource5 = new BindingSource(components);
+            _dni = new DataGridViewTextBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            mailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            curso = new DataGridViewTextBoxColumn();
+            division = new DataGridViewTextBoxColumn();
+            Notas = new DataGridViewLinkColumn();
+            Faltas = new DataGridViewLinkColumn();
+            edit = new DataGridViewLinkColumn();
+            X = new DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource5).BeginInit();
             SuspendLayout();
             // 
             // Button1
@@ -90,7 +92,7 @@
             Buscador.Location = new Point(121, 59);
             Buscador.MaxLength = 8;
             Buscador.Name = "Buscador";
-            Buscador.Size = new Size(504, 23);
+            Buscador.Size = new Size(504, 27);
             Buscador.TabIndex = 3;
             // 
             // Label1
@@ -100,7 +102,7 @@
             Label1.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             Label1.Location = new Point(45, 58);
             Label1.Name = "Label1";
-            Label1.Size = new Size(58, 20);
+            Label1.Size = new Size(74, 25);
             Label1.TabIndex = 4;
             Label1.Text = "Buscar";
             // 
@@ -111,9 +113,9 @@
             Cerrar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Cerrar.Location = new Point(747, 510);
+            Cerrar.Location = new Point(739, 507);
             Cerrar.Name = "Cerrar";
-            Cerrar.Size = new Size(58, 27);
+            Cerrar.Size = new Size(66, 30);
             Cerrar.TabIndex = 5;
             Cerrar.Text = "SALIR";
             Cerrar.UseVisualStyleBackColor = true;
@@ -135,16 +137,81 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { _dni, nameDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn, mailDataGridViewTextBoxColumn, Notas, Faltas, edit, X });
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { _dni, nameDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn, mailDataGridViewTextBoxColumn, curso, division, Notas, Faltas, edit, X });
             GRILLA.DataSource = personasBindingSource5;
             GRILLA.Location = new Point(45, 108);
             GRILLA.Name = "GRILLA";
             GRILLA.ReadOnly = true;
             GRILLA.RowHeadersWidth = 51;
             GRILLA.RowTemplate.Height = 25;
-            GRILLA.Size = new Size(746, 379);
+            GRILLA.Size = new Size(753, 379);
             GRILLA.TabIndex = 6;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
+            // 
+            // personasBindingSource5
+            // 
+            personasBindingSource5.DataSource = typeof(Personas);
+            // 
+            // personasBindingSource3
+            // 
+            personasBindingSource3.DataSource = typeof(Personas);
+            // 
+            // personasBindingSource2
+            // 
+            personasBindingSource2.DataSource = typeof(Personas);
+            // 
+            // personasBindingSource
+            // 
+            personasBindingSource.DataSource = typeof(Personas);
+            // 
+            // personasBindingSource1
+            // 
+            personasBindingSource1.DataSource = typeof(Personas);
+            // 
+            // AlumnoCheck
+            // 
+            AlumnoCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            AlumnoCheck.AutoSize = true;
+            AlumnoCheck.Checked = true;
+            AlumnoCheck.CheckState = CheckState.Checked;
+            AlumnoCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            AlumnoCheck.Location = new Point(45, 507);
+            AlumnoCheck.Name = "AlumnoCheck";
+            AlumnoCheck.Size = new Size(103, 26);
+            AlumnoCheck.TabIndex = 7;
+            AlumnoCheck.Text = "Alumno";
+            AlumnoCheck.UseVisualStyleBackColor = true;
+            AlumnoCheck.CheckedChanged += AlumnoCheck_CheckedChanged;
+            // 
+            // AdminitracionCheck
+            // 
+            AdminitracionCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            AdminitracionCheck.AutoSize = true;
+            AdminitracionCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            AdminitracionCheck.Location = new Point(273, 507);
+            AdminitracionCheck.Name = "AdminitracionCheck";
+            AdminitracionCheck.Size = new Size(172, 26);
+            AdminitracionCheck.TabIndex = 8;
+            AdminitracionCheck.Text = "Administracion";
+            AdminitracionCheck.UseVisualStyleBackColor = true;
+            AdminitracionCheck.CheckedChanged += AdminitracionCheck_CheckedChanged;
+            // 
+            // ProfesorCheck
+            // 
+            ProfesorCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            ProfesorCheck.AutoSize = true;
+            ProfesorCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            ProfesorCheck.Location = new Point(154, 507);
+            ProfesorCheck.Name = "ProfesorCheck";
+            ProfesorCheck.Size = new Size(113, 26);
+            ProfesorCheck.TabIndex = 9;
+            ProfesorCheck.Text = "Profesor";
+            ProfesorCheck.UseVisualStyleBackColor = true;
+            ProfesorCheck.CheckedChanged += ProfesorCheck_CheckedChanged;
+            // 
+            // personasBindingSource4
+            // 
+            personasBindingSource4.DataSource = typeof(Personas);
             // 
             // _dni
             // 
@@ -177,6 +244,22 @@
             mailDataGridViewTextBoxColumn.MinimumWidth = 6;
             mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
             mailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curso
+            // 
+            curso.DataPropertyName = "curso";
+            curso.HeaderText = "Año";
+            curso.MinimumWidth = 6;
+            curso.Name = "curso";
+            curso.ReadOnly = true;
+            // 
+            // division
+            // 
+            division.DataPropertyName = "division";
+            division.HeaderText = "division";
+            division.MinimumWidth = 6;
+            division.Name = "division";
+            division.ReadOnly = true;
             // 
             // Notas
             // 
@@ -214,71 +297,6 @@
             X.Text = "X";
             X.UseColumnTextForLinkValue = true;
             // 
-            // personasBindingSource3
-            // 
-            personasBindingSource3.DataSource = typeof(Personas);
-            // 
-            // personasBindingSource2
-            // 
-            personasBindingSource2.DataSource = typeof(Personas);
-            // 
-            // personasBindingSource
-            // 
-            personasBindingSource.DataSource = typeof(Personas);
-            // 
-            // personasBindingSource1
-            // 
-            personasBindingSource1.DataSource = typeof(Personas);
-            // 
-            // AlumnoCheck
-            // 
-            AlumnoCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            AlumnoCheck.AutoSize = true;
-            AlumnoCheck.Checked = true;
-            AlumnoCheck.CheckState = CheckState.Checked;
-            AlumnoCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            AlumnoCheck.Location = new Point(45, 511);
-            AlumnoCheck.Name = "AlumnoCheck";
-            AlumnoCheck.Size = new Size(79, 22);
-            AlumnoCheck.TabIndex = 7;
-            AlumnoCheck.Text = "Alumno";
-            AlumnoCheck.UseVisualStyleBackColor = true;
-            AlumnoCheck.CheckedChanged += AlumnoCheck_CheckedChanged;
-            // 
-            // AdminitracionCheck
-            // 
-            AdminitracionCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            AdminitracionCheck.AutoSize = true;
-            AdminitracionCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            AdminitracionCheck.Location = new Point(273, 511);
-            AdminitracionCheck.Name = "AdminitracionCheck";
-            AdminitracionCheck.Size = new Size(131, 22);
-            AdminitracionCheck.TabIndex = 8;
-            AdminitracionCheck.Text = "Administracion";
-            AdminitracionCheck.UseVisualStyleBackColor = true;
-            AdminitracionCheck.CheckedChanged += AdminitracionCheck_CheckedChanged;
-            // 
-            // ProfesorCheck
-            // 
-            ProfesorCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            ProfesorCheck.AutoSize = true;
-            ProfesorCheck.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            ProfesorCheck.Location = new Point(154, 511);
-            ProfesorCheck.Name = "ProfesorCheck";
-            ProfesorCheck.Size = new Size(89, 22);
-            ProfesorCheck.TabIndex = 9;
-            ProfesorCheck.Text = "Profesor";
-            ProfesorCheck.UseVisualStyleBackColor = true;
-            ProfesorCheck.CheckedChanged += ProfesorCheck_CheckedChanged;
-            // 
-            // personasBindingSource4
-            // 
-            personasBindingSource4.DataSource = typeof(Personas);
-            // 
-            // personasBindingSource5
-            // 
-            personasBindingSource5.DataSource = typeof(Personas);
-            // 
             // BaseDeDatos
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -297,12 +315,12 @@
             WindowState = FormWindowState.Maximized;
             Load += BaseDeDatos_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)personasBindingSource5).EndInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource3).EndInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource2).EndInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)personasBindingSource5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -321,19 +339,22 @@
         private BindingSource personasBindingSource2;
         private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
         private CheckedListBox checkedListBox1;
-        private DataGridViewTextBoxColumn _dni;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
-        private DataGridViewLinkColumn Notas;
-        private DataGridViewLinkColumn Faltas;
-        private DataGridViewLinkColumn edit;
-        private DataGridViewLinkColumn X;
         private CheckBox AlumnoCheck;
         private CheckBox AdminitracionCheck;
         private CheckBox ProfesorCheck;
         private BindingSource personasBindingSource3;
         private BindingSource personasBindingSource4;
         private BindingSource personasBindingSource5;
+        private DataGridViewTextBoxColumn _dni;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn año;
+        private DataGridViewTextBoxColumn division;
+        private DataGridViewLinkColumn Notas;
+        private DataGridViewLinkColumn Faltas;
+        private DataGridViewLinkColumn edit;
+        private DataGridViewLinkColumn X;
+        private DataGridViewTextBoxColumn curso;
     }
 }

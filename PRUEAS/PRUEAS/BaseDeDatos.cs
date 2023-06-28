@@ -59,7 +59,9 @@ namespace PRUEAS
             }
 
             /*HACER UNA EXCEPCION*/
+            if (e.ColumnIndex==GRILLA.Columns["edit"].Index || e.ColumnIndex == GRILLA.Columns["X"].Index) { 
             DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                 
             if (cell.Value.ToString() == "edit")
             {
                 BotonesValue = true;
@@ -79,7 +81,7 @@ namespace PRUEAS
                 borrar.ShowDialog(this);
 
             }
-
+                
             if (BotonesValue)
             {
 
@@ -93,12 +95,13 @@ namespace PRUEAS
                     mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
 
                 }, BotonesValue);
-
+                    
                 BotonesValue = false;
 
 
                 AgregarData.ShowDialog(this);
 
+            }
             }
         }
 
@@ -157,6 +160,8 @@ namespace PRUEAS
                 AdminitracionCheck.Checked = false;
                 Notas.Visible = false;
                 Faltas.Visible = false;
+                curso.Visible = false;
+                division.Visible = false;
                 CargaDeContactos();
             }
         }
@@ -170,6 +175,10 @@ namespace PRUEAS
                 AlumnoCheck.Checked = false;
                 Notas.Visible = false;
                 Faltas.Visible = false;
+                curso.Visible = false;
+                division.Visible = false;
+                edit.Visible = false;
+                X.Visible = false;
                 CargaDeContactos();
             }
         }
