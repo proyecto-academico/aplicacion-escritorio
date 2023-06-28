@@ -1,9 +1,8 @@
 USE [master]
 GO
-/****** Object:  Database [proyecto_academico]    Script Date: 31/5/2023 19:36:23 ******/
+/****** Object:  Database [proyecto_academico]    Script Date: 14/06/2023 21:43:28 ******/
 CREATE DATABASE [proyecto_academico]
  CONTAINMENT = NONE
-GO
 ALTER DATABASE [proyecto_academico] SET COMPATIBILITY_LEVEL = 150
 GO
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
@@ -75,41 +74,7 @@ ALTER DATABASE [proyecto_academico] SET QUERY_STORE = OFF
 GO
 USE [proyecto_academico]
 GO
-/****** Object:  Table [dbo].[administracion]    Script Date: 31/5/2023 19:36:23 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[administracion](
-	[DNI_Admin] [numeric](8, 0) NOT NULL,
-	[Nombre] [varchar](50) NULL,
-	[Apellido] [varchar](50) NULL,
-	[Mail] [varchar](50) NULL,
-	[Contrasena] [varchar](50) NULL,
- CONSTRAINT [PK_administracion] PRIMARY KEY CLUSTERED 
-(
-	[DNI_Admin] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[alumno]    Script Date: 31/5/2023 19:36:23 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[alumno](
-	[DNI_Alumno] [int] NOT NULL,
-	[Nombre] [varchar](50) NULL,
-	[Apellido] [varchar](50) NULL,
-	[Mail] [varchar](100) NULL,
-	[Contrasena] [varchar](50) NULL,
- CONSTRAINT [PK_alumno] PRIMARY KEY CLUSTERED 
-(
-	[DNI_Alumno] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[clase]    Script Date: 31/5/2023 19:36:23 ******/
+/****** Object:  Table [dbo].[clase]    Script Date: 14/06/2023 21:43:28 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -127,7 +92,7 @@ CREATE TABLE [dbo].[clase](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[division]    Script Date: 31/5/2023 19:36:23 ******/
+/****** Object:  Table [dbo].[division]    Script Date: 14/06/2023 21:43:28 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -143,7 +108,7 @@ CREATE TABLE [dbo].[division](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[division_de_alumnos]    Script Date: 31/5/2023 19:36:23 ******/
+/****** Object:  Table [dbo].[division_de_alumnos]    Script Date: 14/06/2023 21:43:28 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -159,7 +124,7 @@ CREATE TABLE [dbo].[division_de_alumnos](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[evaluaciones]    Script Date: 31/5/2023 19:36:23 ******/
+/****** Object:  Table [dbo].[evaluaciones]    Script Date: 14/06/2023 21:43:28 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -175,7 +140,7 @@ CREATE TABLE [dbo].[evaluaciones](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[faltas]    Script Date: 31/5/2023 19:36:23 ******/
+/****** Object:  Table [dbo].[faltas]    Script Date: 14/06/2023 21:43:28 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -192,7 +157,7 @@ CREATE TABLE [dbo].[faltas](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[materia]    Script Date: 31/5/2023 19:36:23 ******/
+/****** Object:  Table [dbo].[materia]    Script Date: 14/06/2023 21:43:28 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -208,7 +173,7 @@ CREATE TABLE [dbo].[materia](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[notas]    Script Date: 31/5/2023 19:36:23 ******/
+/****** Object:  Table [dbo].[notas]    Script Date: 14/06/2023 21:43:28 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -224,88 +189,23 @@ CREATE TABLE [dbo].[notas](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[profesor]    Script Date: 31/5/2023 19:36:23 ******/
+/****** Object:  Table [dbo].[persona]    Script Date: 14/06/2023 21:43:28 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[profesor](
-	[DNI_Profesor] [int] NOT NULL,
+CREATE TABLE [dbo].[persona](
+	[DNI] [int] NOT NULL,
 	[Nombre] [varchar](50) NULL,
 	[Apellido] [varchar](50) NULL,
 	[Mail] [varchar](50) NULL,
 	[Contrasena] [varchar](50) NULL,
- CONSTRAINT [PK_profesor] PRIMARY KEY CLUSTERED 
+	[Nivel] [int] NULL,
+ CONSTRAINT [PK_persona] PRIMARY KEY CLUSTERED 
 (
-	[DNI_Profesor] ASC
+	[DNI] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
-GO
-INSERT [dbo].[administracion] ([DNI_Admin], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (CAST(26888080 AS Numeric(8, 0)), N'Estrella Rogelio', N'Pardo', N'estrellaRogelioPardo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[administracion] ([DNI_Admin], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (CAST(36165581 AS Numeric(8, 0)), N'Alejo Fabian', N'Nieto', N'alejoFabianNieto@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[administracion] ([DNI_Admin], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (CAST(46283697 AS Numeric(8, 0)), N'Jose Angel Luis Angel', N'Quijada', N'joseAngelLuisAngelQuijada@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[administracion] ([DNI_Admin], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (CAST(47181893 AS Numeric(8, 0)), N'Osvaldo Filomena', N'Ruiz', N'osvaldoFilomenaRuiz@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[administracion] ([DNI_Admin], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (CAST(68626809 AS Numeric(8, 0)), N'Aranzazu Encarnita', N'Araujo', N'aránzazuEncarnitaAraujo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-GO
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (301464, N'tomas', N'mari', N'tomasmari@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (3868668, N'silvia', N'galan', N'silviagalan@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (6046189, N'jennifer ', N'prada', N'jenniferprada@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (8306524, N'kevin ', N'corral', N'kevincorral@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (8837419, N'nora', N'campo', N'noracampo@gmai.com', N'1234')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (9972472, N'nicoleta ', N'rosales', N'nicoletarosales@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (10710361, N'miquel ', N'murcia', N'miquelmurcia@gmail.com', N'1234')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (11763489, N'felicita', N'aguirre', N'felicitaaguirre@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (11794349, N'yanira', N'aguilar', N'yaniraaguilar@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (15253985, N'eduard ', N' romera', N'eduardromera@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (19198515, N'Miguela', N'Felicidad Sancho', N'miguelaFelicidadSancho@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (20982264, N'carlos', N'garreno', N'carlosgarreno@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (25032594, N'gisela', N'soria', N'giselasoria@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (27066540, N'narciso', N'segui', N'narcisosegui@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (28787007, N'saray', N'collado', N'saraycollado@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (30318061, N'joan', N'valencia', N'joanvalencia@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (30728792, N'Felisa', N'Rosalva Duarte', N'felisaRosalvaDuarte@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (34768096, N'isidora', N'lloret', N'isidoralloret@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (36595167, N'eloy', N'rodriguez', N'eloyrodriguez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (36595178, N'jose', N'martin', N'josemartin@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (37418882, N'aritz ', N'gisbert', N'artizgisbert@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (38703622, N'ines', N'aroca', N'inesaroca@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (45396209, N'Cruz', N' Albina Clemente', N'cruzAlbinaClemente@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (48192861, N'Javiera', N'Silvino Olmo', N'javieraSilvinoOlmo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (48397598, N'imane ', N' vazquez', N'imanevazquez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (51886426, N'Amado', N'Felipa Valencia', N'amadoFelipaValencia@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (53796361, N'Leopoldo', N'Mireya Francisco', N'leopoldoMireyaFrancisco@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (54070271, N'marina', N'jurado', N'marinajurado@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (54616843, N'laila', N'gilbert', N'lailagilbert@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (55719308, N'daniela', N'martorell', N'danielamartorell@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (60136659, N'erica ', N'ramirez', N'ericaramirez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (61561229, N'Matias', N'Gaspar Esparza', N'matiasGasparEsparza@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (61923966, N'julian', N'lafuente', N'julianlafuente@gmail.com', N'1234')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (64419692, N'Geraldo', N'Ignacia Espinosa', N'geraldoIgnaciaEspinosa@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (69058336, N'moussa', N'nieto', N'moussanieto@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (73789450, N'Luis', N'Pio Casales', N'luisPioCasales@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (76103238, N'aquilino', N'ocaña', N'aquilinoocaña@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (78721686, N'june', N'alonso', N'junealonso@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (81222167, N'Victoriano', N' Melania Gonzales', N'victorianoMelaniaGonzales@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (81853671, N'enrique', N'marquez', N'enriquemarquez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (83852143, N'Marina', N'Filemon Chaves', N'marinaFilemonChaves@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (84217460, N'María Guadalupe', N'Inmaculada Aguado', N'mariaGuadalupeInmaculadaAguado@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (84649838, N'Urbana', N'Caridad Morales', N'urbanaCaridadMorales@gmal.com', N'1234')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (86684260, N'abril', N'mateu', N'abrilmateu@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (89354103, N'Bernardo', N'Jessenia Asturias', N'bernardoJesseniaAsturias@gmail.com', N'1234')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (89374374, N'montse ', N'mendoza', N'montsemendoza@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (90211974, N'claudia ', N'granado', N'claudiagranado@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (91245394, N'lorena', N'maldonado', N'lorenamaldonado@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (92767317, N'mariam', N'yuste', N'mariamyuste@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (92789405, N'valeria', N'nuñez', N'valerianuñez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (93752192, N'felix', N'araujo', N'felixaraujo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (94260639, N'Leyre', N'Anunciacion Otero', N'leyreAnunciacionOtero@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (94452392, NULL, NULL, NULL, N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (95820922, N'Xiomara', N'Rosalinda Castellano', N'xiomaraRosalindaCastellano@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (96747752, N'sabela', N'trigo', N'sabelatrigo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (96779259, N'Saul', N'Feliciano Borja', N'saulFelicianoBorja@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (98181845, N'cecilia', N'ordoñez', N'ceciliaordoñez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (99652265, N'Ainara', N'Fabricio Alonso', N'ainaraFabricioAlonso@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[alumno] ([DNI_Alumno], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (99899305, N'Marcelino', N'Rayen Miranda', N'marcelinoRayenMiranda@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
 GO
 INSERT [dbo].[clase] ([Clase_ID], [Division_ID], [Materia_ID], [Profesor_ID], [Fecha_Comienzo], [Fecha_Final]) VALUES (1, 1, N'1', N'26911147', CAST(N'2023-03-22' AS Date), NULL)
 INSERT [dbo].[clase] ([Clase_ID], [Division_ID], [Materia_ID], [Profesor_ID], [Fecha_Comienzo], [Fecha_Final]) VALUES (2, 1, N'5', N'36073248', CAST(N'2023-03-22' AS Date), NULL)
@@ -420,20 +320,84 @@ GO
 INSERT [dbo].[notas] ([Notas_ID], [Nota], [DNI_Alumno], [Evaluacion_ID]) VALUES (1, CAST(7.00 AS Decimal(10, 2)), 54070271, 1)
 INSERT [dbo].[notas] ([Notas_ID], [Nota], [DNI_Alumno], [Evaluacion_ID]) VALUES (2, CAST(4.00 AS Decimal(10, 2)), 55719308, 2)
 GO
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (26911147, N'nilo wilmar', N'simon', N'niloWilmarSimon@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (30617946, N'maria', N'cruz', N'mariaCruz66@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (36073248, N'moreno', N'panfilo', N'morenoPanfilo22@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (40321542, N'cloe', N'ciro', N'cloeCiro54@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (44879840, N'ruben dario', N'olmo', N'rubenDarioOlmo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (45843469, N'nelson', N'carmen', N'nelsonCarmen66@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (46570763, N'rosendo ciro', N'arenas', N'rosendoCiroArenas@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (60824508, N'emilio maximiano', N'del olmo', N'emilioMaximianoDelOlmo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (66671306, N'jessica', N'patricia', N'jessicaPatricia22@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (70477729, N'mariana', N'abigail', N'marianaAbigail42@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (71589467, N'agapito benjamin', N'rivas', N'agapitoBenjaminRivas@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (80910575, N'aureliano', N'norberto', N'aurelianoNorberto44@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (81233569, N'azahara ', N'dionisia', N'azaharaDionisia@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
-INSERT [dbo].[profesor] ([DNI_Profesor], [Nombre], [Apellido], [Mail], [Contrasena]) VALUES (81669035, N'modesto', N'gertrudis', N'modestoGertrudis11@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF')
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (301464, N'tomas', N'mari', N'tomasmari@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (3868668, N'silvia', N'galan', N'silviagalan@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (6046189, N'jennifer ', N'prada', N'jenniferprada@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (8306524, N'kevin ', N'corral', N'kevincorral@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (8837419, N'nora', N'campo', N'noracampo@gmai.com', N'1234', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (9972472, N'nicoleta ', N'rosales', N'nicoletarosales@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (10710361, N'miquel ', N'murcia', N'miquelmurcia@gmail.com', N'1234', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (11763489, N'felicita', N'aguirre', N'felicitaaguirre@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (11794349, N'yanira', N'aguilar', N'yaniraaguilar@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (15253985, N'eduard ', N' romera', N'eduardromera@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (19198515, N'Miguela', N'Felicidad Sancho', N'miguelaFelicidadSancho@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (20982264, N'carlos', N'garreno', N'carlosgarreno@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (25032594, N'gisela', N'soria', N'giselasoria@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (26888080, N'Estrella Rogelio', N'Pardo', N'estrellaRogelioPardo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 1)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (26911147, N'nilo wilmar', N'simon', N'niloWilmarSimon@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (27066540, N'narciso', N'segui', N'narcisosegui@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (28787007, N'saray', N'collado', N'saraycollado@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (30318061, N'joan', N'valencia', N'joanvalencia@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (30617946, N'maria', N'cruz', N'mariaCruz66@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (30728792, N'Felisa', N'Rosalva Duarte', N'felisaRosalvaDuarte@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (34768096, N'isidora', N'lloret', N'isidoralloret@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (36073248, N'moreno', N'panfilo', N'morenoPanfilo22@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (36165581, N'Alejo Fabian', N'Nieto', N'alejoFabianNieto@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 1)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (36595167, N'eloy', N'rodriguez', N'eloyrodriguez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (36595178, N'jose', N'martin', N'josemartin@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (37418882, N'aritz ', N'gisbert', N'artizgisbert@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (38703622, N'ines', N'aroca', N'inesaroca@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (40321542, N'cloe', N'ciro', N'cloeCiro54@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (44879840, N'ruben dario', N'olmo', N'rubenDarioOlmo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (45396209, N'Cruz', N' Albina Clemente', N'cruzAlbinaClemente@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (45843469, N'nelson', N'carmen', N'nelsonCarmen66@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (46283697, N'Jose Angel Luis Angel', N'Quijada', N'joseAngelLuisAngelQuijada@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 1)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (46570763, N'rosendo ciro', N'arenas', N'rosendoCiroArenas@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (47181893, N'Osvaldo Filomena', N'Ruiz', N'osvaldoFilomenaRuiz@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 1)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (48192861, N'Javiera', N'Silvino Olmo', N'javieraSilvinoOlmo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (48397598, N'imane ', N' vazquez', N'imanevazquez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (51886426, N'Amado', N'Felipa Valencia', N'amadoFelipaValencia@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (53796361, N'Leopoldo', N'Mireya Francisco', N'leopoldoMireyaFrancisco@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (54070271, N'marina', N'jurado', N'marinajurado@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (54616843, N'laila', N'gilbert', N'lailagilbert@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (55719308, N'daniela', N'martorell', N'danielamartorell@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (60136659, N'erica ', N'ramirez', N'ericaramirez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (60824508, N'emilio maximiano', N'del olmo', N'emilioMaximianoDelOlmo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (61561229, N'Matias', N'Gaspar Esparza', N'matiasGasparEsparza@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (61923966, N'julian', N'lafuente', N'julianlafuente@gmail.com', N'1234', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (64419692, N'Geraldo', N'Ignacia Espinosa', N'geraldoIgnaciaEspinosa@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (66671306, N'jessica', N'patricia', N'jessicaPatricia22@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (68626809, N'Aranzazu Encarnita', N'Araujo', N'aránzazuEncarnitaAraujo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 1)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (69058336, N'moussa', N'nieto', N'moussanieto@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (70477729, N'mariana', N'abigail', N'marianaAbigail42@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (71589467, N'agapito benjamin', N'rivas', N'agapitoBenjaminRivas@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (73789450, N'Luis', N'Pio Casales', N'luisPioCasales@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (76103238, N'aquilino', N'ocaña', N'aquilinoocaña@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (78721686, N'june', N'alonso', N'junealonso@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (80910575, N'aureliano', N'norberto', N'aurelianoNorberto44@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (81222167, N'Victoriano', N' Melania Gonzales', N'victorianoMelaniaGonzales@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (81233569, N'azahara ', N'dionisia', N'azaharaDionisia@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (81669035, N'modesto', N'gertrudis', N'modestoGertrudis11@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 2)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (81853671, N'enrique', N'marquez', N'enriquemarquez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (83852143, N'Marina', N'Filemon Chaves', N'marinaFilemonChaves@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (84217460, N'María Guadalupe', N'Inmaculada Aguado', N'mariaGuadalupeInmaculadaAguado@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (84649838, N'Urbana', N'Caridad Morales', N'urbanaCaridadMorales@gmal.com', N'1234', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (86684260, N'abril', N'mateu', N'abrilmateu@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (89354103, N'Bernardo', N'Jessenia Asturias', N'bernardoJesseniaAsturias@gmail.com', N'1234', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (89374374, N'montse ', N'mendoza', N'montsemendoza@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (90211974, N'claudia ', N'granado', N'claudiagranado@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (91245394, N'lorena', N'maldonado', N'lorenamaldonado@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (92767317, N'mariam', N'yuste', N'mariamyuste@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (92789405, N'valeria', N'nuñez', N'valerianuñez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (93752192, N'felix', N'araujo', N'felixaraujo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (94260639, N'Leyre', N'Anunciacion Otero', N'leyreAnunciacionOtero@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (94452392, NULL, NULL, NULL, N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (95820922, N'Xiomara', N'Rosalinda Castellano', N'xiomaraRosalindaCastellano@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (96747752, N'sabela', N'trigo', N'sabelatrigo@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (96779259, N'Saul', N'Feliciano Borja', N'saulFelicianoBorja@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (98181845, N'cecilia', N'ordoñez', N'ceciliaordoñez@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (99652265, N'Ainara', N'Fabricio Alonso', N'ainaraFabricioAlonso@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
+INSERT [dbo].[persona] ([DNI], [Nombre], [Apellido], [Mail], [Contrasena], [Nivel]) VALUES (99899305, N'Marcelino', N'Rayen Miranda', N'marcelinoRayenMiranda@gmail.com', N'*A4B6157319038724E3560894F7F932C8886EBFCF', 3)
 GO
 USE [master]
 GO
