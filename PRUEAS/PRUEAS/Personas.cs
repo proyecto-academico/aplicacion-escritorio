@@ -10,7 +10,8 @@ namespace PRUEAS
     {
         
 
-        public string contrasenia { get; set; }
+        
+        public int Tipo;
         public string Name { get; set; }
         public string mail{ get; set; }
 

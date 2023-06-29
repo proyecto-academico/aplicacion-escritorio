@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
+
 namespace PRUEAS
 {
     public class DataAccese
@@ -21,8 +22,8 @@ namespace PRUEAS
             {
                 conn.Open();
                 string querry = @"
-                        INSERT INTO persona (DNI, Nombre, Apellido, Mail)
-                        VALUES (@DNI, @Nombre, @Apellido, @mail)
+                        INSERT INTO persona (DNI, Nombre, Apellido, Mail, Nivel)
+                        VALUES (@DNI, @Nombre, @Apellido, @mail, @nivel)
 ";
                 #region Parametros que pasamos
                 SqlParameter sqlParameter = new SqlParameter();
@@ -44,6 +45,11 @@ namespace PRUEAS
                 sqlParameter4.ParameterName = "@Mail";
                 sqlParameter4.Value = Persona.mail;
                 sqlParameter4.DbType = System.Data.DbType.String;
+
+                SqlParameter sqlParameter5 = new SqlParameter();
+                sqlParameter5.ParameterName = "@nivel";
+                sqlParameter5.Value = Persona.Tipo;
+                sqlParameter5.DbType = System.Data.DbType.Int64;
                 #endregion
 
                 #region Comandos Sql
@@ -52,6 +58,7 @@ namespace PRUEAS
                 sqlCommand.Parameters.Add(parametros2);
                 sqlCommand.Parameters.Add(sqlParameter3);
                 sqlCommand.Parameters.Add(sqlParameter4);
+                sqlCommand.Parameters.Add(sqlParameter5);
                 sqlCommand.ExecuteNonQuery();
                 #endregion
             }
@@ -70,15 +77,30 @@ namespace PRUEAS
         public List<Personas> GetPersonas(int nivel)
         {   List<Personas> personas = new List<Personas>();
             try
-            {  if (nivel > 2)
+            {
+                
+                if (nivel > 2)
                 {
                     conn.Open();
-                    string querry = @" SELECT	DNI ,Nombre,Apellido, Mail, [division].Anio_Escolar, [division].Division_Escolar
-                    FROM persona p
-                    INNER JOIN division_de_alumnos d ON p.DNI = d.DNI_Alumno INNER JOIN division  ON [division].Division_ID = d.Division_ID WHERE d.Anio_Calendario = 2023
 
-                            ";
+                    /*string querry = @" SELECT	DNI ,Nombre,Apellido, Mail, [division].Anio_Escolar, [division].Division_Escolar
+                    FROM persona p
+                    LEFT JOIN division_de_alumnos d ON p.DNI = d.DNI_Alumno INNER JOIN division  ON [division].Division_ID = d.Division_ID WHERE d.Anio_Calendario = 2023 AND @nivel = Nivel
+
+                            ";*/
+
+
+                    string querry = @" SELECT	p.DNI ,Nombre,Apellido, Mail, d.Anio_Calendario,[division].Anio_Escolar, [division].Division_Escolar
+                    FROM persona p
+                    LEFT JOIN (SELECT DNI, MAX(Anio_Calendario) as Anio_Calendario , MAX(Division_ID) as Division_ID from persona left join division_de_alumnos on persona.DNI=division_de_alumnos.DNI_Alumno GROUP BY DNI) d ON p.DNI = d.DNI left JOIN division  ON [division].Division_ID = d.Division_ID WHERE d.Anio_Calendario = 2023 AND @nivel = Nivel ";
+
+
+                    SqlParameter sqlParameter3 = new SqlParameter();
+                    sqlParameter3.ParameterName = "@nivel";
+                    sqlParameter3.Value = nivel;
+                    sqlParameter3.DbType = System.Data.DbType.Int64;
                     SqlCommand command = new SqlCommand(querry, conn);
+                    command.Parameters.Add(sqlParameter3);
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
