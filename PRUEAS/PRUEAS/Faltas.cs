@@ -38,5 +38,13 @@ namespace PRUEAS
             List<ClaseFaltas> faltas = _manejoDeDB.TomaDeFaltas(persona_);
             GRILLA.DataSource = faltas;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AgregarFaltas agregarFaltas = new AgregarFaltas();
+            DialogResult dialogResult = agregarFaltas.ShowDialog(this);
+        }
+
+ 
     }
 }

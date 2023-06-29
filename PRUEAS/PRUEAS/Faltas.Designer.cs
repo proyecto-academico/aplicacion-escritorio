@@ -134,6 +134,7 @@
             button2.TabIndex = 8;
             button2.Text = "Agregar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Button1
             // 
@@ -179,7 +180,7 @@
             label3.TabIndex = 14;
             label3.Text = "Faltas justificadas: ";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+
             // label4
             // 
             label4.AutoSize = true;
