@@ -51,6 +51,7 @@
             btnNO.TabIndex = 1;
             btnNO.Text = "No";
             btnNO.UseVisualStyleBackColor = true;
+            btnNO.Click += btnNO_Click_1;
             // 
             // label1
             // 

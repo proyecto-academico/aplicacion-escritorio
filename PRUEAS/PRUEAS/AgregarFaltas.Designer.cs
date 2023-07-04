@@ -84,6 +84,7 @@
             buttonSalir.TabIndex = 16;
             buttonSalir.Text = "Salir";
             buttonSalir.UseVisualStyleBackColor = true;
+            buttonSalir.Click += buttonSalir_Click;
             // 
             // buttonGuardar
             // 
@@ -94,6 +95,7 @@
             buttonGuardar.TabIndex = 15;
             buttonGuardar.Text = "Guardar";
             buttonGuardar.UseVisualStyleBackColor = true;
+            buttonGuardar.Click += buttonGuardar_Click;
             // 
             // dateTimePicker1
             // 
@@ -104,6 +106,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "1", "0.5" });
             comboBox1.Location = new Point(131, 82);
@@ -126,9 +129,9 @@
             No.AutoSize = true;
             No.Location = new Point(174, 118);
             No.Name = "No";
-            No.Size = new Size(83, 19);
+            No.Size = new Size(42, 19);
             No.TabIndex = 20;
-            No.Text = "checkBox2";
+            No.Text = "No";
             No.UseVisualStyleBackColor = true;
             No.CheckedChanged += checkBox2_CheckedChanged;
             // 

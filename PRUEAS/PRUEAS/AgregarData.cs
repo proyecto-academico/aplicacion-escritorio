@@ -51,18 +51,7 @@ namespace PRUEAS
             personas.Surname = textBoxSurname.Text;
             personas._dni = (int)long.Parse(textBoxDNI.Text);
             personas.mail = (textBoxCiCLO.Text);
-            if (cajitaSelector.Text == "Alumno")
-            {
-                personas.Tipo = 3;
-            }
-            else
-            {
-                personas.Tipo = 2;
-            }
-
-
-
-
+            personas.Tipo = cajitaSelector.Text == "Alumno" ? 3 : 2;
             _ManejoDeDB.GuardarPersonas(personas, verdad);
         }
 

@@ -29,7 +29,7 @@ namespace PRUEAS
         {
             manejoDeDB.DeletePersona(_personas);
             ((BaseDeDatos)this.Owner).CargaDeContactos();
-           
+
 
             this.Close();
             _personas = new Personas();
@@ -41,6 +41,11 @@ namespace PRUEAS
             _personas = personas;
 
 
+        }
+
+        private void btnNO_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

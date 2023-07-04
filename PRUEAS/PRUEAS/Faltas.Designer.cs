@@ -107,6 +107,7 @@
             Cerrar.TabIndex = 11;
             Cerrar.Text = "SALIR";
             Cerrar.UseVisualStyleBackColor = true;
+            Cerrar.Click += Cerrar_Click;
             // 
             // Label1
             // 
@@ -144,6 +145,7 @@
             Button1.TabIndex = 7;
             Button1.Text = "Buscar";
             Button1.UseVisualStyleBackColor = true;
+            Button1.Click += Button1_Click;
             // 
             // DNI_alumno
             // 
@@ -180,7 +182,7 @@
             label3.TabIndex = 14;
             label3.Text = "Faltas justificadas: ";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-
+            // 
             // label4
             // 
             label4.AutoSize = true;

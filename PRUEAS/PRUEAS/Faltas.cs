@@ -45,6 +45,14 @@ namespace PRUEAS
             DialogResult dialogResult = agregarFaltas.ShowDialog(this);
         }
 
- 
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
