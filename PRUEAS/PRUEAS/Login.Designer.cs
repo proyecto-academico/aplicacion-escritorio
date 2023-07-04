@@ -1,6 +1,6 @@
 ﻿namespace PRUEAS
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,21 +31,28 @@
             label1 = new Label();
             button1 = new Button();
             textBox1 = new TextBox();
-            label2 = new Label();
+            Cerrar = new Button();
             SuspendLayout();
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(338, 168);
+            label1.Location = new Point(336, 170);
+            label1.MaximumSize = new Size(115, 15);
+            label1.MinimumSize = new Size(115, 15);
             label1.Name = "label1";
             label1.Size = new Size(115, 15);
             label1.TabIndex = 0;
             label1.Text = "INGRESE EL CODIGO";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
-            button1.Location = new Point(352, 215);
+            button1.Anchor = AnchorStyles.None;
+            button1.Location = new Point(355, 217);
+            button1.MaximumSize = new Size(150, 46);
+            button1.MinimumSize = new Size(75, 23);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
@@ -55,31 +62,42 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(311, 186);
+            textBox1.Anchor = AnchorStyles.None;
+            textBox1.Location = new Point(309, 188);
+            textBox1.MaximumSize = new Size(240, 60);
+            textBox1.MinimumSize = new Size(170, 23);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(170, 23);
             textBox1.TabIndex = 2;
-            textBox1.Click += textBox1_Click;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
-            // label2
+            // Cerrar
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(389, 284);
-            label2.Name = "label2";
-            label2.Size = new Size(0, 15);
-            label2.TabIndex = 3;
+            Cerrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Cerrar.FlatStyle = FlatStyle.Flat;
+            Cerrar.Font = new Font("Showcard Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Cerrar.Location = new Point(680, 396);
+            Cerrar.Name = "Cerrar";
+            Cerrar.Size = new Size(75, 23);
+            Cerrar.TabIndex = 6;
+            Cerrar.Text = "SALIR";
+            Cerrar.UseVisualStyleBackColor = true;
+            Cerrar.Click += Cerrar_Click;
             // 
-            // Form1
+            // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label2);
+            Controls.Add(Cerrar);
             Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(label1);
-            Name = "Form1";
+            MinimizeBox = false;
+            Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -89,6 +107,6 @@
         private Label label1;
         private Button button1;
         private TextBox textBox1;
-        private Label label2;
+        private Button Cerrar;
     }
 }
