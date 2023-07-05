@@ -37,7 +37,7 @@
             dateTimePicker1 = new DateTimePicker();
             comboBox1 = new ComboBox();
             checkBox1 = new CheckBox();
-            No = new CheckBox();
+            checkbox2 = new CheckBox();
             SuspendLayout();
             // 
             // label5
@@ -124,23 +124,23 @@
             checkBox1.Text = "Si";
             checkBox1.UseVisualStyleBackColor = true;
             // 
-            // No
+            // checkbox2
             // 
-            No.AutoSize = true;
-            No.Location = new Point(174, 118);
-            No.Name = "No";
-            No.Size = new Size(42, 19);
-            No.TabIndex = 20;
-            No.Text = "No";
-            No.UseVisualStyleBackColor = true;
-            No.CheckedChanged += checkBox2_CheckedChanged;
+            checkbox2.AutoSize = true;
+            checkbox2.Location = new Point(175, 119);
+            checkbox2.Name = "checkbox2";
+            checkbox2.Size = new Size(42, 19);
+            checkbox2.TabIndex = 20;
+            checkbox2.Text = "No";
+            checkbox2.UseVisualStyleBackColor = true;
+            checkbox2.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // AgregarFaltas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(506, 227);
-            Controls.Add(No);
+            Controls.Add(checkbox2);
             Controls.Add(checkBox1);
             Controls.Add(comboBox1);
             Controls.Add(dateTimePicker1);
@@ -167,6 +167,6 @@
         private DateTimePicker dateTimePicker1;
         private ComboBox comboBox1;
         private CheckBox checkBox1;
-        private CheckBox No;
+        private CheckBox checkbox2;
     }
 }
