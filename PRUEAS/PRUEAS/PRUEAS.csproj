@@ -10,9 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
-<<<<<<< HEAD
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-=======
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
@@ -29,7 +27,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
->>>>>>> 04e6dc6c259be53e551d182da63a747a2dfaa17c
   </ItemGroup>
 
 </Project>
