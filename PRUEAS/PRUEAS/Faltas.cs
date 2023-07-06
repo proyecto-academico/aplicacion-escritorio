@@ -28,15 +28,15 @@ namespace PRUEAS
             CargarFaltas(persona);
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
 
-        }
 
         public void CargarFaltas(int persona_)
         {
             List<ClaseFaltas> faltas = _manejoDeDB.TomaDeFaltas(persona_);
             GRILLA.DataSource = faltas;
+            Justificadas.Text = (_manejoDeDB.TomaDeNumFaltas(persona_, 1)).ToString();
+            Numero.Text = (_manejoDeDB.TomaDeNumFaltas(persona_, 0)).ToString();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -48,11 +48,6 @@ namespace PRUEAS
         private void Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

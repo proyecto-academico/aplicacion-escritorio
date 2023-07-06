@@ -37,7 +37,7 @@
             dateTimePicker1 = new DateTimePicker();
             comboBox1 = new ComboBox();
             checkBox1 = new CheckBox();
-            checkbox2 = new CheckBox();
+            No = new CheckBox();
             SuspendLayout();
             // 
             // label5
@@ -50,6 +50,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Location = new Point(47, 119);
             label3.Name = "label3";
@@ -59,6 +60,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Location = new Point(47, 82);
             label2.Name = "label2";
@@ -68,6 +70,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Location = new Point(47, 54);
             label1.Name = "label1";
@@ -77,6 +80,7 @@
             // 
             // buttonSalir
             // 
+            buttonSalir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonSalir.Location = new Point(271, 164);
             buttonSalir.Margin = new Padding(3, 2, 3, 2);
             buttonSalir.Name = "buttonSalir";
@@ -88,6 +92,7 @@
             // 
             // buttonGuardar
             // 
+            buttonGuardar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonGuardar.Location = new Point(175, 164);
             buttonGuardar.Margin = new Padding(3, 2, 3, 2);
             buttonGuardar.Name = "buttonGuardar";
@@ -99,6 +104,7 @@
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dateTimePicker1.Location = new Point(131, 46);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(265, 23);
@@ -106,6 +112,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "1", "0.5" });
@@ -116,6 +123,7 @@
             // 
             // checkBox1
             // 
+            checkBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             checkBox1.AutoSize = true;
             checkBox1.Location = new Point(131, 119);
             checkBox1.Name = "checkBox1";
@@ -124,23 +132,24 @@
             checkBox1.Text = "Si";
             checkBox1.UseVisualStyleBackColor = true;
             // 
-            // checkbox2
+            // No
             // 
-            checkbox2.AutoSize = true;
-            checkbox2.Location = new Point(175, 119);
-            checkbox2.Name = "checkbox2";
-            checkbox2.Size = new Size(42, 19);
-            checkbox2.TabIndex = 20;
-            checkbox2.Text = "No";
-            checkbox2.UseVisualStyleBackColor = true;
-            checkbox2.CheckedChanged += checkBox2_CheckedChanged;
+            No.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            No.AutoSize = true;
+            No.Location = new Point(172, 119);
+            No.Name = "No";
+            No.Size = new Size(42, 19);
+            No.TabIndex = 20;
+            No.Text = "No";
+            No.UseVisualStyleBackColor = true;
+            No.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // AgregarFaltas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(506, 227);
-            Controls.Add(checkbox2);
+            Controls.Add(No);
             Controls.Add(checkBox1);
             Controls.Add(comboBox1);
             Controls.Add(dateTimePicker1);
@@ -167,6 +176,6 @@
         private DateTimePicker dateTimePicker1;
         private ComboBox comboBox1;
         private CheckBox checkBox1;
-        private CheckBox checkbox2;
+        private CheckBox No;
     }
 }

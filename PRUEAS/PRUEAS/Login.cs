@@ -44,6 +44,9 @@ namespace PRUEAS
                 BaseDeDatos baseDeDatos = new BaseDeDatos();
                 baseDeDatos.Show();
             }
+            else {
+                MessageBox.Show("Contraseña erronea");
+            }
 
 
 
@@ -101,20 +104,6 @@ namespace PRUEAS
                    cnn.Close(); */
         #endregion
 
-
-
-
-
-
-      /*  private void Login_Enter(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (int)Keys.Enter)
-            {
-                e.Handled = true;
-                Menu();
-            }
-        }*/
-
         private void Login_Load(object sender, EventArgs e)
         {
             textBox1.KeyDown += TextBox1_KeyDown;
@@ -134,27 +123,7 @@ namespace PRUEAS
         {
 
         }
-        /* private void Login_SizeChanged(object sender, EventArgs e)
-{
-int windowWith = this.Width;
-int windowHeight = this.Height;
 
-int newControlWidth = (int)(windowWith * 0.2);
-int newControlHeight = (int)(windowHeight * 0.3);
-
-int newControlX = (windowWith - newControlWidth) / 2;
-int newControlY = (windowHeight - newControlHeight) / 2;
-
-button1.Size = new Size(newControlWidth, newControlHeight);
-button1.Location = new Point(newControlX, newControlY);
-label1.Size = new Size(newControlWidth, newControlHeight);
-label1.Location = new Point(newControlX, newControlY);
-textBox1.Size = new Size(newControlWidth, newControlHeight);
-textBox1.Location = new Point(newControlX, newControlY);
-Cerrar.Size = new Size(newControlWidth,newControlHeight);
-Cerrar.Location = new Point(newControlX, newControlY);
-
-}   */
 
     }
 

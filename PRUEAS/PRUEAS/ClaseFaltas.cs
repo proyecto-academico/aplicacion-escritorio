@@ -11,8 +11,9 @@ namespace PRUEAS
         public int FaltasID { get; set; } 
         public DateTime Fecha { get; set; }
         public float Tipo { get; set; }
-        public bool Justificado { get; set; } 
-        public ClaseFaltas() { }
+        public bool Justificado { get; set; }
+        public int cantJusti { get; set; }
+        public int cantTotal { get; set; }
     }
 
 }

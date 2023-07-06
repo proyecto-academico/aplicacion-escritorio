@@ -46,6 +46,9 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            Libre = new Label();
+            Numero = new Label();
+            Justificadas = new Label();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseFaltasBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataAcceseBindingSource).BeginInit();
@@ -145,7 +148,6 @@
             Button1.TabIndex = 7;
             Button1.Text = "Buscar";
             Button1.UseVisualStyleBackColor = true;
-            Button1.Click += Button1_Click;
             // 
             // DNI_alumno
             // 
@@ -165,7 +167,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Impact", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(387, 81);
+            label2.Location = new Point(391, 84);
             label2.Name = "label2";
             label2.Size = new Size(151, 29);
             label2.TabIndex = 13;
@@ -193,13 +195,44 @@
             label4.Size = new Size(221, 45);
             label4.TabIndex = 15;
             label4.Text = "NO LIBRE";
-            label4.Click += label4_Click;
+            // 
+            // Libre
+            // 
+            Libre.AutoSize = true;
+            Libre.Font = new Font("Verdana", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Libre.ForeColor = Color.Red;
+            Libre.Location = new Point(500, 228);
+            Libre.Name = "Libre";
+            Libre.Size = new Size(146, 45);
+            Libre.TabIndex = 16;
+            Libre.Text = "LIBRE";
+            Libre.UseMnemonic = false;
+            Libre.Visible = false;
+            // 
+            // Numero
+            // 
+            Numero.AutoSize = true;
+            Numero.Location = new Point(548, 96);
+            Numero.Name = "Numero";
+            Numero.Size = new Size(0, 15);
+            Numero.TabIndex = 17;
+            // 
+            // Justificadas
+            // 
+            Justificadas.AutoSize = true;
+            Justificadas.Location = new Point(548, 121);
+            Justificadas.Name = "Justificadas";
+            Justificadas.Size = new Size(0, 15);
+            Justificadas.TabIndex = 18;
             // 
             // Faltas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(761, 430);
+            Controls.Add(Justificadas);
+            Controls.Add(Numero);
+            Controls.Add(Libre);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -240,5 +273,8 @@
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn justificadoDataGridViewCheckBoxColumn;
         private BindingSource claseFaltasBindingSource2;
+        private Label Libre;
+        private Label Numero;
+        private Label Justificadas;
     }
 }

@@ -16,7 +16,7 @@ namespace PRUEAS
             __DataAccese = new DataAccese();
     }
 
-    public Personas GuardarPersonas(Personas personas, bool VerDades)
+    public Personas TomaDeFaltas(Personas personas, bool VerDades)
         {
            
             if (VerDades)
@@ -55,5 +55,19 @@ namespace PRUEAS
             return __DataAccese.BuscarPersona(nivel, Busqueda);
 
         }
+
+        public int TomaDeNumFaltas(int persona_, int tipo)
+        {
+            if (tipo == 0)
+            {
+                return __DataAccese.NumGetFaltas(persona_);
+            }
+            else
+            {
+                return __DataAccese.NumGetFaltasJust(persona_);
+            }
+        }
+
+       
     }
 }

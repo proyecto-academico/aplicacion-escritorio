@@ -19,13 +19,13 @@ namespace PRUEAS
         {
             InitializeComponent();
             _ManejoDeDB = new ManejoDeDB();
+
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
-
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             ClaseFaltas faltas = _claseFaltas;
@@ -41,13 +41,14 @@ namespace PRUEAS
             ClaseFaltas faltas = new ClaseFaltas();
 
             faltas.Fecha = dateTimePicker1.Value;
-            faltas.Tipo = (float)long.Parse(comboBox1.SelectedItem.ToString());
-            faltas.Justificado = checkBox1.Checked ;
-            _ManejoDeDB.GuardarPersonas(faltas, verdad);
+            faltas.Tipo = comboBox1.SelectedItem.ToString() == "1" ? 1 : 0.5f;
+            faltas.Justificado = checkBox1.Checked;
+            _ManejoDeDB.TomaDeFaltas(faltas, verdad);
         }
         private void buttonSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

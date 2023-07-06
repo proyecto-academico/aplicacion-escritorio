@@ -13,7 +13,7 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-007\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-008\\SQLEXPRESS");
 
         #region Querry Personas
         public void insertarData(Personas Persona)
@@ -245,18 +245,24 @@ namespace PRUEAS
             {
                 conn.Open();
                 string querry = @$"SELECT Fecha, Tipo, CASE WHEN jutificada = 1 THEN 'True' ELSE 'False' END AS jutificada FROM persona INNER JOIN faltas ON persona.DNI = faltas.DNI_Alumno WHERE persona.DNI = {persona_}";
+               
                 SqlCommand command = new SqlCommand(querry, conn);
+               
                 SqlDataReader reader = command.ExecuteReader();
+               
+               
                 while (reader.Read())
                 {
                     faltas.Add(new ClaseFaltas
                     {
                         Fecha = DateTime.Parse(reader["Fecha"].ToString()),
                         Tipo = float.Parse(reader["Tipo"].ToString()),
-                        Justificado = Convert.ToBoolean(reader["jutificada"].ToString())
-                    });
-                }
+                        Justificado = Convert.ToBoolean(reader["jutificada"].ToString()),
+                        
 
+                    });
+                        
+                }
             }
             catch (Exception)
             {
@@ -269,9 +275,66 @@ namespace PRUEAS
             }
             return faltas;
         }
+        public int NumGetFaltas(int persona_)
+        {
+            ClaseFaltas faltas = new ClaseFaltas();
+            try
+            {
+                conn.Open();
+                string querry3 = @$"Select  COUNT(faltas.Falta_ID) AS Faltas from faltas where DNI_Alumno = {persona_} ";
+                SqlCommand command3 = new SqlCommand(querry3, conn);
+                SqlDataReader reader3 = command3.ExecuteReader();
+                while (reader3.Read())
+                {
+                    faltas.cantTotal = (int)Convert.ToInt64(reader3["Faltas"]);
 
-        #endregion
+                    
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return faltas.cantJusti;
+        }
+        public int NumGetFaltasJust(int persona_)
+        {
+            ClaseFaltas faltas = new ClaseFaltas();
+            try
+            {
+                conn.Open();
+                string querry2 = @$"Select  COUNT(faltas.Falta_ID) AS FaltasJust from faltas inner join persona on DNI=DNI_Alumno where jutificada = 1 and DNI_Alumno = {persona_}"; 
+                SqlCommand command3 = new SqlCommand(querry2, conn);
+                SqlDataReader reader3 = command3.ExecuteReader();
+                while (reader3.Read())
+                {
+                    faltas.cantTotal = (int)Convert.ToInt64(reader3["FaltasJust"]);
+
+               
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return faltas.cantTotal;
+        }
+
        
+        #endregion
+
         #region Querry Varios 
 
         public List<Personas> BuscarPersona(int nivel, string Busqueda)

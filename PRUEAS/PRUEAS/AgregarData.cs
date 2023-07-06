@@ -52,7 +52,11 @@ namespace PRUEAS
             personas._dni = (int)long.Parse(textBoxDNI.Text);
             personas.mail = (textBoxCiCLO.Text);
             personas.Tipo = cajitaSelector.Text == "Alumno" ? 3 : 2;
-            _ManejoDeDB.GuardarPersonas(personas, verdad);
+
+
+
+
+            _ManejoDeDB.TomaDeFaltas(personas, verdad);
         }
 
         public void CargarPersona(Personas personas, bool Verdades)
