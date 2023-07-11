@@ -1,2 +1,5 @@
-.vs
+.vs/
 obj/Debug/
+bin/
+obj/PRUEAS.csproj.nuget.dgspec.json
+obj/project.nuget.cache

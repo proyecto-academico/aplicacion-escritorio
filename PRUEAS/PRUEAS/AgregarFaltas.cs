@@ -43,7 +43,7 @@ namespace PRUEAS
             faltas.Fecha = dateTimePicker1.Value;
             faltas.Tipo = comboBox1.SelectedItem.ToString() == "1" ? 1 : 0.5f;
             faltas.Justificado = checkBox1.Checked;
-            _ManejoDeDB.TomaDeFaltas(faltas, verdad);
+            _ManejoDeDB.GetFaltas(faltas, verdad);
         }
         private void buttonSalir_Click(object sender, EventArgs e)
         {

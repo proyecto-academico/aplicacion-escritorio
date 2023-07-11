@@ -16,7 +16,7 @@ namespace PRUEAS
             __DataAccese = new DataAccese();
     }
 
-    public Personas TomaDeFaltas(Personas personas, bool VerDades)
+    public Personas GetFaltas(Personas personas, bool VerDades)
         {
            
             if (VerDades)

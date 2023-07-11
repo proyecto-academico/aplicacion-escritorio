@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-
+using System.Diagnostics.CodeAnalysis;
 
 namespace PRUEAS
 {
@@ -330,9 +330,27 @@ namespace PRUEAS
                 conn.Close();
             }
             return faltas.cantTotal;
-        }
+        }/*
+        public  int GuardarFaltas (int persona_)
+        {
+            try
+            {
+                conn.Open();
+                string query = @"INSERT INTO faltas (fecha, tipo, justificada,DNI) values (@fecha, @Tipo, @justificada, @DNi)";
+                SqlCommand command2 = new SqlCommand(query, conn);
+                SqlDataReader reader3 = command2.ExecuteReader();
 
-       
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+       */
         #endregion
 
         #region Querry Varios 
