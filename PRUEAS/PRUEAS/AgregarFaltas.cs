@@ -15,10 +15,14 @@ namespace PRUEAS
         public bool verdad = false;
         private ClaseFaltas _claseFaltas;
         public ManejoDeDB _ManejoDeDB;
-        public AgregarFaltas()
+        private int DNI;
+        public AgregarFaltas(int persona, bool verdades)
+
         {
+            DNI = persona;
             InitializeComponent();
             _ManejoDeDB = new ManejoDeDB();
+            verdad = verdades;
 
         }
 
@@ -29,21 +33,22 @@ namespace PRUEAS
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             ClaseFaltas faltas = _claseFaltas;
-
+           
             Guardar();
+            ((Faltas)this.Owner).CargarFaltas(DNI);
 
+            this.Close();
 
-            ((BaseDeDatos)this.Owner).CargaDeContactos();
         }
 
         public void Guardar()
         {
             ClaseFaltas faltas = new ClaseFaltas();
-
+            faltas._dni = DNI;
             faltas.Fecha = dateTimePicker1.Value;
             faltas.Tipo = comboBox1.SelectedItem.ToString() == "1" ? 1 : 0.5f;
             faltas.Justificado = checkBox1.Checked;
-            _ManejoDeDB.GetFaltas(faltas, verdad);
+            _ManejoDeDB.guardarFaltaEnDB(faltas, verdad);
         }
         private void buttonSalir_Click(object sender, EventArgs e)
         {

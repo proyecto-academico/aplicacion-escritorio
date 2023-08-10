@@ -33,6 +33,7 @@
             fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tipoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             justificadoDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
+            Edit = new DataGridViewLinkColumn();
             claseFaltasBindingSource2 = new BindingSource(components);
             dataAcceseBindingSource = new BindingSource(components);
             Cerrar = new Button();
@@ -60,15 +61,17 @@
             // 
             GRILLA.AllowUserToAddRows = false;
             GRILLA.AutoGenerateColumns = false;
+            GRILLA.BorderStyle = BorderStyle.Fixed3D;
+            GRILLA.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { fechaDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, justificadoDataGridViewCheckBoxColumn });
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { fechaDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, justificadoDataGridViewCheckBoxColumn, Edit });
             GRILLA.DataSource = claseFaltasBindingSource2;
-            GRILLA.Location = new Point(25, 81);
+            GRILLA.Location = new Point(25, 96);
             GRILLA.Name = "GRILLA";
             GRILLA.ReadOnly = true;
             GRILLA.RowHeadersWidth = 51;
             GRILLA.RowTemplate.Height = 25;
-            GRILLA.Size = new Size(356, 336);
+            GRILLA.Size = new Size(274, 321);
             GRILLA.TabIndex = 12;
             // 
             // fechaDataGridViewTextBoxColumn
@@ -77,6 +80,7 @@
             fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            fechaDataGridViewTextBoxColumn.Width = 63;
             // 
             // tipoDataGridViewTextBoxColumn
             // 
@@ -84,6 +88,7 @@
             tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
             tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            tipoDataGridViewTextBoxColumn.Width = 55;
             // 
             // justificadoDataGridViewCheckBoxColumn
             // 
@@ -91,6 +96,16 @@
             justificadoDataGridViewCheckBoxColumn.HeaderText = "Justificado";
             justificadoDataGridViewCheckBoxColumn.Name = "justificadoDataGridViewCheckBoxColumn";
             justificadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            justificadoDataGridViewCheckBoxColumn.Width = 69;
+            // 
+            // Edit
+            // 
+            Edit.HeaderText = "Edit";
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Text = "edit";
+            Edit.UseColumnTextForLinkValue = true;
+            Edit.Width = 33;
             // 
             // claseFaltasBindingSource2
             // 
@@ -104,7 +119,7 @@
             // 
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Cerrar.Location = new Point(672, 385);
+            Cerrar.Location = new Point(572, 385);
             Cerrar.Name = "Cerrar";
             Cerrar.Size = new Size(75, 32);
             Cerrar.TabIndex = 11;
@@ -116,7 +131,7 @@
             // 
             Label1.AutoSize = true;
             Label1.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            Label1.Location = new Point(127, 43);
+            Label1.Location = new Point(78, 56);
             Label1.Name = "Label1";
             Label1.Size = new Size(58, 20);
             Label1.TabIndex = 10;
@@ -124,7 +139,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(191, 44);
+            textBox1.Location = new Point(142, 57);
             textBox1.MaxLength = 8;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(292, 23);
@@ -132,7 +147,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(581, 40);
+            button2.Location = new Point(532, 53);
             button2.Name = "button2";
             button2.Size = new Size(75, 27);
             button2.TabIndex = 8;
@@ -142,7 +157,7 @@
             // 
             // Button1
             // 
-            Button1.Location = new Point(500, 40);
+            Button1.Location = new Point(451, 53);
             Button1.Name = "Button1";
             Button1.Size = new Size(75, 28);
             Button1.TabIndex = 7;
@@ -167,7 +182,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Impact", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(391, 84);
+            label2.Location = new Point(305, 96);
             label2.Name = "label2";
             label2.Size = new Size(151, 29);
             label2.TabIndex = 13;
@@ -178,7 +193,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(387, 113);
+            label3.Location = new Point(301, 125);
             label3.Name = "label3";
             label3.Size = new Size(167, 25);
             label3.TabIndex = 14;
@@ -190,7 +205,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Verdana", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(128, 255, 128);
-            label4.Location = new Point(463, 228);
+            label4.Location = new Point(372, 230);
             label4.Name = "label4";
             label4.Size = new Size(221, 45);
             label4.TabIndex = 15;
@@ -201,7 +216,7 @@
             Libre.AutoSize = true;
             Libre.Font = new Font("Verdana", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
             Libre.ForeColor = Color.Red;
-            Libre.Location = new Point(500, 228);
+            Libre.Location = new Point(409, 230);
             Libre.Name = "Libre";
             Libre.Size = new Size(146, 45);
             Libre.TabIndex = 16;
@@ -212,7 +227,7 @@
             // Numero
             // 
             Numero.AutoSize = true;
-            Numero.Location = new Point(548, 96);
+            Numero.Location = new Point(462, 108);
             Numero.Name = "Numero";
             Numero.Size = new Size(0, 15);
             Numero.TabIndex = 17;
@@ -220,7 +235,7 @@
             // Justificadas
             // 
             Justificadas.AutoSize = true;
-            Justificadas.Location = new Point(548, 121);
+            Justificadas.Location = new Point(462, 133);
             Justificadas.Name = "Justificadas";
             Justificadas.Size = new Size(0, 15);
             Justificadas.TabIndex = 18;
@@ -229,7 +244,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(761, 430);
+            ClientSize = new Size(665, 430);
             Controls.Add(Justificadas);
             Controls.Add(Numero);
             Controls.Add(Libre);
@@ -269,12 +284,13 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn justificadoDataGridViewCheckBoxColumn;
         private BindingSource claseFaltasBindingSource2;
         private Label Libre;
         private Label Numero;
         private Label Justificadas;
+        private DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn justificadoDataGridViewCheckBoxColumn;
+        private DataGridViewLinkColumn Edit;
     }
 }

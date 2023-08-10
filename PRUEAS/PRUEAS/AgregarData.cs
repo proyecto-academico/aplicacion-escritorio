@@ -56,7 +56,7 @@ namespace PRUEAS
 
 
 
-            _ManejoDeDB.GetFaltas(personas, verdad);
+            _ManejoDeDB.guardarPersonaEnDB(personas, verdad);
         }
 
         public void CargarPersona(Personas personas, bool Verdades)
