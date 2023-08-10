@@ -13,10 +13,10 @@ namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-008\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=DESKTOP-QB22C4J\\SQLEXPRESS");
 
         #region Querry Personas
-        public void insertarData(Personas Persona)
+        public void insertarPersona(Personas Persona)
         {
             try
             {
@@ -73,7 +73,135 @@ namespace PRUEAS
 
     
         }
-    
+
+        public void insertarFalta(ClaseFaltas falta)
+        {
+            try
+            {
+                conn.Open();
+                string querry = @"
+                        INSERT INTO faltas (Falta_ID, DNI_Alumno, Fecha, Tipo, jutificada)
+                        VALUES (@Falta_ID, @DNI_Alumno, @Fecha, @Tipo, @jutificada)";
+
+                SqlCommand sqlCommandForNetxID = new SqlCommand("SELECT MAX(Falta_ID) + 1 as FALTAID FROM faltas  ", conn);
+                SqlDataReader readerForNetxID = sqlCommandForNetxID.ExecuteReader();
+                readerForNetxID.Read();
+
+
+                #region Parametros que pasamos
+                SqlParameter sqlParameter = new SqlParameter();
+                sqlParameter.ParameterName = "@Falta_ID";
+                sqlParameter.Value = readerForNetxID["FALTAID"];
+                sqlParameter.DbType = System.Data.DbType.Int64;
+
+                SqlParameter sqlParameter9 = new SqlParameter();
+                sqlParameter9.ParameterName = "@DNI_Alumno";
+                sqlParameter9.Value = falta._dni;
+                sqlParameter9.DbType = System.Data.DbType.Int64;
+
+                SqlParameter parametros2 = new SqlParameter();
+                parametros2.ParameterName = "@Fecha";
+                parametros2.Value = falta.Fecha;
+                parametros2.DbType = System.Data.DbType.DateTime;
+
+                SqlParameter sqlParameter3 = new SqlParameter();
+                sqlParameter3.ParameterName = "@Tipo";
+                sqlParameter3.Value = falta.Tipo;
+                sqlParameter3.DbType = System.Data.DbType.Int64;
+
+                SqlParameter sqlParameter4 = new SqlParameter();
+                sqlParameter4.ParameterName = "@jutificada";
+                sqlParameter4.Value = falta.Justificado;
+                sqlParameter4.DbType = System.Data.DbType.Int64;
+
+
+
+                #endregion
+                readerForNetxID.Close();
+                #region Comandos Sql
+                SqlCommand sqlCommand = new SqlCommand(querry, conn);
+                sqlCommand.Parameters.Add(sqlParameter);
+                sqlCommand.Parameters.Add(parametros2);
+                sqlCommand.Parameters.Add(sqlParameter3);
+                sqlCommand.Parameters.Add(sqlParameter4);
+                sqlCommand.Parameters.Add(sqlParameter9);
+
+                sqlCommand.ExecuteNonQuery();
+
+                #endregion
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+
+                conn.Close();
+            }
+
+
+        }
+
+
+
+        public void UpdateFalta(ClaseFaltas falta)
+        {
+            try
+            {
+                conn.Open();
+                string querry = @"
+                        UPDATE falta 
+                        SET Fecha=@Fecha, Tipo=@Tipo, justificada=@justificada WHERE Falta_ID = @Falta_ID
+";
+                #region Parametros que pasamos
+                SqlParameter sqlParameter = new SqlParameter();
+                sqlParameter.ParameterName = "@Fecha";
+                sqlParameter.Value = falta.Fecha;
+                sqlParameter.DbType = System.Data.DbType.String;
+
+                SqlParameter parametros2 = new SqlParameter();
+                parametros2.ParameterName = "@Tipo";
+                parametros2.Value = falta.Tipo;
+                parametros2.DbType = System.Data.DbType.String;
+
+                SqlParameter sqlParameter3 = new SqlParameter();
+                sqlParameter3.ParameterName = "@justificada";
+                sqlParameter3.Value = falta.Justificado;
+                sqlParameter3.DbType = System.Data.DbType.Int64;
+
+                SqlParameter sqlParameter4 = new SqlParameter();
+                sqlParameter4.ParameterName = "@Falta_ID";
+                sqlParameter4.Value = falta.FaltasID;
+                sqlParameter4.DbType = System.Data.DbType.String;
+
+                #endregion
+
+                #region Comandos Sql
+                SqlCommand sqlCommand = new SqlCommand(querry, conn);
+                sqlCommand.Parameters.Add(sqlParameter);
+                sqlCommand.Parameters.Add(parametros2);
+                sqlCommand.Parameters.Add(sqlParameter3);
+                sqlCommand.Parameters.Add(sqlParameter4);
+                ;
+                sqlCommand.ExecuteNonQuery();
+                #endregion
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+
+                conn.Close();
+            }
+        }
+
+
+
+
+
         public List<Personas> GetPersonas(int nivel)
         {   List<Personas> personas = new List<Personas>();
             try
@@ -151,7 +279,7 @@ namespace PRUEAS
                 return personas;
         }
 
-        public void UpdateData(Personas Persona)
+        public void UpdatePersona(Personas Persona)
         {
             try
             {
@@ -204,7 +332,7 @@ namespace PRUEAS
             }
         }
 
-        public void DeleteData(Personas personas) {
+        public void DeletePersona(Personas personas) {
 
 
             try

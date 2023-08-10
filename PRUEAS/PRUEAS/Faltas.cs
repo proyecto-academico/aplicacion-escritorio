@@ -41,7 +41,7 @@ namespace PRUEAS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AgregarFaltas agregarFaltas = new AgregarFaltas();
+            AgregarFaltas agregarFaltas = new AgregarFaltas(persona, false);
             DialogResult dialogResult = agregarFaltas.ShowDialog(this);
         }
 
