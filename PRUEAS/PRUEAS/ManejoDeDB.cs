@@ -14,21 +14,40 @@ namespace PRUEAS
 
         public ManejoDeDB() {
             __DataAccese = new DataAccese();
-    }
+        }
 
-    public Personas GetFaltas(Personas personas, bool VerDades)
+        public Personas guardarPersonaEnDB(Personas personas, bool personaYaExiste)
         {
            
-            if (VerDades)
+            if (personaYaExiste)
             {
-                __DataAccese.UpdateData(personas);
+                __DataAccese.UpdatePersona(personas);
             }
             else {
-                __DataAccese.insertarData(personas);
+                __DataAccese.insertarPersona(personas);
 
             }
             return personas;
         }
+
+
+        public Personas guardarFaltaEnDB(ClaseFaltas falta, bool faltaYaExiste)
+        {
+
+            if (faltaYaExiste)
+            {
+                __DataAccese.UpdateFalta(falta);
+            }
+            else
+            {
+                __DataAccese.insertarFalta(falta);
+
+            }
+            return falta;
+        }
+
+
+
         public List<Personas> TomaDePersonas(int nivel)
         {
             return __DataAccese.GetPersonas(nivel);
@@ -36,7 +55,7 @@ namespace PRUEAS
         }
         public void DeletePersona (Personas persona)
         {
-            __DataAccese.DeleteData(persona);
+            __DataAccese.DeletePersona(persona);
             
         }
         public List<ClaseFaltas> TomaDeFaltas(int persona_)

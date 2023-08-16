@@ -24,7 +24,6 @@ namespace PRUEAS
 
         private void Faltas_Load(object sender, EventArgs e)
         {
-
             CargarFaltas(persona);
         }
 
@@ -36,12 +35,11 @@ namespace PRUEAS
             GRILLA.DataSource = faltas;
             Justificadas.Text = (_manejoDeDB.TomaDeNumFaltas(persona_, 1)).ToString();
             Numero.Text = (_manejoDeDB.TomaDeNumFaltas(persona_, 0)).ToString();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AgregarFaltas agregarFaltas = new AgregarFaltas();
+            AgregarFaltas agregarFaltas = new AgregarFaltas(persona, false);
             DialogResult dialogResult = agregarFaltas.ShowDialog(this);
         }
 
@@ -49,5 +47,6 @@ namespace PRUEAS
         {
             this.Close();
         }
+
     }
 }

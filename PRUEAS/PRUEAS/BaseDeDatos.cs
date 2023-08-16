@@ -44,16 +44,14 @@ namespace PRUEAS
             Close();
         }
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {   
+            if (e.ColumnIndex == GRILLA.Columns["Notas"].Index && e.RowIndex >= 0)
+            {
+                FNotas formNotas = new FNotas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                formNotas.ShowDialog();
+            }
             if (e.ColumnIndex == GRILLA.Columns["Faltas"].Index && e.RowIndex >= 0)
             {
-
-
-
-
-
-
-
                 Faltas formFaltas = new Faltas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
                 formFaltas.ShowDialog();
             }
@@ -144,15 +142,7 @@ namespace PRUEAS
 
         }
 
-
-
         #endregion
-
-
-
-
-
-
 
         private void AlumnoCheck_CheckedChanged(object sender, EventArgs e)
         {
