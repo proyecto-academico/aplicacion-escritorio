@@ -48,6 +48,7 @@
             GRILLA.RowTemplate.Height = 25;
             GRILLA.Size = new Size(740, 336);
             GRILLA.TabIndex = 24;
+            GRILLA.CellContentClick += GRILLA_CellContentClick;
             // 
             // Cerrar
             // 

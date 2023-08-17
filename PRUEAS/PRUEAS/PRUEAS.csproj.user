@@ -4,9 +4,6 @@
     <Compile Update="AgregarData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ErrorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Borrar.cs">
       <SubType>Form</SubType>
     </Compile>

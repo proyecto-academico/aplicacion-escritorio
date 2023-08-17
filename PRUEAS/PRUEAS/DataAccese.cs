@@ -8,14 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Diagnostics.CodeAnalysis;
+using System.Data;
 
 namespace PRUEAS
 {
     public class DataAccese
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=DESKTOP-QB22C4J\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-008\\SQLEXPRESS");
 
         #region Querry Personas
+
         public void insertarPersona(Personas Persona)
         {
             try
@@ -107,7 +109,7 @@ namespace PRUEAS
                 SqlParameter sqlParameter3 = new SqlParameter();
                 sqlParameter3.ParameterName = "@Tipo";
                 sqlParameter3.Value = falta.Tipo;
-                sqlParameter3.DbType = System.Data.DbType.Int64;
+                sqlParameter3.DbType = System.Data.DbType.Decimal;
 
                 SqlParameter sqlParameter4 = new SqlParameter();
                 sqlParameter4.ParameterName = "@jutificada";
@@ -151,24 +153,13 @@ namespace PRUEAS
             {
                 conn.Open();
                 string querry = @"
-                        UPDATE falta 
-                        SET Fecha=@Fecha, Tipo=@Tipo, justificada=@justificada WHERE Falta_ID = @Falta_ID
+                        UPDATE faltas 
+                        SET jutificada = IIF(jutificada = 1 ,0,1)  Where Falta_ID = @Falta_ID
 ";
                 #region Parametros que pasamos
-                SqlParameter sqlParameter = new SqlParameter();
-                sqlParameter.ParameterName = "@Fecha";
-                sqlParameter.Value = falta.Fecha;
-                sqlParameter.DbType = System.Data.DbType.String;
+              
 
-                SqlParameter parametros2 = new SqlParameter();
-                parametros2.ParameterName = "@Tipo";
-                parametros2.Value = falta.Tipo;
-                parametros2.DbType = System.Data.DbType.String;
-
-                SqlParameter sqlParameter3 = new SqlParameter();
-                sqlParameter3.ParameterName = "@justificada";
-                sqlParameter3.Value = falta.Justificado;
-                sqlParameter3.DbType = System.Data.DbType.Int64;
+                
 
                 SqlParameter sqlParameter4 = new SqlParameter();
                 sqlParameter4.ParameterName = "@Falta_ID";
@@ -179,9 +170,8 @@ namespace PRUEAS
 
                 #region Comandos Sql
                 SqlCommand sqlCommand = new SqlCommand(querry, conn);
-                sqlCommand.Parameters.Add(sqlParameter);
-                sqlCommand.Parameters.Add(parametros2);
-                sqlCommand.Parameters.Add(sqlParameter3);
+             
+              
                 sqlCommand.Parameters.Add(sqlParameter4);
                 ;
                 sqlCommand.ExecuteNonQuery();
@@ -372,7 +362,7 @@ namespace PRUEAS
             try
             {
                 conn.Open();
-                string querry = @$"SELECT Fecha, Tipo, CASE WHEN jutificada = 1 THEN 'True' ELSE 'False' END AS jutificada FROM persona INNER JOIN faltas ON persona.DNI = faltas.DNI_Alumno WHERE persona.DNI = {persona_}";
+                string querry = @$"SELECT Falta_ID,Fecha, Tipo, CASE WHEN jutificada = 1 THEN 'True' ELSE 'False' END AS jutificada FROM persona INNER JOIN faltas ON persona.DNI = faltas.DNI_Alumno WHERE persona.DNI = {persona_}";
                
                 SqlCommand command = new SqlCommand(querry, conn);
                
@@ -386,9 +376,10 @@ namespace PRUEAS
                         Fecha = DateTime.Parse(reader["Fecha"].ToString()),
                         Tipo = float.Parse(reader["Tipo"].ToString()),
                         Justificado = Convert.ToBoolean(reader["jutificada"].ToString()),
-                        
+                        FaltasID = int.Parse(reader["Falta_ID"].ToString())
 
-                    });
+
+                    }); 
                         
                 }
             }
@@ -409,9 +400,10 @@ namespace PRUEAS
             try
             {
                 conn.Open();
-                string querry3 = @$"Select  COUNT(faltas.Falta_ID) AS Faltas from faltas where DNI_Alumno = {persona_} ";
+                string querry3 = @$"SELECT IIF(SUM(tipo) is null, 0, SUM(tipo)) AS Faltas from faltas WHERE DNI_Alumno={persona_} ";
                 SqlCommand command3 = new SqlCommand(querry3, conn);
                 SqlDataReader reader3 = command3.ExecuteReader();
+
                 while (reader3.Read())
                 {
                     faltas.cantTotal = (int)Convert.ToInt64(reader3["Faltas"]);
@@ -429,7 +421,7 @@ namespace PRUEAS
             {
                 conn.Close();
             }
-            return faltas.cantJusti;
+            return faltas.cantTotal;
         }
         public int NumGetFaltasJust(int persona_)
         {
@@ -442,7 +434,7 @@ namespace PRUEAS
                 SqlDataReader reader3 = command3.ExecuteReader();
                 while (reader3.Read())
                 {
-                    faltas.cantTotal = (int)Convert.ToInt64(reader3["FaltasJust"]);
+                    faltas.cantJusti = (int)Convert.ToInt64(reader3["FaltasJust"]);
 
                
 
@@ -457,7 +449,8 @@ namespace PRUEAS
             {
                 conn.Close();
             }
-            return faltas.cantTotal;
+            
+            return faltas.cantJusti;
         }/*
         public  int GuardarFaltas (int persona_)
         {

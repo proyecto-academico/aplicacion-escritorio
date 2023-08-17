@@ -30,10 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             GRILLA = new DataGridView();
-            fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            tipoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            justificadoDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
-            Edit = new DataGridViewLinkColumn();
             claseFaltasBindingSource2 = new BindingSource(components);
             dataAcceseBindingSource = new BindingSource(components);
             Cerrar = new Button();
@@ -44,12 +40,16 @@
             DNI_alumno = new DataGridViewTextBoxColumn();
             claseFaltasBindingSource = new BindingSource(components);
             claseFaltasBindingSource1 = new BindingSource(components);
-            label2 = new Label();
+            faltasTotales = new Label();
             label3 = new Label();
-            label4 = new Label();
+            noLibre = new Label();
             Libre = new Label();
             Numero = new Label();
             Justificadas = new Label();
+            Column1 = new DataGridViewTextBoxColumn();
+            fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            tipoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            justificadoDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseFaltasBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataAcceseBindingSource).BeginInit();
@@ -59,53 +59,21 @@
             // 
             // GRILLA
             // 
-            GRILLA.AllowUserToAddRows = false;
+            GRILLA.AllowUserToDeleteRows = false;
             GRILLA.AutoGenerateColumns = false;
             GRILLA.BorderStyle = BorderStyle.Fixed3D;
             GRILLA.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { fechaDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, justificadoDataGridViewCheckBoxColumn, Edit });
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { Column1, fechaDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, justificadoDataGridViewCheckBoxColumn });
             GRILLA.DataSource = claseFaltasBindingSource2;
-            GRILLA.Location = new Point(25, 96);
+            GRILLA.Location = new Point(12, 97);
             GRILLA.Name = "GRILLA";
             GRILLA.ReadOnly = true;
             GRILLA.RowHeadersWidth = 51;
             GRILLA.RowTemplate.Height = 25;
-            GRILLA.Size = new Size(274, 321);
+            GRILLA.Size = new Size(290, 321);
             GRILLA.TabIndex = 12;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            fechaDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            tipoDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // justificadoDataGridViewCheckBoxColumn
-            // 
-            justificadoDataGridViewCheckBoxColumn.DataPropertyName = "Justificado";
-            justificadoDataGridViewCheckBoxColumn.HeaderText = "Justificado";
-            justificadoDataGridViewCheckBoxColumn.Name = "justificadoDataGridViewCheckBoxColumn";
-            justificadoDataGridViewCheckBoxColumn.ReadOnly = true;
-            justificadoDataGridViewCheckBoxColumn.Width = 69;
-            // 
-            // Edit
-            // 
-            Edit.HeaderText = "Edit";
-            Edit.Name = "Edit";
-            Edit.ReadOnly = true;
-            Edit.Text = "edit";
-            Edit.UseColumnTextForLinkValue = true;
-            Edit.Width = 33;
+            GRILLA.CellContentClick += GRILLA_CellContentClick;
             // 
             // claseFaltasBindingSource2
             // 
@@ -178,56 +146,57 @@
             // 
             claseFaltasBindingSource1.DataSource = typeof(ClaseFaltas);
             // 
-            // label2
+            // faltasTotales
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Impact", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(305, 96);
-            label2.Name = "label2";
-            label2.Size = new Size(151, 29);
-            label2.TabIndex = 13;
-            label2.Text = "Faltas totales: ";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            faltasTotales.AutoSize = true;
+            faltasTotales.Font = new Font("Impact", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            faltasTotales.Location = new Point(308, 97);
+            faltasTotales.Name = "faltasTotales";
+            faltasTotales.Size = new Size(151, 29);
+            faltasTotales.TabIndex = 13;
+            faltasTotales.Text = "Faltas totales: ";
+            faltasTotales.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(301, 125);
+            label3.Location = new Point(308, 126);
             label3.Name = "label3";
             label3.Size = new Size(167, 25);
             label3.TabIndex = 14;
             label3.Text = "Faltas justificadas: ";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // noLibre
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Verdana", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.FromArgb(128, 255, 128);
-            label4.Location = new Point(372, 230);
-            label4.Name = "label4";
-            label4.Size = new Size(221, 45);
-            label4.TabIndex = 15;
-            label4.Text = "NO LIBRE";
+            noLibre.AutoSize = true;
+            noLibre.Font = new Font("Verdana", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
+            noLibre.ForeColor = Color.FromArgb(128, 255, 128);
+            noLibre.Location = new Point(371, 228);
+            noLibre.Name = "noLibre";
+            noLibre.Size = new Size(221, 45);
+            noLibre.TabIndex = 15;
+            noLibre.Text = "NO LIBRE";
             // 
             // Libre
             // 
             Libre.AutoSize = true;
             Libre.Font = new Font("Verdana", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
             Libre.ForeColor = Color.Red;
-            Libre.Location = new Point(409, 230);
+            Libre.Location = new Point(408, 228);
             Libre.Name = "Libre";
             Libre.Size = new Size(146, 45);
             Libre.TabIndex = 16;
             Libre.Text = "LIBRE";
             Libre.UseMnemonic = false;
             Libre.Visible = false;
+            Libre.Click += Libre_Click;
             // 
             // Numero
             // 
             Numero.AutoSize = true;
-            Numero.Location = new Point(462, 108);
+            Numero.Location = new Point(454, 109);
             Numero.Name = "Numero";
             Numero.Size = new Size(0, 15);
             Numero.TabIndex = 17;
@@ -235,10 +204,42 @@
             // Justificadas
             // 
             Justificadas.AutoSize = true;
-            Justificadas.Location = new Point(462, 133);
+            Justificadas.Location = new Point(465, 134);
             Justificadas.Name = "Justificadas";
             Justificadas.Size = new Size(0, 15);
             Justificadas.TabIndex = 18;
+            // 
+            // Column1
+            // 
+            Column1.DataPropertyName = "FaltasID";
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 50;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            fechaDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            tipoDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // justificadoDataGridViewCheckBoxColumn
+            // 
+            justificadoDataGridViewCheckBoxColumn.DataPropertyName = "Justificado";
+            justificadoDataGridViewCheckBoxColumn.HeaderText = "Justificado";
+            justificadoDataGridViewCheckBoxColumn.Name = "justificadoDataGridViewCheckBoxColumn";
+            justificadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            justificadoDataGridViewCheckBoxColumn.Width = 69;
             // 
             // Faltas
             // 
@@ -248,9 +249,9 @@
             Controls.Add(Justificadas);
             Controls.Add(Numero);
             Controls.Add(Libre);
-            Controls.Add(label4);
+            Controls.Add(noLibre);
             Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(faltasTotales);
             Controls.Add(GRILLA);
             Controls.Add(Cerrar);
             Controls.Add(Label1);
@@ -288,9 +289,11 @@
         private Label Libre;
         private Label Numero;
         private Label Justificadas;
+        private Label faltasTotales;
+        private Label noLibre;
+        private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn justificadoDataGridViewCheckBoxColumn;
-        private DataGridViewLinkColumn Edit;
     }
 }
