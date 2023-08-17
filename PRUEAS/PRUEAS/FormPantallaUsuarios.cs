@@ -13,17 +13,17 @@ using System.Windows.Forms;
 
 namespace PRUEAS
 {
-    public partial class BaseDeDatos : Form
+    public partial class FormPantallaUsuarios : Form
     {
         int nivel = 3;
-        public string VaribleBuscador;
-        public Borrar borrar = new Borrar();
-        public bool BotonesValue = false;
-        private ManejoDeDB _ManejoDeDB;
-        public BaseDeDatos()
+        public string Cadena_Buscar;
+        public FormBorrarPersonas FormBorrar = new FormBorrarPersonas();
+        public bool TeclaIF = false;
+        private Acceso_Querys FuncionesQuerys;
+        public FormPantallaUsuarios()
         {
             InitializeComponent();
-            _ManejoDeDB = new ManejoDeDB();
+            FuncionesQuerys = new Acceso_Querys();
         }
 
         #region Botones
@@ -39,7 +39,7 @@ namespace PRUEAS
         }
         private void Cerrar_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            InicioSesion login = new InicioSesion();
             login.Show();
             Close();
         }
@@ -47,12 +47,12 @@ namespace PRUEAS
         {   
             if (e.ColumnIndex == GRILLA.Columns["Notas"].Index && e.RowIndex >= 0)
             {
-                FNotas formNotas = new FNotas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                FormVerNotas formNotas = new FormVerNotas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
                 formNotas.ShowDialog();
             }
             if (e.ColumnIndex == GRILLA.Columns["Faltas"].Index && e.RowIndex >= 0)
             {
-                Faltas formFaltas = new Faltas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                FormVerFaltas formFaltas = new FormVerFaltas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
                 formFaltas.ShowDialog();
             }
 
@@ -62,12 +62,12 @@ namespace PRUEAS
                  
             if (cell.Value.ToString() == "edit")
             {
-                BotonesValue = true;
+                TeclaIF = true;
             }
             else if (cell.Value.ToString() == "X")
             {
 
-                borrar.CargarPersona(new Personas
+                FormBorrar.CargarPersona(new ClasePersonas
                 {
 
                     _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
@@ -76,15 +76,15 @@ namespace PRUEAS
                     mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
 
                 });
-                borrar.ShowDialog(this);
+                FormBorrar.ShowDialog(this);
 
             }
                 
-            if (BotonesValue)
+            if (TeclaIF)
             {
 
-                AgregarData AgregarData = new AgregarData();
-                AgregarData.CargarPersona(new Personas
+                FormGuardarPersonas AgregarData = new FormGuardarPersonas();
+                AgregarData.CargarPersona(new ClasePersonas
                 {
 
                     _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
@@ -92,9 +92,9 @@ namespace PRUEAS
                     Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
                     mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
 
-                }, BotonesValue);
+                }, TeclaIF);
                     
-                BotonesValue = false;
+                TeclaIF = false;
 
 
                 AgregarData.ShowDialog(this);
@@ -104,20 +104,20 @@ namespace PRUEAS
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            VaribleBuscador = Buscador.Text;
+            Cadena_Buscar = Buscador.Text;
             curso.Visible = false;
             division.Visible = false;
             int entero;
-            bool esEntero = int.TryParse(VaribleBuscador, out entero);
+            bool esEntero = int.TryParse(Cadena_Buscar, out entero);
             if (esEntero)
             {
-                int tranformacion = (int)Int64.Parse(VaribleBuscador);
+                int tranformacion = (int)Int64.Parse(Cadena_Buscar);
 
-                GRILLA.DataSource = _ManejoDeDB.BusquedaDePersonas(nivel, tranformacion);
+                GRILLA.DataSource = FuncionesQuerys.BusquedaDePersonas(nivel, tranformacion);
             }
             else
             {
-                GRILLA.DataSource = _ManejoDeDB.BusquedaDePersonas(nivel, VaribleBuscador);
+                GRILLA.DataSource = FuncionesQuerys.BusquedaDePersonas(nivel, Cadena_Buscar);
             }
 
         }
@@ -129,7 +129,7 @@ namespace PRUEAS
 
         public void AgregarData()
         {
-            AgregarData agregarData = new AgregarData();
+            FormGuardarPersonas agregarData = new FormGuardarPersonas();
             agregarData.ShowDialog(this);
 
         }
@@ -137,7 +137,7 @@ namespace PRUEAS
 
         public void CargaDeContactos()
         {
-            List<Personas> personas = _ManejoDeDB.TomaDePersonas(nivel);
+            List<ClasePersonas> personas = FuncionesQuerys.ObetenerPersona(nivel);
             GRILLA.DataSource = personas;
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace PRUEAS
 {
-    partial class Borrar
+    partial class FormBorrarPersonas
     {
         /// <summary>
         /// Required designer variable.

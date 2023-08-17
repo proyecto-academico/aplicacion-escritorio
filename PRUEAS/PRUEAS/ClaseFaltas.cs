@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PRUEAS
 {
-    public class ClaseFaltas : Personas
+    public class ClaseFaltas : ClasePersonas
     {
         public int FaltasID { get; set; } 
         public DateTime Fecha { get; set; }

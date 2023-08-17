@@ -8,11 +8,11 @@ using System.Text;
 
 namespace PRUEAS
 {
-    public partial class Login : Form
+    public partial class InicioSesion : Form
     {
         string data;
 
-        public Login()
+        public InicioSesion()
         {
             InitializeComponent();
 
@@ -41,10 +41,11 @@ namespace PRUEAS
 
                 this.Hide();
 
-                BaseDeDatos baseDeDatos = new BaseDeDatos();
+                FormPantallaUsuarios baseDeDatos = new FormPantallaUsuarios();
                 baseDeDatos.Show();
             }
-            else {
+            else
+            {
                 MessageBox.Show("Contraseña erronea");
             }
 

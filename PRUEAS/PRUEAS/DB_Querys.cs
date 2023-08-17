@@ -12,13 +12,13 @@ using System.Data;
 
 namespace PRUEAS
 {
-    public class DataAccese
+    public class DB_Querys
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-008\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-3B9J7H4\\MSSQLSERVER01");
 
         #region Querry Personas
 
-        public void insertarPersona(Personas Persona)
+        public void insertarPersona(ClasePersonas Persona)
         {
             try
             {
@@ -192,21 +192,14 @@ namespace PRUEAS
 
 
 
-        public List<Personas> GetPersonas(int nivel)
-        {   List<Personas> personas = new List<Personas>();
+        public List<ClasePersonas> GetPersonas(int nivel)
+        {   List<ClasePersonas> personas = new List<ClasePersonas>();
             try
             {
                 
                 if (nivel > 2)
                 {
                     conn.Open();
-
-                    /*string querry = @" SELECT	DNI ,Nombre,Apellido, Mail, [division].Anio_Escolar, [division].Division_Escolar
-                    FROM persona p
-                    LEFT JOIN division_de_alumnos d ON p.DNI = d.DNI_Alumno INNER JOIN division  ON [division].Division_ID = d.Division_ID WHERE d.Anio_Calendario = 2023 AND @nivel = Nivel
-
-                            ";*/
-
 
                     string querry = @" SELECT	p.DNI ,Nombre,Apellido, Mail, d.Anio_Calendario,[division].Anio_Escolar, [division].Division_Escolar
                     FROM persona p
@@ -222,7 +215,7 @@ namespace PRUEAS
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        personas.Add(new Personas
+                        personas.Add(new ClasePersonas
                         {
                             _dni = int.Parse(reader["DNI"].ToString()),
                             Name = reader["Nombre"].ToString(),
@@ -247,7 +240,7 @@ namespace PRUEAS
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        personas.Add(new Personas
+                        personas.Add(new ClasePersonas
                         {
                             _dni = int.Parse(reader["DNI"].ToString()),
                             Name = reader["Nombre"].ToString(),
@@ -269,7 +262,7 @@ namespace PRUEAS
                 return personas;
         }
 
-        public void UpdatePersona(Personas Persona)
+        public void UpdatePersona(ClasePersonas Persona)
         {
             try
             {
@@ -322,7 +315,7 @@ namespace PRUEAS
             }
         }
 
-        public void DeletePersona(Personas personas) {
+        public void DeletePersona(ClasePersonas personas) {
 
 
             try
@@ -476,9 +469,9 @@ namespace PRUEAS
 
         #region Querry Varios 
 
-        public List<Personas> BuscarPersona(int nivel, string Busqueda)
+        public List<ClasePersonas> BuscarPersona(int nivel, string Busqueda)
         {
-            List<Personas> personas = new List<Personas>();
+            List<ClasePersonas> personas = new List<ClasePersonas>();
             try
             {
                 string querry;
@@ -508,7 +501,7 @@ namespace PRUEAS
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    personas.Add(new Personas
+                    personas.Add(new ClasePersonas
                     {
                         _dni = int.Parse(reader["DNI"].ToString()),
                         Name = reader["Nombre"].ToString(),
@@ -531,9 +524,9 @@ namespace PRUEAS
             return personas;
 
         }
-        public List<Personas> BuscarPersona(int nivel, int Busqueda)
+        public List<ClasePersonas> BuscarPersona(int nivel, int Busqueda)
         {
-            List<Personas> personas = new List<Personas>();
+            List<ClasePersonas> personas = new List<ClasePersonas>();
             try
             {
                 string querry;
@@ -560,7 +553,7 @@ namespace PRUEAS
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    personas.Add(new Personas
+                    personas.Add(new ClasePersonas
                     {
                         _dni = int.Parse(reader["DNI"].ToString()),
                         Name = reader["Nombre"].ToString(),

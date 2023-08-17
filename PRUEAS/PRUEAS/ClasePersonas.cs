@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PRUEAS
 {
-    public class Personas
+    public class ClasePersonas
     {
         
 
@@ -29,6 +29,6 @@ namespace PRUEAS
 
         public string Surname { get; set; }
 
-        public Personas() { }
+        public ClasePersonas() { }
     }
 }

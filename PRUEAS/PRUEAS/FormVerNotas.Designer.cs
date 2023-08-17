@@ -1,6 +1,6 @@
 ﻿namespace PRUEAS
 {
-    partial class FNotas
+    partial class FormVerNotas
     {
         /// <summary>
         /// Required designer variable.

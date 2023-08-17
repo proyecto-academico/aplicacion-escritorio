@@ -1,6 +1,6 @@
 ﻿namespace PRUEAS
 {
-    partial class Faltas
+    partial class FormVerFaltas
     {
         /// <summary>
         /// Required designer variable.
@@ -81,7 +81,7 @@
             // 
             // dataAcceseBindingSource
             // 
-            dataAcceseBindingSource.DataSource = typeof(DataAccese);
+            dataAcceseBindingSource.DataSource = typeof(DB_Querys);
             // 
             // Cerrar
             // 

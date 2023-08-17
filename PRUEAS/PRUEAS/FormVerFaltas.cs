@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace PRUEAS
 {
-    public partial class Faltas : Form
+    public partial class FormVerFaltas : Form
     {
-        public bool verdad;
-        ManejoDeDB _manejoDeDB;
+        public bool TeclaDeIf;
+        Acceso_Querys FuncionesQuerys;
         int persona;
-        public Faltas(int persona_)
+        public FormVerFaltas(int persona_)
         {
             InitializeComponent();
-            _manejoDeDB = new ManejoDeDB();
+            FuncionesQuerys = new Acceso_Querys();
             this.persona = persona_;
         }
 
@@ -33,24 +33,24 @@ namespace PRUEAS
 
         public void CargarFaltas(int persona_)
         {
-            List<ClaseFaltas> faltas = _manejoDeDB.TomaDeFaltas(persona_);
-            if (_manejoDeDB.TomaDeNumFaltas(persona_, 0) >= 25)
+            List<ClaseFaltas> faltas = FuncionesQuerys.ObetenerFaltas(persona_);
+            if (FuncionesQuerys.ObtenerNumeroDeFaltas(persona_, 0) >= 25)
             {
                 noLibre.Visible = false;
                 Libre.Visible = true;
             }
 
             GRILLA.DataSource = faltas;
-            Justificadas.Text = _manejoDeDB.TomaDeNumFaltas(persona_, 1).ToString();
+            Justificadas.Text = FuncionesQuerys.ObtenerNumeroDeFaltas(persona_, 1).ToString();
 
-            Numero.Text = _manejoDeDB.TomaDeNumFaltas(persona_, 0).ToString();
+            Numero.Text = FuncionesQuerys.ObtenerNumeroDeFaltas(persona_, 0).ToString();
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            verdad = false;
-            AgregarFaltas agregarFaltas = new AgregarFaltas(persona, false);
+            TeclaDeIf = false;
+            FormGuardarFaltas agregarFaltas = new FormGuardarFaltas(persona, false);
             DialogResult dialogResult = agregarFaltas.ShowDialog(this);
         }
 
@@ -66,12 +66,12 @@ namespace PRUEAS
 
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            verdad = true;
+            TeclaDeIf = true;
             ClaseFaltas faltas = new ClaseFaltas();
             if (e.ColumnIndex == GRILLA.Columns["justificadoDataGridViewCheckBoxColumn"].Index && e.RowIndex >= 0)
             {
                 faltas.FaltasID = (int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
-                _manejoDeDB.guardarFaltaEnDB(faltas, verdad);
+                FuncionesQuerys.guardarFaltaEnDB(faltas, TeclaDeIf);
                 CargarFaltas(persona);
 
             }

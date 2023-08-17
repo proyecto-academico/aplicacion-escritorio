@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace PRUEAS
 {
-    public partial class AgregarFaltas : Form
+    public partial class FormGuardarFaltas : Form
     {
-        public bool verdad = false;
-        private ClaseFaltas _claseFaltas;
-        public ManejoDeDB _ManejoDeDB;
+        public bool TeclaIF = false;
+        private ClaseFaltas ObjFaltas;
+        public Acceso_Querys FuncionesQuerys;
         private int DNI;
-        public AgregarFaltas(int persona, bool verdades)
+        public FormGuardarFaltas(int persona, bool verdades)
 
         {
             DNI = persona;
             InitializeComponent();
-            _ManejoDeDB = new ManejoDeDB();
-            verdad = verdades;
+            FuncionesQuerys = new Acceso_Querys();
+            TeclaIF = verdades;
 
         }
 
@@ -32,10 +32,10 @@ namespace PRUEAS
         }
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            ClaseFaltas faltas = _claseFaltas;
+            ClaseFaltas faltas = ObjFaltas;
            
             Guardar();
-            ((Faltas)this.Owner).CargarFaltas(DNI);
+            ((FormVerFaltas)this.Owner).CargarFaltas(DNI);
 
             this.Close();
 
@@ -48,7 +48,7 @@ namespace PRUEAS
             faltas.Fecha = dateTimePicker1.Value;
             faltas.Tipo = comboBox1.SelectedItem.ToString() == "1" ? 1 : 0.5f;
             faltas.Justificado = checkBox1.Checked;
-            _ManejoDeDB.guardarFaltaEnDB(faltas, verdad);
+            FuncionesQuerys.guardarFaltaEnDB(faltas, TeclaIF);
         }
         private void buttonSalir_Click(object sender, EventArgs e)
         {

@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace PRUEAS
 {
-    public partial class Borrar : Form
+    public partial class FormBorrarPersonas : Form
     {
-        public Personas _personas = new Personas();
-        public ManejoDeDB manejoDeDB = new ManejoDeDB();
+        public ClasePersonas _personas = new ClasePersonas();
+        public Acceso_Querys manejoDeDB = new Acceso_Querys();
 
-        public Borrar()
+        public FormBorrarPersonas()
         {
             InitializeComponent();
 
@@ -23,19 +23,19 @@ namespace PRUEAS
         private void btnNO_Click(object sender, EventArgs e)
         {
             this.Close();
-            _personas = new Personas();
+            _personas = new ClasePersonas();
         }
         private void btnSI_Click(object sender, EventArgs e)
         {
             manejoDeDB.DeletePersona(_personas);
-            ((BaseDeDatos)this.Owner).CargaDeContactos();
+            ((FormPantallaUsuarios)this.Owner).CargaDeContactos();
 
 
             this.Close();
-            _personas = new Personas();
+            _personas = new ClasePersonas();
         }
 
-        public void CargarPersona(Personas personas)
+        public void CargarPersona(ClasePersonas personas)
         {
 
             _personas = personas;

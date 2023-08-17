@@ -13,15 +13,15 @@ using System.Windows.Forms;
 
 namespace PRUEAS
 {
-    public partial class AgregarData : Form
+    public partial class FormGuardarPersonas : Form
     {
-        public bool verdad = false;
-        public ManejoDeDB _ManejoDeDB;
-        private Personas _personas;
-        public AgregarData()
+        public bool TeclaIf = false;
+        public Acceso_Querys FuncionesQuerys;
+        private ClasePersonas ObjPersona;
+        public FormGuardarPersonas()
         {
             InitializeComponent();
-            _ManejoDeDB = new ManejoDeDB();
+            FuncionesQuerys = new Acceso_Querys();
         }
         #region Botones
         private void buttonSalir_Click(object sender, EventArgs e)
@@ -31,12 +31,12 @@ namespace PRUEAS
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            Personas personas = _personas;
+            ClasePersonas personas = ObjPersona;
 
             Guardar();
 
 
-            ((BaseDeDatos)this.Owner).CargaDeContactos();
+            ((FormPantallaUsuarios)this.Owner).CargaDeContactos();
 
         }
         #endregion
@@ -45,7 +45,7 @@ namespace PRUEAS
 
         public void Guardar()
         {
-            Personas personas = new Personas();
+            ClasePersonas personas = new ClasePersonas();
 
             personas.Name = textBoxName.Text;
             personas.Surname = textBoxSurname.Text;
@@ -56,13 +56,13 @@ namespace PRUEAS
 
 
 
-            _ManejoDeDB.guardarPersonaEnDB(personas, verdad);
+            FuncionesQuerys.guardarPersonaEnDB(personas, TeclaIf);
         }
 
-        public void CargarPersona(Personas personas, bool Verdades)
+        public void CargarPersona(ClasePersonas personas, bool Verdades)
         {
 
-            _personas = personas;
+            ObjPersona = personas;
             if (personas != null)
             {
                 VaciarForm();
@@ -70,7 +70,7 @@ namespace PRUEAS
                 textBoxDNI.Text = personas._dni.ToString();
                 textBoxSurname.Text = personas.Surname;
                 textBoxCiCLO.Text = personas.mail;
-                verdad = Verdades;
+                TeclaIf = Verdades;
             }
 
         }

@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace PRUEAS
 {
-    public partial class FNotas : Form
+    public partial class FormVerNotas : Form
     {
-        ManejoDeDB _manejoDeDB;
+        Acceso_Querys _manejoDeDB;
         int persona;
         public bool BotonesValue = false;
-        public FNotas(int persona_)
+        public FormVerNotas(int persona_)
         {
             InitializeComponent();
-            _manejoDeDB = new ManejoDeDB();
+            _manejoDeDB = new Acceso_Querys();
             this.persona = persona_;
         }
 

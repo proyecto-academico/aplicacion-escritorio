@@ -1,6 +1,6 @@
 ﻿namespace PRUEAS
 {
-    partial class AgregarFaltas
+    partial class FormGuardarFaltas
     {
         /// <summary>
         /// Required designer variable.

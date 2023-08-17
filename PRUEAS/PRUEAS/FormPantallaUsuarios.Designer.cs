@@ -1,6 +1,6 @@
 ﻿namespace PRUEAS
 {
-    partial class BaseDeDatos
+    partial class FormPantallaUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -150,23 +150,23 @@
             // 
             // personasBindingSource5
             // 
-            personasBindingSource5.DataSource = typeof(Personas);
+            personasBindingSource5.DataSource = typeof(ClasePersonas);
             // 
             // personasBindingSource3
             // 
-            personasBindingSource3.DataSource = typeof(Personas);
+            personasBindingSource3.DataSource = typeof(ClasePersonas);
             // 
             // personasBindingSource2
             // 
-            personasBindingSource2.DataSource = typeof(Personas);
+            personasBindingSource2.DataSource = typeof(ClasePersonas);
             // 
             // personasBindingSource
             // 
-            personasBindingSource.DataSource = typeof(Personas);
+            personasBindingSource.DataSource = typeof(ClasePersonas);
             // 
             // personasBindingSource1
             // 
-            personasBindingSource1.DataSource = typeof(Personas);
+            personasBindingSource1.DataSource = typeof(ClasePersonas);
             // 
             // AlumnoCheck
             // 
@@ -211,7 +211,7 @@
             // 
             // personasBindingSource4
             // 
-            personasBindingSource4.DataSource = typeof(Personas);
+            personasBindingSource4.DataSource = typeof(ClasePersonas);
             // 
             // _dni
             // 
