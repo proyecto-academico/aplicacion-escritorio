@@ -10,6 +10,9 @@
     <Compile Update="FormVerClaseMateria.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormVerFaltas.cs">
       <SubType>Form</SubType>
     </Compile>

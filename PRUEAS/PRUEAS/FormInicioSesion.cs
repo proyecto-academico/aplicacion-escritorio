@@ -39,8 +39,8 @@ namespace PRUEAS
 
                 this.Hide();
 
-                FormPantallaUsuarios baseDeDatos = new FormPantallaUsuarios();
-                baseDeDatos.Show();
+                FormMenuPrincipal MenuPrincipal = new FormMenuPrincipal();
+                MenuPrincipal.Show();
             }
             else
             {
