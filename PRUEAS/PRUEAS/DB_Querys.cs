@@ -1,14 +1,4 @@
 ﻿using System.Data.SqlClient;
-using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Diagnostics.CodeAnalysis;
-using System.Data;
 
 namespace PRUEAS
 {
@@ -68,7 +58,8 @@ namespace PRUEAS
             {
                 throw;
             }
-            finally {
+            finally
+            {
 
                 conn.Close();
             }
@@ -193,7 +184,8 @@ namespace PRUEAS
 
 
         public List<ClasePersonas> GetPersonas(int nivel)
-        { List<ClasePersonas> personas = new List<ClasePersonas>();
+        {
+            List<ClasePersonas> personas = new List<ClasePersonas>();
             try
             {
 
@@ -215,6 +207,12 @@ namespace PRUEAS
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
                         personas.Add(new ClasePersonas
                         {
                             _dni = int.Parse(reader["DNI"].ToString()),
@@ -224,6 +222,12 @@ namespace PRUEAS
                             division = int.Parse(reader["Anio_Escolar"].ToString()),
                             curso = int.Parse(reader["Division_Escolar"].ToString()),
                         });
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
                     }
                 }
                 else
@@ -240,6 +244,10 @@ namespace PRUEAS
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
                         personas.Add(new ClasePersonas
                         {
                             _dni = int.Parse(reader["DNI"].ToString()),
@@ -248,15 +256,21 @@ namespace PRUEAS
                             mail = reader["Mail"].ToString(),
 
                         });
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
                     }
                 }
 
             }
-            catch (Exception) {
+            catch (Exception)
+            {
 
                 throw;
             }
-            finally {
+            finally
+            {
                 conn.Close();
             }
             return personas;
@@ -315,7 +329,8 @@ namespace PRUEAS
             }
         }
 
-        public void DeletePersona(ClasePersonas personas) {
+        public void DeletePersona(ClasePersonas personas)
+        {
 
 
             try
@@ -348,10 +363,9 @@ namespace PRUEAS
         }
 
         #endregion
+
         #region
-        #endregion
-        #region
-        public List<Clase_ClaseMarteria> GetClaseClaseMarterias(int persona_)
+        public List<Clase_ClaseMateria> GetClaseClaseMaterias(int persona_, Convert convert)
         {
             List<Clase_ClaseMateria> materia = new List<Clase_ClaseMateria>();
 
@@ -359,13 +373,35 @@ namespace PRUEAS
             {
                 conn.Open();
                 string querry = @$"SELECT  [Clase_ID],CONCAT(division.Anio_Escolar, '° ', division.Division_Escolar, '° ')AS Division,division.Division_ID,CONCAT(persona.Nombre,' ',persona.Apellido)AS Profesor,[clase].[Materia_ID],[Profesor_ID],[Fecha_Comienzo],[Fecha_Final], materia.Nombre \r\nFROM [proyecto_academico].[dbo].[clase]\r\nLEFT JOIN materia on clase.Materia_ID=materia.Materia_ID  \r\nLEFT JOIN division on clase.Division_ID = division.Division_ID\r\nLEFT JOIN persona on clase.Profesor_ID = persona.DNI";
-                SqlParameter sqlParameter1 = new SqlParameter();
+                SqlCommand command = new SqlCommand(querry, conn);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+                    materia.Add(new Clase_ClaseMateria
+                    {
+                        Clase_ID = int.Parse(reader["Clase_ID"].ToString()),
+                        Division_ID = int.Parse(reader["Division"].ToString()),
+                        Profesor_ID = convert.ToBoolean(reader["jutificada"].ToString()),
+                        FaltasID = int.Parse(reader["Falta_ID"].ToString())
+                    });
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+
+                }
+
 
             }
             catch
             {
                 throw;
-            } 
+            }
             finally
             {
                 conn.Close();
@@ -389,6 +425,9 @@ namespace PRUEAS
 
                 while (reader.Read())
                 {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
                     faltas.Add(new ClaseFaltas
                     {
                         Fecha = DateTime.Parse(reader["Fecha"].ToString()),
@@ -398,6 +437,9 @@ namespace PRUEAS
 
 
                     });
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
 
                 }
             }
@@ -526,6 +568,10 @@ namespace PRUEAS
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
                     personas.Add(new ClasePersonas
                     {
                         _dni = int.Parse(reader["DNI"].ToString()),
@@ -534,6 +580,10 @@ namespace PRUEAS
                         mail = reader["Mail"].ToString()
 
                     });
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
                 }
 
             }
@@ -549,7 +599,7 @@ namespace PRUEAS
             return personas;
 
         }
-       
+
         public List<ClasePersonas> BuscarPersona(int nivel, int Busqueda)
         {
             List<ClasePersonas> personas = new List<ClasePersonas>();
@@ -579,14 +629,22 @@ namespace PRUEAS
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
                     personas.Add(new ClasePersonas
                     {
                         _dni = int.Parse(reader["DNI"].ToString()),
                         Name = reader["Nombre"].ToString(),
                         Surname = reader["Apellido"].ToString(),
                         mail = reader["Mail"].ToString()
-                        
+
                     });
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
                 }
 
             }

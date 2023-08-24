@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PRUEAS
+﻿namespace PRUEAS
 {
     public class ClaseFaltas : ClasePersonas
     {
-        public int FaltasID { get; set; } 
+        public int FaltasID { get; set; }
         public DateTime Fecha { get; set; }
+#pragma warning disable CS0108 // El miembro oculta el miembro heredado. Falta una contraseña nueva
         public float Tipo { get; set; }
+#pragma warning restore CS0108 // El miembro oculta el miembro heredado. Falta una contraseña nueva
         public bool Justificado { get; set; }
         public int cantJusti { get; set; }
         public int cantTotal { get; set; }
-
 
     }
 

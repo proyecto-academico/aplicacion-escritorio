@@ -282,9 +282,13 @@
         private DataGridViewTextBoxColumn DNI_alumno;
         private BindingSource claseFaltasBindingSource;
         private BindingSource claseFaltasBindingSource1;
+#pragma warning disable CS0169 // El campo 'FormVerFaltas.label2' nunca se usa
         private Label label2;
+#pragma warning restore CS0169 // El campo 'FormVerFaltas.label2' nunca se usa
         private Label label3;
+#pragma warning disable CS0169 // El campo 'FormVerFaltas.label4' nunca se usa
         private Label label4;
+#pragma warning restore CS0169 // El campo 'FormVerFaltas.label4' nunca se usa
         private BindingSource claseFaltasBindingSource2;
         private Label Libre;
         private Label Numero;

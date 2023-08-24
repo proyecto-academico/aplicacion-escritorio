@@ -1,18 +1,16 @@
-
-using System.ComponentModel;
-using System.Drawing.Text;
-
-using Microsoft.Data.SqlClient;
-
 using System.Text;
 
 namespace PRUEAS
 {
     public partial class FormInicioSesion : Form
     {
+#pragma warning disable CS0169 // El campo 'FormInicioSesion.data' nunca se usa
         string data;
+#pragma warning restore CS0169 // El campo 'FormInicioSesion.data' nunca se usa
 
+#pragma warning disable CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         public FormInicioSesion()
+#pragma warning restore CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         {
             InitializeComponent();
 

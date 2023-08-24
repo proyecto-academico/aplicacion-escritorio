@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace PRUEAS
+﻿namespace PRUEAS
 {
     public partial class FormBorrarPersonas : Form
     {
@@ -28,7 +18,11 @@ namespace PRUEAS
         private void btnSI_Click(object sender, EventArgs e)
         {
             manejoDeDB.DeletePersona(_personas);
+#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
+#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
             ((FormPantallaUsuarios)this.Owner).CargaDeContactos();
+#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
+#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
 
 
             this.Close();

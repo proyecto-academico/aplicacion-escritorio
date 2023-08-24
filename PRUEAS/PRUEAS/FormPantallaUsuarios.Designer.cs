@@ -333,12 +333,18 @@
         private Button Cerrar;
 
         private DataGridView GRILLA;
+#pragma warning disable CS0169 // El campo 'FormPantallaUsuarios.editar' nunca se usa
         private DataGridViewLinkColumn editar;
+#pragma warning restore CS0169 // El campo 'FormPantallaUsuarios.editar' nunca se usa
         private BindingSource personasBindingSource;
         private BindingSource personasBindingSource1;
         private BindingSource personasBindingSource2;
+#pragma warning disable CS0169 // El campo 'FormPantallaUsuarios.dNIDataGridViewTextBoxColumn' nunca se usa
         private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // El campo 'FormPantallaUsuarios.dNIDataGridViewTextBoxColumn' nunca se usa
+#pragma warning disable CS0169 // El campo 'FormPantallaUsuarios.checkedListBox1' nunca se usa
         private CheckedListBox checkedListBox1;
+#pragma warning restore CS0169 // El campo 'FormPantallaUsuarios.checkedListBox1' nunca se usa
         private CheckBox AlumnoCheck;
         private CheckBox AdminitracionCheck;
         private CheckBox ProfesorCheck;
@@ -349,7 +355,9 @@
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
+#pragma warning disable CS0169 // El campo 'FormPantallaUsuarios.año' nunca se usa
         private DataGridViewTextBoxColumn año;
+#pragma warning restore CS0169 // El campo 'FormPantallaUsuarios.año' nunca se usa
         private DataGridViewTextBoxColumn division;
         private DataGridViewLinkColumn Notas;
         private DataGridViewLinkColumn Faltas;

@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace PRUEAS
+﻿namespace PRUEAS
 {
     public partial class FormPantallaUsuarios : Form
     {
@@ -20,7 +7,9 @@ namespace PRUEAS
         public FormBorrarPersonas FormBorrar = new FormBorrarPersonas();
         public bool TeclaIF = false;
         private Acceso_Querys FuncionesQuerys;
+#pragma warning disable CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         public FormPantallaUsuarios()
+#pragma warning restore CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         {
             InitializeComponent();
             FuncionesQuerys = new Acceso_Querys();
@@ -44,62 +33,83 @@ namespace PRUEAS
             Close();
         }
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {   
+        {
             if (e.ColumnIndex == GRILLA.Columns["Notas"].Index && e.RowIndex >= 0)
             {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
                 FormVerNotas formNotas = new FormVerNotas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
                 formNotas.ShowDialog();
             }
             if (e.ColumnIndex == GRILLA.Columns["Faltas"].Index && e.RowIndex >= 0)
             {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
                 FormVerFaltas formFaltas = new FormVerFaltas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
                 formFaltas.ShowDialog();
             }
 
             /*HACER UNA EXCEPCION*/
-            if (e.ColumnIndex==GRILLA.Columns["edit"].Index || e.ColumnIndex == GRILLA.Columns["X"].Index) { 
-            DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                 
-            if (cell.Value.ToString() == "edit")
+            if (e.ColumnIndex == GRILLA.Columns["edit"].Index || e.ColumnIndex == GRILLA.Columns["X"].Index)
             {
-                TeclaIF = true;
-            }
-            else if (cell.Value.ToString() == "X")
-            {
+                DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-                FormBorrar.CargarPersona(new ClasePersonas
+                if (cell.Value.ToString() == "edit")
+                {
+                    TeclaIF = true;
+                }
+                else if (cell.Value.ToString() == "X")
                 {
 
-                    _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
-                    Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
-                    Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
-                    mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+                    FormBorrar.CargarPersona(new ClasePersonas
+                    {
 
-                });
-                FormBorrar.ShowDialog(this);
+                        _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                        Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                        Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                        mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
 
-            }
-                
-            if (TeclaIF)
-            {
+                    });
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+                    FormBorrar.ShowDialog(this);
 
-                FormGuardarPersonas AgregarData = new FormGuardarPersonas();
-                AgregarData.CargarPersona(new ClasePersonas
+                }
+
+                if (TeclaIF)
                 {
 
-                    _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
-                    Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
-                    Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
-                    mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
+                    FormGuardarPersonas AgregarData = new FormGuardarPersonas();
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+                    AgregarData.CargarPersona(new ClasePersonas
+                    {
 
-                }, TeclaIF);
-                    
-                TeclaIF = false;
+                        _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                        Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                        Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                        mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
+
+                    }, TeclaIF);
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+
+                    TeclaIF = false;
 
 
-                AgregarData.ShowDialog(this);
+                    AgregarData.ShowDialog(this);
 
-            }
+                }
             }
         }
         private void Button1_Click(object sender, EventArgs e)
@@ -198,7 +208,7 @@ namespace PRUEAS
             }
         }
 
-       
+
     }
 
 }

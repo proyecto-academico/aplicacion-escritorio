@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace PRUEAS
+﻿namespace PRUEAS
 {
     public partial class FormVerFaltas : Form
     {
@@ -70,7 +59,9 @@ namespace PRUEAS
             ClaseFaltas faltas = new ClaseFaltas();
             if (e.ColumnIndex == GRILLA.Columns["justificadoDataGridViewCheckBoxColumn"].Index && e.RowIndex >= 0)
             {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
                 faltas.FaltasID = (int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
                 FuncionesQuerys.guardarFaltaEnDB(faltas, TeclaDeIf);
                 CargarFaltas(persona);
 
