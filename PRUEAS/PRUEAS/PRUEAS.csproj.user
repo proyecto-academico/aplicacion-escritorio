@@ -16,7 +16,7 @@
     <Compile Update="FormVerNotas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="InicioSesion.cs">
+    <Compile Update="FormInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormPantallaUsuarios.cs">

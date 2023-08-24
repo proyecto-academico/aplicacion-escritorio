@@ -60,6 +60,7 @@
             Cerrar.TabIndex = 23;
             Cerrar.Text = "SALIR";
             Cerrar.UseVisualStyleBackColor = true;
+            Cerrar.Click += Cerrar_Click;
             // 
             // Label1
             // 
@@ -97,7 +98,7 @@
             buscar.Text = "Buscar";
             buscar.UseVisualStyleBackColor = true;
             // 
-            // FNotas
+            // FormVerNotas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -108,7 +109,7 @@
             Controls.Add(listbuscador);
             Controls.Add(agregar);
             Controls.Add(buscar);
-            Name = "FNotas";
+            Name = "FormVerNotas";
             Text = "Form1";
             Load += FNotas_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();

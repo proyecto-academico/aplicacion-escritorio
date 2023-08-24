@@ -39,7 +39,7 @@ namespace PRUEAS
         }
         private void Cerrar_Click(object sender, EventArgs e)
         {
-            InicioSesion login = new InicioSesion();
+            FormInicioSesion login = new FormInicioSesion();
             login.Show();
             Close();
         }

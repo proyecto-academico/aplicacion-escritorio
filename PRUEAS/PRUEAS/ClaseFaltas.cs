@@ -14,6 +14,8 @@ namespace PRUEAS
         public bool Justificado { get; set; }
         public int cantJusti { get; set; }
         public int cantTotal { get; set; }
+
+
     }
 
 }

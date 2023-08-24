@@ -8,11 +8,11 @@ using System.Text;
 
 namespace PRUEAS
 {
-    public partial class InicioSesion : Form
+    public partial class FormInicioSesion : Form
     {
         string data;
 
-        public InicioSesion()
+        public FormInicioSesion()
         {
             InitializeComponent();
 

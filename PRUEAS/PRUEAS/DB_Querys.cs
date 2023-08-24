@@ -14,7 +14,7 @@ namespace PRUEAS
 {
     public class DB_Querys
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=DESKTOP-3B9J7H4\\MSSQLSERVER01");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-008\\SQLEXPRESS");
 
         #region Querry Personas
 
@@ -37,7 +37,7 @@ namespace PRUEAS
                 parametros2.ParameterName = "@Apellido";
                 parametros2.Value = Persona.Surname;
                 parametros2.DbType = System.Data.DbType.String;
- 
+
                 SqlParameter sqlParameter3 = new SqlParameter();
                 sqlParameter3.ParameterName = "@DNI";
                 sqlParameter3.Value = Persona._dni;
@@ -65,15 +65,15 @@ namespace PRUEAS
                 #endregion
             }
             catch (Exception)
-            {   
-                throw; 
+            {
+                throw;
             }
-            finally{ 
-            
-            conn.Close();
+            finally {
+
+                conn.Close();
             }
 
-    
+
         }
 
         public void insertarFalta(ClaseFaltas falta)
@@ -157,9 +157,9 @@ namespace PRUEAS
                         SET jutificada = IIF(jutificada = 1 ,0,1)  Where Falta_ID = @Falta_ID
 ";
                 #region Parametros que pasamos
-              
 
-                
+
+
 
                 SqlParameter sqlParameter4 = new SqlParameter();
                 sqlParameter4.ParameterName = "@Falta_ID";
@@ -170,8 +170,8 @@ namespace PRUEAS
 
                 #region Comandos Sql
                 SqlCommand sqlCommand = new SqlCommand(querry, conn);
-             
-              
+
+
                 sqlCommand.Parameters.Add(sqlParameter4);
                 ;
                 sqlCommand.ExecuteNonQuery();
@@ -193,10 +193,10 @@ namespace PRUEAS
 
 
         public List<ClasePersonas> GetPersonas(int nivel)
-        {   List<ClasePersonas> personas = new List<ClasePersonas>();
+        { List<ClasePersonas> personas = new List<ClasePersonas>();
             try
             {
-                
+
                 if (nivel > 2)
                 {
                     conn.Open();
@@ -246,20 +246,20 @@ namespace PRUEAS
                             Name = reader["Nombre"].ToString(),
                             Surname = reader["Apellido"].ToString(),
                             mail = reader["Mail"].ToString(),
-                    
+
                         });
                     }
                 }
 
             }
-            catch(Exception) {
+            catch (Exception) {
 
                 throw;
             }
-            finally { 
-                conn.Close(); 
+            finally {
+                conn.Close();
             }
-                return personas;
+            return personas;
         }
 
         public void UpdatePersona(ClasePersonas Persona)
@@ -291,7 +291,7 @@ namespace PRUEAS
                 sqlParameter4.ParameterName = "@Mail";
                 sqlParameter4.Value = Persona.mail;
                 sqlParameter4.DbType = System.Data.DbType.String;
-                
+
                 #endregion
 
                 #region Comandos Sql
@@ -300,7 +300,7 @@ namespace PRUEAS
                 sqlCommand.Parameters.Add(parametros2);
                 sqlCommand.Parameters.Add(sqlParameter3);
                 sqlCommand.Parameters.Add(sqlParameter4);
-              ;
+                ;
                 sqlCommand.ExecuteNonQuery();
                 #endregion
             }
@@ -346,8 +346,33 @@ namespace PRUEAS
 
 
         }
+
         #endregion
-        
+        #region
+        #endregion
+        #region
+        public List<Clase_ClaseMarteria> GetClaseClaseMarterias(int persona_)
+        {
+            List<Clase_ClaseMateria> materia = new List<Clase_ClaseMateria>();
+
+            try
+            {
+                conn.Open();
+                string querry = @$"SELECT  [Clase_ID],CONCAT(division.Anio_Escolar, '° ', division.Division_Escolar, '° ')AS Division,division.Division_ID,CONCAT(persona.Nombre,' ',persona.Apellido)AS Profesor,[clase].[Materia_ID],[Profesor_ID],[Fecha_Comienzo],[Fecha_Final], materia.Nombre \r\nFROM [proyecto_academico].[dbo].[clase]\r\nLEFT JOIN materia on clase.Materia_ID=materia.Materia_ID  \r\nLEFT JOIN division on clase.Division_ID = division.Division_ID\r\nLEFT JOIN persona on clase.Profesor_ID = persona.DNI";
+                SqlParameter sqlParameter1 = new SqlParameter();
+
+            }
+            catch
+            {
+                throw;
+            } 
+            finally
+            {
+                conn.Close();
+            }
+        }
+        #endregion
+
         #region Querry Faltas
         public List<ClaseFaltas> GetFaltas(int persona_)
         {
@@ -356,12 +381,12 @@ namespace PRUEAS
             {
                 conn.Open();
                 string querry = @$"SELECT Falta_ID,Fecha, Tipo, CASE WHEN jutificada = 1 THEN 'True' ELSE 'False' END AS jutificada FROM persona INNER JOIN faltas ON persona.DNI = faltas.DNI_Alumno WHERE persona.DNI = {persona_}";
-               
+
                 SqlCommand command = new SqlCommand(querry, conn);
-               
+
                 SqlDataReader reader = command.ExecuteReader();
-               
-               
+
+
                 while (reader.Read())
                 {
                     faltas.Add(new ClaseFaltas
@@ -372,8 +397,8 @@ namespace PRUEAS
                         FaltasID = int.Parse(reader["Falta_ID"].ToString())
 
 
-                    }); 
-                        
+                    });
+
                 }
             }
             catch (Exception)
@@ -401,7 +426,7 @@ namespace PRUEAS
                 {
                     faltas.cantTotal = (int)Convert.ToInt64(reader3["Faltas"]);
 
-                    
+
 
                 }
             }
@@ -422,14 +447,14 @@ namespace PRUEAS
             try
             {
                 conn.Open();
-                string querry2 = @$"Select  COUNT(faltas.Falta_ID) AS FaltasJust from faltas inner join persona on DNI=DNI_Alumno where jutificada = 1 and DNI_Alumno = {persona_}"; 
+                string querry2 = @$"Select  COUNT(faltas.Falta_ID) AS FaltasJust from faltas inner join persona on DNI=DNI_Alumno where jutificada = 1 and DNI_Alumno = {persona_}";
                 SqlCommand command3 = new SqlCommand(querry2, conn);
                 SqlDataReader reader3 = command3.ExecuteReader();
                 while (reader3.Read())
                 {
                     faltas.cantJusti = (int)Convert.ToInt64(reader3["FaltasJust"]);
 
-               
+
 
                 }
             }
@@ -442,7 +467,7 @@ namespace PRUEAS
             {
                 conn.Close();
             }
-            
+
             return faltas.cantJusti;
         }/*
         public  int GuardarFaltas (int persona_)
@@ -507,7 +532,7 @@ namespace PRUEAS
                         Name = reader["Nombre"].ToString(),
                         Surname = reader["Apellido"].ToString(),
                         mail = reader["Mail"].ToString()
-                       
+
                     });
                 }
 
@@ -524,6 +549,7 @@ namespace PRUEAS
             return personas;
 
         }
+       
         public List<ClasePersonas> BuscarPersona(int nivel, int Busqueda)
         {
             List<ClasePersonas> personas = new List<ClasePersonas>();

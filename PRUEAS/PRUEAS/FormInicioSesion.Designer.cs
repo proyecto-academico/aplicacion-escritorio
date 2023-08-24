@@ -1,6 +1,6 @@
 ﻿namespace PRUEAS
 {
-    partial class InicioSesion
+    partial class FormInicioSesion
     {
         /// <summary>
         ///  Required designer variable.

@@ -54,51 +54,53 @@ namespace PRUEAS
 
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           /* if (e.ColumnIndex == GRILLA.Columns["edit"].Index || e.ColumnIndex == GRILLA.Columns["X"].Index)
-            {
-                DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            /* if (e.ColumnIndex == GRILLA.Columns["edit"].Index || e.ColumnIndex == GRILLA.Columns["X"].Index)
+             {
+                 DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-                if (cell.Value.ToString() == "edit")
-                {
-                    BotonesValue = true;
-                }
-                else if (cell.Value.ToString() == "X")
-                {
+                 if (cell.Value.ToString() == "edit")
+                 {
+                     BotonesValue = true;
+                 }
+                 else if (cell.Value.ToString() == "X")
+                 {
 
-                    borrar.CargarPersona(new Personas
-                    {
+                     borrar.CargarPersona(new Personas
+                     {
 
-                        _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
-                        Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
-                        Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
-                        mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
+                         _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                         Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                         Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                         mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
 
-                    });
-                    borrar.ShowDialog(this);
+                     });
+                     borrar.ShowDialog(this);
 
-                }
+                 }
 
-                if (BotonesValue)
-                {
+                 if (BotonesValue)
+                 {
 
-                    AgregarData AgregarData = new AgregarData();
-                    AgregarData.CargarPersona(new Personas
-                    {
+                     AgregarData AgregarData = new AgregarData();
+                     AgregarData.CargarPersona(new Personas
+                     {
 
-                        _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
-                        Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
-                        Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
-                        mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
+                         _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                         Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                         Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                         mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
 
-                    }, BotonesValue);
+                     }, BotonesValue);
 
-                    BotonesValue = false;
+                     BotonesValue = false;
 
 
-                    AgregarData.ShowDialog(this);
+                     AgregarData.ShowDialog(this);
 
-                }
-            }*/
+                 }
+             }*/
         }
+
+        
     }
 }
