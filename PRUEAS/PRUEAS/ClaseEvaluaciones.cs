@@ -1,6 +1,6 @@
 ﻿namespace PRUEAS
 {
-    internal class ClaseEvaluaciones
+    public class ClaseEvaluaciones
     {
         public int Division_ID { get; set; }
         public string Clase { get; set; }

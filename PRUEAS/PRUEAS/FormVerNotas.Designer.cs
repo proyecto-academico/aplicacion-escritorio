@@ -28,33 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             GRILLA = new DataGridView();
+            clasenotasBindingSource = new BindingSource(components);
             Cerrar = new Button();
             Label1 = new Label();
             listbuscador = new TextBox();
             agregar = new Button();
             buscar = new Button();
+            clasenotasBindingSource1 = new BindingSource(components);
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            Materia = new DataGridViewTextBoxColumn();
+            Profesor = new DataGridViewTextBoxColumn();
+            dateTimeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clasenotasBindingSource2 = new BindingSource(components);
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            evaluacionIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dateTimeDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            clasenotasBindingSource3 = new BindingSource(components);
+            dniDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            divisionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dateTimeDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+            dniDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            clasenotasBindingSource4 = new BindingSource(components);
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            evaluacionIDDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dateTimeDataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            mailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dniDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            cursoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            divisionDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource4).BeginInit();
             SuspendLayout();
             // 
             // GRILLA
             // 
             GRILLA.AllowUserToAddRows = false;
+            GRILLA.AllowUserToDeleteRows = false;
+            GRILLA.AllowUserToOrderColumns = true;
+            GRILLA.AutoGenerateColumns = false;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Location = new Point(39, 78);
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn9, evaluacionIDDataGridViewTextBoxColumn1, dateTimeDataGridViewTextBoxColumn3, nameDataGridViewTextBoxColumn, mailDataGridViewTextBoxColumn, dniDataGridViewTextBoxColumn2, cursoDataGridViewTextBoxColumn, divisionDataGridViewTextBoxColumn1, dataGridViewTextBoxColumn10 });
+            GRILLA.DataSource = clasenotasBindingSource4;
+            GRILLA.Location = new Point(39, 75);
             GRILLA.Name = "GRILLA";
-            GRILLA.ReadOnly = true;
             GRILLA.RowHeadersWidth = 51;
             GRILLA.RowTemplate.Height = 25;
-            GRILLA.Size = new Size(740, 336);
+            GRILLA.Size = new Size(659, 336);
             GRILLA.TabIndex = 24;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
+            // 
+            // clasenotasBindingSource
+            // 
+            clasenotasBindingSource.DataSource = typeof(Clasenotas);
             // 
             // Cerrar
             // 
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Cerrar.Location = new Point(740, 420);
+            Cerrar.Location = new Point(666, 426);
             Cerrar.Name = "Cerrar";
             Cerrar.Size = new Size(75, 32);
             Cerrar.TabIndex = 23;
@@ -77,32 +122,205 @@
             listbuscador.Location = new Point(103, 41);
             listbuscador.MaxLength = 8;
             listbuscador.Name = "listbuscador";
-            listbuscador.Size = new Size(514, 23);
+            listbuscador.Size = new Size(447, 23);
             listbuscador.TabIndex = 21;
             // 
             // agregar
             // 
-            agregar.Location = new Point(704, 37);
+            agregar.Location = new Point(637, 42);
             agregar.Name = "agregar";
-            agregar.Size = new Size(75, 27);
+            agregar.Size = new Size(61, 27);
             agregar.TabIndex = 20;
             agregar.Text = "Agregar";
             agregar.UseVisualStyleBackColor = true;
             // 
             // buscar
             // 
-            buscar.Location = new Point(623, 37);
+            buscar.Location = new Point(556, 41);
             buscar.Name = "buscar";
             buscar.Size = new Size(75, 28);
             buscar.TabIndex = 19;
             buscar.Text = "Buscar";
             buscar.UseVisualStyleBackColor = true;
             // 
+            // clasenotasBindingSource1
+            // 
+            clasenotasBindingSource1.DataSource = typeof(Clasenotas);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.DataPropertyName = "DNI";
+            dataGridViewTextBoxColumn2.Frozen = true;
+            dataGridViewTextBoxColumn2.HeaderText = "DNI";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.DataPropertyName = "Division";
+            dataGridViewTextBoxColumn3.Frozen = true;
+            dataGridViewTextBoxColumn3.HeaderText = "Division";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // Materia
+            // 
+            Materia.Frozen = true;
+            Materia.HeaderText = "Materia";
+            Materia.Name = "Materia";
+            Materia.ReadOnly = true;
+            // 
+            // Profesor
+            // 
+            Profesor.Frozen = true;
+            Profesor.HeaderText = "Profesor";
+            Profesor.Name = "Profesor";
+            Profesor.ReadOnly = true;
+            // 
+            // dateTimeDataGridViewTextBoxColumn
+            // 
+            dateTimeDataGridViewTextBoxColumn.DataPropertyName = "Fecha Comienzo";
+            dateTimeDataGridViewTextBoxColumn.Frozen = true;
+            dateTimeDataGridViewTextBoxColumn.HeaderText = "Fecha Comienzo";
+            dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
+            // 
+            // clasenotasBindingSource2
+            // 
+            clasenotasBindingSource2.DataSource = typeof(Clasenotas);
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.DataPropertyName = "DNI";
+            dataGridViewTextBoxColumn4.HeaderText = "DNI";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.DataPropertyName = "Division";
+            dataGridViewTextBoxColumn5.HeaderText = "Division";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // evaluacionIDDataGridViewTextBoxColumn
+            // 
+            evaluacionIDDataGridViewTextBoxColumn.DataPropertyName = "Evaluacion_ID";
+            evaluacionIDDataGridViewTextBoxColumn.HeaderText = "Evaluacion_ID";
+            evaluacionIDDataGridViewTextBoxColumn.Name = "evaluacionIDDataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Profesor";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dateTimeDataGridViewTextBoxColumn1
+            // 
+            dateTimeDataGridViewTextBoxColumn1.DataPropertyName = "Fecha Comienzo";
+            dateTimeDataGridViewTextBoxColumn1.HeaderText = "Fecha Comienzo";
+            dateTimeDataGridViewTextBoxColumn1.Name = "dateTimeDataGridViewTextBoxColumn1";
+            // 
+            // clasenotasBindingSource3
+            // 
+            clasenotasBindingSource3.DataSource = typeof(Clasenotas);
+            // 
+            // dniDataGridViewTextBoxColumn
+            // 
+            dniDataGridViewTextBoxColumn.DataPropertyName = "DNI";
+            dniDataGridViewTextBoxColumn.HeaderText = "DNI";
+            dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
+            // 
+            // divisionDataGridViewTextBoxColumn
+            // 
+            divisionDataGridViewTextBoxColumn.DataPropertyName = "Division";
+            divisionDataGridViewTextBoxColumn.HeaderText = "Division";
+            divisionDataGridViewTextBoxColumn.Name = "divisionDataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.HeaderText = "Materia";
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.HeaderText = "Profesor";
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dateTimeDataGridViewTextBoxColumn2
+            // 
+            dateTimeDataGridViewTextBoxColumn2.DataPropertyName = "Fecha Final";
+            dateTimeDataGridViewTextBoxColumn2.HeaderText = "Fecha Final";
+            dateTimeDataGridViewTextBoxColumn2.Name = "dateTimeDataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewTextBoxColumn8.HeaderText = "Profesor";
+            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dniDataGridViewTextBoxColumn1
+            // 
+            dniDataGridViewTextBoxColumn1.DataPropertyName = "DNI";
+            dniDataGridViewTextBoxColumn1.HeaderText = "DNI";
+            dniDataGridViewTextBoxColumn1.Name = "dniDataGridViewTextBoxColumn1";
+            // 
+            // clasenotasBindingSource4
+            // 
+            clasenotasBindingSource4.DataSource = typeof(Clasenotas);
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewTextBoxColumn9.DataPropertyName = "Nota";
+            dataGridViewTextBoxColumn9.HeaderText = "Nota";
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // evaluacionIDDataGridViewTextBoxColumn1
+            // 
+            evaluacionIDDataGridViewTextBoxColumn1.DataPropertyName = "Evaluacion_ID";
+            evaluacionIDDataGridViewTextBoxColumn1.HeaderText = "Evaluacion_ID";
+            evaluacionIDDataGridViewTextBoxColumn1.Name = "evaluacionIDDataGridViewTextBoxColumn1";
+            // 
+            // dateTimeDataGridViewTextBoxColumn3
+            // 
+            dateTimeDataGridViewTextBoxColumn3.DataPropertyName = "DateTime";
+            dateTimeDataGridViewTextBoxColumn3.HeaderText = "DateTime";
+            dateTimeDataGridViewTextBoxColumn3.Name = "dateTimeDataGridViewTextBoxColumn3";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // mailDataGridViewTextBoxColumn
+            // 
+            mailDataGridViewTextBoxColumn.DataPropertyName = "mail";
+            mailDataGridViewTextBoxColumn.HeaderText = "mail";
+            mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            // 
+            // dniDataGridViewTextBoxColumn2
+            // 
+            dniDataGridViewTextBoxColumn2.DataPropertyName = "_dni";
+            dniDataGridViewTextBoxColumn2.HeaderText = "_dni";
+            dniDataGridViewTextBoxColumn2.Name = "dniDataGridViewTextBoxColumn2";
+            // 
+            // cursoDataGridViewTextBoxColumn
+            // 
+            cursoDataGridViewTextBoxColumn.DataPropertyName = "curso";
+            cursoDataGridViewTextBoxColumn.HeaderText = "curso";
+            cursoDataGridViewTextBoxColumn.Name = "cursoDataGridViewTextBoxColumn";
+            // 
+            // divisionDataGridViewTextBoxColumn1
+            // 
+            divisionDataGridViewTextBoxColumn1.DataPropertyName = "division";
+            divisionDataGridViewTextBoxColumn1.HeaderText = "division";
+            divisionDataGridViewTextBoxColumn1.Name = "divisionDataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            dataGridViewTextBoxColumn10.DataPropertyName = "Surname";
+            dataGridViewTextBoxColumn10.HeaderText = "Surname";
+            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
             // FormVerNotas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(827, 462);
+            ClientSize = new Size(753, 470);
             Controls.Add(GRILLA);
             Controls.Add(Cerrar);
             Controls.Add(Label1);
@@ -113,6 +331,11 @@
             Text = "Form1";
             Load += FNotas_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -125,5 +348,38 @@
         private TextBox listbuscador;
         private Button agregar;
         private Button buscar;
+        private DataGridViewTextBoxColumn notaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn divisionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private BindingSource clasenotasBindingSource;
+        private BindingSource clasenotasBindingSource2;
+        private BindingSource clasenotasBindingSource1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn Materia;
+        private DataGridViewTextBoxColumn Profesor;
+        private DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn evaluacionIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn1;
+        private BindingSource clasenotasBindingSource3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn evaluacionIDDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn cursoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn divisionDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private BindingSource clasenotasBindingSource4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn1;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace PRUEAS
 {
-    partial class FormVerClaseMateria
+    partial class FormDivisiones
     {
         /// <summary>
         /// Required designer variable.
@@ -36,16 +36,13 @@
             Buscador = new TextBox();
             button2 = new Button();
             Button1 = new Button();
-            claseMateriaBindingSource = new BindingSource(components);
-            claseMateriaBindingSource1 = new BindingSource(components);
+            claseDivisionesBindingSource = new BindingSource(components);
+            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            anioescolarDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            horassemanalesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            Clase = new DataGridViewTextBoxColumn();
+            turnoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            divisionsDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)claseMateriaBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)claseMateriaBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource).BeginInit();
             SuspendLayout();
             // 
             // GRILLA
@@ -63,14 +60,14 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, anioescolarDataGridViewTextBoxColumn, horassemanalesDataGridViewTextBoxColumn, Clase });
-            GRILLA.DataSource = claseMateriaBindingSource1;
-            GRILLA.Location = new Point(44, 59);
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { nombreDataGridViewTextBoxColumn, iDDataGridViewTextBoxColumn, turnoDataGridViewTextBoxColumn, divisionsDataGridViewTextBoxColumn });
+            GRILLA.DataSource = claseDivisionesBindingSource;
+            GRILLA.Location = new Point(43, 71);
             GRILLA.Name = "GRILLA";
             GRILLA.RowHeadersWidth = 51;
             GRILLA.RowTemplate.Height = 25;
             GRILLA.Size = new Size(753, 382);
-            GRILLA.TabIndex = 15;
+            GRILLA.TabIndex = 21;
             // 
             // Cerrar
             // 
@@ -79,60 +76,63 @@
             Cerrar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Cerrar.Location = new Point(778, 458);
+            Cerrar.Location = new Point(792, 466);
             Cerrar.Name = "Cerrar";
             Cerrar.Size = new Size(58, 27);
-            Cerrar.TabIndex = 14;
+            Cerrar.TabIndex = 20;
             Cerrar.Text = "SALIR";
             Cerrar.UseVisualStyleBackColor = true;
+            Cerrar.Click += Cerrar_Click;
             // 
             // Label1
             // 
             Label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Label1.AutoSize = true;
             Label1.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            Label1.Location = new Point(44, 9);
+            Label1.Location = new Point(43, 21);
             Label1.Name = "Label1";
             Label1.Size = new Size(58, 20);
-            Label1.TabIndex = 13;
+            Label1.TabIndex = 19;
             Label1.Text = "Buscar";
             // 
             // Buscador
             // 
             Buscador.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Buscador.Location = new Point(120, 10);
+            Buscador.Location = new Point(119, 22);
             Buscador.MaxLength = 8;
             Buscador.Name = "Buscador";
-            Buscador.Size = new Size(504, 23);
-            Buscador.TabIndex = 12;
+            Buscador.Size = new Size(518, 23);
+            Buscador.TabIndex = 18;
             // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.Location = new Point(718, 10);
+            button2.Location = new Point(731, 22);
             button2.Name = "button2";
             button2.Size = new Size(79, 30);
-            button2.TabIndex = 11;
+            button2.TabIndex = 17;
             button2.Text = "Agregar";
             button2.UseVisualStyleBackColor = true;
             // 
             // Button1
             // 
             Button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Button1.Location = new Point(633, 9);
+            Button1.Location = new Point(646, 21);
             Button1.Name = "Button1";
             Button1.Size = new Size(79, 30);
-            Button1.TabIndex = 10;
+            Button1.TabIndex = 16;
             Button1.Text = "Buscar";
             Button1.UseVisualStyleBackColor = true;
             // 
-            // claseMateriaBindingSource
+            // claseDivisionesBindingSource
             // 
-            claseMateriaBindingSource.DataSource = typeof(ClaseMateria);
+            claseDivisionesBindingSource.DataSource = typeof(ClaseDivisiones);
             // 
-            // claseMateriaBindingSource1
+            // nombreDataGridViewTextBoxColumn
             // 
-            claseMateriaBindingSource1.DataSource = typeof(ClaseMateria);
+            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -140,45 +140,33 @@
             iDDataGridViewTextBoxColumn.HeaderText = "ID";
             iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             // 
-            // nameDataGridViewTextBoxColumn
+            // turnoDataGridViewTextBoxColumn
             // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            nameDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            turnoDataGridViewTextBoxColumn.DataPropertyName = "turno";
+            turnoDataGridViewTextBoxColumn.HeaderText = "turno";
+            turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
             // 
-            // anioescolarDataGridViewTextBoxColumn
+            // divisionsDataGridViewTextBoxColumn
             // 
-            anioescolarDataGridViewTextBoxColumn.DataPropertyName = "Anio_escolar";
-            anioescolarDataGridViewTextBoxColumn.HeaderText = "Anio_escolar";
-            anioescolarDataGridViewTextBoxColumn.Name = "anioescolarDataGridViewTextBoxColumn";
+            divisionsDataGridViewTextBoxColumn.DataPropertyName = "divisions";
+            divisionsDataGridViewTextBoxColumn.HeaderText = "divisions";
+            divisionsDataGridViewTextBoxColumn.Name = "divisionsDataGridViewTextBoxColumn";
             // 
-            // horassemanalesDataGridViewTextBoxColumn
-            // 
-            horassemanalesDataGridViewTextBoxColumn.DataPropertyName = "Horas_semanales";
-            horassemanalesDataGridViewTextBoxColumn.HeaderText = "Horas_semanales";
-            horassemanalesDataGridViewTextBoxColumn.Name = "horassemanalesDataGridViewTextBoxColumn";
-            // 
-            // Clase
-            // 
-            Clase.HeaderText = "Evaluaciones";
-            Clase.Name = "Clase";
-            // 
-            // FormVerClaseMateria
+            // FormDivisiones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(848, 497);
+            ClientSize = new Size(862, 505);
             Controls.Add(GRILLA);
             Controls.Add(Cerrar);
             Controls.Add(Label1);
             Controls.Add(Buscador);
             Controls.Add(button2);
             Controls.Add(Button1);
-            Name = "FormVerClaseMateria";
-            Text = "FormVerClaseMateria";
+            Name = "FormDivisiones";
+            Text = "FormDivisiones";
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
-            ((System.ComponentModel.ISupportInitialize)claseMateriaBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)claseMateriaBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -191,12 +179,10 @@
         private TextBox Buscador;
         private Button button2;
         private Button Button1;
-        private BindingSource claseMateriaBindingSource;
-        private BindingSource claseMateriaBindingSource1;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn anioescolarDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn horassemanalesDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn Clase;
+        private DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn divisionsDataGridViewTextBoxColumn;
+        private BindingSource claseDivisionesBindingSource;
     }
 }

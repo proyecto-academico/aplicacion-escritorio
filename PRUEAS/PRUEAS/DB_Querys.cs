@@ -365,14 +365,14 @@ namespace PRUEAS
         #endregion
 
         #region
-        public List<Clase_ClaseMateria> GetClaseClaseMaterias(int persona_, Convert convert)
+        public List<Clase_ClaseMateria> GetClaseClaseMaterias(int persona_)
         {
             List<Clase_ClaseMateria> materia = new List<Clase_ClaseMateria>();
 
             try
             {
                 conn.Open();
-                string querry = @$"SELECT  [Clase_ID],CONCAT(division.Anio_Escolar, '° ', division.Division_Escolar, '° ')AS Division,division.Division_ID,CONCAT(persona.Nombre,' ',persona.Apellido)AS Profesor,[clase].[Materia_ID],[Profesor_ID],[Fecha_Comienzo],[Fecha_Final], materia.Nombre \r\nFROM [proyecto_academico].[dbo].[clase]\r\nLEFT JOIN materia on clase.Materia_ID=materia.Materia_ID  \r\nLEFT JOIN division on clase.Division_ID = division.Division_ID\r\nLEFT JOIN persona on clase.Profesor_ID = persona.DNI";
+                string querry = @$"SELECT  [Clase_ID],CONCAT(division.Anio_Escolar, '° ', division.Division_Escolar, '° ')AS Division,division.Division_ID,CONCAT(persona.Nombre,' ',persona.Apellido)AS Profesor,[clase].[Materia_ID],[Profesor_ID],[Fecha_Comienzo],[Fecha_Final], materia.Nombre FROM [proyecto_academico].[dbo].[clase] LEFT JOIN materia on clase.Materia_ID=materia.Materia_ID LEFT JOIN division on clase.Division_ID = division.Division_ID LEFT JOIN persona on clase.Profesor_ID = persona.DNI";
                 SqlCommand command = new SqlCommand(querry, conn);
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -387,8 +387,9 @@ namespace PRUEAS
                     {
                         Clase_ID = int.Parse(reader["Clase_ID"].ToString()),
                         Division_ID = int.Parse(reader["Division"].ToString()),
-                        Profesor_ID = convert.ToBoolean(reader["jutificada"].ToString()),
-                        FaltasID = int.Parse(reader["Falta_ID"].ToString())
+                        Profesor_ID = (reader["Profesor"].ToString()),
+                        Fecha_Final = DateTime.Parse(reader["Fecha_Final"].ToString()),
+                        Fecha_Comienzo = DateTime.Parse(reader["Fecha_Comienzo"].ToString())
                     });
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
@@ -406,6 +407,7 @@ namespace PRUEAS
             {
                 conn.Close();
             }
+            return materia;
         }
         #endregion
 
@@ -430,13 +432,13 @@ namespace PRUEAS
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
                     faltas.Add(new ClaseFaltas
                     {
+                        FaltasID = int.Parse(reader["Falta_ID"].ToString()),
                         Fecha = DateTime.Parse(reader["Fecha"].ToString()),
                         Tipo = float.Parse(reader["Tipo"].ToString()),
-                        Justificado = Convert.ToBoolean(reader["jutificada"].ToString()),
-                        FaltasID = int.Parse(reader["Falta_ID"].ToString())
-
-
+                        Justificado = Convert.ToBoolean(reader["jutificada"].ToString())
+                        
                     });
+
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo

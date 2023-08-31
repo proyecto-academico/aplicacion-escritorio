@@ -26,10 +26,10 @@
             return ObjPersonas;
         }
 
-        
+
         public void guardarFaltaEnDB(ClaseFaltas ObjFalta, bool ExisteFalta)
         {
-            if (ExisteFalta)
+            if (!ExisteFalta)
             {
                 __DataAccese.insertarFalta(ObjFalta);
             }
@@ -40,9 +40,9 @@
 
         }
 
-        public List<Clase_ClaseMateria> GetClaseClaseMarterias(int ObjPersonas)
+        public List<Clase_ClaseMateria> GetClaseClaseMaterias(int ObjPersonas)
         {
-            return __DataAccese.GetClaseClaseMaterias(ObjPersonas, Convert);
+            return __DataAccese.GetClaseClaseMaterias(ObjPersonas);
         }
 
         public List<ClasePersonas> ObetenerPersona(int nivel)
