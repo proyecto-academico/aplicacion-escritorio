@@ -31,6 +31,18 @@ namespace PRUEAS
 
         public ClasePersonas() { }
 
+        /*public ClasePersonas(int tipo, string name, string mail, int dNI, int dni, int curso, int division, string surname)
+        {
+            Tipo = tipo;
+            Name = name;
+            this.mail = mail;
+            DNI = dNI;
+            _dni = dni;
+            this.curso = curso;
+            this.division = division;
+            Surname = surname;
+        }
+        */
 #pragma warning restore CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
     }
 }

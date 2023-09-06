@@ -31,19 +31,29 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             GRILLA = new DataGridView();
+            claseEvaluacionesBindingSource1 = new BindingSource(components);
+            claseEvaluacionesBindingSource = new BindingSource(components);
             Cerrar = new Button();
             Label1 = new Label();
             Buscador = new TextBox();
             button2 = new Button();
             Button1 = new Button();
-            claseEvaluacionesBindingSource = new BindingSource(components);
-            divisionIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clasenotasBindingSource = new BindingSource(components);
+            claseEvaluacionesBindingSource2 = new BindingSource(components);
+            claseEvaluacionesBindingSource3 = new BindingSource(components);
+            Nombre = new DataGridViewTextBoxColumn();
+            evaluacion = new DataGridViewTextBoxColumn();
             claseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             detallesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Notas = new DataGridViewLinkColumn();
             notaPromedioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource3).BeginInit();
             SuspendLayout();
             // 
             // GRILLA
@@ -61,14 +71,22 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { divisionIDDataGridViewTextBoxColumn, claseDataGridViewTextBoxColumn, fechaDataGridViewTextBoxColumn, detallesDataGridViewTextBoxColumn, notaPromedioDataGridViewTextBoxColumn });
-            GRILLA.DataSource = claseEvaluacionesBindingSource;
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { Nombre, evaluacion, claseDataGridViewTextBoxColumn, fechaDataGridViewTextBoxColumn, detallesDataGridViewTextBoxColumn, Notas, notaPromedioDataGridViewTextBoxColumn });
+            GRILLA.DataSource = claseEvaluacionesBindingSource3;
             GRILLA.Location = new Point(46, 70);
             GRILLA.Name = "GRILLA";
             GRILLA.RowHeadersWidth = 51;
             GRILLA.RowTemplate.Height = 25;
             GRILLA.Size = new Size(753, 382);
             GRILLA.TabIndex = 21;
+            // 
+            // claseEvaluacionesBindingSource1
+            // 
+            claseEvaluacionesBindingSource1.DataSource = typeof(ClaseEvaluaciones);
+            // 
+            // claseEvaluacionesBindingSource
+            // 
+            claseEvaluacionesBindingSource.DataSource = typeof(ClaseEvaluaciones);
             // 
             // Cerrar
             // 
@@ -125,15 +143,28 @@
             Button1.Text = "Buscar";
             Button1.UseVisualStyleBackColor = true;
             // 
-            // claseEvaluacionesBindingSource
+            // clasenotasBindingSource
             // 
-            claseEvaluacionesBindingSource.DataSource = typeof(ClaseEvaluaciones);
+            clasenotasBindingSource.DataSource = typeof(Clasenotas);
             // 
-            // divisionIDDataGridViewTextBoxColumn
+            // claseEvaluacionesBindingSource2
             // 
-            divisionIDDataGridViewTextBoxColumn.DataPropertyName = "Division_ID";
-            divisionIDDataGridViewTextBoxColumn.HeaderText = "Division_ID";
-            divisionIDDataGridViewTextBoxColumn.Name = "divisionIDDataGridViewTextBoxColumn";
+            claseEvaluacionesBindingSource2.DataSource = typeof(ClaseEvaluaciones);
+            // 
+            // claseEvaluacionesBindingSource3
+            // 
+            claseEvaluacionesBindingSource3.DataSource = typeof(ClaseEvaluaciones);
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // evaluacion
+            // 
+            evaluacion.DataPropertyName = "ID";
+            evaluacion.HeaderText = "ID";
+            evaluacion.Name = "evaluacion";
             // 
             // claseDataGridViewTextBoxColumn
             // 
@@ -152,6 +183,13 @@
             detallesDataGridViewTextBoxColumn.DataPropertyName = "Detalles";
             detallesDataGridViewTextBoxColumn.HeaderText = "Detalles";
             detallesDataGridViewTextBoxColumn.Name = "detallesDataGridViewTextBoxColumn";
+            // 
+            // Notas
+            // 
+            Notas.HeaderText = "Notas";
+            Notas.Name = "Notas";
+            Notas.Resizable = DataGridViewTriState.True;
+            Notas.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // notaPromedioDataGridViewTextBoxColumn
             // 
@@ -173,7 +211,11 @@
             Name = "FormEvaluaciones";
             Text = "FormEvaluaciones";
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -186,11 +228,17 @@
         private TextBox Buscador;
         private Button button2;
         private Button Button1;
-        private DataGridViewTextBoxColumn divisionIDDataGridViewTextBoxColumn;
+        private BindingSource claseEvaluacionesBindingSource;
+        private BindingSource claseEvaluacionesBindingSource1;
+        private BindingSource clasenotasBindingSource;
+        private BindingSource claseEvaluacionesBindingSource2;
+        private BindingSource claseEvaluacionesBindingSource3;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn evaluacion;
         private DataGridViewTextBoxColumn claseDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn detallesDataGridViewTextBoxColumn;
+        private DataGridViewLinkColumn Notas;
         private DataGridViewTextBoxColumn notaPromedioDataGridViewTextBoxColumn;
-        private BindingSource claseEvaluacionesBindingSource;
     }
 }

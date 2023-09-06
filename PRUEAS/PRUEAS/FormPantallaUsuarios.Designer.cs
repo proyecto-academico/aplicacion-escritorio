@@ -113,7 +113,7 @@
             Cerrar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Cerrar.Location = new Point(747, 510);
+            Cerrar.Location = new Point(765, 506);
             Cerrar.Name = "Cerrar";
             Cerrar.Size = new Size(58, 27);
             Cerrar.TabIndex = 5;
@@ -125,7 +125,6 @@
             // 
             GRILLA.AllowUserToDeleteRows = false;
             GRILLA.AllowUserToOrderColumns = true;
-            GRILLA.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             GRILLA.AutoGenerateColumns = false;
             GRILLA.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GRILLA.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
@@ -301,6 +300,7 @@
             // FormPantallaUsuarios
             // 
             AutoScaleMode = AutoScaleMode.None;
+            AutoScroll = true;
             AutoSize = true;
             ClientSize = new Size(835, 555);
             Controls.Add(ProfesorCheck);

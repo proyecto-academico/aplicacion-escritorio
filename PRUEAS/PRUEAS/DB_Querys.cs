@@ -207,12 +207,7 @@ namespace PRUEAS
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-#pragma warning disable CS8604 // Posible argumento de referencia nulo
-#pragma warning disable CS8604 // Posible argumento de referencia nulo
-#pragma warning disable CS8604 // Posible argumento de referencia nulo
-#pragma warning disable CS8601 // Posible asignación de referencia nula
-#pragma warning disable CS8601 // Posible asignación de referencia nula
-#pragma warning disable CS8601 // Posible asignación de referencia nula
+
                         personas.Add(new ClasePersonas
                         {
                             _dni = int.Parse(reader["DNI"].ToString()),
@@ -222,12 +217,7 @@ namespace PRUEAS
                             division = int.Parse(reader["Anio_Escolar"].ToString()),
                             curso = int.Parse(reader["Division_Escolar"].ToString()),
                         });
-#pragma warning restore CS8601 // Posible asignación de referencia nula
-#pragma warning restore CS8601 // Posible asignación de referencia nula
-#pragma warning restore CS8601 // Posible asignación de referencia nula
-#pragma warning restore CS8604 // Posible argumento de referencia nulo
-#pragma warning restore CS8604 // Posible argumento de referencia nulo
-#pragma warning restore CS8604 // Posible argumento de referencia nulo
+
                     }
                 }
                 else
@@ -364,7 +354,7 @@ namespace PRUEAS
 
         #endregion
 
-        #region
+        #region Querry ClaseMateria
         public List<Clase_ClaseMateria> GetClaseClaseMaterias(int persona_)
         {
             List<Clase_ClaseMateria> materia = new List<Clase_ClaseMateria>();
@@ -384,13 +374,14 @@ namespace PRUEAS
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
                     materia.Add(new Clase_ClaseMateria
-                    {
-                        Clase_ID = int.Parse(reader["Clase_ID"].ToString()),
-                        Division_ID = int.Parse(reader["Division"].ToString()),
-                        Profesor_ID = (reader["Profesor"].ToString()),
-                        Fecha_Final = DateTime.Parse(reader["Fecha_Final"].ToString()),
-                        Fecha_Comienzo = DateTime.Parse(reader["Fecha_Comienzo"].ToString())
-                    });
+                    (
+                        int.Parse(reader["Clase_ID"].ToString()),
+                        int.Parse(reader["Division"].ToString()),
+                        (reader["Materia"].ToString()),
+                        (reader["Profesor"].ToString()),
+                        DateTime.Parse(reader["Fecha_Final"].ToString()),
+                        DateTime.Parse(reader["Fecha_Comienzo"].ToString())
+                    ));
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
@@ -409,6 +400,193 @@ namespace PRUEAS
             }
             return materia;
         }
+        #endregion
+
+        #region Querry Divisiones
+        public List<ClaseDivisiones> GetDivisiones(int persona_)
+        {
+            List<ClaseDivisiones> divisiones = new List<ClaseDivisiones>();
+
+            try
+            {
+                conn.Open();
+                string querry = @$"SELECT materia.Materia_ID, materia.Nombre, Anio_escolar, Horas_Semanales FROM materia WHERE materia.Materia_ID = @DNI";
+                SqlCommand command = new SqlCommand(querry, conn);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+                    divisiones.Add(new ClaseDivisiones
+                    (
+                        int.Parse(reader["ID"].ToString()),
+                        (reader["Nombre"].ToString()),
+                        int.Parse(reader["Turno"].ToString()),
+                        int.Parse(reader["Divisiones"].ToString())
+                    ));
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+
+                }
+
+
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return divisiones;
+        }
+        #endregion
+
+        #region Querry Materia
+        public List<ClaseMateria> GetMaterias(int persona_)
+        {
+            List<ClaseMateria> a = new List<ClaseMateria>();
+
+            try
+            {
+                conn.Open();
+                string querry = @$"SELECT materia.Materia_ID, materia.Nombre, Anio_escolar, Horas_Semanales FROM materia WHERE materia.Materia_ID = @DNI";
+                SqlCommand command = new SqlCommand(querry, conn);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+                    a.Add(new ClaseMateria
+                    (
+                        int.Parse(reader["ID"].ToString()),   
+                        (reader["Nombre"].ToString()),
+                        int.Parse(reader["Anio"].ToString()),
+                        int.Parse(reader["Horas_semanales"].ToString())
+                    )) ;
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+
+                }
+
+
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return a;
+        }
+        #endregion
+
+        #region Querry Notas
+        public List<Clasenotas> GetClasenotas(int persona_)
+        {
+            List<Clasenotas> clasenotas = new List<Clasenotas>();
+
+            try
+            {
+                conn.Open();
+                string querry = @$"SELECT materia.Materia_ID, materia.Nombre, Anio_escolar, Horas_Semanales FROM materia WHERE materia.Materia_ID = @DNI";
+                SqlCommand command = new SqlCommand(querry, conn);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+                    clasenotas.Add(new Clasenotas
+                    (
+                        int.Parse(reader["ID"].ToString()),
+                        decimal.Parse(reader["Nota"].ToString()),
+                        int.Parse(reader["Anio"].ToString()),
+                        DateTime.Parse(reader["Horas_semanales"].ToString())
+                    ));
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+
+                }
+
+
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return clasenotas;
+        }
+
+        #endregion
+
+        #region Querry Evaluaciones 
+        public List<ClaseEvaluaciones> GetEvaluaciones(int persona_)
+        {
+            List<ClaseEvaluaciones> evaluaciones = new List<ClaseEvaluaciones>();
+
+            try
+            {
+                conn.Open();
+                string querry = @$"SELECT materia.Materia_ID, materia.Nombre, Anio_escolar, Horas_Semanales FROM materia WHERE materia.Materia_ID = @DNI";
+                SqlCommand command = new SqlCommand(querry, conn);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+                    evaluaciones.Add(new ClaseEvaluaciones
+                    (
+                        int.Parse(reader["EvaluacionID"].ToString()),
+                        (reader["Clase"].ToString()),
+                        DateTime.Parse(reader["Fecha"].ToString()),
+                        (reader["Detalles"].ToString()),
+                        int.Parse(reader["NotaPromedio"].ToString())
+                    ));
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+
+                }
+
+
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return evaluaciones;
+        }
+
         #endregion
 
         #region Querry Faltas

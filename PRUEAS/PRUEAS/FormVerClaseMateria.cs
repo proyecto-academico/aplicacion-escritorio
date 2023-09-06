@@ -6,5 +6,15 @@
         {
             InitializeComponent();
         }
+
+        private void FormVerClaseMateria_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -7,12 +7,13 @@
         public int Anio_escolar { get; set; }
         public int Horas_semanales { get; set; }
 
-        public ClaseMateria(int iD, string nombre, int anio_escolar, int horas_semanales)
+        public ClaseMateria(int id, string nombre, int anio_escolar, int horas_semanales)
         {
-            ID = iD;
+            ID = id;
             this.Nombre = nombre;
             Anio_escolar = anio_escolar;
             Horas_semanales = horas_semanales;
         }
+        
     }
 }
