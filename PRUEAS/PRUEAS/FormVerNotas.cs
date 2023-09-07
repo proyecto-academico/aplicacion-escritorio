@@ -12,29 +12,9 @@
             this.persona = persona_;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void FNotas_Load(object sender, EventArgs e)
@@ -91,6 +71,19 @@
              }*/
         }
 
+        private void agregar_Click(object sender, EventArgs e)
+        {
+            AgregarData();
+        }
+        private void AgregarData()
+        {
+            //FormGuardarNotas notas = new FormGuardarNotas();
+            //notas.ShowDialog(this);
+        }
 
+        private void buscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

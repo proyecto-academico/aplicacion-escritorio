@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PRUEAS
 {
-    public partial class FormDivisiones : Form
+    public partial class FormVerDivisiones : Form
     {
-        public FormDivisiones()
+        public FormVerDivisiones()
         {
             InitializeComponent();
         }

@@ -30,6 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             GRILLA = new DataGridView();
+            dniDataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            notaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            divisionDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            Fecha = new DataGridViewTextBoxColumn();
             clasenotasBindingSource5 = new BindingSource(components);
             clasenotasBindingSource3 = new BindingSource(components);
             clasenotasBindingSource4 = new BindingSource(components);
@@ -67,11 +72,6 @@
             evaluacionIDDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dateTimeDataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dniDataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dniDataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            notaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            divisionDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            Fecha = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource3).BeginInit();
@@ -96,6 +96,41 @@
             GRILLA.Size = new Size(555, 403);
             GRILLA.TabIndex = 24;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
+            // 
+            // dniDataGridViewTextBoxColumn4
+            // 
+            dniDataGridViewTextBoxColumn4.DataPropertyName = "_dni";
+            dniDataGridViewTextBoxColumn4.HeaderText = "DNI";
+            dniDataGridViewTextBoxColumn4.Name = "dniDataGridViewTextBoxColumn4";
+            dniDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Persona";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // notaDataGridViewTextBoxColumn
+            // 
+            notaDataGridViewTextBoxColumn.DataPropertyName = "Nota";
+            notaDataGridViewTextBoxColumn.HeaderText = "Nota";
+            notaDataGridViewTextBoxColumn.Name = "notaDataGridViewTextBoxColumn";
+            notaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // divisionDataGridViewTextBoxColumn1
+            // 
+            divisionDataGridViewTextBoxColumn1.DataPropertyName = "division";
+            divisionDataGridViewTextBoxColumn1.HeaderText = "Clase";
+            divisionDataGridViewTextBoxColumn1.Name = "divisionDataGridViewTextBoxColumn1";
+            divisionDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            Fecha.DataPropertyName = "DateTime";
+            Fecha.HeaderText = "Fecha";
+            Fecha.Name = "Fecha";
+            Fecha.ReadOnly = true;
             // 
             // clasenotasBindingSource5
             // 
@@ -151,6 +186,7 @@
             agregar.TabIndex = 20;
             agregar.Text = "Agregar";
             agregar.UseVisualStyleBackColor = true;
+            agregar.Click += agregar_Click;
             // 
             // buscar
             // 
@@ -160,6 +196,7 @@
             buscar.TabIndex = 19;
             buscar.Text = "Buscar";
             buscar.UseVisualStyleBackColor = true;
+            buscar.Click += buscar_Click;
             // 
             // clasenotasBindingSource1
             // 
@@ -324,36 +361,6 @@
             dniDataGridViewTextBoxColumn3.DataPropertyName = "_dni";
             dniDataGridViewTextBoxColumn3.HeaderText = "_dni";
             dniDataGridViewTextBoxColumn3.Name = "dniDataGridViewTextBoxColumn3";
-            // 
-            // dniDataGridViewTextBoxColumn4
-            // 
-            dniDataGridViewTextBoxColumn4.DataPropertyName = "_dni";
-            dniDataGridViewTextBoxColumn4.HeaderText = "DNI";
-            dniDataGridViewTextBoxColumn4.Name = "dniDataGridViewTextBoxColumn4";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Persona";
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // notaDataGridViewTextBoxColumn
-            // 
-            notaDataGridViewTextBoxColumn.DataPropertyName = "Nota";
-            notaDataGridViewTextBoxColumn.HeaderText = "Nota";
-            notaDataGridViewTextBoxColumn.Name = "notaDataGridViewTextBoxColumn";
-            // 
-            // divisionDataGridViewTextBoxColumn1
-            // 
-            divisionDataGridViewTextBoxColumn1.DataPropertyName = "division";
-            divisionDataGridViewTextBoxColumn1.HeaderText = "Clase";
-            divisionDataGridViewTextBoxColumn1.Name = "divisionDataGridViewTextBoxColumn1";
-            // 
-            // Fecha
-            // 
-            Fecha.DataPropertyName = "DateTime";
-            Fecha.HeaderText = "Fecha";
-            Fecha.Name = "Fecha";
             // 
             // FormVerNotas
             // 

@@ -54,9 +54,10 @@ namespace PRUEAS
                 sqlCommand.ExecuteNonQuery();
                 #endregion
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                MessageBox.Show(e.Message);
+
             }
             finally
             {
@@ -123,9 +124,9 @@ namespace PRUEAS
 
                 #endregion
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -168,9 +169,9 @@ namespace PRUEAS
                 sqlCommand.ExecuteNonQuery();
                 #endregion
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -254,10 +255,10 @@ namespace PRUEAS
                 }
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -308,9 +309,9 @@ namespace PRUEAS
                 sqlCommand.ExecuteNonQuery();
                 #endregion
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -339,9 +340,9 @@ namespace PRUEAS
                 sqlCommand.ExecuteNonQuery();
                 #endregion
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -390,9 +391,9 @@ namespace PRUEAS
 
 
             }
-            catch
+            catch(Exception e)
             {
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -436,9 +437,9 @@ namespace PRUEAS
 
 
             }
-            catch
+            catch(Exception e)
             {
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -482,9 +483,9 @@ namespace PRUEAS
 
 
             }
-            catch
+            catch(Exception e)
             {
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -528,9 +529,9 @@ namespace PRUEAS
 
 
             }
-            catch
+            catch(Exception e) 
             {
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -576,9 +577,9 @@ namespace PRUEAS
 
 
             }
-            catch
+            catch(Exception e)
             {
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -623,10 +624,10 @@ namespace PRUEAS
 
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -652,10 +653,10 @@ namespace PRUEAS
 
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -680,10 +681,10 @@ namespace PRUEAS
 
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -704,7 +705,7 @@ namespace PRUEAS
             }
             catch (Exception ex)
             {
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -767,10 +768,10 @@ namespace PRUEAS
                 }
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {
@@ -828,10 +829,10 @@ namespace PRUEAS
                 }
 
             }
-            catch (Exception)
+            catch (Exception e)   
             {
 
-                throw;
+                MessageBox.Show(e.Message);
             }
             finally
             {

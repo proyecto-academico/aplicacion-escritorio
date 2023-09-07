@@ -1,8 +1,8 @@
 ﻿namespace PRUEAS
 {
-    public partial class FormEvaluaciones : Form
+    public partial class FormVerEvaluaciones : Form
     {
-        public FormEvaluaciones()
+        public FormVerEvaluaciones()
         {
             InitializeComponent();
         }

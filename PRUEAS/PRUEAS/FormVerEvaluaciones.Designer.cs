@@ -1,6 +1,6 @@
 ﻿namespace PRUEAS
 {
-    partial class FormEvaluaciones
+    partial class FormVerEvaluaciones
     {
         /// <summary>
         /// Required designer variable.
