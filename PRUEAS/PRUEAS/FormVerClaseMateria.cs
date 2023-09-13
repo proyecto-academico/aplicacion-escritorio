@@ -40,16 +40,21 @@ namespace PRUEAS
 
             }
         }
-        /*private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void GRILLA_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString() == "Email me")
-            {
-                MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
-            }
-            else
-            {
-                MessageBox.Show("You Clicked another Cell");
-            }
-        }*/
+
+        }
+        /*private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+{
+   if (dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString() == "Email me")
+   {
+       MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+   }
+   else
+   {
+       MessageBox.Show("You Clicked another Cell");
+   }
+}*/
     }
 }

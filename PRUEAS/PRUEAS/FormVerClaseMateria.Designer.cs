@@ -81,6 +81,7 @@
             GRILLA.RowTemplate.Height = 25;
             GRILLA.Size = new Size(792, 360);
             GRILLA.TabIndex = 21;
+            GRILLA.CellContentClick += GRILLA_CellContentClick_1;
             // 
             // claseIDDataGridViewTextBoxColumn
             // 
