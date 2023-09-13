@@ -77,8 +77,8 @@
         }
         private void AgregarData()
         {
-            //FormGuardarNotas notas = new FormGuardarNotas();
-            //notas.ShowDialog(this);
+            FormGuardarNotas notas = new FormGuardarNotas();
+            notas.ShowDialog(this);
         }
 
         private void buscar_Click(object sender, EventArgs e)

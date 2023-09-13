@@ -59,6 +59,7 @@
             // GRILLA
             // 
             GRILLA.AllowUserToDeleteRows = false;
+            GRILLA.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             GRILLA.AutoGenerateColumns = false;
             GRILLA.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GRILLA.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
@@ -128,6 +129,7 @@
             Evaluaciones.HeaderText = "Evaluaciones";
             Evaluaciones.Name = "Evaluaciones";
             Evaluaciones.ReadOnly = true;
+            Evaluaciones.UseColumnTextForLinkValue = true;
             // 
             // claseClaseMateriaBindingSource3
             // 
@@ -206,10 +208,11 @@
             // 
             claseEvaluacionesBindingSource.DataSource = typeof(ClaseEvaluaciones);
             // 
-            // FormClaseMateria
+            // FormVerClaseMateria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(848, 497);
             Controls.Add(GRILLA);
             Controls.Add(Cerrar);
@@ -217,7 +220,7 @@
             Controls.Add(Buscador);
             Controls.Add(button2);
             Controls.Add(Button1);
-            Name = "FormClaseMateria";
+            Name = "FormVerClaseMateria";
             Text = "FormClaseMateria";
             Load += FormClaseMateria_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
@@ -241,6 +244,8 @@
         private BindingSource claseClaseMateriaBindingSource;
         private BindingSource claseClaseMateriaBindingSource1;
         private BindingSource claseClaseMateriaBindingSource2;
+        private BindingSource claseClaseMateriaBindingSource3;
+        private BindingSource claseEvaluacionesBindingSource;
         private DataGridViewTextBoxColumn claseIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn divisionIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn materiaIDDataGridViewTextBoxColumn;
@@ -248,7 +253,5 @@
         private DataGridViewTextBoxColumn fechaComienzoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaFinalDataGridViewTextBoxColumn;
         private DataGridViewLinkColumn Evaluaciones;
-        private BindingSource claseClaseMateriaBindingSource3;
-        private BindingSource claseEvaluacionesBindingSource;
     }
 }

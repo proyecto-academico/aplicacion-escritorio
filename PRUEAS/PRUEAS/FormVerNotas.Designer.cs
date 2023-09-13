@@ -152,7 +152,7 @@
             // 
             Cerrar.FlatStyle = FlatStyle.Flat;
             Cerrar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Cerrar.Location = new Point(571, 481);
+            Cerrar.Location = new Point(570, 485);
             Cerrar.Name = "Cerrar";
             Cerrar.Size = new Size(75, 32);
             Cerrar.TabIndex = 23;
@@ -366,7 +366,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(658, 525);
+            ClientSize = new Size(657, 527);
             Controls.Add(GRILLA);
             Controls.Add(Cerrar);
             Controls.Add(Label1);

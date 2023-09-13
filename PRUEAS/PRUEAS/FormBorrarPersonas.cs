@@ -20,7 +20,7 @@
             manejoDeDB.DeletePersona(_personas);
 #pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
 #pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
-            ((FormPantallaUsuarios)this.Owner).CargaDeContactos();
+            ((FormVerPersonas)this.Owner).CargaDeContactos();
 #pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
 #pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
 

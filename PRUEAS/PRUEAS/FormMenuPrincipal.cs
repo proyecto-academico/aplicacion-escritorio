@@ -9,7 +9,7 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormPantallaUsuarios Alumno_BaseDeDatos = new FormPantallaUsuarios();
+            FormVerPersonas Alumno_BaseDeDatos = new FormVerPersonas();
             Alumno_BaseDeDatos.Show();
             this.Close();
         }

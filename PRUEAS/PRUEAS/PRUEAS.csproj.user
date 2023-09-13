@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="FormGuardarEvaluaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormGuardarNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormVerClaseMateria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -37,7 +43,7 @@
     <Compile Update="FormInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormPantallaUsuarios.cs">
+    <Compile Update="FormVerPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -21,5 +21,11 @@ namespace PRUEAS
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //FormGuardarDivisiones agregarDivisiones= new FormGuardarDivisiones(persona, false);
+            //agregarDivisiones.ShowDialog(this);
+        }
     }
 }

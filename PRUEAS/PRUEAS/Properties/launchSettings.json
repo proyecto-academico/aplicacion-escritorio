@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PRUEAS": {
+      "commandName": "Project",
+      "sqlDebugging": true
+    }
+  }
+}

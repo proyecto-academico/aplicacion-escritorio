@@ -31,22 +31,22 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             GRILLA = new DataGridView();
-            claseDivisionesBindingSource = new BindingSource(components);
-            Cerrar = new Button();
-            Label1 = new Label();
-            Buscador = new TextBox();
-            button2 = new Button();
-            Button1 = new Button();
-            claseDivisionesBindingSource1 = new BindingSource(components);
             nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             turno = new DataGridViewTextBoxColumn();
             divisions = new DataGridViewTextBoxColumn();
             Clases = new DataGridViewLinkColumn();
             Alumno = new DataGridViewLinkColumn();
+            claseDivisionesBindingSource1 = new BindingSource(components);
+            claseDivisionesBindingSource = new BindingSource(components);
+            Cerrar = new Button();
+            Label1 = new Label();
+            Buscador = new TextBox();
+            button2 = new Button();
+            Button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource).BeginInit();
             SuspendLayout();
             // 
             // GRILLA
@@ -72,6 +72,50 @@
             GRILLA.RowTemplate.Height = 25;
             GRILLA.Size = new Size(753, 382);
             GRILLA.TabIndex = 21;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // turno
+            // 
+            turno.DataPropertyName = "turno";
+            turno.HeaderText = "Turno";
+            turno.Name = "turno";
+            // 
+            // divisions
+            // 
+            divisions.DataPropertyName = "divisions";
+            divisions.HeaderText = "Divisions";
+            divisions.Name = "divisions";
+            // 
+            // Clases
+            // 
+            Clases.HeaderText = "Clases";
+            Clases.Name = "Clases";
+            Clases.Resizable = DataGridViewTriState.True;
+            Clases.SortMode = DataGridViewColumnSortMode.Automatic;
+            Clases.UseColumnTextForLinkValue = true;
+            // 
+            // Alumno
+            // 
+            Alumno.HeaderText = "Alumno";
+            Alumno.Name = "Alumno";
+            Alumno.Resizable = DataGridViewTriState.True;
+            Alumno.SortMode = DataGridViewColumnSortMode.Automatic;
+            Alumno.UseColumnTextForLinkValue = true;
+            // 
+            // claseDivisionesBindingSource1
+            // 
+            claseDivisionesBindingSource1.DataSource = typeof(ClaseDivisiones);
             // 
             // claseDivisionesBindingSource
             // 
@@ -121,6 +165,7 @@
             button2.TabIndex = 17;
             button2.Text = "Agregar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Button1
             // 
@@ -132,49 +177,7 @@
             Button1.Text = "Buscar";
             Button1.UseVisualStyleBackColor = true;
             // 
-            // claseDivisionesBindingSource1
-            // 
-            claseDivisionesBindingSource1.DataSource = typeof(ClaseDivisiones);
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // turno
-            // 
-            turno.DataPropertyName = "turno";
-            turno.HeaderText = "Turno";
-            turno.Name = "turno";
-            // 
-            // divisions
-            // 
-            divisions.DataPropertyName = "divisions";
-            divisions.HeaderText = "Divisions";
-            divisions.Name = "divisions";
-            // 
-            // Clases
-            // 
-            Clases.HeaderText = "Clases";
-            Clases.Name = "Clases";
-            Clases.Resizable = DataGridViewTriState.True;
-            Clases.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Alumno
-            // 
-            Alumno.HeaderText = "Alumno";
-            Alumno.Name = "Alumno";
-            Alumno.Resizable = DataGridViewTriState.True;
-            Alumno.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // FormDivisiones
+            // FormVerDivisiones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -185,11 +188,11 @@
             Controls.Add(Buscador);
             Controls.Add(button2);
             Controls.Add(Button1);
-            Name = "FormDivisiones";
+            Name = "FormVerDivisiones";
             Text = "FormDivisiones";
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
-            ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

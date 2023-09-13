@@ -1,6 +1,6 @@
 ﻿namespace PRUEAS
 {
-    partial class FormPantallaUsuarios
+    partial class FormVerPersonas
     {
         /// <summary>
         /// Required designer variable.
@@ -125,6 +125,7 @@
             // 
             GRILLA.AllowUserToDeleteRows = false;
             GRILLA.AllowUserToOrderColumns = true;
+            GRILLA.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             GRILLA.AutoGenerateColumns = false;
             GRILLA.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GRILLA.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
@@ -297,7 +298,7 @@
             // 
             personasBindingSource4.DataSource = typeof(ClasePersonas);
             // 
-            // FormPantallaUsuarios
+            // FormVerPersonas
             // 
             AutoScaleMode = AutoScaleMode.None;
             AutoScroll = true;
@@ -312,7 +313,7 @@
             Controls.Add(Buscador);
             Controls.Add(button2);
             Controls.Add(Button1);
-            Name = "FormPantallaUsuarios";
+            Name = "FormVerPersonas";
             WindowState = FormWindowState.Maximized;
             Load += BaseDeDatos_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
