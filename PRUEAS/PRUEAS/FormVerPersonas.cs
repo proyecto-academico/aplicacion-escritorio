@@ -150,8 +150,8 @@
             List<ClasePersonas> personas = FuncionesQuerys.ObetenerPersona(nivel);
             GRILLA.DataSource = personas;
 
-        }
 
+        }
         #endregion
 
         private void AlumnoCheck_CheckedChanged(object sender, EventArgs e)

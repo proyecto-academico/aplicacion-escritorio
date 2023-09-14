@@ -40,10 +40,7 @@
 
         }
 
-        public List<Clase_ClaseMateria> GetClaseClaseMaterias(int ObjPersonas)
-        {
-            return __DataAccese.GetClaseClaseMaterias(ObjPersonas);
-        }
+        
 
         public List<ClasePersonas> ObetenerPersona(int nivel)
         {
@@ -82,6 +79,11 @@
             {
                 return __DataAccese.NumGetFaltasJust(ObjPersona);
             }
+        }
+
+        public List<Clase_ClaseMateria> CargarMaterias()
+        {
+            return __DataAccese.GetClaseClaseMaterias();
         }
 
 

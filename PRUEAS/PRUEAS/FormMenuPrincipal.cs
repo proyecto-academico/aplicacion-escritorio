@@ -21,7 +21,9 @@
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            FormVerClaseMateria formVerClaseMateria = new FormVerClaseMateria();
+            formVerClaseMateria.Show();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)

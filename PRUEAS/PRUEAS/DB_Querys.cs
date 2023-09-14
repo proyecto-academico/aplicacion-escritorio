@@ -4,7 +4,7 @@ namespace PRUEAS
 {
     public class DB_Querys
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=proyecto_academico;Data Source=PC-F-008\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=PC-F-026\\SQLEXPRESS");
 
         #region Querry Personas
 
@@ -65,7 +65,7 @@ namespace PRUEAS
                 conn.Close();
             }
 
-
+           
         }
 
         public void insertarFalta(ClaseFaltas falta)
@@ -356,10 +356,10 @@ namespace PRUEAS
         #endregion
 
         #region Querry ClaseMateria
-        public List<Clase_ClaseMateria> GetClaseClaseMaterias(int persona_)
+        public List<Clase_ClaseMateria> GetClaseClaseMaterias()
         {
-            List<Clase_ClaseMateria> materia = new List<Clase_ClaseMateria>();
-
+            List<Clase_ClaseMateria> materia= new List<Clase_ClaseMateria>();
+            
             try
             {
                 conn.Open();
@@ -376,13 +376,16 @@ namespace PRUEAS
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
                     materia.Add(new Clase_ClaseMateria
                     (
-                        int.Parse(reader["Clase_ID"].ToString()),
-                        int.Parse(reader["Division"].ToString()),
-                        (reader["Materia"].ToString()),
+                        reader["Clase_ID"].ToString(),
+                        reader["Division"].ToString(),
+                        (reader["Materia_ID"].ToString()),
                         (reader["Profesor"].ToString()),
-                        DateTime.Parse(reader["Fecha_Final"].ToString()),
-                        DateTime.Parse(reader["Fecha_Comienzo"].ToString())
-                    ));
+                        reader["Fecha_Comienzo"].ToString(),
+                        reader["Fecha_Final"].ToString(),
+                        reader["Nombre"].ToString()
+                        
+                        
+                    )) ; 
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
