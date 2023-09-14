@@ -31,12 +31,6 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             GRILLA = new DataGridView();
-            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            turno = new DataGridViewTextBoxColumn();
-            divisions = new DataGridViewTextBoxColumn();
-            Clases = new DataGridViewLinkColumn();
-            Alumno = new DataGridViewLinkColumn();
             claseDivisionesBindingSource1 = new BindingSource(components);
             claseDivisionesBindingSource = new BindingSource(components);
             Cerrar = new Button();
@@ -44,6 +38,9 @@
             Buscador = new TextBox();
             button2 = new Button();
             Button1 = new Button();
+            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            turno = new DataGridViewTextBoxColumn();
+            divisions = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource).BeginInit();
@@ -64,7 +61,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { nombreDataGridViewTextBoxColumn, iDDataGridViewTextBoxColumn, turno, divisions, Clases, Alumno });
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, turno, divisions });
             GRILLA.DataSource = claseDivisionesBindingSource1;
             GRILLA.Location = new Point(43, 71);
             GRILLA.Name = "GRILLA";
@@ -72,46 +69,7 @@
             GRILLA.RowTemplate.Height = 25;
             GRILLA.Size = new Size(753, 382);
             GRILLA.TabIndex = 21;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // turno
-            // 
-            turno.DataPropertyName = "turno";
-            turno.HeaderText = "Turno";
-            turno.Name = "turno";
-            // 
-            // divisions
-            // 
-            divisions.DataPropertyName = "divisions";
-            divisions.HeaderText = "Divisions";
-            divisions.Name = "divisions";
-            // 
-            // Clases
-            // 
-            Clases.HeaderText = "Clases";
-            Clases.Name = "Clases";
-            Clases.Resizable = DataGridViewTriState.True;
-            Clases.SortMode = DataGridViewColumnSortMode.Automatic;
-            Clases.UseColumnTextForLinkValue = true;
-            // 
-            // Alumno
-            // 
-            Alumno.HeaderText = "Alumno";
-            Alumno.Name = "Alumno";
-            Alumno.Resizable = DataGridViewTriState.True;
-            Alumno.SortMode = DataGridViewColumnSortMode.Automatic;
-            Alumno.UseColumnTextForLinkValue = true;
+            GRILLA.CellContentClick += GRILLA_CellContentClick;
             // 
             // claseDivisionesBindingSource1
             // 
@@ -177,6 +135,24 @@
             Button1.Text = "Buscar";
             Button1.UseVisualStyleBackColor = true;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // turno
+            // 
+            turno.DataPropertyName = "turno";
+            turno.HeaderText = "Turno";
+            turno.Name = "turno";
+            // 
+            // divisions
+            // 
+            divisions.DataPropertyName = "divisions";
+            divisions.HeaderText = "Divisions";
+            divisions.Name = "divisions";
+            // 
             // FormVerDivisiones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -190,6 +166,7 @@
             Controls.Add(Button1);
             Name = "FormVerDivisiones";
             Text = "FormDivisiones";
+            Load += FormVerDivisiones_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource).EndInit();
@@ -213,7 +190,5 @@
         private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn turno;
         private DataGridViewTextBoxColumn divisions;
-        private DataGridViewLinkColumn Clases;
-        private DataGridViewLinkColumn Alumno;
     }
 }

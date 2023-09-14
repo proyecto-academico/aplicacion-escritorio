@@ -86,6 +86,15 @@
             return __DataAccese.GetClaseClaseMaterias();
         }
 
+        public List<ClaseDivisiones> CargarDivisiones()
+        {
+            return __DataAccese.GetDivisiones();
+        }
+        public List<ClaseEvaluaciones> ClaseEvaluaciones()
+        {
+            return __DataAccese.GetEvaluaciones();
+        }
+
 
     }
 }

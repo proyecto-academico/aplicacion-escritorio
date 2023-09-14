@@ -12,9 +12,11 @@ namespace PRUEAS
 {
     public partial class FormVerDivisiones : Form
     {
+        Acceso_Querys FuncionesQuerys;
         public FormVerDivisiones()
         {
             InitializeComponent();
+            FuncionesQuerys = new Acceso_Querys();
         }
 
         private void Cerrar_Click(object sender, EventArgs e)
@@ -26,6 +28,22 @@ namespace PRUEAS
         {
             //FormGuardarDivisiones agregarDivisiones= new FormGuardarDivisiones(persona, false);
             //agregarDivisiones.ShowDialog(this);
+        }
+
+        private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void CargarDivisiones()
+        {
+            List<ClaseDivisiones> Divisiones = FuncionesQuerys.CargarDivisiones();
+            GRILLA.DataSource = Divisiones;
+        }
+
+        private void FormVerDivisiones_Load(object sender, EventArgs e)
+        {
+            CargarDivisiones();
         }
     }
 }

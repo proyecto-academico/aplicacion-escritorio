@@ -33,6 +33,7 @@
             button3 = new Button();
             button4 = new Button();
             label1 = new Label();
+            button5 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -55,7 +56,7 @@
             button2.Name = "button2";
             button2.Size = new Size(336, 23);
             button2.TabIndex = 1;
-            button2.Text = "button2";
+            button2.Text = "Materias/Clases";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -67,7 +68,7 @@
             button3.Name = "button3";
             button3.Size = new Size(336, 23);
             button3.TabIndex = 2;
-            button3.Text = "button3";
+            button3.Text = "Divisiones";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
@@ -92,9 +93,19 @@
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Location = new Point(131, 178);
             label1.Name = "label1";
-            label1.Size = new Size(737, 30);
+            label1.Size = new Size(738, 31);
             label1.TabIndex = 4;
             label1.Text = "Welcome to \"La suiza sistem\" from to administrator of the school";
+            // 
+            // button5
+            // 
+            button5.Location = new Point(336, 352);
+            button5.Name = "button5";
+            button5.Size = new Size(336, 23);
+            button5.TabIndex = 5;
+            button5.Text = "button5";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // FormMenuPrincipal
             // 
@@ -102,6 +113,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.suiza;
             ClientSize = new Size(1001, 586);
+            Controls.Add(button5);
             Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -120,5 +132,6 @@
         private Button button3;
         private Button button4;
         private Label label1;
+        private Button button5;
     }
 }

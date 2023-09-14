@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             GRILLA = new DataGridView();
-            Nombre = new DataGridViewTextBoxColumn();
-            claseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            detallesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            Notas = new DataGridViewLinkColumn();
-            notaPromedioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            claseEvaluacionesBindingSource6 = new BindingSource(components);
+            claseEvaluacionesBindingSource5 = new BindingSource(components);
             claseEvaluacionesBindingSource3 = new BindingSource(components);
             claseEvaluacionesBindingSource1 = new BindingSource(components);
             claseEvaluacionesBindingSource = new BindingSource(components);
@@ -47,12 +43,22 @@
             Button1 = new Button();
             clasenotasBindingSource = new BindingSource(components);
             claseEvaluacionesBindingSource2 = new BindingSource(components);
+            claseEvaluacionesBindingSource4 = new BindingSource(components);
+            evaluacionIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            claseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Clase_Name = new DataGridViewTextBoxColumn();
+            fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            detallesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            notaPromedioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource4).BeginInit();
             SuspendLayout();
             // 
             // GRILLA
@@ -61,17 +67,17 @@
             GRILLA.AutoGenerateColumns = false;
             GRILLA.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GRILLA.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { Nombre, claseDataGridViewTextBoxColumn, fechaDataGridViewTextBoxColumn, detallesDataGridViewTextBoxColumn, Notas, notaPromedioDataGridViewTextBoxColumn });
-            GRILLA.DataSource = claseEvaluacionesBindingSource3;
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { evaluacionIDDataGridViewTextBoxColumn, claseDataGridViewTextBoxColumn, Clase_Name, fechaDataGridViewTextBoxColumn, detallesDataGridViewTextBoxColumn, notaPromedioDataGridViewTextBoxColumn });
+            GRILLA.DataSource = claseEvaluacionesBindingSource6;
             GRILLA.Location = new Point(46, 70);
             GRILLA.Name = "GRILLA";
             GRILLA.RowHeadersWidth = 51;
@@ -80,42 +86,13 @@
             GRILLA.TabIndex = 21;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
             // 
-            // Nombre
+            // claseEvaluacionesBindingSource6
             // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
+            claseEvaluacionesBindingSource6.DataSource = typeof(ClaseEvaluaciones);
             // 
-            // claseDataGridViewTextBoxColumn
+            // claseEvaluacionesBindingSource5
             // 
-            claseDataGridViewTextBoxColumn.DataPropertyName = "Clase";
-            claseDataGridViewTextBoxColumn.HeaderText = "Clase";
-            claseDataGridViewTextBoxColumn.Name = "claseDataGridViewTextBoxColumn";
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
-            // detallesDataGridViewTextBoxColumn
-            // 
-            detallesDataGridViewTextBoxColumn.DataPropertyName = "Detalles";
-            detallesDataGridViewTextBoxColumn.HeaderText = "Detalles";
-            detallesDataGridViewTextBoxColumn.Name = "detallesDataGridViewTextBoxColumn";
-            // 
-            // Notas
-            // 
-            Notas.HeaderText = "Notas";
-            Notas.Name = "Notas";
-            Notas.Resizable = DataGridViewTriState.True;
-            Notas.SortMode = DataGridViewColumnSortMode.Automatic;
-            Notas.UseColumnTextForLinkValue = true;
-            // 
-            // notaPromedioDataGridViewTextBoxColumn
-            // 
-            notaPromedioDataGridViewTextBoxColumn.DataPropertyName = "NotaPromedio";
-            notaPromedioDataGridViewTextBoxColumn.HeaderText = "NotaPromedio";
-            notaPromedioDataGridViewTextBoxColumn.Name = "notaPromedioDataGridViewTextBoxColumn";
+            claseEvaluacionesBindingSource5.DataSource = typeof(ClaseEvaluaciones);
             // 
             // claseEvaluacionesBindingSource3
             // 
@@ -193,6 +170,46 @@
             // 
             claseEvaluacionesBindingSource2.DataSource = typeof(ClaseEvaluaciones);
             // 
+            // claseEvaluacionesBindingSource4
+            // 
+            claseEvaluacionesBindingSource4.DataSource = typeof(ClaseEvaluaciones);
+            // 
+            // evaluacionIDDataGridViewTextBoxColumn
+            // 
+            evaluacionIDDataGridViewTextBoxColumn.DataPropertyName = "Evaluacion_ID";
+            evaluacionIDDataGridViewTextBoxColumn.HeaderText = "Evaluacion_ID";
+            evaluacionIDDataGridViewTextBoxColumn.Name = "evaluacionIDDataGridViewTextBoxColumn";
+            // 
+            // claseDataGridViewTextBoxColumn
+            // 
+            claseDataGridViewTextBoxColumn.DataPropertyName = "Clase";
+            claseDataGridViewTextBoxColumn.HeaderText = "Clase_ID";
+            claseDataGridViewTextBoxColumn.Name = "claseDataGridViewTextBoxColumn";
+            // 
+            // Clase_Name
+            // 
+            Clase_Name.DataPropertyName = "Clase_Name";
+            Clase_Name.HeaderText = "Clase";
+            Clase_Name.Name = "Clase_Name";
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            // 
+            // detallesDataGridViewTextBoxColumn
+            // 
+            detallesDataGridViewTextBoxColumn.DataPropertyName = "Detalles";
+            detallesDataGridViewTextBoxColumn.HeaderText = "Detalles";
+            detallesDataGridViewTextBoxColumn.Name = "detallesDataGridViewTextBoxColumn";
+            // 
+            // notaPromedioDataGridViewTextBoxColumn
+            // 
+            notaPromedioDataGridViewTextBoxColumn.DataPropertyName = "NotaPromedio";
+            notaPromedioDataGridViewTextBoxColumn.HeaderText = "NotaPromedio";
+            notaPromedioDataGridViewTextBoxColumn.Name = "notaPromedioDataGridViewTextBoxColumn";
+            // 
             // FormVerEvaluaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -206,12 +223,16 @@
             Controls.Add(Button1);
             Name = "FormVerEvaluaciones";
             Text = "FormEvaluaciones";
+            Load += FormVerEvaluaciones_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource5).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource3).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)claseEvaluacionesBindingSource4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -230,11 +251,14 @@
         private BindingSource claseEvaluacionesBindingSource2;
         private BindingSource claseEvaluacionesBindingSource3;
         private DataGridViewTextBoxColumn evaluacion;
-        private DataGridViewTextBoxColumn Nombre;
+        private BindingSource claseEvaluacionesBindingSource4;
+        private BindingSource claseEvaluacionesBindingSource5;
+        private BindingSource claseEvaluacionesBindingSource6;
+        private DataGridViewTextBoxColumn evaluacionIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn claseDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Clase_Name;
         private DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn detallesDataGridViewTextBoxColumn;
-        private DataGridViewLinkColumn Notas;
         private DataGridViewTextBoxColumn notaPromedioDataGridViewTextBoxColumn;
     }
 }

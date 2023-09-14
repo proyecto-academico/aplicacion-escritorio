@@ -4,14 +4,12 @@
     {
         
         public int ID { get; set; }
-        public string Nombre { get; set; }
-        public int turno { get; set; }
-        public int divisions { get; set; }
+        public string turno { get; set; }
+        public string divisions { get; set; }
 
-        public ClaseDivisiones(int iD,string nombre, int turno, int divisions)
+        public ClaseDivisiones(int iD, string turno, string divisions)
         {
             ID = iD;
-            Nombre = nombre;
             this.turno = turno;
             this.divisions = divisions;
         }
