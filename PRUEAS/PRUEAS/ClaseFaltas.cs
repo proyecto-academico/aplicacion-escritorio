@@ -11,13 +11,13 @@
         public int cantJusti { get; set; }
         public int cantTotal { get; set; }
 
-       /* public ClaseFaltas(int faltasID, DateTime fecha, float tipo, bool justificado)
-        {
-            FaltasID = faltasID;
-            Fecha = fecha;
-            Tipo = tipo;
-            Justificado = justificado;
+        /* public ClaseFaltas(int faltasID, DateTime fecha, float tipo, bool justificado)
+         {
+             FaltasID = faltasID;
+             Fecha = fecha;
+             Tipo = tipo;
+             Justificado = justificado;
 
-        }*/
+         }*/
     }
 }

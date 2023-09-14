@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             GRILLA = new DataGridView();
+            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            anioescolarDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            horassemanalesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Clases = new DataGridViewLinkColumn();
             claseMateriaBindingSource = new BindingSource(components);
             claseMateriaBindingSource1 = new BindingSource(components);
             Cerrar = new Button();
@@ -39,11 +44,6 @@
             button2 = new Button();
             Button1 = new Button();
             claseEvaluacionesBindingSource = new BindingSource(components);
-            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            anioescolarDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            horassemanalesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            Clases = new DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseMateriaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseMateriaBindingSource1).BeginInit();
@@ -56,14 +56,14 @@
             GRILLA.AutoGenerateColumns = false;
             GRILLA.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GRILLA.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             GRILLA.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, anioescolarDataGridViewTextBoxColumn, horassemanalesDataGridViewTextBoxColumn, Clases });
             GRILLA.DataSource = claseMateriaBindingSource;
@@ -74,6 +74,36 @@
             GRILLA.Size = new Size(753, 382);
             GRILLA.TabIndex = 15;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // anioescolarDataGridViewTextBoxColumn
+            // 
+            anioescolarDataGridViewTextBoxColumn.DataPropertyName = "Anio_escolar";
+            anioescolarDataGridViewTextBoxColumn.HeaderText = "Anio_escolar";
+            anioescolarDataGridViewTextBoxColumn.Name = "anioescolarDataGridViewTextBoxColumn";
+            // 
+            // horassemanalesDataGridViewTextBoxColumn
+            // 
+            horassemanalesDataGridViewTextBoxColumn.DataPropertyName = "Horas_semanales";
+            horassemanalesDataGridViewTextBoxColumn.HeaderText = "Horas_semanales";
+            horassemanalesDataGridViewTextBoxColumn.Name = "horassemanalesDataGridViewTextBoxColumn";
+            // 
+            // Clases
+            // 
+            Clases.HeaderText = "Clases";
+            Clases.Name = "Clases";
+            Clases.UseColumnTextForLinkValue = true;
             // 
             // claseMateriaBindingSource
             // 
@@ -143,36 +173,6 @@
             // 
             claseEvaluacionesBindingSource.DataSource = typeof(ClaseEvaluaciones);
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // anioescolarDataGridViewTextBoxColumn
-            // 
-            anioescolarDataGridViewTextBoxColumn.DataPropertyName = "Anio_escolar";
-            anioescolarDataGridViewTextBoxColumn.HeaderText = "Anio_escolar";
-            anioescolarDataGridViewTextBoxColumn.Name = "anioescolarDataGridViewTextBoxColumn";
-            // 
-            // horassemanalesDataGridViewTextBoxColumn
-            // 
-            horassemanalesDataGridViewTextBoxColumn.DataPropertyName = "Horas_semanales";
-            horassemanalesDataGridViewTextBoxColumn.HeaderText = "Horas_semanales";
-            horassemanalesDataGridViewTextBoxColumn.Name = "horassemanalesDataGridViewTextBoxColumn";
-            // 
-            // Clases
-            // 
-            Clases.HeaderText = "Clases";
-            Clases.Name = "Clases";
-            Clases.UseColumnTextForLinkValue = true;
-            // 
             // FormVerMateria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -185,7 +185,7 @@
             Controls.Add(button2);
             Controls.Add(Button1);
             Name = "FormVerMateria";
-            Text = "FormVerClaseMateria";
+            Text = "FormVerMateria";
             Load += FormVerClaseMateria_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseMateriaBindingSource).EndInit();

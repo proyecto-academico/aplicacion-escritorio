@@ -1,4 +1,4 @@
-﻿ namespace PRUEAS
+﻿namespace PRUEAS
 {
     public class Clasenotas : ClasePersonas
     {

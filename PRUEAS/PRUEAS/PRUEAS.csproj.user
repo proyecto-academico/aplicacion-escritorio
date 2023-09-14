@@ -4,7 +4,13 @@
     <Compile Update="FormGuardarEvaluaciones.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormGuardarMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormGuardarNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormVerClaseMateria.cs">
@@ -23,9 +29,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormBorrarPersonas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="FormMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormVerMateria.cs">

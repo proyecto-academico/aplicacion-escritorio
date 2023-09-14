@@ -18,18 +18,27 @@ namespace PRUEAS
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
+            FormMenuPrincipal menuPrincipal231 = new FormMenuPrincipal();
+            menuPrincipal231.Show();
             this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormGuardarClaseMateria claseMateria = new FormGuardarClaseMateria();
-            claseMateria.ShowDialog(this);
+            FormGuardarMateria Materia = new FormGuardarMateria();
+            Materia.ShowDialog(this);
         }
 
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+            menuPrincipal.Show();
+            this.Close();
         }
     }
 }

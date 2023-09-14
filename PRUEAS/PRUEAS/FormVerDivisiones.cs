@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace PRUEAS
+﻿namespace PRUEAS
 {
     public partial class FormVerDivisiones : Form
     {
@@ -26,6 +16,18 @@ namespace PRUEAS
         {
             //FormGuardarDivisiones agregarDivisiones= new FormGuardarDivisiones(persona, false);
             //agregarDivisiones.ShowDialog(this);
+        }
+
+        private void FormVerDivisiones_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonVolver2_Click(object sender, EventArgs e)
+        {
+            FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+            menuPrincipal.Show();
+            this.Close();
         }
     }
 }

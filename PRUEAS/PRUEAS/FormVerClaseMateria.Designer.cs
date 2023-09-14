@@ -31,12 +31,6 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             GRILLA = new DataGridView();
-            claseIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            divisionIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            materiaIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            profesorIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fechaComienzoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fechaFinalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Evaluaciones = new DataGridViewLinkColumn();
             claseClaseMateriaBindingSource3 = new BindingSource(components);
             claseClaseMateriaBindingSource = new BindingSource(components);
@@ -72,7 +66,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { claseIDDataGridViewTextBoxColumn, divisionIDDataGridViewTextBoxColumn, materiaIDDataGridViewTextBoxColumn, profesorIDDataGridViewTextBoxColumn, fechaComienzoDataGridViewTextBoxColumn, fechaFinalDataGridViewTextBoxColumn, Evaluaciones });
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { Evaluaciones });
             GRILLA.DataSource = claseClaseMateriaBindingSource3;
             GRILLA.Location = new Point(28, 84);
             GRILLA.Name = "GRILLA";
@@ -81,48 +75,7 @@
             GRILLA.RowTemplate.Height = 25;
             GRILLA.Size = new Size(792, 360);
             GRILLA.TabIndex = 21;
-            // 
-            // claseIDDataGridViewTextBoxColumn
-            // 
-            claseIDDataGridViewTextBoxColumn.DataPropertyName = "Clase_ID";
-            claseIDDataGridViewTextBoxColumn.HeaderText = "Clase";
-            claseIDDataGridViewTextBoxColumn.Name = "claseIDDataGridViewTextBoxColumn";
-            claseIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // divisionIDDataGridViewTextBoxColumn
-            // 
-            divisionIDDataGridViewTextBoxColumn.DataPropertyName = "Division_ID";
-            divisionIDDataGridViewTextBoxColumn.HeaderText = "Division";
-            divisionIDDataGridViewTextBoxColumn.Name = "divisionIDDataGridViewTextBoxColumn";
-            divisionIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // materiaIDDataGridViewTextBoxColumn
-            // 
-            materiaIDDataGridViewTextBoxColumn.DataPropertyName = "Materia_ID";
-            materiaIDDataGridViewTextBoxColumn.HeaderText = "Materia";
-            materiaIDDataGridViewTextBoxColumn.Name = "materiaIDDataGridViewTextBoxColumn";
-            materiaIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profesorIDDataGridViewTextBoxColumn
-            // 
-            profesorIDDataGridViewTextBoxColumn.DataPropertyName = "Profesor_ID";
-            profesorIDDataGridViewTextBoxColumn.HeaderText = "Profesor";
-            profesorIDDataGridViewTextBoxColumn.Name = "profesorIDDataGridViewTextBoxColumn";
-            profesorIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaComienzoDataGridViewTextBoxColumn
-            // 
-            fechaComienzoDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Comienzo";
-            fechaComienzoDataGridViewTextBoxColumn.HeaderText = "Fecha_Comienzo";
-            fechaComienzoDataGridViewTextBoxColumn.Name = "fechaComienzoDataGridViewTextBoxColumn";
-            fechaComienzoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaFinalDataGridViewTextBoxColumn
-            // 
-            fechaFinalDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Final";
-            fechaFinalDataGridViewTextBoxColumn.HeaderText = "Fecha_Final";
-            fechaFinalDataGridViewTextBoxColumn.Name = "fechaFinalDataGridViewTextBoxColumn";
-            fechaFinalDataGridViewTextBoxColumn.ReadOnly = true;
+            GRILLA.CellContentClick += GRILLA_CellContentClick_1;
             // 
             // Evaluaciones
             // 
@@ -130,14 +83,6 @@
             Evaluaciones.Name = "Evaluaciones";
             Evaluaciones.ReadOnly = true;
             Evaluaciones.UseColumnTextForLinkValue = true;
-            // 
-            // claseClaseMateriaBindingSource3
-            // 
-            claseClaseMateriaBindingSource3.DataSource = typeof(Clase_ClaseMateria);
-            // 
-            // claseClaseMateriaBindingSource
-            // 
-            claseClaseMateriaBindingSource.DataSource = typeof(Clase_ClaseMateria);
             // 
             // Cerrar
             // 
@@ -195,18 +140,6 @@
             Button1.TabIndex = 16;
             Button1.Text = "Buscar";
             Button1.UseVisualStyleBackColor = true;
-            // 
-            // claseClaseMateriaBindingSource1
-            // 
-            claseClaseMateriaBindingSource1.DataSource = typeof(Clase_ClaseMateria);
-            // 
-            // claseClaseMateriaBindingSource2
-            // 
-            claseClaseMateriaBindingSource2.DataSource = typeof(Clase_ClaseMateria);
-            // 
-            // claseEvaluacionesBindingSource
-            // 
-            claseEvaluacionesBindingSource.DataSource = typeof(ClaseEvaluaciones);
             // 
             // FormVerClaseMateria
             // 

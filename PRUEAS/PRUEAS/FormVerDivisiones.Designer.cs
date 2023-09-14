@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             GRILLA = new DataGridView();
             nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -44,6 +44,7 @@
             Buscador = new TextBox();
             button2 = new Button();
             Button1 = new Button();
+            buttonVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource).BeginInit();
@@ -55,14 +56,14 @@
             GRILLA.AutoGenerateColumns = false;
             GRILLA.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GRILLA.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             GRILLA.Columns.AddRange(new DataGridViewColumn[] { nombreDataGridViewTextBoxColumn, iDDataGridViewTextBoxColumn, turno, divisions, Clases, Alumno });
             GRILLA.DataSource = claseDivisionesBindingSource1;
@@ -177,11 +178,27 @@
             Button1.Text = "Buscar";
             Button1.UseVisualStyleBackColor = true;
             // 
+            // buttonVolver
+            // 
+            buttonVolver.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonVolver.AutoSize = true;
+            buttonVolver.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonVolver.FlatStyle = FlatStyle.Flat;
+            buttonVolver.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonVolver.Location = new Point(714, 466);
+            buttonVolver.Name = "buttonVolver";
+            buttonVolver.Size = new Size(72, 27);
+            buttonVolver.TabIndex = 22;
+            buttonVolver.Text = "VOLVER";
+            buttonVolver.UseVisualStyleBackColor = true;
+            buttonVolver.Click += buttonVolver2_Click;
+            // 
             // FormVerDivisiones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(862, 505);
+            Controls.Add(buttonVolver);
             Controls.Add(GRILLA);
             Controls.Add(Cerrar);
             Controls.Add(Label1);
@@ -190,6 +207,7 @@
             Controls.Add(Button1);
             Name = "FormVerDivisiones";
             Text = "FormDivisiones";
+            Load += FormVerDivisiones_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource).EndInit();
@@ -215,5 +233,6 @@
         private DataGridViewTextBoxColumn divisions;
         private DataGridViewLinkColumn Clases;
         private DataGridViewLinkColumn Alumno;
+        private Button buttonVolver;
     }
 }

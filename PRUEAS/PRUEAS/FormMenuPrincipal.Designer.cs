@@ -39,7 +39,7 @@
             // 
             button1.Anchor = AnchorStyles.Top;
             button1.BackColor = Color.Transparent;
-            button1.Location = new Point(336, 265);
+            button1.Location = new Point(341, 265);
             button1.Name = "button1";
             button1.Size = new Size(336, 23);
             button1.TabIndex = 0;
@@ -51,11 +51,11 @@
             // 
             button2.Anchor = AnchorStyles.Top;
             button2.BackColor = Color.Transparent;
-            button2.Location = new Point(336, 294);
+            button2.Location = new Point(341, 294);
             button2.Name = "button2";
             button2.Size = new Size(336, 23);
             button2.TabIndex = 1;
-            button2.Text = "button2";
+            button2.Text = "Materia/Base de datos";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -63,11 +63,11 @@
             // 
             button3.Anchor = AnchorStyles.Top;
             button3.BackColor = Color.Transparent;
-            button3.Location = new Point(336, 323);
+            button3.Location = new Point(341, 323);
             button3.Name = "button3";
             button3.Size = new Size(336, 23);
             button3.TabIndex = 2;
-            button3.Text = "button3";
+            button3.Text = "Divisiones/Base de Datos";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
@@ -75,9 +75,9 @@
             // 
             button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             button4.BackColor = Color.Transparent;
-            button4.Location = new Point(406, 408);
+            button4.Location = new Point(406, 632);
             button4.Name = "button4";
-            button4.Size = new Size(191, 23);
+            button4.Size = new Size(201, 23);
             button4.TabIndex = 3;
             button4.Text = "Salir";
             button4.UseVisualStyleBackColor = false;
@@ -92,7 +92,7 @@
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Location = new Point(131, 178);
             label1.Name = "label1";
-            label1.Size = new Size(737, 30);
+            label1.Size = new Size(738, 31);
             label1.TabIndex = 4;
             label1.Text = "Welcome to \"La suiza sistem\" from to administrator of the school";
             // 
@@ -101,7 +101,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.suiza;
-            ClientSize = new Size(1001, 586);
+            ClientSize = new Size(1011, 810);
             Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(button3);

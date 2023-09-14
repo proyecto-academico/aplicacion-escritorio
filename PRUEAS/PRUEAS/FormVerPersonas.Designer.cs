@@ -55,6 +55,7 @@
             AdminitracionCheck = new CheckBox();
             ProfesorCheck = new CheckBox();
             personasBindingSource4 = new BindingSource(components);
+            buttonVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource3).BeginInit();
@@ -298,12 +299,28 @@
             // 
             personasBindingSource4.DataSource = typeof(ClasePersonas);
             // 
+            // buttonVolver
+            // 
+            buttonVolver.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonVolver.AutoSize = true;
+            buttonVolver.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonVolver.FlatStyle = FlatStyle.Flat;
+            buttonVolver.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonVolver.Location = new Point(687, 506);
+            buttonVolver.Name = "buttonVolver";
+            buttonVolver.Size = new Size(72, 27);
+            buttonVolver.TabIndex = 24;
+            buttonVolver.Text = "VOLVER";
+            buttonVolver.UseVisualStyleBackColor = true;
+            buttonVolver.Click += buttonVolver_Click;
+            // 
             // FormVerPersonas
             // 
             AutoScaleMode = AutoScaleMode.None;
             AutoScroll = true;
             AutoSize = true;
             ClientSize = new Size(835, 555);
+            Controls.Add(buttonVolver);
             Controls.Add(ProfesorCheck);
             Controls.Add(AdminitracionCheck);
             Controls.Add(AlumnoCheck);
@@ -366,5 +383,6 @@
         private DataGridViewLinkColumn edit;
         private DataGridViewLinkColumn X;
         private DataGridViewTextBoxColumn curso;
+        private Button buttonVolver;
     }
 }
