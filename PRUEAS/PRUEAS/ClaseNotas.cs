@@ -2,18 +2,15 @@
 {
     public class Clasenotas : ClasePersonas
     {
-
-        public int NotasID;
+        private DateTime Date;
+        public int NotasID { get; set; }
+        public string clase { get; set; }
         public decimal Nota { get; set; }
-        public int Evaluacion_ID { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime DateT { get; set; }
 
-        public Clasenotas(int notasID, decimal nota, int evaluacion_ID, DateTime dateTime)
+        public Clasenotas()
         {
-            NotasID = notasID;
-            Nota = nota;
-            Evaluacion_ID = evaluacion_ID;
-            DateTime = dateTime;
+            
         }
     }
 }

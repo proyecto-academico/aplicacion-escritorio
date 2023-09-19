@@ -501,12 +501,12 @@ namespace PRUEAS
         #region Querry Notas
         public List<Clasenotas> GetClasenotas(int persona_)
         {
-            List<Clasenotas> clasenotas = new List<Clasenotas>();
+            List<Clasenotas> clasenotas = new();
 
             try
             {
                 conn.Open();
-                string querry = @$"SELECT notas.Notas_ID, notas.DNI_Alumno, CONCAT(persona.Nombre, ' ', persona.Apellido) as nombre_alumno, nota, clase.Clase_ID , CONCAT(materia.Nombre, ' ', division.Anio_Escolar, '° ', division.Division_Escolar, '°') as clase_nombre, evaluaciones.Fecha, evaluaciones.Evaluacion_ID FROM notas INNER JOIN persona ON notas.DNI_Alumno = persona.DNI INNER JOIN clase ON clase.Clase_ID = notas.Notas_ID INNER JOIN division ON clase.Division_ID = division.Division_ID INNER JOIN materia ON materia.Materia_ID = clase.Materia_ID INNER JOIN evaluaciones ON notas.Evaluacion_ID = evaluaciones.Evaluacion_ID ";
+                string querry = @$"SELECT notas.Notas_ID, notas.DNI_Alumno, CONCAT(persona.Nombre, ' ', persona.Apellido) as nombre_alumno, nota, clase.Clase_ID , CONCAT(materia.Nombre, ' ', division.Anio_Escolar, '° ', division.Division_Escolar, '°') as clase_nombre, evaluaciones.Fecha, evaluaciones.Evaluacion_ID FROM notas INNER JOIN persona ON notas.DNI_Alumno = persona.DNI INNER JOIN clase ON clase.Clase_ID = notas.Notas_ID INNER JOIN division ON clase.Division_ID = division.Division_ID INNER JOIN materia ON materia.Materia_ID = clase.Materia_ID INNER JOIN evaluaciones ON notas.Evaluacion_ID = evaluaciones.Evaluacion_ID WHERE persona.DNI = {persona_}";
                 SqlCommand command = new SqlCommand(querry, conn);
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -517,13 +517,15 @@ namespace PRUEAS
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
-                    clasenotas.Add(new Clasenotas
-                    (
-                        int.Parse(reader["ID"].ToString()),
-                        decimal.Parse(reader["Nota"].ToString()),
-                        int.Parse(reader["Anio"].ToString()),
-                        DateTime.Parse(reader["Horas_semanales"].ToString())
-                    ));
+                    clasenotas.Add(new Clasenotas {
+                    
+                        NotasID = int.Parse(reader["Notas_ID"].ToString()),
+                        Nota =decimal.Parse(reader["nota"].ToString()),
+                        clase =(reader["clase_nombre"].ToString()),
+                        Name=(reader["nombre_alumno"].ToString()),
+                        DateT=DateTime.Parse(reader["Fecha"].ToString())
+                        
+                        })  ;
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
@@ -593,7 +595,6 @@ namespace PRUEAS
         }
 
         #endregion
-
 
         #region Querry Faltas
         public List<ClaseFaltas> GetFaltas(int persona_)

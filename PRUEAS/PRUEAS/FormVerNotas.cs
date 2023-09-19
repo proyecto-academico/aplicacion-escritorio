@@ -19,56 +19,12 @@
 
         private void FNotas_Load(object sender, EventArgs e)
         {
-
+            CargarNotas();
         }
 
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /* if (e.ColumnIndex == GRILLA.Columns["edit"].Index || e.ColumnIndex == GRILLA.Columns["X"].Index)
-             {
-                 DataGridViewLinkCell cell = (DataGridViewLinkCell)GRILLA.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-                 if (cell.Value.ToString() == "edit")
-                 {
-                     BotonesValue = true;
-                 }
-                 else if (cell.Value.ToString() == "X")
-                 {
-
-                     borrar.CargarPersona(new Personas
-                     {
-
-                         _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
-                         Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
-                         Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
-                         mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
-
-                     });
-                     borrar.ShowDialog(this);
-
-                 }
-
-                 if (BotonesValue)
-                 {
-
-                     AgregarData AgregarData = new AgregarData();
-                     AgregarData.CargarPersona(new Personas
-                     {
-
-                         _dni = int.Parse(s: GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()),
-                         Name = GRILLA.Rows[e.RowIndex].Cells[1].Value.ToString(),
-                         Surname = GRILLA.Rows[e.RowIndex].Cells[2].Value.ToString(),
-                         mail = GRILLA.Rows[e.RowIndex].Cells[3].Value.ToString()
-
-                     }, BotonesValue);
-
-                     BotonesValue = false;
-
-
-                     AgregarData.ShowDialog(this);
-
-                 }
-             }*/
         }
 
         private void agregar_Click(object sender, EventArgs e)
@@ -83,6 +39,12 @@
 
         private void buscar_Click(object sender, EventArgs e)
         {
+
+        }
+        public void CargarNotas()
+        {
+            List<Clasenotas> clasenotas = _manejoDeDB.GetClasenotas(persona);
+            GRILLA.DataSource = clasenotas;
 
         }
     }

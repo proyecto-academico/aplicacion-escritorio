@@ -95,6 +95,9 @@
             return __DataAccese.GetEvaluaciones();
         }
 
-
+        public List<Clasenotas> GetClasenotas(int _persona)
+        {
+            return  __DataAccese.GetClasenotas(_persona);
+        }
     }
 }
