@@ -40,10 +40,7 @@
 
         }
 
-        public List<Clase_ClaseMateria> GetClaseClaseMaterias(int ObjPersonas)
-        {
-            return __DataAccese.GetClaseClaseMaterias(ObjPersonas);
-        }
+        
 
         public List<ClasePersonas> ObetenerPersona(int nivel)
         {
@@ -84,6 +81,23 @@
             }
         }
 
+        public List<Clase_ClaseMateria> CargarMaterias()
+        {
+            return __DataAccese.GetClaseClaseMaterias();
+        }
 
+        public List<ClaseDivisiones> CargarDivisiones()
+        {
+            return __DataAccese.GetDivisiones();
+        }
+        public List<ClaseEvaluaciones> ClaseEvaluaciones()
+        {
+            return __DataAccese.GetEvaluaciones();
+        }
+
+        public List<Clasenotas> GetClasenotas(int _persona)
+        {
+            return  __DataAccese.GetClasenotas(_persona);
+        }
     }
 }

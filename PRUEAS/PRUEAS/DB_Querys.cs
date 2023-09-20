@@ -66,7 +66,7 @@ namespace PRUEAS
                 conn.Close();
             }
 
-
+           
         }
 
         public void insertarFalta(ClaseFaltas falta)
@@ -357,10 +357,10 @@ namespace PRUEAS
         #endregion
 
         #region Querry ClaseMateria
-        public List<Clase_ClaseMateria> GetClaseClaseMaterias(int persona_)
+        public List<Clase_ClaseMateria> GetClaseClaseMaterias()
         {
-            List<Clase_ClaseMateria> materia = new List<Clase_ClaseMateria>();
-
+            List<Clase_ClaseMateria> materia= new List<Clase_ClaseMateria>();
+            
             try
             {
                 conn.Open();
@@ -377,13 +377,16 @@ namespace PRUEAS
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
                     materia.Add(new Clase_ClaseMateria
                     (
-                        int.Parse(reader["Clase_ID"].ToString()),
-                        int.Parse(reader["Division"].ToString()),
-                        (reader["Materia"].ToString()),
+                        reader["Clase_ID"].ToString(),
+                        reader["Division"].ToString(),
+                        (reader["Materia_ID"].ToString()),
                         (reader["Profesor"].ToString()),
-                        DateTime.Parse(reader["Fecha_Final"].ToString()),
-                        DateTime.Parse(reader["Fecha_Comienzo"].ToString())
-                    ));
+                        reader["Fecha_Comienzo"].ToString(),
+                        reader["Fecha_Final"].ToString(),
+                        reader["Nombre"].ToString()
+                        
+                        
+                    )) ; 
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
@@ -405,14 +408,14 @@ namespace PRUEAS
         #endregion
 
         #region Querry Divisiones
-        public List<ClaseDivisiones> GetDivisiones(int persona_)
+        public List<ClaseDivisiones> GetDivisiones()
         {
             List<ClaseDivisiones> divisiones = new List<ClaseDivisiones>();
 
             try
             {
                 conn.Open();
-                string querry = @$"SELECT materia.Materia_ID, materia.Nombre, Anio_escolar, Horas_Semanales FROM materia WHERE materia.Materia_ID = @DNI";
+                string querry = @$"SELECT Division_ID, Turno, CONCAT(Anio_Escolar , '° ' , Division_Escolar , '°') as division_nombre FROM division";
                 SqlCommand command = new SqlCommand(querry, conn);
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -425,10 +428,10 @@ namespace PRUEAS
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
                     divisiones.Add(new ClaseDivisiones
                     (
-                        int.Parse(reader["ID"].ToString()),
-                        (reader["Nombre"].ToString()),
-                        int.Parse(reader["Turno"].ToString()),
-                        int.Parse(reader["Divisiones"].ToString())
+                        int.Parse(reader["Division_ID"].ToString()),
+                        (reader["Turno"].ToString()),
+                        reader["division_nombre"].ToString()
+                        
                     ));
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
@@ -471,11 +474,19 @@ namespace PRUEAS
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
                     a.Add(new ClaseMateria
                     (
+<<<<<<< HEAD
                         int.Parse(reader["ID"].ToString()),
                         (reader["Nombre"].ToString()),
                         int.Parse(reader["Anio"].ToString()),
                         int.Parse(reader["Horas_semanales"].ToString())
                     ));
+=======
+                        int.Parse(reader[""].ToString()),   
+                        (reader[""].ToString()),
+                        int.Parse(reader[""].ToString()),
+                        int.Parse(reader[""].ToString())
+                    )) ;
+>>>>>>> 7d92c16edfd87db4cd448c12586d55176fab09df
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
@@ -499,12 +510,12 @@ namespace PRUEAS
         #region Querry Notas
         public List<Clasenotas> GetClasenotas(int persona_)
         {
-            List<Clasenotas> clasenotas = new List<Clasenotas>();
+            List<Clasenotas> clasenotas = new();
 
             try
             {
                 conn.Open();
-                string querry = @$"SELECT materia.Materia_ID, materia.Nombre, Anio_escolar, Horas_Semanales FROM materia WHERE materia.Materia_ID = @DNI";
+                string querry = @$"SELECT notas.Notas_ID, notas.DNI_Alumno, CONCAT(persona.Nombre, ' ', persona.Apellido) as nombre_alumno, nota, clase.Clase_ID , CONCAT(materia.Nombre, ' ', division.Anio_Escolar, '° ', division.Division_Escolar, '°') as clase_nombre, evaluaciones.Fecha, evaluaciones.Evaluacion_ID FROM notas INNER JOIN persona ON notas.DNI_Alumno = persona.DNI INNER JOIN clase ON clase.Clase_ID = notas.Notas_ID INNER JOIN division ON clase.Division_ID = division.Division_ID INNER JOIN materia ON materia.Materia_ID = clase.Materia_ID INNER JOIN evaluaciones ON notas.Evaluacion_ID = evaluaciones.Evaluacion_ID WHERE persona.DNI = {persona_}";
                 SqlCommand command = new SqlCommand(querry, conn);
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -515,13 +526,15 @@ namespace PRUEAS
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
-                    clasenotas.Add(new Clasenotas
-                    (
-                        int.Parse(reader["ID"].ToString()),
-                        decimal.Parse(reader["Nota"].ToString()),
-                        int.Parse(reader["Anio"].ToString()),
-                        DateTime.Parse(reader["Horas_semanales"].ToString())
-                    ));
+                    clasenotas.Add(new Clasenotas {
+                    
+                        NotasID = int.Parse(reader["Notas_ID"].ToString()),
+                        Nota =decimal.Parse(reader["nota"].ToString()),
+                        clase =(reader["clase_nombre"].ToString()),
+                        Name=(reader["nombre_alumno"].ToString()),
+                        DateT=DateTime.Parse(reader["Fecha"].ToString())
+                        
+                        })  ;
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
@@ -544,14 +557,14 @@ namespace PRUEAS
         #endregion
 
         #region Querry Evaluaciones 
-        public List<ClaseEvaluaciones> GetEvaluaciones(int persona_)
+        public List<ClaseEvaluaciones> GetEvaluaciones()
         {
             List<ClaseEvaluaciones> evaluaciones = new List<ClaseEvaluaciones>();
 
             try
             {
                 conn.Open();
-                string querry = @$"SELECT materia.Materia_ID, materia.Nombre, Anio_escolar, Horas_Semanales FROM materia WHERE materia.Materia_ID = @DNI";
+                string querry = @$"SELECT evaluaciones.Evaluacion_ID, MAX(evaluaciones.Clase_ID) as Clase_ID, MAX(Fecha) as Fecha, MAX(Detalles) as Detalles, MAX(CONCAT(materia.Nombre, ' ',  division.Anio_Escolar , '° ' , Division_Escolar , '° ', YEAR( Fecha_Comienzo ))) as clase_name,  AVG(notas.Nota) as nota_promedio from evaluaciones INNER JOIN clase on clase.Clase_ID =evaluaciones.Clase_ID inner join materia on materia.Materia_ID=clase.Materia_ID INNER JOIN division ON clase.Division_ID=division.Division_ID INNER JOIN notas ON notas.Evaluacion_ID = evaluaciones.Evaluacion_ID GROUP BY evaluaciones.Evaluacion_ID";
                 SqlCommand command = new SqlCommand(querry, conn);
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -564,11 +577,12 @@ namespace PRUEAS
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
                     evaluaciones.Add(new ClaseEvaluaciones
                     (
-                        int.Parse(reader["EvaluacionID"].ToString()),
-                        (reader["Clase"].ToString()),
-                        DateTime.Parse(reader["Fecha"].ToString()),
+                        int.Parse(reader["Evaluacion_ID"].ToString()),
+                        (reader["clase_name"].ToString()),
+                        reader["Clase_ID"].ToString(),
+                        reader["Fecha"].ToString(),
                         (reader["Detalles"].ToString()),
-                        int.Parse(reader["NotaPromedio"].ToString())
+                        float.Parse(reader["nota_promedio"].ToString())
                     ));
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
