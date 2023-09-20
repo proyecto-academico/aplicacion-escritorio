@@ -11,11 +11,6 @@ namespace PRUEAS
             InitializeComponent();
         }
 
-        private void FormVerClaseMateria_Load(object sender, EventArgs e)
-        {
-            //CargaDeContactos();
-        }
-
         private void Cerrar_Click(object sender, EventArgs e)
         {
             FormMenuPrincipal menuPrincipal231 = new FormMenuPrincipal();
@@ -39,6 +34,11 @@ namespace PRUEAS
             FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
             menuPrincipal.Show();
             this.Close();
+        }
+
+        private void FormVerMateria_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

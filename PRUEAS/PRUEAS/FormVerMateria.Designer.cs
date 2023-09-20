@@ -186,7 +186,7 @@
             Controls.Add(Button1);
             Name = "FormVerMateria";
             Text = "FormVerMateria";
-            Load += FormVerClaseMateria_Load;
+            Load += FormVerMateria_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseMateriaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)claseMateriaBindingSource1).EndInit();
