@@ -11,7 +11,7 @@ namespace PRUEAS
             FuncionesQuerys = new Acceso_Querys();
         }
 
-       
+
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace PRUEAS
 
         public void CargarEvaluaciones()
         {
-            List<ClaseEvaluaciones> Evaluaciones=FuncionesQuerys.ClaseEvaluaciones();
+            List<ClaseEvaluaciones> Evaluaciones = FuncionesQuerys.ClaseEvaluaciones();
             GRILLA.DataSource = Evaluaciones;
         }
     }

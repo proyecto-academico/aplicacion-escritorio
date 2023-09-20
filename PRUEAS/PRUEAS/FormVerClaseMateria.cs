@@ -5,11 +5,15 @@ namespace PRUEAS
 {
     public partial class FormVerClaseMateria : Form
     {
+        public int ObjMateria;
         public Acceso_Querys FuncionesQuerys = new Acceso_Querys();
-        public FormVerClaseMateria()
+        public FormVerClaseMateria(int IDMateria)
         {
+            
             InitializeComponent();
+            ObjMateria = IDMateria;
             CargaDeMaterias();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,11 +38,12 @@ namespace PRUEAS
 
         public void CargaDeMaterias()
         {
-            List<Clase_ClaseMateria> Materia = FuncionesQuerys.CargarMaterias();
+            
+            List<Clase_ClaseMateria> Materia = FuncionesQuerys.CargarMaterias(ObjMateria);
             GRILLA.DataSource = Materia;
         }
 
-        
+
         private void GRILLA_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == GRILLA.Columns["Evaluaciones"].Index && e.RowIndex >= 0)

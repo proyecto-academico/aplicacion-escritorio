@@ -36,6 +36,15 @@
             Label1 = new Label();
             Cerrar = new Button();
             GRILLA = new DataGridView();
+            personasBindingSource5 = new BindingSource(components);
+            personasBindingSource3 = new BindingSource(components);
+            personasBindingSource2 = new BindingSource(components);
+            personasBindingSource = new BindingSource(components);
+            personasBindingSource1 = new BindingSource(components);
+            AlumnoCheck = new CheckBox();
+            AdminitracionCheck = new CheckBox();
+            ProfesorCheck = new CheckBox();
+            personasBindingSource4 = new BindingSource(components);
             _dni = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -46,15 +55,6 @@
             Faltas = new DataGridViewLinkColumn();
             edit = new DataGridViewLinkColumn();
             X = new DataGridViewLinkColumn();
-            personasBindingSource5 = new BindingSource(components);
-            personasBindingSource3 = new BindingSource(components);
-            personasBindingSource2 = new BindingSource(components);
-            personasBindingSource = new BindingSource(components);
-            personasBindingSource1 = new BindingSource(components);
-            AlumnoCheck = new CheckBox();
-            AdminitracionCheck = new CheckBox();
-            ProfesorCheck = new CheckBox();
-            personasBindingSource4 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource3).BeginInit();
@@ -149,90 +149,6 @@
             GRILLA.TabIndex = 6;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
             // 
-            // _dni
-            // 
-            _dni.DataPropertyName = "_dni";
-            _dni.HeaderText = "DNI";
-            _dni.MinimumWidth = 6;
-            _dni.Name = "_dni";
-            _dni.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
-            surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            surnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mailDataGridViewTextBoxColumn
-            // 
-            mailDataGridViewTextBoxColumn.DataPropertyName = "mail";
-            mailDataGridViewTextBoxColumn.HeaderText = "mail";
-            mailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
-            mailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // curso
-            // 
-            curso.DataPropertyName = "curso";
-            curso.HeaderText = "Año";
-            curso.MinimumWidth = 6;
-            curso.Name = "curso";
-            curso.ReadOnly = true;
-            // 
-            // division
-            // 
-            division.DataPropertyName = "division";
-            division.HeaderText = "division";
-            division.MinimumWidth = 6;
-            division.Name = "division";
-            division.ReadOnly = true;
-            // 
-            // Notas
-            // 
-            Notas.HeaderText = "Notas";
-            Notas.MinimumWidth = 6;
-            Notas.Name = "Notas";
-            Notas.ReadOnly = true;
-            Notas.Text = "Notas";
-            Notas.UseColumnTextForLinkValue = true;
-            // 
-            // Faltas
-            // 
-            Faltas.HeaderText = "Faltas";
-            Faltas.MinimumWidth = 6;
-            Faltas.Name = "Faltas";
-            Faltas.ReadOnly = true;
-            Faltas.Text = "Faltas";
-            Faltas.UseColumnTextForLinkValue = true;
-            // 
-            // edit
-            // 
-            edit.HeaderText = "edit";
-            edit.MinimumWidth = 6;
-            edit.Name = "edit";
-            edit.ReadOnly = true;
-            edit.Text = "edit";
-            edit.UseColumnTextForLinkValue = true;
-            // 
-            // X
-            // 
-            X.HeaderText = "Eliminar";
-            X.MinimumWidth = 6;
-            X.Name = "X";
-            X.ReadOnly = true;
-            X.Text = "X";
-            X.UseColumnTextForLinkValue = true;
-            // 
             // personasBindingSource5
             // 
             personasBindingSource5.DataSource = typeof(ClasePersonas);
@@ -298,6 +214,90 @@
             // 
             personasBindingSource4.DataSource = typeof(ClasePersonas);
             // 
+            // _dni
+            // 
+            _dni.DataPropertyName = "_dni";
+            _dni.HeaderText = "DNI";
+            _dni.MinimumWidth = 6;
+            _dni.Name = "_dni";
+            _dni.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // surnameDataGridViewTextBoxColumn
+            // 
+            surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
+            surnameDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            surnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mailDataGridViewTextBoxColumn
+            // 
+            mailDataGridViewTextBoxColumn.DataPropertyName = "mail";
+            mailDataGridViewTextBoxColumn.HeaderText = "Mail";
+            mailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            mailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curso
+            // 
+            curso.DataPropertyName = "curso";
+            curso.HeaderText = "Año";
+            curso.MinimumWidth = 6;
+            curso.Name = "curso";
+            curso.ReadOnly = true;
+            // 
+            // division
+            // 
+            division.DataPropertyName = "division";
+            division.HeaderText = "Division";
+            division.MinimumWidth = 6;
+            division.Name = "division";
+            division.ReadOnly = true;
+            // 
+            // Notas
+            // 
+            Notas.HeaderText = "Notas";
+            Notas.MinimumWidth = 6;
+            Notas.Name = "Notas";
+            Notas.ReadOnly = true;
+            Notas.Text = "Notas";
+            Notas.UseColumnTextForLinkValue = true;
+            // 
+            // Faltas
+            // 
+            Faltas.HeaderText = "Faltas";
+            Faltas.MinimumWidth = 6;
+            Faltas.Name = "Faltas";
+            Faltas.ReadOnly = true;
+            Faltas.Text = "Faltas";
+            Faltas.UseColumnTextForLinkValue = true;
+            // 
+            // edit
+            // 
+            edit.HeaderText = "Editar";
+            edit.MinimumWidth = 6;
+            edit.Name = "edit";
+            edit.ReadOnly = true;
+            edit.Text = "edit";
+            edit.UseColumnTextForLinkValue = true;
+            // 
+            // X
+            // 
+            X.HeaderText = "Eliminar";
+            X.MinimumWidth = 6;
+            X.Name = "X";
+            X.ReadOnly = true;
+            X.Text = "X";
+            X.UseColumnTextForLinkValue = true;
+            // 
             // FormVerPersonas
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -353,18 +353,17 @@
         private BindingSource personasBindingSource3;
         private BindingSource personasBindingSource4;
         private BindingSource personasBindingSource5;
+#pragma warning disable CS0169 // El campo 'FormPantallaUsuarios.año' nunca se usa
+        private DataGridViewTextBoxColumn año;
         private DataGridViewTextBoxColumn _dni;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
-#pragma warning disable CS0169 // El campo 'FormPantallaUsuarios.año' nunca se usa
-        private DataGridViewTextBoxColumn año;
-#pragma warning restore CS0169 // El campo 'FormPantallaUsuarios.año' nunca se usa
+        private DataGridViewTextBoxColumn curso;
         private DataGridViewTextBoxColumn division;
         private DataGridViewLinkColumn Notas;
         private DataGridViewLinkColumn Faltas;
         private DataGridViewLinkColumn edit;
         private DataGridViewLinkColumn X;
-        private DataGridViewTextBoxColumn curso;
     }
 }

@@ -17,7 +17,7 @@ namespace PRUEAS
                 {
                     DNI = value;
                 }
-                else { throw new Exception("El DNI ESTA RE VOLADO AMIGO NO PODES INGRESAR MAS DE 8 DIGITOS GIL"); }
+                else { MessageBox.Show("El dni ingresado a superado el limite de caracteres, porfavor reingreselo con los cambios pertinentes."); }
             }
         }
         public int curso { get; set; }
@@ -26,18 +26,7 @@ namespace PRUEAS
 #pragma warning disable CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         public ClasePersonas() { }
 
-        /*public ClasePersonas(int tipo, string name, string mail, int dNI, int dni, int curso, int division, string surname)
-        {
-            Tipo = tipo;
-            Name = name;
-            this.mail = mail;
-            DNI = dNI;
-            _dni = dni;
-            this.curso = curso;
-            this.division = division;
-            Surname = surname;
-        }
-        */
+       
 #pragma warning restore CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
     }
 }

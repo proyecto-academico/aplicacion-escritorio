@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             GRILLA = new DataGridView();
+            clasenotasBindingSource16 = new BindingSource(components);
             clasenotasBindingSource14 = new BindingSource(components);
             clasenotasBindingSource11 = new BindingSource(components);
             clasenotasBindingSource10 = new BindingSource(components);
@@ -77,13 +78,13 @@
             clasenotasBindingSource12 = new BindingSource(components);
             clasenotasBindingSource13 = new BindingSource(components);
             clasenotasBindingSource15 = new BindingSource(components);
-            clasenotasBindingSource16 = new BindingSource(components);
             notasIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             claseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dateTDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             notaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource16).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource14).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource10).BeginInit();
@@ -100,7 +101,6 @@
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource13).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource15).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource16).BeginInit();
             SuspendLayout();
             // 
             // GRILLA
@@ -118,6 +118,10 @@
             GRILLA.Size = new Size(555, 403);
             GRILLA.TabIndex = 24;
             GRILLA.CellContentClick += GRILLA_CellContentClick;
+            // 
+            // clasenotasBindingSource16
+            // 
+            clasenotasBindingSource16.DataSource = typeof(Clasenotas);
             // 
             // clasenotasBindingSource14
             // 
@@ -389,35 +393,31 @@
             // 
             clasenotasBindingSource15.DataSource = typeof(Clasenotas);
             // 
-            // clasenotasBindingSource16
-            // 
-            clasenotasBindingSource16.DataSource = typeof(Clasenotas);
-            // 
             // notasIDDataGridViewTextBoxColumn
             // 
             notasIDDataGridViewTextBoxColumn.DataPropertyName = "NotasID";
-            notasIDDataGridViewTextBoxColumn.HeaderText = "NotasID";
+            notasIDDataGridViewTextBoxColumn.HeaderText = "ID";
             notasIDDataGridViewTextBoxColumn.Name = "notasIDDataGridViewTextBoxColumn";
             notasIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Nombre";
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // claseDataGridViewTextBoxColumn
             // 
             claseDataGridViewTextBoxColumn.DataPropertyName = "clase";
-            claseDataGridViewTextBoxColumn.HeaderText = "clase";
+            claseDataGridViewTextBoxColumn.HeaderText = "Clase";
             claseDataGridViewTextBoxColumn.Name = "claseDataGridViewTextBoxColumn";
             claseDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dateTDataGridViewTextBoxColumn
             // 
             dateTDataGridViewTextBoxColumn.DataPropertyName = "DateT";
-            dateTDataGridViewTextBoxColumn.HeaderText = "DateT";
+            dateTDataGridViewTextBoxColumn.HeaderText = "Fecha";
             dateTDataGridViewTextBoxColumn.Name = "dateTDataGridViewTextBoxColumn";
             dateTDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -443,6 +443,7 @@
             Text = "Form1";
             Load += FNotas_Load;
             ((System.ComponentModel.ISupportInitialize)GRILLA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource16).EndInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource14).EndInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource11).EndInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource10).EndInit();
@@ -459,7 +460,6 @@
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource12).EndInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource13).EndInit();
             ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource15).EndInit();
-            ((System.ComponentModel.ISupportInitialize)clasenotasBindingSource16).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -515,12 +515,12 @@
         private BindingSource clasenotasBindingSource;
         private BindingSource clasenotasBindingSource12;
         private BindingSource clasenotasBindingSource14;
+        private BindingSource clasenotasBindingSource16;
+        private BindingSource clasenotasBindingSource15;
         private DataGridViewTextBoxColumn notasIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn claseDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dateTDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn notaDataGridViewTextBoxColumn;
-        private BindingSource clasenotasBindingSource16;
-        private BindingSource clasenotasBindingSource15;
     }
 }

@@ -56,7 +56,7 @@
             button2.Name = "button2";
             button2.Size = new Size(336, 23);
             button2.TabIndex = 1;
-            button2.Text = "Materias/Clases";
+            button2.Text = "Materias";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -103,7 +103,7 @@
             button5.Name = "button5";
             button5.Size = new Size(336, 23);
             button5.TabIndex = 5;
-            button5.Text = "button5";
+            button5.Text = "Evaluaciones";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 

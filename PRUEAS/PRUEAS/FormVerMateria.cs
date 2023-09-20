@@ -4,8 +4,8 @@ namespace PRUEAS
 {
     public partial class FormVerMateria : Form
     {
-        public DataTable DataSource { get; internal set; }
 
+        private Acceso_Querys Acceso_Querys = new();
         public FormVerMateria()
         {
             InitializeComponent();
@@ -13,7 +13,7 @@ namespace PRUEAS
 
         private void FormVerClaseMateria_Load(object sender, EventArgs e)
         {
-            //CargaDeContactos();
+            CargaDeMateria();
         }
 
         private void Cerrar_Click(object sender, EventArgs e)
@@ -29,7 +29,20 @@ namespace PRUEAS
 
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == GRILLA.Columns["Clases"].Index && e.RowIndex >= 0)
+            {
+                
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+                FormVerClaseMateria formVerClaseMateria = new FormVerClaseMateria(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+                formVerClaseMateria.ShowDialog();
+            }
+        }
+        public void CargaDeMateria()
+        {
+            List<ClaseMateria> claseMaterias = new();
+            claseMaterias = Acceso_Querys.GetMaterias();
+            GRILLA.DataSource = claseMaterias;
         }
     }
 }

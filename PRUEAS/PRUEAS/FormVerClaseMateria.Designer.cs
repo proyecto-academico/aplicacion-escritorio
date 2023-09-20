@@ -31,25 +31,25 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             GRILLA = new DataGridView();
+            claseIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            divisionIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            profesorIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            NombreMateria = new DataGridViewTextBoxColumn();
+            fechaComienzoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fechaFinalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Evaluaciones = new DataGridViewLinkColumn();
             claseClaseMateriaBindingSource5 = new BindingSource(components);
             claseClaseMateriaBindingSource4 = new BindingSource(components);
             claseClaseMateriaBindingSource3 = new BindingSource(components);
             claseClaseMateriaBindingSource = new BindingSource(components);
             Cerrar = new Button();
-            Label1 = new Label();
-            Buscador = new TextBox();
-            button2 = new Button();
-            Button1 = new Button();
             claseClaseMateriaBindingSource1 = new BindingSource(components);
             claseClaseMateriaBindingSource2 = new BindingSource(components);
             claseEvaluacionesBindingSource = new BindingSource(components);
-            Evaluaciones = new DataGridViewLinkColumn();
-            claseIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            NombreMateria = new DataGridViewTextBoxColumn();
-            divisionIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            profesorIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fechaComienzoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fechaFinalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Button1 = new Button();
+            button2 = new Button();
+            Buscador = new TextBox();
+            Label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseClaseMateriaBindingSource5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseClaseMateriaBindingSource4).BeginInit();
@@ -76,7 +76,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GRILLA.Columns.AddRange(new DataGridViewColumn[] { Evaluaciones, claseIDDataGridViewTextBoxColumn, NombreMateria, divisionIDDataGridViewTextBoxColumn, profesorIDDataGridViewTextBoxColumn, fechaComienzoDataGridViewTextBoxColumn, fechaFinalDataGridViewTextBoxColumn });
+            GRILLA.Columns.AddRange(new DataGridViewColumn[] { claseIDDataGridViewTextBoxColumn, divisionIDDataGridViewTextBoxColumn, profesorIDDataGridViewTextBoxColumn, NombreMateria, fechaComienzoDataGridViewTextBoxColumn, fechaFinalDataGridViewTextBoxColumn, Evaluaciones });
             GRILLA.DataSource = claseClaseMateriaBindingSource5;
             GRILLA.Location = new Point(28, 84);
             GRILLA.Name = "GRILLA";
@@ -86,6 +86,56 @@
             GRILLA.Size = new Size(792, 360);
             GRILLA.TabIndex = 21;
             GRILLA.CellContentClick += GRILLA_CellContentClick_1;
+            // 
+            // claseIDDataGridViewTextBoxColumn
+            // 
+            claseIDDataGridViewTextBoxColumn.DataPropertyName = "Clase_ID";
+            claseIDDataGridViewTextBoxColumn.HeaderText = "Clase_ID";
+            claseIDDataGridViewTextBoxColumn.Name = "claseIDDataGridViewTextBoxColumn";
+            claseIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // divisionIDDataGridViewTextBoxColumn
+            // 
+            divisionIDDataGridViewTextBoxColumn.DataPropertyName = "Division_ID";
+            divisionIDDataGridViewTextBoxColumn.HeaderText = "Division_ID";
+            divisionIDDataGridViewTextBoxColumn.Name = "divisionIDDataGridViewTextBoxColumn";
+            divisionIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profesorIDDataGridViewTextBoxColumn
+            // 
+            profesorIDDataGridViewTextBoxColumn.DataPropertyName = "Profesor_ID";
+            profesorIDDataGridViewTextBoxColumn.HeaderText = "Profesor_ID";
+            profesorIDDataGridViewTextBoxColumn.Name = "profesorIDDataGridViewTextBoxColumn";
+            profesorIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // NombreMateria
+            // 
+            NombreMateria.DataPropertyName = "NombreMateria";
+            NombreMateria.HeaderText = "Nombre De Materia";
+            NombreMateria.Name = "NombreMateria";
+            NombreMateria.ReadOnly = true;
+            // 
+            // fechaComienzoDataGridViewTextBoxColumn
+            // 
+            fechaComienzoDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Comienzo";
+            fechaComienzoDataGridViewTextBoxColumn.HeaderText = "Fecha Comienzo";
+            fechaComienzoDataGridViewTextBoxColumn.Name = "fechaComienzoDataGridViewTextBoxColumn";
+            fechaComienzoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaFinalDataGridViewTextBoxColumn
+            // 
+            fechaFinalDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Final";
+            fechaFinalDataGridViewTextBoxColumn.HeaderText = "Fecha Final";
+            fechaFinalDataGridViewTextBoxColumn.Name = "fechaFinalDataGridViewTextBoxColumn";
+            fechaFinalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Evaluaciones
+            // 
+            Evaluaciones.HeaderText = "Evaluaciones";
+            Evaluaciones.Name = "Evaluaciones";
+            Evaluaciones.ReadOnly = true;
+            Evaluaciones.Text = "Evaluaciones";
+            Evaluaciones.UseColumnTextForLinkValue = true;
             // 
             // claseClaseMateriaBindingSource5
             // 
@@ -110,26 +160,15 @@
             Cerrar.UseVisualStyleBackColor = true;
             Cerrar.Click += Cerrar_Click;
             // 
-            // Label1
+            // Button1
             // 
-            Label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Label1.AutoSize = true;
-            Label1.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            Label1.Location = new Point(40, 25);
-            Label1.Name = "Label1";
-            Label1.Size = new Size(58, 20);
-            Label1.TabIndex = 19;
-            Label1.Text = "Buscar";
-            Label1.Click += Label1_Click;
-            // 
-            // Buscador
-            // 
-            Buscador.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Buscador.Location = new Point(104, 26);
-            Buscador.MaxLength = 8;
-            Buscador.Name = "Buscador";
-            Buscador.Size = new Size(546, 23);
-            Buscador.TabIndex = 18;
+            Button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Button1.Location = new Point(656, 26);
+            Button1.Name = "Button1";
+            Button1.Size = new Size(79, 30);
+            Button1.TabIndex = 16;
+            Button1.Text = "Buscar";
+            Button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -142,65 +181,26 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // Button1
+            // Buscador
             // 
-            Button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Button1.Location = new Point(656, 26);
-            Button1.Name = "Button1";
-            Button1.Size = new Size(79, 30);
-            Button1.TabIndex = 16;
-            Button1.Text = "Buscar";
-            Button1.UseVisualStyleBackColor = true;
+            Buscador.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Buscador.Location = new Point(104, 26);
+            Buscador.MaxLength = 8;
+            Buscador.Name = "Buscador";
+            Buscador.Size = new Size(546, 23);
+            Buscador.TabIndex = 18;
             // 
-            // Evaluaciones
+            // Label1
             // 
-            Evaluaciones.HeaderText = "Evaluaciones";
-            Evaluaciones.Name = "Evaluaciones";
-            Evaluaciones.ReadOnly = true;
-            Evaluaciones.Text = "Evaluaciones";
-            Evaluaciones.UseColumnTextForLinkValue = true;
-            // 
-            // claseIDDataGridViewTextBoxColumn
-            // 
-            claseIDDataGridViewTextBoxColumn.DataPropertyName = "Clase_ID";
-            claseIDDataGridViewTextBoxColumn.HeaderText = "Clase_ID";
-            claseIDDataGridViewTextBoxColumn.Name = "claseIDDataGridViewTextBoxColumn";
-            claseIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // NombreMateria
-            // 
-            NombreMateria.DataPropertyName = "NombreMateria";
-            NombreMateria.HeaderText = "NombreMateria";
-            NombreMateria.Name = "NombreMateria";
-            NombreMateria.ReadOnly = true;
-            // 
-            // divisionIDDataGridViewTextBoxColumn
-            // 
-            divisionIDDataGridViewTextBoxColumn.DataPropertyName = "Division_ID";
-            divisionIDDataGridViewTextBoxColumn.HeaderText = "Division_ID";
-            divisionIDDataGridViewTextBoxColumn.Name = "divisionIDDataGridViewTextBoxColumn";
-            divisionIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profesorIDDataGridViewTextBoxColumn
-            // 
-            profesorIDDataGridViewTextBoxColumn.DataPropertyName = "Profesor_ID";
-            profesorIDDataGridViewTextBoxColumn.HeaderText = "Profesor_ID";
-            profesorIDDataGridViewTextBoxColumn.Name = "profesorIDDataGridViewTextBoxColumn";
-            profesorIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaComienzoDataGridViewTextBoxColumn
-            // 
-            fechaComienzoDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Comienzo";
-            fechaComienzoDataGridViewTextBoxColumn.HeaderText = "Fecha_Comienzo";
-            fechaComienzoDataGridViewTextBoxColumn.Name = "fechaComienzoDataGridViewTextBoxColumn";
-            fechaComienzoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaFinalDataGridViewTextBoxColumn
-            // 
-            fechaFinalDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Final";
-            fechaFinalDataGridViewTextBoxColumn.HeaderText = "Fecha_Final";
-            fechaFinalDataGridViewTextBoxColumn.Name = "fechaFinalDataGridViewTextBoxColumn";
-            fechaFinalDataGridViewTextBoxColumn.ReadOnly = true;
+            Label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Label1.AutoSize = true;
+            Label1.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            Label1.Location = new Point(40, 25);
+            Label1.Name = "Label1";
+            Label1.Size = new Size(58, 20);
+            Label1.TabIndex = 19;
+            Label1.Text = "Buscar";
+            Label1.Click += Label1_Click;
             // 
             // FormVerClaseMateria
             // 
@@ -233,10 +233,6 @@
 
         private DataGridView GRILLA;
         private Button Cerrar;
-        private Label Label1;
-        private TextBox Buscador;
-        private Button button2;
-        private Button Button1;
         private BindingSource claseClaseMateriaBindingSource;
         private BindingSource claseClaseMateriaBindingSource1;
         private BindingSource claseClaseMateriaBindingSource2;
@@ -250,12 +246,16 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private BindingSource claseClaseMateriaBindingSource4;
         private BindingSource claseClaseMateriaBindingSource5;
-        private DataGridViewLinkColumn Evaluaciones;
         private DataGridViewTextBoxColumn claseIDDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn NombreMateria;
         private DataGridViewTextBoxColumn divisionIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn profesorIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn NombreMateria;
         private DataGridViewTextBoxColumn fechaComienzoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaFinalDataGridViewTextBoxColumn;
+        private DataGridViewLinkColumn Evaluaciones;
+        private Button Button1;
+        private Button button2;
+        private TextBox Buscador;
+        private Label Label1;
     }
 }

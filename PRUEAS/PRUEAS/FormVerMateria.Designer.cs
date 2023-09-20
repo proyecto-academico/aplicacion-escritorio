@@ -158,19 +158,20 @@
             // anioescolarDataGridViewTextBoxColumn
             // 
             anioescolarDataGridViewTextBoxColumn.DataPropertyName = "Anio_escolar";
-            anioescolarDataGridViewTextBoxColumn.HeaderText = "Anio_escolar";
+            anioescolarDataGridViewTextBoxColumn.HeaderText = "Año Escolar";
             anioescolarDataGridViewTextBoxColumn.Name = "anioescolarDataGridViewTextBoxColumn";
             // 
             // horassemanalesDataGridViewTextBoxColumn
             // 
             horassemanalesDataGridViewTextBoxColumn.DataPropertyName = "Horas_semanales";
-            horassemanalesDataGridViewTextBoxColumn.HeaderText = "Horas_semanales";
+            horassemanalesDataGridViewTextBoxColumn.HeaderText = "Horas Semanales";
             horassemanalesDataGridViewTextBoxColumn.Name = "horassemanalesDataGridViewTextBoxColumn";
             // 
             // Clases
             // 
             Clases.HeaderText = "Clases";
             Clases.Name = "Clases";
+            Clases.Text = "Profesor/Materia";
             Clases.UseColumnTextForLinkValue = true;
             // 
             // FormVerMateria

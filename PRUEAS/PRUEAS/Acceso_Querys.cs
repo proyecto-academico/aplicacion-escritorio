@@ -81,9 +81,9 @@
             }
         }
 
-        public List<Clase_ClaseMateria> CargarMaterias()
+        public List<Clase_ClaseMateria> CargarMaterias(int ObjMateria)
         {
-            return __DataAccese.GetClaseClaseMaterias();
+            return __DataAccese.GetClaseClaseMaterias(ObjMateria);
         }
 
         public List<ClaseDivisiones> CargarDivisiones()
@@ -98,6 +98,11 @@
         public List<Clasenotas> GetClasenotas(int _persona)
         {
             return  __DataAccese.GetClasenotas(_persona);
+        }
+
+        public List<ClaseMateria> GetMaterias()
+        {
+            return __DataAccese.GetMaterias();
         }
     }
 }

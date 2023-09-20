@@ -356,14 +356,14 @@ namespace PRUEAS
         #endregion
 
         #region Querry ClaseMateria
-        public List<Clase_ClaseMateria> GetClaseClaseMaterias()
+        public List<Clase_ClaseMateria> GetClaseClaseMaterias(int ObjMateria)
         {
             List<Clase_ClaseMateria> materia= new List<Clase_ClaseMateria>();
-            
+          
             try
             {
                 conn.Open();
-                string querry = @$"SELECT  [Clase_ID],CONCAT(division.Anio_Escolar, '° ', division.Division_Escolar, '° ')AS Division,division.Division_ID,CONCAT(persona.Nombre,' ',persona.Apellido)AS Profesor,[clase].[Materia_ID],[Profesor_ID],[Fecha_Comienzo],[Fecha_Final], materia.Nombre FROM [proyecto_academico].[dbo].[clase] LEFT JOIN materia on clase.Materia_ID=materia.Materia_ID LEFT JOIN division on clase.Division_ID = division.Division_ID LEFT JOIN persona on clase.Profesor_ID = persona.DNI";
+                string querry = @$"SELECT  [Clase_ID],CONCAT(division.Anio_Escolar, '° ', division.Division_Escolar, '° ')AS Division,division.Division_ID,CONCAT(persona.Nombre,' ',persona.Apellido)AS Profesor,[clase].[Materia_ID],[Profesor_ID],[Fecha_Comienzo],[Fecha_Final], materia.Nombre FROM [proyecto_academico].[dbo].[clase] LEFT JOIN materia on clase.Materia_ID=materia.Materia_ID LEFT JOIN division on clase.Division_ID = division.Division_ID LEFT JOIN persona on clase.Profesor_ID = persona.DNI WHERE clase.Materia_ID = {ObjMateria} ";
                 SqlCommand command = new SqlCommand(querry, conn);
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -404,7 +404,7 @@ namespace PRUEAS
             }
             return materia;
         }
-        #endregion
+        #endregion  // hay que poner un refrascar para finalizar los del año actual para copiarlos de nuevo y poner el nuevo año
 
         #region Querry Divisiones
         public List<ClaseDivisiones> GetDivisiones()
@@ -453,14 +453,14 @@ namespace PRUEAS
         #endregion
 
         #region Querry Materia
-        public List<ClaseMateria> GetMaterias(int persona_)
+        public List<ClaseMateria> GetMaterias()
         {
             List<ClaseMateria> a = new List<ClaseMateria>();
 
             try
             {
                 conn.Open();
-                string querry = @$"SELECT materia.Materia_ID, materia.Nombre, Anio_escolar, Horas_Semanales FROM materia WHERE materia.Materia_ID = @DNI";
+                string querry = @$"SELECT materia.Materia_ID, materia.Nombre, Anio_escolar, Horas_Semanales FROM materia";
                 SqlCommand command = new SqlCommand(querry, conn);
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -473,10 +473,10 @@ namespace PRUEAS
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
                     a.Add(new ClaseMateria
                     (
-                        int.Parse(reader[""].ToString()),   
-                        (reader[""].ToString()),
-                        int.Parse(reader[""].ToString()),
-                        int.Parse(reader[""].ToString())
+                        int.Parse(reader["Materia_ID"].ToString()),   
+                        (reader["Nombre"].ToString()),
+                        int.Parse(reader["Anio_Escolar"].ToString()),
+                        int.Parse(reader["Horas_Semanales"].ToString())
                     )) ;
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
