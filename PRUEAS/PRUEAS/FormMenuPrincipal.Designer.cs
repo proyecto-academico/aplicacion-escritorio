@@ -111,7 +111,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.suiza;
+            BackgroundImage = SuizaSystem.Properties.Resources.suiza;
             ClientSize = new Size(1001, 586);
             Controls.Add(button5);
             Controls.Add(label1);

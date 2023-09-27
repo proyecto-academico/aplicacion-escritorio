@@ -6,7 +6,22 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>recursos\fondo-suiza.ico</ApplicationIcon>
+    <AssemblyName>SuizaSystem</AssemblyName>
+    <RootNamespace>SuizaSystem</RootNamespace>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Description>Sistema escolar para la suiza</Description>
+    <Copyright>ellushopapu</Copyright>
+    <PackageIcon>suiza.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="recursos\suiza.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="recursos\fondo-suiza.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
@@ -38,6 +53,10 @@
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="recursos\suiza.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 

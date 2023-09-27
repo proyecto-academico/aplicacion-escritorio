@@ -4,7 +4,7 @@ namespace PRUEAS
 {
     public class DB_Querys
     {
-        private SqlConnection conn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_academico;Data Source=PC-F-026\\SQLEXPRESS");
+        private SqlConnection conn = new SqlConnection("Server=10.120.0.176;Database=proyecto_academico;User Id=123;Password=456;");
 
         #region Querry Personas
 
