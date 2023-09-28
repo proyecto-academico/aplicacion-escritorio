@@ -1,7 +1,4 @@
-﻿using System.Data;
-using System.Windows.Forms;
-
-namespace PRUEAS
+﻿namespace PRUEAS
 {
     public partial class FormVerClaseMateria : Form
     {
@@ -18,6 +15,9 @@ namespace PRUEAS
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+            FormGuardarClaseMateria agrergarMateria = new FormGuardarClaseMateria();
+            agrergarMateria.ShowDialog(this);
 
         }
 
@@ -53,16 +53,9 @@ namespace PRUEAS
 
             }
         }
-        /*private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-{
-   if (dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString() == "Email me")
-   {
-       MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
-   }
-   else
-   {
-       MessageBox.Show("You Clicked another Cell");
-   }
-}*/
+
+
+        
+
     }
 }

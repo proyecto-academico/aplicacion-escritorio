@@ -14,6 +14,6 @@
             Anio_escolar = anio_escolar;
             Horas_semanales = horas_semanales;
         }
-        
+
     }
 }

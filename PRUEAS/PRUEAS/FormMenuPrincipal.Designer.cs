@@ -40,7 +40,7 @@
             // 
             button1.Anchor = AnchorStyles.Top;
             button1.BackColor = Color.Transparent;
-            button1.Location = new Point(336, 265);
+            button1.Location = new Point(341, 265);
             button1.Name = "button1";
             button1.Size = new Size(336, 23);
             button1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             button2.Anchor = AnchorStyles.Top;
             button2.BackColor = Color.Transparent;
-            button2.Location = new Point(336, 294);
+            button2.Location = new Point(341, 294);
             button2.Name = "button2";
             button2.Size = new Size(336, 23);
             button2.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             button3.Anchor = AnchorStyles.Top;
             button3.BackColor = Color.Transparent;
-            button3.Location = new Point(336, 323);
+            button3.Location = new Point(341, 323);
             button3.Name = "button3";
             button3.Size = new Size(336, 23);
             button3.TabIndex = 2;
@@ -76,9 +76,9 @@
             // 
             button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             button4.BackColor = Color.Transparent;
-            button4.Location = new Point(406, 408);
+            button4.Location = new Point(406, 632);
             button4.Name = "button4";
-            button4.Size = new Size(191, 23);
+            button4.Size = new Size(201, 23);
             button4.TabIndex = 3;
             button4.Text = "Salir";
             button4.UseVisualStyleBackColor = false;
@@ -105,7 +105,7 @@
             button5.TabIndex = 5;
             button5.Text = "Evaluaciones";
             button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            button5.Click += button5_Click_1;
             // 
             // FormMenuPrincipal
             // 

@@ -11,29 +11,30 @@ namespace PRUEAS
             InitializeComponent();
         }
 
-        private void FormVerClaseMateria_Load(object sender, EventArgs e)
-        {
-            CargaDeMateria();
-        }
+
+
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
+            FormMenuPrincipal menuPrincipal231 = new FormMenuPrincipal();
+            menuPrincipal231.Show();
             this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormGuardarClaseMateria claseMateria = new FormGuardarClaseMateria();
-            claseMateria.ShowDialog(this);
+            FormGuardarMateria Materia = new FormGuardarMateria();
+            Materia.ShowDialog(this);
         }
 
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (e.ColumnIndex == GRILLA.Columns["Clases"].Index && e.RowIndex >= 0)
             {
-                
+                int variabletempo = 5;//int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString());
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
-                FormVerClaseMateria formVerClaseMateria = new FormVerClaseMateria(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                FormVerClaseMateria formVerClaseMateria = new FormVerClaseMateria(variabletempo);
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
                 formVerClaseMateria.ShowDialog();
             }
@@ -43,6 +44,18 @@ namespace PRUEAS
             List<ClaseMateria> claseMaterias = new();
             claseMaterias = Acceso_Querys.GetMaterias();
             GRILLA.DataSource = claseMaterias;
+        }
+
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+            menuPrincipal.Show();
+            this.Close();
+        }
+
+        private void FormVerMateria_Load(object sender, EventArgs e)
+        {
+            CargaDeMateria();
         }
     }
 }

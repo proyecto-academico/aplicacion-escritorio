@@ -63,3 +63,4 @@ C:\Users\Alumno\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Release\net
 C:\Users\Alumno\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Release\net7.0-windows\SuizaSystem.pdb
 C:\Users\Alumno\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Release\net7.0-windows\PRUEAS.genruntimeconfig.cache
 C:\Users\Alumno\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Release\net7.0-windows\ref\SuizaSystem.dll
+C:\Users\Alumno\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\obj\Release\net7.0-windows\PRUEAS.FormGuardarMateria.resources

@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace PRUEAS
+﻿namespace PRUEAS
 {
     public partial class FormVerDivisiones : Form
     {
@@ -19,31 +9,37 @@ namespace PRUEAS
             FuncionesQuerys = new Acceso_Querys();
         }
 
-        private void Cerrar_Click(object sender, EventArgs e)
+        public void Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
             //FormGuardarDivisiones agregarDivisiones= new FormGuardarDivisiones(persona, false);
             //agregarDivisiones.ShowDialog(this);
         }
 
-        private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+
+
+        public void buttonVolver2_Click(object sender, EventArgs e)
         {
+            FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+            menuPrincipal.Show();
+            this.Close();
+        }
+        public void FormVerDivisiones_Load(object sender, EventArgs e)
+        {
+            CargarDivisiones();
 
         }
 
-        private void CargarDivisiones()
+
+        public void CargarDivisiones()
         {
             List<ClaseDivisiones> Divisiones = FuncionesQuerys.CargarDivisiones();
             GRILLA.DataSource = Divisiones;
-        }
-
-        private void FormVerDivisiones_Load(object sender, EventArgs e)
-        {
-            CargarDivisiones();
         }
     }
 }

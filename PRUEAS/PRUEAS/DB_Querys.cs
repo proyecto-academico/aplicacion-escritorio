@@ -4,6 +4,7 @@ namespace PRUEAS
 {
     public class DB_Querys
     {
+
         private SqlConnection conn = new SqlConnection("Server=10.120.0.176;Database=proyecto_academico;User Id=123;Password=456;");
 
         #region Querry Personas
@@ -394,7 +395,7 @@ namespace PRUEAS
 
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -440,7 +441,7 @@ namespace PRUEAS
 
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -473,11 +474,16 @@ namespace PRUEAS
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
                     a.Add(new ClaseMateria
                     (
-                        int.Parse(reader["Materia_ID"].ToString()),   
+
+                     
+                        int.Parse(reader["Materia_ID"].ToString()),
                         (reader["Nombre"].ToString()),
-                        int.Parse(reader["Anio_Escolar"].ToString()),
-                        int.Parse(reader["Horas_Semanales"].ToString())
-                    )) ;
+                        int.Parse(reader["Anio_escolar"].ToString()),
+                        int.Parse(reader["Horas_semanales"].ToString())
+                    ));
+
+                    
+
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
@@ -486,7 +492,7 @@ namespace PRUEAS
 
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -534,7 +540,7 @@ namespace PRUEAS
 
 
             }
-            catch(Exception e) 
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -583,7 +589,7 @@ namespace PRUEAS
 
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -621,7 +627,7 @@ namespace PRUEAS
                         Fecha = DateTime.Parse(reader["Fecha"].ToString()),
                         Tipo = float.Parse(reader["Tipo"].ToString()),
                         Justificado = Convert.ToBoolean(reader["jutificada"].ToString())
-                        
+
                     });
 
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
@@ -835,7 +841,7 @@ namespace PRUEAS
                 }
 
             }
-            catch (Exception e)   
+            catch (Exception e)
             {
 
                 MessageBox.Show(e.Message);

@@ -21,16 +21,20 @@
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormVerMateria formVerMateria = new FormVerMateria();
-            formVerMateria.Show();
+
+            FormVerMateria materia = new FormVerMateria();
+            materia.Show();
             this.Close();
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FormVerDivisiones formVerDivisiones = new FormVerDivisiones();
-            formVerDivisiones.Show();
-            this.Close();
+
+            FormVerDivisiones divisiones = new FormVerDivisiones();
+            divisiones.Show();
+
 
         }
 
@@ -38,8 +42,16 @@
         {
             FormVerEvaluaciones formVerEvaluciones = new FormVerEvaluaciones();
             formVerEvaluciones.Show();
+
             this.Close();
 
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            FormVerEvaluaciones formVerEvaluaciones = new FormVerEvaluaciones();
+            formVerEvaluaciones.Show();
+            this.Close();
         }
     }
 }

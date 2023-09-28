@@ -55,6 +55,18 @@
             Faltas = new DataGridViewLinkColumn();
             edit = new DataGridViewLinkColumn();
             X = new DataGridViewLinkColumn();
+
+            personasBindingSource5 = new BindingSource(components);
+            personasBindingSource3 = new BindingSource(components);
+            personasBindingSource2 = new BindingSource(components);
+            personasBindingSource = new BindingSource(components);
+            personasBindingSource1 = new BindingSource(components);
+            AlumnoCheck = new CheckBox();
+            AdminitracionCheck = new CheckBox();
+            ProfesorCheck = new CheckBox();
+            personasBindingSource4 = new BindingSource(components);
+
+
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personasBindingSource3).BeginInit();
@@ -214,6 +226,7 @@
             // 
             personasBindingSource4.DataSource = typeof(ClasePersonas);
             // 
+
             // _dni
             // 
             _dni.DataPropertyName = "_dni";
@@ -297,6 +310,7 @@
             X.ReadOnly = true;
             X.Text = "X";
             X.UseColumnTextForLinkValue = true;
+
             // 
             // FormVerPersonas
             // 
@@ -304,6 +318,7 @@
             AutoScroll = true;
             AutoSize = true;
             ClientSize = new Size(835, 555);
+
             Controls.Add(ProfesorCheck);
             Controls.Add(AdminitracionCheck);
             Controls.Add(AlumnoCheck);
@@ -365,5 +380,6 @@
         private DataGridViewLinkColumn Faltas;
         private DataGridViewLinkColumn edit;
         private DataGridViewLinkColumn X;
+
     }
 }

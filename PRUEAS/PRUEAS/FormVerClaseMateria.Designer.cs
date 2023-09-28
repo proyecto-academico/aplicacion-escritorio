@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             GRILLA = new DataGridView();
+
             claseIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             divisionIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             profesorIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -38,8 +39,13 @@
             fechaComienzoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             fechaFinalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Evaluaciones = new DataGridViewLinkColumn();
+
+            Evaluaciones = new DataGridViewLinkColumn();
+
+
             claseClaseMateriaBindingSource5 = new BindingSource(components);
             claseClaseMateriaBindingSource4 = new BindingSource(components);
+
             claseClaseMateriaBindingSource3 = new BindingSource(components);
             claseClaseMateriaBindingSource = new BindingSource(components);
             Cerrar = new Button();
@@ -76,8 +82,12 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
             GRILLA.Columns.AddRange(new DataGridViewColumn[] { claseIDDataGridViewTextBoxColumn, divisionIDDataGridViewTextBoxColumn, profesorIDDataGridViewTextBoxColumn, NombreMateria, fechaComienzoDataGridViewTextBoxColumn, fechaFinalDataGridViewTextBoxColumn, Evaluaciones });
+            
+            GRILLA.DataSource = claseClaseMateriaBindingSource3;
             GRILLA.DataSource = claseClaseMateriaBindingSource5;
+
             GRILLA.Location = new Point(28, 84);
             GRILLA.Name = "GRILLA";
             GRILLA.ReadOnly = true;
@@ -85,8 +95,11 @@
             GRILLA.RowTemplate.Height = 25;
             GRILLA.Size = new Size(792, 360);
             GRILLA.TabIndex = 21;
-            GRILLA.CellContentClick += GRILLA_CellContentClick_1;
+
+
+
             // 
+
             // claseIDDataGridViewTextBoxColumn
             // 
             claseIDDataGridViewTextBoxColumn.DataPropertyName = "Clase_ID";
@@ -103,6 +116,7 @@
             // 
             // profesorIDDataGridViewTextBoxColumn
             // 
+
             profesorIDDataGridViewTextBoxColumn.DataPropertyName = "Profesor_ID";
             profesorIDDataGridViewTextBoxColumn.HeaderText = "Profesor_ID";
             profesorIDDataGridViewTextBoxColumn.Name = "profesorIDDataGridViewTextBoxColumn";
@@ -129,14 +143,19 @@
             fechaFinalDataGridViewTextBoxColumn.Name = "fechaFinalDataGridViewTextBoxColumn";
             fechaFinalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+
             // Evaluaciones
             // 
             Evaluaciones.HeaderText = "Evaluaciones";
             Evaluaciones.Name = "Evaluaciones";
             Evaluaciones.ReadOnly = true;
+
             Evaluaciones.Text = "Evaluaciones";
             Evaluaciones.UseColumnTextForLinkValue = true;
             // 
+
+            Evaluaciones.UseColumnTextForLinkValue = true;
+
             // claseClaseMateriaBindingSource5
             // 
             claseClaseMateriaBindingSource5.DataSource = typeof(Clase_ClaseMateria);
@@ -144,6 +163,7 @@
             // claseClaseMateriaBindingSource4
             // 
             claseClaseMateriaBindingSource4.DataSource = typeof(Clase_ClaseMateria);
+
             // 
             // Cerrar
             // 
@@ -180,6 +200,7 @@
             button2.Text = "Agregar";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+
             // 
             // Buscador
             // 
@@ -190,7 +211,11 @@
             Buscador.Size = new Size(546, 23);
             Buscador.TabIndex = 18;
             // 
+
             // Label1
+
+            // Evaluaciones
+
             // 
             Label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Label1.AutoSize = true;
@@ -202,6 +227,7 @@
             Label1.Text = "Buscar";
             Label1.Click += Label1_Click;
             // 
+
             // FormVerClaseMateria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);

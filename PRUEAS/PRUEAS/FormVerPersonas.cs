@@ -32,6 +32,12 @@
             login.Show();
             Close();
         }
+        private void buttonVolver2_Click(object sender, EventArgs e)
+        {
+            FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+            menuPrincipal.Show();
+            this.Close();
+        }
         private void GRILLA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == GRILLA.Columns["Notas"].Index && e.RowIndex >= 0)
@@ -208,7 +214,12 @@
             }
         }
 
-
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+            menuPrincipal.Show();
+            this.Close();
+        }
     }
 
 }
