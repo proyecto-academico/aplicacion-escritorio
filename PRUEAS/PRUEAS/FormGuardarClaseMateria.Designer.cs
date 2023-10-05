@@ -41,7 +41,7 @@
             // 
             // textBoxCiCLO
             // 
-            textBoxCiCLO.Location = new Point(328, 221);
+            textBoxCiCLO.Location = new Point(333, 233);
             textBoxCiCLO.Margin = new Padding(3, 2, 3, 2);
             textBoxCiCLO.Name = "textBoxCiCLO";
             textBoxCiCLO.Size = new Size(263, 23);
@@ -49,7 +49,7 @@
             // 
             // textBoxDNI
             // 
-            textBoxDNI.Location = new Point(328, 191);
+            textBoxDNI.Location = new Point(333, 196);
             textBoxDNI.Margin = new Padding(3, 2, 3, 2);
             textBoxDNI.Name = "textBoxDNI";
             textBoxDNI.Size = new Size(263, 23);
@@ -57,7 +57,7 @@
             // 
             // textBoxSurname
             // 
-            textBoxSurname.Location = new Point(328, 154);
+            textBoxSurname.Location = new Point(333, 159);
             textBoxSurname.Margin = new Padding(3, 2, 3, 2);
             textBoxSurname.Name = "textBoxSurname";
             textBoxSurname.Size = new Size(263, 23);
@@ -66,7 +66,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(455, 174);
+            label5.Location = new Point(455, 117);
             label5.Name = "label5";
             label5.Size = new Size(0, 15);
             label5.TabIndex = 20;
@@ -74,24 +74,24 @@
             // Fecha
             // 
             Fecha.AutoSize = true;
-            Fecha.Location = new Point(209, 224);
+            Fecha.Location = new Point(214, 236);
             Fecha.Name = "Fecha";
-            Fecha.Size = new Size(38, 15);
+            Fecha.Size = new Size(66, 15);
             Fecha.TabIndex = 18;
-            Fecha.Text = "Fecha";
+            Fecha.Text = "Fecha Final";
             // 
             // Clase
             // 
             Clase.AutoSize = true;
-            Clase.Location = new Point(209, 194);
+            Clase.Location = new Point(214, 199);
             Clase.Name = "Clase";
-            Clase.Size = new Size(35, 15);
+            Clase.Size = new Size(95, 15);
             Clase.TabIndex = 17;
-            Clase.Text = "Clase";
+            Clase.Text = "Fecha Comienzo";
             // 
             // buttonSalir
             // 
-            buttonSalir.Location = new Point(458, 308);
+            buttonSalir.Location = new Point(411, 300);
             buttonSalir.Margin = new Padding(3, 2, 3, 2);
             buttonSalir.Name = "buttonSalir";
             buttonSalir.Size = new Size(82, 22);
@@ -101,7 +101,7 @@
             // 
             // buttonGuardar
             // 
-            buttonGuardar.Location = new Point(362, 308);
+            buttonGuardar.Location = new Point(315, 300);
             buttonGuardar.Margin = new Padding(3, 2, 3, 2);
             buttonGuardar.Name = "buttonGuardar";
             buttonGuardar.Size = new Size(82, 22);
@@ -112,11 +112,12 @@
             // Nota
             // 
             Nota.AutoSize = true;
-            Nota.Location = new Point(209, 157);
+            Nota.Location = new Point(214, 162);
             Nota.Name = "Nota";
-            Nota.Size = new Size(33, 15);
+            Nota.Size = new Size(110, 15);
             Nota.TabIndex = 16;
-            Nota.Text = "Nota";
+            Nota.Text = "Nombre de Materia";
+            Nota.Click += Nota_Click;
             // 
             // FormGuardarClaseMateria
             // 

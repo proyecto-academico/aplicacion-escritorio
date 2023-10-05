@@ -854,5 +854,8 @@ namespace PRUEAS
 
         }
         #endregion
+        #region prueba de los listbox
+
+        #endregion
     }
 }

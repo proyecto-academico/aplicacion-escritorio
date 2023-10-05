@@ -7,5 +7,9 @@
             InitializeComponent();
         }
 
+        private void Nota_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
