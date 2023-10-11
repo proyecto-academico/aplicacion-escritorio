@@ -25,7 +25,15 @@
 
             List<int> list = Acceso_Querys.GetDNI();
             comboBox1.DataSource = list;
-            
+
+        }
+
+
+
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
+

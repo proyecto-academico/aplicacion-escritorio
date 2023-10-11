@@ -1,6 +1,6 @@
-﻿namespace PRUEAS
+﻿namespace SuizaSystem
 {
-    partial class FormGuardarEvaluaciones
+    partial class FormGuardarDivisiones
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(61, 51);
+            label1.Location = new Point(105, 83);
             label1.Name = "label1";
             label1.Size = new Size(51, 15);
             label1.TabIndex = 0;
@@ -54,98 +54,102 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(64, 133);
+            label2.Location = new Point(105, 123);
             label2.Name = "label2";
-            label2.Size = new Size(48, 15);
+            label2.Size = new Size(49, 15);
             label2.TabIndex = 1;
-            label2.Text = "Detalles";
+            label2.Text = "Division";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(64, 78);
+            label3.Location = new Point(105, 244);
             label3.Name = "label3";
-            label3.Size = new Size(35, 15);
+            label3.Size = new Size(55, 15);
             label3.TabIndex = 2;
-            label3.Text = "Clase";
+            label3.Text = "Alumnos";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(64, 107);
+            label4.Location = new Point(105, 204);
             label4.Name = "label4";
-            label4.Size = new Size(38, 15);
+            label4.Size = new Size(40, 15);
             label4.TabIndex = 3;
-            label4.Text = "Fecha";
+            label4.Text = "Clases";
+            label4.Click += label4_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(64, 166);
+            label5.Location = new Point(105, 164);
             label5.Name = "label5";
             label5.Size = new Size(38, 15);
             label5.TabIndex = 4;
-            label5.Text = "Notas";
+            label5.Text = "Turno";
+            label5.Click += label5_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(136, 48);
+            textBox1.Location = new Point(186, 75);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(281, 23);
+            textBox1.Size = new Size(318, 23);
             textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(136, 75);
+            textBox2.Location = new Point(186, 115);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(281, 23);
+            textBox2.Size = new Size(318, 23);
             textBox2.TabIndex = 6;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(136, 101);
+            textBox3.Location = new Point(186, 156);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(281, 23);
+            textBox3.Size = new Size(318, 23);
             textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(136, 130);
+            textBox4.Location = new Point(186, 236);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(281, 23);
+            textBox4.Size = new Size(318, 23);
             textBox4.TabIndex = 8;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(136, 158);
+            textBox5.Location = new Point(186, 196);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(281, 23);
+            textBox5.Size = new Size(318, 23);
             textBox5.TabIndex = 9;
             // 
             // button1
             // 
-            button1.Location = new Point(100, 222);
+            button1.Location = new Point(76, 324);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 10;
-            button1.Text = "Cancelar";
+            button1.Text = "cancelar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(365, 222);
+            button2.Location = new Point(474, 324);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 11;
-            button2.Text = "Aceptar";
+            button2.Text = "guardar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
-            // FormGuardarEvaluaciones
+            // FormGuardarDivisiones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(557, 291);
+            ClientSize = new Size(686, 450);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox5);
@@ -158,8 +162,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "FormGuardarEvaluaciones";
-            Text = "FormGuardarEvaluaciones";
+            Name = "FormGuardarDivisiones";
+            Text = "FormGuardarDivisiones";
             ResumeLayout(false);
             PerformLayout();
         }

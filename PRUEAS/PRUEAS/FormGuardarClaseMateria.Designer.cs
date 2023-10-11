@@ -99,6 +99,7 @@
             buttonSalir.TabIndex = 14;
             buttonSalir.Text = "Salir";
             buttonSalir.UseVisualStyleBackColor = true;
+            buttonSalir.Click += buttonSalir_Click;
             // 
             // buttonGuardar
             // 
