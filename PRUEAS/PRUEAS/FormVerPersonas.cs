@@ -28,9 +28,9 @@
         }
         private void Cerrar_Click(object sender, EventArgs e)
         {
-            FormInicioSesion login = new FormInicioSesion();
-            login.Show();
-            Close();
+            FormMenuPrincipal formmenuprincipal = new FormMenuPrincipal();
+            formmenuprincipal.Show();
+            this.Close();
         }
         private void buttonVolver2_Click(object sender, EventArgs e)
         {

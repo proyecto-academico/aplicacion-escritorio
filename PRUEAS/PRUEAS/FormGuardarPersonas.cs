@@ -15,6 +15,7 @@
         #region Botones
         private void buttonSalir_Click(object sender, EventArgs e)
         {
+            FormVerPersonas Alumno_BaseDeDatos = new FormVerPersonas();
             this.Close();
         }
 

@@ -34,6 +34,7 @@
 
             FormVerDivisiones divisiones = new FormVerDivisiones();
             divisiones.Show();
+            this.Close();
 
 
         }

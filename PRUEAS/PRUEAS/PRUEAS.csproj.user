@@ -4,6 +4,9 @@
     <_LastSelectedProfileId>C:\Users\Alumno\source\repos\aplicacion-escritorio\PRUEAS\PRUEAS\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="FormGuardarDivisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormVerClase.cs">
       <SubType>Form</SubType>
     </Compile>

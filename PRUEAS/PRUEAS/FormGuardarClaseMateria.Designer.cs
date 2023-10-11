@@ -98,6 +98,7 @@
             buttonSalir.TabIndex = 14;
             buttonSalir.Text = "Salir";
             buttonSalir.UseVisualStyleBackColor = true;
+            buttonSalir.Click += buttonSalir_Click;
             // 
             // buttonGuardar
             // 
@@ -135,6 +136,7 @@
             Controls.Add(buttonGuardar);
             Name = "FormGuardarClaseMateria";
             Text = "FormGuardarClaseMateria";
+            Load += FormGuardarClaseMateria_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -15,6 +15,8 @@ namespace PRUEAS
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
+            FormMenuPrincipal formmenuprincipal = new FormMenuPrincipal();
+            formmenuprincipal.Show();
             this.Close();
         }
 
@@ -25,8 +27,8 @@ namespace PRUEAS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //FormGuardarEvaluaciones agregarEvaluaciones = new FormGuardarEvaluaciones(persona, false);
-            //agregarEvaluaciones.ShowDialog(this);
+            FormGuardarEvaluaciones agregarEvaluaciones = new FormGuardarEvaluaciones();
+            agregarEvaluaciones.ShowDialog(this);
         }
 
         private void FormVerEvaluaciones_Load(object sender, EventArgs e)

@@ -1,4 +1,6 @@
-﻿namespace PRUEAS
+﻿using SuizaSystem;
+
+namespace PRUEAS
 {
     public partial class FormVerDivisiones : Form
     {
@@ -11,13 +13,15 @@
 
         public void Cerrar_Click(object sender, EventArgs e)
         {
+            FormMenuPrincipal formmenuprincipal = new FormMenuPrincipal();
             this.Close();
         }
 
         public void button2_Click(object sender, EventArgs e)
         {
-            //FormGuardarDivisiones agregarDivisiones= new FormGuardarDivisiones(persona, false);
-            //agregarDivisiones.ShowDialog(this);
+            FormGuardarDivisiones agregarDivisiones= new FormGuardarDivisiones();
+            agregarDivisiones.ShowDialog(this);
+
         }
 
 

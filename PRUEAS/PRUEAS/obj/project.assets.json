@@ -2339,11 +2339,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alumno\\source\\repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
+      "projectUniqueName": "C:\\Users\\Alumno\\Source\\Repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
       "projectName": "SuizaSystem",
-      "projectPath": "C:\\Users\\Alumno\\source\\repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
+      "projectPath": "C:\\Users\\Alumno\\Source\\Repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\PRUEAS.csproj",
       "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alumno\\source\\repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\obj\\",
+      "outputPath": "C:\\Users\\Alumno\\Source\\Repos\\aplicacion-escritorio\\PRUEAS\\PRUEAS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2354,7 +2354,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2405,7 +2404,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

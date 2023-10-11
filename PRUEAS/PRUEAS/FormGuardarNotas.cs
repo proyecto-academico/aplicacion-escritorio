@@ -6,5 +6,10 @@
         {
             InitializeComponent();
         }
+
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
