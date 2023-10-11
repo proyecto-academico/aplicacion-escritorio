@@ -37,11 +37,12 @@
             buttonSalir = new Button();
             buttonGuardar = new Button();
             Nota = new Label();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // textBoxCiCLO
             // 
-            textBoxCiCLO.Location = new Point(333, 233);
+            textBoxCiCLO.Location = new Point(277, 240);
             textBoxCiCLO.Margin = new Padding(3, 2, 3, 2);
             textBoxCiCLO.Name = "textBoxCiCLO";
             textBoxCiCLO.Size = new Size(263, 23);
@@ -49,7 +50,7 @@
             // 
             // textBoxDNI
             // 
-            textBoxDNI.Location = new Point(333, 196);
+            textBoxDNI.Location = new Point(277, 203);
             textBoxDNI.Margin = new Padding(3, 2, 3, 2);
             textBoxDNI.Name = "textBoxDNI";
             textBoxDNI.Size = new Size(263, 23);
@@ -57,7 +58,7 @@
             // 
             // textBoxSurname
             // 
-            textBoxSurname.Location = new Point(333, 159);
+            textBoxSurname.Location = new Point(277, 166);
             textBoxSurname.Margin = new Padding(3, 2, 3, 2);
             textBoxSurname.Name = "textBoxSurname";
             textBoxSurname.Size = new Size(263, 23);
@@ -66,7 +67,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(455, 117);
+            label5.Location = new Point(399, 124);
             label5.Name = "label5";
             label5.Size = new Size(0, 15);
             label5.TabIndex = 20;
@@ -74,7 +75,7 @@
             // Fecha
             // 
             Fecha.AutoSize = true;
-            Fecha.Location = new Point(214, 236);
+            Fecha.Location = new Point(158, 243);
             Fecha.Name = "Fecha";
             Fecha.Size = new Size(66, 15);
             Fecha.TabIndex = 18;
@@ -83,7 +84,7 @@
             // Clase
             // 
             Clase.AutoSize = true;
-            Clase.Location = new Point(214, 199);
+            Clase.Location = new Point(158, 206);
             Clase.Name = "Clase";
             Clase.Size = new Size(95, 15);
             Clase.TabIndex = 17;
@@ -91,7 +92,7 @@
             // 
             // buttonSalir
             // 
-            buttonSalir.Location = new Point(411, 300);
+            buttonSalir.Location = new Point(415, 333);
             buttonSalir.Margin = new Padding(3, 2, 3, 2);
             buttonSalir.Name = "buttonSalir";
             buttonSalir.Size = new Size(82, 22);
@@ -101,7 +102,7 @@
             // 
             // buttonGuardar
             // 
-            buttonGuardar.Location = new Point(315, 300);
+            buttonGuardar.Location = new Point(319, 333);
             buttonGuardar.Margin = new Padding(3, 2, 3, 2);
             buttonGuardar.Name = "buttonGuardar";
             buttonGuardar.Size = new Size(82, 22);
@@ -112,18 +113,27 @@
             // Nota
             // 
             Nota.AutoSize = true;
-            Nota.Location = new Point(214, 162);
+            Nota.Location = new Point(158, 169);
             Nota.Name = "Nota";
             Nota.Size = new Size(110, 15);
             Nota.TabIndex = 16;
             Nota.Text = "Nombre de Materia";
             Nota.Click += Nota_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(298, 281);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(219, 23);
+            comboBox1.TabIndex = 24;
+            // 
             // FormGuardarClaseMateria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(comboBox1);
             Controls.Add(textBoxCiCLO);
             Controls.Add(textBoxDNI);
             Controls.Add(textBoxSurname);
@@ -135,6 +145,7 @@
             Controls.Add(buttonGuardar);
             Name = "FormGuardarClaseMateria";
             Text = "FormGuardarClaseMateria";
+            Load += FormGuardarClaseMateria_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,5 +160,6 @@
         private Button buttonSalir;
         private Button buttonGuardar;
         private Label Nota;
+        private ComboBox comboBox1;
     }
 }

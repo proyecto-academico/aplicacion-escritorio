@@ -854,7 +854,59 @@ namespace PRUEAS
 
         }
         #endregion
+
         #region prueba de los listbox
+
+        public List<int> GetDni()
+        {
+            List<int> personas = new List<int>();
+            try
+            {
+
+               
+                    conn.Open();
+
+                   
+                
+                
+              
+                 
+                    string querry = @"  Select DNI from persona where Nivel = 2
+                            ";
+                   
+                    SqlCommand command = new SqlCommand(querry, conn);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+                        personas.Add(
+                        
+                            int.Parse(reader["DNI"].ToString())
+
+                        );
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
+                    }
+                
+
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return personas;
+        }
+
 
         #endregion
     }

@@ -104,5 +104,9 @@
         {
             return __DataAccese.GetMaterias();
         }
+        public List<int> GetDNI()
+        {
+            return __DataAccese.GetDni();
+        }
     }
 }
