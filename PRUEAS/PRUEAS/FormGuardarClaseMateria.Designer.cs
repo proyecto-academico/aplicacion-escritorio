@@ -37,7 +37,7 @@
             buttonSalir = new Button();
             buttonGuardar = new Button();
             Nota = new Label();
-            comboBox1 = new ComboBox();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // textBoxCiCLO
@@ -121,20 +121,21 @@
             Nota.Text = "Nombre de Materia";
             Nota.Click += Nota_Click;
             // 
-            // comboBox1
+            // textBox1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(298, 281);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(219, 23);
-            comboBox1.TabIndex = 24;
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(277, 279);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(263, 23);
+            textBox1.TabIndex = 24;
             // 
             // FormGuardarClaseMateria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(comboBox1);
+            Controls.Add(textBox1);
             Controls.Add(textBoxCiCLO);
             Controls.Add(textBoxDNI);
             Controls.Add(textBoxSurname);
@@ -161,6 +162,6 @@
         private Button buttonSalir;
         private Button buttonGuardar;
         private Label Nota;
-        private ComboBox comboBox1;
+        private TextBox textBox1;
     }
 }

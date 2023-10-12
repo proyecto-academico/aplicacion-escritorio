@@ -1,4 +1,6 @@
-﻿namespace PRUEAS
+﻿using SuizaSystem;
+
+namespace PRUEAS
 {
     public partial class FormVerClaseMateria : Form
     {
@@ -16,8 +18,9 @@
         private void button2_Click(object sender, EventArgs e)
         {
 
-            FormGuardarClaseMateria agrergarMateria = new FormGuardarClaseMateria();
-            agrergarMateria.ShowDialog(this);
+            FormEleccion agrergarMateria = new FormEleccion();
+            agrergarMateria.Show();
+            this.Close();
 
         }
 

@@ -32,11 +32,12 @@ namespace PRUEAS
             
             if (e.ColumnIndex == GRILLA.Columns["Clases"].Index && e.RowIndex >= 0)
             {
-                int variabletempo = 5;//int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString());
+                int variabletempo = int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString());
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
                 FormVerClaseMateria formVerClaseMateria = new FormVerClaseMateria(variabletempo);
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
                 formVerClaseMateria.ShowDialog();
+                this.Hide();
             }
         }
         public void CargaDeMateria()

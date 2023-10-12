@@ -3,10 +3,12 @@
     public partial class FormGuardarClaseMateria : Form
     {
         private Acceso_Querys Acceso_Querys;
-        public FormGuardarClaseMateria()
+        private int DNI;
+        public FormGuardarClaseMateria(int variableDni)
         {
             InitializeComponent();
             Acceso_Querys = new Acceso_Querys();
+            DNI = variableDni;
         }
 
         private void Nota_Click(object sender, EventArgs e)
@@ -23,8 +25,7 @@
         private void CargarDNI()
         {
 
-            List<int> list = Acceso_Querys.GetDNI();
-            comboBox1.DataSource = list;
+            textBox1.Text = DNI.ToString();
 
         }
 
