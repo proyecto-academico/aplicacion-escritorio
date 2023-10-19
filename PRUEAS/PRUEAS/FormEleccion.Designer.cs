@@ -30,11 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            clasePersonasBindingSource = new BindingSource(components);
             dniDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             mailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clasePersonasBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clasePersonasBindingSource).BeginInit();
             SuspendLayout();
@@ -42,20 +42,15 @@
             // dataGridView1
             // 
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dniDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn, mailDataGridViewTextBoxColumn });
             dataGridView1.DataSource = clasePersonasBindingSource;
-            dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(800, 450);
+            dataGridView1.Size = new Size(446, 450);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // clasePersonasBindingSource
-            // 
-            clasePersonasBindingSource.DataSource = typeof(PRUEAS.ClasePersonas);
             // 
             // dniDataGridViewTextBoxColumn
             // 
@@ -81,11 +76,15 @@
             mailDataGridViewTextBoxColumn.HeaderText = "Email";
             mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
             // 
+            // clasePersonasBindingSource
+            // 
+            clasePersonasBindingSource.DataSource = typeof(PRUEAS.ClasePersonas);
+            // 
             // FormEleccion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(448, 451);
             Controls.Add(dataGridView1);
             Name = "FormEleccion";
             Text = "FormEleccion";

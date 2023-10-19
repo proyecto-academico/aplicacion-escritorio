@@ -34,13 +34,14 @@
             button4 = new Button();
             label1 = new Label();
             button5 = new Button();
+            button6 = new Button();
             SuspendLayout();
             // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Top;
             button1.BackColor = Color.Transparent;
-            button1.Location = new Point(341, 265);
+            button1.Location = new Point(216, 273);
             button1.Name = "button1";
             button1.Size = new Size(336, 23);
             button1.TabIndex = 0;
@@ -52,7 +53,7 @@
             // 
             button2.Anchor = AnchorStyles.Top;
             button2.BackColor = Color.Transparent;
-            button2.Location = new Point(341, 294);
+            button2.Location = new Point(216, 302);
             button2.Name = "button2";
             button2.Size = new Size(336, 23);
             button2.TabIndex = 1;
@@ -64,7 +65,7 @@
             // 
             button3.Anchor = AnchorStyles.Top;
             button3.BackColor = Color.Transparent;
-            button3.Location = new Point(341, 323);
+            button3.Location = new Point(216, 331);
             button3.Name = "button3";
             button3.Size = new Size(336, 23);
             button3.TabIndex = 2;
@@ -91,28 +92,41 @@
             label1.BackColor = Color.FromArgb(128, 128, 255);
             label1.Font = new Font("Sitka Small", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(131, 178);
+            label1.Location = new Point(472, 175);
             label1.Name = "label1";
             label1.Size = new Size(738, 31);
             label1.TabIndex = 4;
             label1.Text = "Welcome to \"La suiza sistem\" from to administrator of the school";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button5
             // 
-            button5.Location = new Point(336, 352);
+            button5.Location = new Point(0, 0);
             button5.Name = "button5";
-            button5.Size = new Size(336, 23);
-            button5.TabIndex = 5;
-            button5.Text = "Evaluaciones";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click_1;
+            button5.Size = new Size(75, 23);
+            button5.TabIndex = 7;
+            // 
+            // button6
+            // 
+            button6.Anchor = AnchorStyles.Top;
+            button6.BackColor = Color.Transparent;
+            button6.Location = new Point(216, 360);
+            button6.Name = "button6";
+            button6.Size = new Size(336, 23);
+            button6.TabIndex = 6;
+            button6.Text = "Evaluaciones";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // FormMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackgroundImage = SuizaSystem.Properties.Resources.suiza;
             ClientSize = new Size(1001, 586);
+            Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(label1);
             Controls.Add(button4);
@@ -120,7 +134,11 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "FormMenuPrincipal";
+            RightToLeftLayout = true;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FormMenuPrincipal";
+            WindowState = FormWindowState.Maximized;
+            Load += FormMenuPrincipal_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,5 +151,6 @@
         private Button button4;
         private Label label1;
         private Button button5;
+        private Button button6;
     }
 }

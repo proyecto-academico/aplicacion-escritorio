@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             GRILLA = new DataGridView();
+            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            turno = new DataGridViewTextBoxColumn();
+            divisions = new DataGridViewTextBoxColumn();
             claseDivisionesBindingSource1 = new BindingSource(components);
             claseDivisionesBindingSource = new BindingSource(components);
             Cerrar = new Button();
@@ -38,9 +41,6 @@
             Buscador = new TextBox();
             button2 = new Button();
             Button1 = new Button();
-            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            turno = new DataGridViewTextBoxColumn();
-            divisions = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)GRILLA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)claseDivisionesBindingSource).BeginInit();
@@ -52,14 +52,14 @@
             GRILLA.AutoGenerateColumns = false;
             GRILLA.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GRILLA.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            GRILLA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             GRILLA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             GRILLA.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, turno, divisions });
             GRILLA.DataSource = claseDivisionesBindingSource1;
@@ -69,7 +69,25 @@
             GRILLA.RowTemplate.Height = 25;
             GRILLA.Size = new Size(753, 382);
             GRILLA.TabIndex = 21;
-
+            GRILLA.CellContentClick += GRILLA_CellContentClick;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // turno
+            // 
+            turno.DataPropertyName = "turno";
+            turno.HeaderText = "Turno";
+            turno.Name = "turno";
+            // 
+            // divisions
+            // 
+            divisions.DataPropertyName = "divisions";
+            divisions.HeaderText = "Divisions";
+            divisions.Name = "divisions";
             // 
             // claseDivisionesBindingSource1
             // 
@@ -134,24 +152,6 @@
             Button1.TabIndex = 16;
             Button1.Text = "Buscar";
             Button1.UseVisualStyleBackColor = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // turno
-            // 
-            turno.DataPropertyName = "turno";
-            turno.HeaderText = "Turno";
-            turno.Name = "turno";
-            // 
-            // divisions
-            // 
-            divisions.DataPropertyName = "divisions";
-            divisions.HeaderText = "Divisions";
-            divisions.Name = "divisions";
             // 
             // FormVerDivisiones
             // 

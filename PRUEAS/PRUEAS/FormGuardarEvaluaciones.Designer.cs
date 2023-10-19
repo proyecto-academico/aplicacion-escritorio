@@ -35,11 +35,11 @@
             label5 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
             button1 = new Button();
             button2 = new Button();
+            dateTimePicker1 = new DateTimePicker();
             SuspendLayout();
             // 
             // label1
@@ -101,13 +101,6 @@
             textBox2.Size = new Size(281, 23);
             textBox2.TabIndex = 6;
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(136, 101);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(281, 23);
-            textBox3.TabIndex = 7;
-            // 
             // textBox4
             // 
             textBox4.Location = new Point(136, 130);
@@ -141,16 +134,23 @@
             button2.Text = "Aceptar";
             button2.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(136, 104);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(281, 23);
+            dateTimePicker1.TabIndex = 12;
+            // 
             // FormGuardarEvaluaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(557, 291);
+            Controls.Add(dateTimePicker1);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label5);
@@ -173,10 +173,10 @@
         private Label label5;
         private TextBox textBox1;
         private TextBox textBox2;
-        private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox5;
         private Button button1;
         private Button button2;
+        private DateTimePicker dateTimePicker1;
     }
 }

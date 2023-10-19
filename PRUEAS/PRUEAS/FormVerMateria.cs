@@ -57,6 +57,23 @@ namespace PRUEAS
         private void FormVerMateria_Load(object sender, EventArgs e)
         {
             CargaDeMateria();
+            // Cambiar el color de fondo del formulario
+            this.BackColor = Color.LightGray; // Puedes ajustar el color según tus preferencias
+
+            // Cambiar el color de fondo del DataGridView (GRILLA)
+            GRILLA.BackgroundColor = Color.White; // Cambia el color de fondo de la tabla
+
+            DataGridViewCellStyle estiloCelda = new DataGridViewCellStyle();
+            estiloCelda.BackColor = Color.LightBlue; // Cambia el color de fondo de las celdas
+            estiloCelda.ForeColor = Color.Black; // Cambia el color del texto de las celdas
+
+            GRILLA.DefaultCellStyle = estiloCelda;
+
+            // También puedes personalizar columnas individuales si lo deseas.
+            // Por ejemplo, si quieres personalizar la primera columna:
+            GRILLA.Columns[0].DefaultCellStyle.BackColor = Color.Yellow;
+            GRILLA.Columns[0].DefaultCellStyle.ForeColor = Color.Black;
+
         }
     }
 }

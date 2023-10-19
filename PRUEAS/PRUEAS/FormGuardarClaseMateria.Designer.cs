@@ -28,33 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBoxCiCLO = new TextBox();
-            textBoxDNI = new TextBox();
             textBoxSurname = new TextBox();
             label5 = new Label();
-            Fecha = new Label();
             Clase = new Label();
             buttonSalir = new Button();
             buttonGuardar = new Button();
             Nota = new Label();
             textBox1 = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
+            Fecha = new Label();
+            dateTimePicker2 = new DateTimePicker();
             SuspendLayout();
-            // 
-            // textBoxCiCLO
-            // 
-            textBoxCiCLO.Location = new Point(277, 240);
-            textBoxCiCLO.Margin = new Padding(3, 2, 3, 2);
-            textBoxCiCLO.Name = "textBoxCiCLO";
-            textBoxCiCLO.Size = new Size(263, 23);
-            textBoxCiCLO.TabIndex = 23;
-            // 
-            // textBoxDNI
-            // 
-            textBoxDNI.Location = new Point(277, 203);
-            textBoxDNI.Margin = new Padding(3, 2, 3, 2);
-            textBoxDNI.Name = "textBoxDNI";
-            textBoxDNI.Size = new Size(263, 23);
-            textBoxDNI.TabIndex = 22;
             // 
             // textBoxSurname
             // 
@@ -71,15 +55,6 @@
             label5.Name = "label5";
             label5.Size = new Size(0, 15);
             label5.TabIndex = 20;
-            // 
-            // Fecha
-            // 
-            Fecha.AutoSize = true;
-            Fecha.Location = new Point(158, 243);
-            Fecha.Name = "Fecha";
-            Fecha.Size = new Size(66, 15);
-            Fecha.TabIndex = 18;
-            Fecha.Text = "Fecha Final";
             // 
             // Clase
             // 
@@ -130,14 +105,39 @@
             textBox1.Size = new Size(263, 23);
             textBox1.TabIndex = 24;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(277, 200);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(263, 23);
+            dateTimePicker1.TabIndex = 25;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // Fecha
+            // 
+            Fecha.AutoSize = true;
+            Fecha.Location = new Point(158, 243);
+            Fecha.Name = "Fecha";
+            Fecha.Size = new Size(66, 15);
+            Fecha.TabIndex = 18;
+            Fecha.Text = "Fecha Final";
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(277, 237);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(263, 23);
+            dateTimePicker2.TabIndex = 26;
+            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
+            // 
             // FormGuardarClaseMateria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
             Controls.Add(textBox1);
-            Controls.Add(textBoxCiCLO);
-            Controls.Add(textBoxDNI);
             Controls.Add(textBoxSurname);
             Controls.Add(label5);
             Controls.Add(Fecha);
@@ -153,15 +153,15 @@
         }
 
         #endregion
-        private TextBox textBoxCiCLO;
-        private TextBox textBoxDNI;
         private TextBox textBoxSurname;
         private Label label5;
-        private Label Fecha;
         private Label Clase;
         private Button buttonSalir;
         private Button buttonGuardar;
         private Label Nota;
         private TextBox textBox1;
+        private DateTimePicker dateTimePicker1;
+        private Label Fecha;
+        private DateTimePicker dateTimePicker2;
     }
 }

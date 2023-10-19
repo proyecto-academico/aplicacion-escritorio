@@ -136,7 +136,7 @@
             // 
             dateTimePicker1.Location = new Point(218, 162);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.Size = new Size(263, 23);
             dateTimePicker1.TabIndex = 22;
             // 
             // textBox1
