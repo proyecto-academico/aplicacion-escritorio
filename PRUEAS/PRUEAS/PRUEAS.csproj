@@ -16,6 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="NewFile1.txt" />
     <None Remove="recursos\suiza.png" />
   </ItemGroup>
 

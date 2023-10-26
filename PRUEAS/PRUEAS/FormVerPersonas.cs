@@ -60,7 +60,7 @@
             if (e.ColumnIndex == GRILLA.Columns["Notas"].Index && e.RowIndex >= 0)
             {
 #pragma warning disable CS8604 // Posible argumento de referencia nulo
-                FormVerNotas formNotas = new FormVerNotas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                FormVerNotas formNotas = new FormVerNotas(int.Parse(GRILLA.Rows[e.RowIndex].Cells[0].Value.ToString()), int.Parse(GRILLA.Rows[e.RowIndex].Cells[5].Value.ToString()));
 #pragma warning restore CS8604 // Posible argumento de referencia nulo
                 formNotas.ShowDialog();
             }

@@ -1,15 +1,19 @@
-﻿namespace PRUEAS
+﻿using SuizaSystem;
+
+namespace PRUEAS
 {
     public partial class FormVerNotas : Form
     {
         Acceso_Querys _manejoDeDB;
-        int persona;
+        private int persona;
+        private int Division;
         public bool BotonesValue = false;
-        public FormVerNotas(int persona_)
+        public FormVerNotas(int persona_, int division_id)
         {
             InitializeComponent();
             _manejoDeDB = new Acceso_Querys();
             this.persona = persona_;
+            this.Division = division_id;
         }
 
         private void Cerrar_Click(object sender, EventArgs e)
@@ -33,7 +37,7 @@
         }
         private void AgregarData()
         {
-            FormGuardarNotas notas = new FormGuardarNotas();
+            FormEleccion notas = new FormEleccion(persona, Division);
             notas.ShowDialog(this);
         }
 

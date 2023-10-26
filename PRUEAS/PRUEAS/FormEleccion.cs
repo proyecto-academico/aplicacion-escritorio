@@ -13,12 +13,15 @@ namespace SuizaSystem
 {
     public partial class FormEleccion : Form
     {
+        int? DNI;
+        int? Division;
         private Acceso_Querys Acceso_Querys { get; set; }
-        public FormEleccion()
-        {
+        public FormEleccion(int? dni = null, int? division = null)
+        { 
             InitializeComponent();
             Acceso_Querys = new Acceso_Querys();
-
+            DNI = dni;
+            Division = division;
         }
 
         private void FormEleccion_Load(object sender, EventArgs e)
@@ -45,6 +48,8 @@ namespace SuizaSystem
         {
             List<ClasePersonas> clasePersonas = Acceso_Querys.ObetenerPersona(2);
             dataGridView1.DataSource = clasePersonas;
+            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -68,6 +73,12 @@ namespace SuizaSystem
 
 
 
+        }
+
+        private void GRILLA2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int variabletempo = int.Parse(GRILLA2.Rows[e.RowIndex].Cells[0].Value.ToString());
+             
         }
     }
 }
