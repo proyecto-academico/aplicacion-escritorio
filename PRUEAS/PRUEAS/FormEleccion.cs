@@ -13,20 +13,32 @@ namespace SuizaSystem
 {
     public partial class FormEleccion : Form
     {
+        int Tipo;
         int? DNI;
         int? Division;
         private Acceso_Querys Acceso_Querys { get; set; }
-        public FormEleccion(int? dni = null, int? division = null)
+        public FormEleccion(int? dni = null, int? division = null, int tipo)
         { 
             InitializeComponent();
             Acceso_Querys = new Acceso_Querys();
             DNI = dni;
             Division = division;
+            this.Tipo = tipo;
         }
 
         private void FormEleccion_Load(object sender, EventArgs e)
         {
-            CargarPersonas();
+
+            switch (Tipo)
+            {
+                case 0: CargarPersonas();
+                    break;
+                case 1: CargarPersonas(); 
+                    break;
+
+        }
+            
+            
 
             // Cambiar el color de fondo del DataGridView (GRILLA)
             dataGridView1.BackgroundColor = Color.White; // Cambia el color de fondo de la tabla
@@ -77,8 +89,8 @@ namespace SuizaSystem
 
         private void GRILLA2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int variabletempo = int.Parse(GRILLA2.Rows[e.RowIndex].Cells[0].Value.ToString());
-             
+            int Evaluacion = int.Parse(GRILLA2.Rows[e.RowIndex].Cells[0].Value.ToString());
+            FormGuardarNotas formGuardarNotas = new(int.Parse(DNI.ToString()), Evaluacion); 
         }
     }
 }

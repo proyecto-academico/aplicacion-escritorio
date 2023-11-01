@@ -36,8 +36,8 @@ namespace PRUEAS
             AgregarData();
         }
         private void AgregarData()
-        {
-            FormEleccion notas = new FormEleccion(persona, Division);
+        {   // el argumento tipo es un argumento necesario para saber que eleccion necesito
+            FormEleccion notas = new FormEleccion(persona, Division, 1);
             notas.ShowDialog(this);
         }
 
