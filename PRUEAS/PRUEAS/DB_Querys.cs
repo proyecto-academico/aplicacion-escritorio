@@ -855,6 +855,71 @@ namespace PRUEAS
         }
         #endregion
 
+        #region
+        public List<ClaseEvaluaciones> evaluacionesPersona(int dni, int division)
+        {
+            List<ClaseEvaluaciones> evaluaciones = new List<ClaseEvaluaciones>();
+            try
+            {
+                string querry;
+                conn.Open();
+
+                querry = @"SELECT Evaluacion_ID, evaluaciones.Clase_ID, Fecha, Detalles, CONCAT(materia.Nombre, ' ',  division.Anio_Escolar , '° ' , Division_Escolar , '° ', YEAR( Fecha_Comienzo )) as nombre_de_clase FROM persona											
+                            INNER JOIN division_de_alumnos ON persona.DNI = division_de_alumnos.DNI_Alumno											
+                            INNER JOIN division ON division_de_alumnos.Division_ID = division.Division_ID											
+                            INNER JOIN clase ON clase.Division_ID = division.Division_ID											
+                            INNER JOIN evaluaciones ON evaluaciones.Clase_ID = clase.Clase_ID											
+                            INNER JOIN materia ON materia.Materia_ID = clase.Materia_ID											
+                            WHERE nivel=3											
+                            AND persona.DNI = {@dni}											
+                            AND division.Division_ID = {@division}
+							";
+
+                SqlParameter sqlParameter3 = new SqlParameter();
+                sqlParameter3.ParameterName = "@DNI";
+                sqlParameter3.Value = dni;
+                sqlParameter3.DbType = System.Data.DbType.Int64;
+                SqlParameter sqlParameter1 = new SqlParameter();
+                sqlParameter1.ParameterName = "@division";
+                sqlParameter1.Value = division;
+                sqlParameter1.DbType = System.Data.DbType.Int64;
+
+                SqlCommand command = new SqlCommand(querry, conn);
+                command.Parameters.Add(sqlParameter3);
+                command.Parameters.Add(sqlParameter1);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    evaluaciones.Add( new ClaseEvaluaciones( 
+                    
+                        int.Parse(reader["Evaluacion_ID"].ToString()),
+                         reader["nombre_de_clase"].ToString(),
+                         reader["Detalles"].ToString(),
+                        reader["Fecha"].ToString(),
+                        reader["Detalles"].ToString(),
+                         float.Parse(reader[""].ToString())
+                         )
+                    );
+
+                }
+
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return evaluaciones;
+
+        }
+
+        #endregion
+
         #region prueba de los listbox
 
         public List<int> GetDni()
@@ -909,5 +974,6 @@ namespace PRUEAS
 
 
         #endregion
+
     }
 }
