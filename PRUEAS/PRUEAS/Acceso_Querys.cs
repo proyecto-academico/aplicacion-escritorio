@@ -25,7 +25,11 @@
             }
             return ObjPersonas;
         }
+        public Clasenotas GuardarNotas(Clasenotas objNotas, bool ExisteNota) {
+            __DataAccese.insertarEvaluaciones();
 
+
+        }
 
         public void guardarFaltaEnDB(ClaseFaltas ObjFalta, bool ExisteFalta)
         {

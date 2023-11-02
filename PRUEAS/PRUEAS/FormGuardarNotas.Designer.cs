@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBoxDNI = new TextBox();
             textBoxSurname = new TextBox();
             label5 = new Label();
             alumno = new TextBox();
             label4 = new Label();
-            label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             buttonSalir = new Button();
@@ -43,17 +41,9 @@
             label6 = new Label();
             SuspendLayout();
             // 
-            // textBoxDNI
-            // 
-            textBoxDNI.Location = new Point(218, 134);
-            textBoxDNI.Margin = new Padding(3, 2, 3, 2);
-            textBoxDNI.Name = "textBoxDNI";
-            textBoxDNI.Size = new Size(263, 23);
-            textBoxDNI.TabIndex = 18;
-            // 
             // textBoxSurname
             // 
-            textBoxSurname.Location = new Point(218, 104);
+            textBoxSurname.Location = new Point(218, 134);
             textBoxSurname.Margin = new Padding(3, 2, 3, 2);
             textBoxSurname.Name = "textBoxSurname";
             textBoxSurname.Size = new Size(263, 23);
@@ -62,14 +52,14 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(345, 112);
+            label5.Location = new Point(345, 142);
             label5.Name = "label5";
             label5.Size = new Size(0, 15);
             label5.TabIndex = 16;
             // 
             // alumno
             // 
-            alumno.Location = new Point(218, 77);
+            alumno.Location = new Point(218, 107);
             alumno.Margin = new Padding(3, 2, 3, 2);
             alumno.Name = "alumno";
             alumno.Size = new Size(263, 23);
@@ -84,19 +74,10 @@
             label4.TabIndex = 14;
             label4.Text = "Fecha";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(99, 142);
-            label3.Name = "label3";
-            label3.Size = new Size(35, 15);
-            label3.TabIndex = 13;
-            label3.Text = "Clase";
-            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(99, 112);
+            label2.Location = new Point(99, 142);
             label2.Name = "label2";
             label2.Size = new Size(33, 15);
             label2.TabIndex = 12;
@@ -105,7 +86,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(99, 85);
+            label1.Location = new Point(99, 115);
             label1.Name = "label1";
             label1.Size = new Size(50, 15);
             label1.TabIndex = 11;
@@ -166,12 +147,10 @@
             Controls.Add(dateTimePicker1);
             Controls.Add(buttonSalir);
             Controls.Add(buttonGuardar);
-            Controls.Add(textBoxDNI);
             Controls.Add(textBoxSurname);
             Controls.Add(label5);
             Controls.Add(alumno);
             Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FormGuardarNotas";
@@ -181,12 +160,10 @@
         }
 
         #endregion
-        private TextBox textBoxDNI;
         private TextBox textBoxSurname;
         private Label label5;
         private TextBox textBoxName;
         private Label label4;
-        private Label label3;
         private Label label2;
         private Label label1;
         private Button buttonSalir;

@@ -600,6 +600,54 @@ namespace PRUEAS
             return evaluaciones;
         }
 
+        public void insertarEvaluaciones(Clasenotas Nota)
+        {
+            try
+            {
+                conn.Open();
+                string querry = @"
+                        INSERT INTO notas (Nota, DNI_Alumno, Evaluacion_ID)
+                        VALUES (@Nota, @DNI_Alumno, @Evaluacion_ID)
+";
+                #region Parametros que pasamos
+                SqlParameter sqlParameter = new SqlParameter();
+                sqlParameter.ParameterName = "@Nota";
+                sqlParameter.Value = Nota.Nota;
+                sqlParameter.DbType = System.Data.DbType.String;
+
+                SqlParameter parametros2 = new SqlParameter();
+                parametros2.ParameterName = "@DNI_Alumno";
+                parametros2.Value = Nota._dni;
+                parametros2.DbType = System.Data.DbType.String;
+
+                SqlParameter sqlParameter3 = new SqlParameter();
+                sqlParameter3.ParameterName = "@Evaluacion_ID";
+                sqlParameter3.Value = Nota.Evaluacion_ID;
+                sqlParameter3.DbType = System.Data.DbType.Int64;
+                #endregion
+
+                #region Comandos Sql
+                SqlCommand sqlCommand = new SqlCommand(querry, conn);
+                sqlCommand.Parameters.Add(sqlParameter);
+                sqlCommand.Parameters.Add(parametros2);
+                sqlCommand.Parameters.Add(sqlParameter3);
+                sqlCommand.ExecuteNonQuery();
+                #endregion
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+
+            }
+            finally
+            {
+
+                conn.Close();
+            }
+
+
+        }
+
         #endregion
 
         #region Querry Faltas

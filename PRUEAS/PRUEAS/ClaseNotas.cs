@@ -7,6 +7,7 @@
         public string clase { get; set; }
         public decimal Nota { get; set; }
         public DateTime DateT { get; set; }
+        public int Evaluacion_ID { get; set; }
 
         public Clasenotas()
         {
