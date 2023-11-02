@@ -18,7 +18,7 @@ namespace PRUEAS
         private void button2_Click(object sender, EventArgs e)
         {
 
-            FormEleccion agrergarMateria = new FormEleccion();
+            FormEleccion agrergarMateria = new FormEleccion(0);
             agrergarMateria.Show();
 
         }

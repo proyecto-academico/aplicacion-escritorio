@@ -31,7 +31,7 @@
             textBoxDNI = new TextBox();
             textBoxSurname = new TextBox();
             label5 = new Label();
-            textBoxName = new TextBox();
+            alumno = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -39,7 +39,7 @@
             buttonSalir = new Button();
             buttonGuardar = new Button();
             dateTimePicker1 = new DateTimePicker();
-            textBox1 = new TextBox();
+            textBoxEvaluacion = new TextBox();
             label6 = new Label();
             SuspendLayout();
             // 
@@ -67,13 +67,13 @@
             label5.Size = new Size(0, 15);
             label5.TabIndex = 16;
             // 
-            // textBoxName
+            // alumno
             // 
-            textBoxName.Location = new Point(218, 77);
-            textBoxName.Margin = new Padding(3, 2, 3, 2);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(263, 23);
-            textBoxName.TabIndex = 15;
+            alumno.Location = new Point(218, 77);
+            alumno.Margin = new Padding(3, 2, 3, 2);
+            alumno.Name = "alumno";
+            alumno.Size = new Size(263, 23);
+            alumno.TabIndex = 15;
             // 
             // label4
             // 
@@ -139,13 +139,13 @@
             dateTimePicker1.Size = new Size(263, 23);
             dateTimePicker1.TabIndex = 22;
             // 
-            // textBox1
+            // textBoxEvaluacion
             // 
-            textBox1.Location = new Point(218, 190);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(263, 23);
-            textBox1.TabIndex = 24;
+            textBoxEvaluacion.Location = new Point(218, 190);
+            textBoxEvaluacion.Margin = new Padding(3, 2, 3, 2);
+            textBoxEvaluacion.Name = "textBoxEvaluacion";
+            textBoxEvaluacion.Size = new Size(263, 23);
+            textBoxEvaluacion.TabIndex = 24;
             // 
             // label6
             // 
@@ -161,7 +161,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(600, 315);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxEvaluacion);
             Controls.Add(label6);
             Controls.Add(dateTimePicker1);
             Controls.Add(buttonSalir);
@@ -169,7 +169,7 @@
             Controls.Add(textBoxDNI);
             Controls.Add(textBoxSurname);
             Controls.Add(label5);
-            Controls.Add(textBoxName);
+            Controls.Add(alumno);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -194,5 +194,7 @@
         private DateTimePicker dateTimePicker1;
         private TextBox textBox1;
         private Label label6;
+        private TextBox alumno;
+        private TextBox textBoxEvaluacion;
     }
 }

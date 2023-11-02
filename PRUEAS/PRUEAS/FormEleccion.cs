@@ -17,13 +17,15 @@ namespace SuizaSystem
         int? DNI;
         int? Division;
         private Acceso_Querys Acceso_Querys { get; set; }
-        public FormEleccion(int? dni = null, int? division = null, int tipo)
-        { 
+        public FormEleccion(int tipo, int? dni = null, int? division = null)
+        {
+
             InitializeComponent();
             Acceso_Querys = new Acceso_Querys();
             DNI = dni;
             Division = division;
             this.Tipo = tipo;
+          
         }
 
         private void FormEleccion_Load(object sender, EventArgs e)
@@ -31,14 +33,20 @@ namespace SuizaSystem
 
             switch (Tipo)
             {
-                case 0: CargarPersonas();
+                case 0:
+                    GRILLA2.Hide();
+                    dataGridView1.Show();
+                    CargarPersonas();
                     break;
-                case 1: CargarPersonas(); 
+                case 1:
+                    GRILLA2.Show();
+                    dataGridView1.Hide();
+                    CargzarEvalucionesPersonas();
                     break;
 
-        }
-            
-            
+            }
+
+
 
             // Cambiar el color de fondo del DataGridView (GRILLA)
             dataGridView1.BackgroundColor = Color.White; // Cambia el color de fondo de la tabla
@@ -60,8 +68,13 @@ namespace SuizaSystem
         {
             List<ClasePersonas> clasePersonas = Acceso_Querys.ObetenerPersona(2);
             dataGridView1.DataSource = clasePersonas;
-            
 
+
+        }
+        private void CargzarEvalucionesPersonas()
+        {
+            List<ClaseEvaluaciones> claseEvaluaciones = Acceso_Querys.ObtenerEvaluacionesAlumno(int.Parse(DNI.ToString()), int.Parse(Division.ToString()));
+            GRILLA2.DataSource = claseEvaluaciones;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -90,7 +103,9 @@ namespace SuizaSystem
         private void GRILLA2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int Evaluacion = int.Parse(GRILLA2.Rows[e.RowIndex].Cells[0].Value.ToString());
-            FormGuardarNotas formGuardarNotas = new(int.Parse(DNI.ToString()), Evaluacion); 
+            FormGuardarNotas formGuardarNotas = new(int.Parse(DNI.ToString()), Evaluacion);
+            formGuardarNotas.Show();
+            this.Close();
         }
     }
 }

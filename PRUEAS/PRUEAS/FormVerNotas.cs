@@ -1,4 +1,5 @@
 ﻿using SuizaSystem;
+using System.Net;
 
 namespace PRUEAS
 {
@@ -37,8 +38,9 @@ namespace PRUEAS
         }
         private void AgregarData()
         {   // el argumento tipo es un argumento necesario para saber que eleccion necesito
-            FormEleccion notas = new FormEleccion(persona, Division, 1);
+            FormEleccion notas = new FormEleccion(1,persona, Division);
             notas.ShowDialog(this);
+            
         }
 
         private void buscar_Click(object sender, EventArgs e)

@@ -108,5 +108,9 @@
         {
             return __DataAccese.GetDni();
         }
+        public List<ClaseEvaluaciones> ObtenerEvaluacionesAlumno(int dni, int division) {
+            return __DataAccese.evaluacionesPersona(dni,division);
+        }
+
     }
 }

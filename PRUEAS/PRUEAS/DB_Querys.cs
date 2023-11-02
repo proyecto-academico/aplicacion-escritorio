@@ -855,7 +855,7 @@ namespace PRUEAS
         }
         #endregion
 
-        #region
+        #region eleccion
         public List<ClaseEvaluaciones> evaluacionesPersona(int dni, int division)
         {
             List<ClaseEvaluaciones> evaluaciones = new List<ClaseEvaluaciones>();
@@ -864,15 +864,14 @@ namespace PRUEAS
                 string querry;
                 conn.Open();
 
-                querry = @"SELECT Evaluacion_ID, evaluaciones.Clase_ID, Fecha, Detalles, CONCAT(materia.Nombre, ' ',  division.Anio_Escolar , '° ' , Division_Escolar , '° ', YEAR( Fecha_Comienzo )) as nombre_de_clase FROM persona											
+                querry = @"SELECT division.Division_ID, Evaluacion_ID, evaluaciones.Clase_ID, Fecha, Detalles, CONCAT(materia.Nombre, ' ',  division.Anio_Escolar , '° ' , Division_Escolar , '° ', YEAR( Fecha_Comienzo )) as nombre_de_clase FROM persona											
                             INNER JOIN division_de_alumnos ON persona.DNI = division_de_alumnos.DNI_Alumno											
                             INNER JOIN division ON division_de_alumnos.Division_ID = division.Division_ID											
                             INNER JOIN clase ON clase.Division_ID = division.Division_ID											
                             INNER JOIN evaluaciones ON evaluaciones.Clase_ID = clase.Clase_ID											
                             INNER JOIN materia ON materia.Materia_ID = clase.Materia_ID											
                             WHERE nivel=3											
-                            AND persona.DNI = {@dni}											
-                            AND division.Division_ID = {@division}
+                            AND persona.DNI = @DNI										
 							";
 
                 SqlParameter sqlParameter3 = new SqlParameter();
@@ -897,8 +896,8 @@ namespace PRUEAS
                          reader["nombre_de_clase"].ToString(),
                          reader["Detalles"].ToString(),
                         reader["Fecha"].ToString(),
-                        reader["Detalles"].ToString(),
-                         float.Parse(reader[""].ToString())
+                        reader["Detalles"].ToString(), null
+                      
                          )
                     );
 
